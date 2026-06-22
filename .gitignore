@@ -250,3 +250,11 @@ Icon
 Network Trash Folder
 Temporary Items
 .apdisk
+
+
+##---------------------------------------------------
+# Project specific .gitignore
+##---------------------------------------------------
+
+# Generated calendar output (the workflow builds public/outages.ics)
+outages.ics
