@@ -302,7 +302,7 @@ def build_calendar(incidents, tzname):
     cal = Calendar()
     cal.add("prodid", "-//Alliance Outage Calendar//EN")
     cal.add("version", "2.0")
-    cal.add("x-wr-calname", "Alliance Canada Cluster Outages")
+    cal.add("x-wr-calname", "DRAC Canada Cluster Outages")
     cal.add("x-wr-timezone", tzname)
 
     for inc in incidents:
