@@ -40,7 +40,7 @@ from zoneinfo import ZoneInfo
 BASE = "https://status.alliancecan.ca/"
 HOME = BASE
 DEFAULT_TZ = "America/Toronto"          # EST/EDT, what the site quotes times in
-HEADERS = {"User-Agent": "alliance-outage-calendar/1.0 (personal use)"}
+HEADERS = {"User-Agent": "drac-outage-calendar/1.0 (personal use)"}
 
 # Map the abbreviations the site prints to tz names, so "4:00 AM EDT" resolves.
 TZINFOS = {
@@ -82,7 +82,7 @@ def get_scheduled_incident_urls(home_html):
             url = urljoin(BASE, el["href"])
             if url not in seen:
                 seen.add(url)
-                out.append((current_service or "Alliance", url))
+                out.append((current_service or "DRAC", url))
     return out
 
 
@@ -123,7 +123,7 @@ def parse_incident(html, url):
         dt_start, dt_end = parse_dates_from_prose(summary)
 
     return {
-        "service": service or "Alliance",
+        "service": service or "DRAC",
         "title": title or "Scheduled outage",
         "summary": summary,
         "url": url,
@@ -300,7 +300,7 @@ def parse_dates_from_prose(summary, ref=None):
 def build_calendar(incidents, tzname):
     tz = ZoneInfo(tzname)
     cal = Calendar()
-    cal.add("prodid", "-//Alliance Outage Calendar//EN")
+    cal.add("prodid", "-//DRAC Outage Calendar//EN")
     cal.add("version", "2.0")
     cal.add("x-wr-calname", "DRAC Canada Cluster Outages")
     cal.add("x-wr-timezone", tzname)
@@ -355,7 +355,7 @@ def main():
     for service, url in urls:
         try:
             inc = parse_incident(fetch(url), url)
-            if inc["service"] in (None, "Alliance"):
+            if inc["service"] in (None, "DRAC"):
                 inc["service"] = service
             incidents.append(inc)
             when = inc["start"].isoformat() if inc["start"] else "date TBD"
