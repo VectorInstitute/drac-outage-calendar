@@ -314,7 +314,7 @@ def build_calendar(incidents, tzname):
 
         ev = Event()
         uid = inc["url"].split("=")[-1]
-        ev.add("uid", f"alliance-incident-{uid}@status.alliancecan.ca")
+        ev.add("uid", f"drac-incident-{uid}@status.alliancecan.ca")
         desc = (inc["summary"] or "").strip()
         ev.add("description", f"{desc}\n\n{inc['url']}".strip())
         ev.add("url", inc["url"])
