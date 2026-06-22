@@ -20,20 +20,29 @@ app can subscribe by URL and refresh automatically.
   placeholder would show a bogus "now" slot; the real outage is at some unknown
   future time). They're still logged to the run output (and counted in the
   final summary as "N undated, omitted") so they're visible in CI logs.
+- `--service NAME` filters to incidents whose service name contains NAME
+  (case-insensitive); `--calname` sets the calendar's display title. These let
+  one script produce both the all-clusters feed and per-cluster feeds.
 
 ## Deployment
 - Hosted as a public repo under the VectorInstitute GitHub org.
 - `.github/workflows/outages.yml` runs daily (cron) + on manual dispatch, builds
-  `public/outages.ics`, and deploys via the official `upload-pages-artifact` /
-  `deploy-pages` actions.
+  `public/outages.ics` (all clusters) and `public/killarney.ics` (Killarney
+  only), and deploys via the official `upload-pages-artifact` / `deploy-pages`
+  actions. The script is invoked once per feed, so the site is scraped twice per
+  daily run — still well within polite limits.
 - Pages source must be set to "GitHub Actions" in repo Settings -> Pages.
-- Subscribe URL (project site): https://vectorinstitute.github.io/<repo-name>/outages.ics
+- Subscribe URLs (project site):
+  - all clusters: https://vectorinstitute.github.io/<repo-name>/outages.ics
+  - Killarney only: https://vectorinstitute.github.io/<repo-name>/killarney.ics
   (could differ if the org has a custom Pages domain).
 
 ## Run locally
     pip install -r requirements.txt
-    python drac_outages_ics.py            # writes ./outages.ics
+    python drac_outages_ics.py            # writes ./outages.ics (all clusters)
     python drac_outages_ics.py -o out.ics --tz America/Toronto
+    python drac_outages_ics.py -o killarney.ics \
+        --service Killarney --calname "Killarney Cluster Outages"
 
 ## Known caveats / open items
 - Depends on the current status-page HTML layout; brittle if Cachet markup changes.

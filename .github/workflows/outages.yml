@@ -22,6 +22,8 @@ jobs:
       - run: |
           mkdir -p public
           python drac_outages_ics.py -o public/outages.ics
+          python drac_outages_ics.py -o public/killarney.ics \
+            --service Killarney --calname "Killarney Cluster Outages"
       - uses: actions/upload-pages-artifact@v3
         with:
           path: public

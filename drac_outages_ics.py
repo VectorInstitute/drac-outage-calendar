@@ -40,6 +40,7 @@ from zoneinfo import ZoneInfo
 BASE = "https://status.alliancecan.ca/"
 HOME = BASE
 DEFAULT_TZ = "America/Toronto"          # EST/EDT, what the site quotes times in
+DEFAULT_CALNAME = "DRAC Canada Cluster Outages"
 HEADERS = {"User-Agent": "drac-outage-calendar/1.0 (personal use)"}
 
 # Map the abbreviations the site prints to tz names, so "4:00 AM EDT" resolves.
@@ -297,12 +298,12 @@ def parse_dates_from_prose(summary, ref=None):
     return start, end
 
 
-def build_calendar(incidents, tzname):
+def build_calendar(incidents, tzname, calname=DEFAULT_CALNAME):
     tz = ZoneInfo(tzname)
     cal = Calendar()
     cal.add("prodid", "-//DRAC Outage Calendar//EN")
     cal.add("version", "2.0")
-    cal.add("x-wr-calname", "DRAC Canada Cluster Outages")
+    cal.add("x-wr-calname", calname)
     cal.add("x-wr-timezone", tzname)
 
     for inc in incidents:
@@ -339,6 +340,11 @@ def main():
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("-o", "--output", default="outages.ics")
     ap.add_argument("--tz", default=DEFAULT_TZ, help="IANA tz for naive times")
+    ap.add_argument("--service", default=None,
+                    help="only include incidents whose service name contains "
+                         "this string (case-insensitive), e.g. 'Killarney'")
+    ap.add_argument("--calname", default=DEFAULT_CALNAME,
+                    help="calendar display name (X-WR-CALNAME)")
     args = ap.parse_args()
 
     try:
@@ -363,7 +369,12 @@ def main():
         except requests.RequestException as e:
             print(f"  ! skip {url}: {e}", file=sys.stderr)
 
-    cal = build_calendar(incidents, args.tz)
+    if args.service:
+        needle = args.service.lower()
+        incidents = [i for i in incidents if needle in i["service"].lower()]
+        print(f"Filtered to service ~ {args.service!r}: {len(incidents)} incident(s)")
+
+    cal = build_calendar(incidents, args.tz, args.calname)
     with open(args.output, "wb") as f:
         f.write(cal.to_ical())
     written = sum(1 for c in cal.walk("VEVENT"))
