@@ -306,6 +306,12 @@ def build_calendar(incidents, tzname):
     cal.add("x-wr-timezone", tzname)
 
     for inc in incidents:
+        start, end = inc["start"], inc["end"]
+        if start is None:
+            # No parseable date -> omit. A placeholder at build time would show
+            # a bogus "now" slot; the real outage is at some unknown future time.
+            continue
+
         ev = Event()
         uid = inc["url"].split("=")[-1]
         ev.add("uid", f"alliance-incident-{uid}@status.alliancecan.ca")
@@ -313,14 +319,7 @@ def build_calendar(incidents, tzname):
         ev.add("description", f"{desc}\n\n{inc['url']}".strip())
         ev.add("url", inc["url"])
 
-        start, end = inc["start"], inc["end"]
-        title = f"[{inc['service']}] {inc['title']}"
-        if start is None:
-            # No parseable date -> placeholder today so it's still visible.
-            start = datetime.now(tz)
-            end = start + timedelta(hours=1)
-            title += " (date TBD - check link)"
-        ev.add("summary", title)
+        ev.add("summary", f"[{inc['service']}] {inc['title']}")
         if start.tzinfo is None:
             start = start.replace(tzinfo=tz)
         if end is None:
@@ -367,7 +366,10 @@ def main():
     cal = build_calendar(incidents, args.tz)
     with open(args.output, "wb") as f:
         f.write(cal.to_ical())
-    print(f"Wrote {len(incidents)} event(s) to {args.output}")
+    written = sum(1 for c in cal.walk("VEVENT"))
+    skipped = len(incidents) - written
+    note = f" ({skipped} undated, omitted)" if skipped else ""
+    print(f"Wrote {written} event(s) to {args.output}{note}")
 
 
 if __name__ == "__main__":

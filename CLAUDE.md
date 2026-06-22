@@ -16,7 +16,10 @@ app can subscribe by URL and refresh automatically.
 - The status site is a self-hosted Cachet instance. There is NO public RSS/iCal
   feed, which is why scraping is necessary. Incident date fields are often blank,
   so prose parsing is the fallback and matters.
-- Incidents with no parseable date still appear, flagged "date TBD - check link".
+- Incidents with no parseable date are omitted from the .ics (a build-time
+  placeholder would show a bogus "now" slot; the real outage is at some unknown
+  future time). They're still logged to the run output (and counted in the
+  final summary as "N undated, omitted") so they're visible in CI logs.
 
 ## Deployment
 - Hosted as a public repo under the VectorInstitute GitHub org.
