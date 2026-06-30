@@ -1,4 +1,4 @@
-name: Tests
+name: tests
 on:
   push:
     branches: [main]      # not calendar-state (bot data branch: no code/tests)
@@ -10,11 +10,24 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: ["3.10", "3.12"]
+        python-version: ["3.10", "3.12"]   # oldest + newest supported
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.python-version }}
-      - run: pip install .[test]
-      - run: pytest
+          cache: pip
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip wheel
+          python -m pip install flake8
+          python -m pip install --editable .[test]
+      - name: Sanity check with flake8
+        run: |
+          # stop the build if there are Python syntax errors or undefined names
+          python -m flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+          # exit-zero treats all errors as warnings
+          python -m flake8 . --count --exit-zero --statistics
+      - name: Test with pytest
+        run: python -m pytest
