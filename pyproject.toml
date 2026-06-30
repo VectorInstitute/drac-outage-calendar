@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "drac-outage-calendar"
+version = "0.1.0"
+description = "iCalendar feed of scheduled Digital Research Alliance of Canada (DRAC) cluster outages, scraped from the status page."
+readme = "README.md"
+requires-python = ">=3.9"
+# Runtime deps live in requirements.txt (used directly by the build workflow);
+# read them from there so there is a single source of truth.
+dynamic = ["dependencies"]
+
+[project.optional-dependencies]
+test = ["pytest"]
+
+[tool.setuptools]
+py-modules = ["drac_outages_ics"]
+
+[tool.setuptools.dynamic]
+dependencies = { file = ["requirements.txt"] }
+
+[tool.pytest.ini_options]
+python_files = ["test_*.py"]
+addopts = "-ra"
