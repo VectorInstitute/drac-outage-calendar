@@ -4,7 +4,7 @@ on:
     - cron: "0 6 * * *"     # daily 06:00 UTC
   workflow_dispatch:          # lets you run it manually
 permissions:
-  contents: read
+  contents: write          # to commit accumulated state back to calendar-state
   pages: write
   id-token: write
 concurrency:
@@ -14,16 +14,36 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4          # main: the code
+      - uses: actions/checkout@v4          # accumulated state (orphan branch)
+        with:
+          ref: calendar-state
+          path: state
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
       - run: pip install -r requirements.txt
-      - run: |
+      - name: Build feeds (carrying forward elapsed events)
+        run: |
           mkdir -p public
-          python drac_outages_ics.py -o public/outages.ics
+          python drac_outages_ics.py -o public/outages.ics \
+            --merge-from state/outages.ics
           python drac_outages_ics.py -o public/killarney.ics \
-            --service Killarney --calname "Killarney Cluster Outages"
+            --service Killarney --calname "Killarney Cluster Outages" \
+            --merge-from state/killarney.ics
+      - name: Persist updated state to calendar-state
+        run: |
+          cp public/outages.ics public/killarney.ics state/
+          cd state
+          if git diff --quiet; then
+            echo "State unchanged; nothing to commit."
+          else
+            git config user.name  "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add outages.ics killarney.ics
+            git commit -m "Update calendar state ($(date -u +%Y-%m-%dT%H:%MZ))"
+            git push
+          fi
       - uses: actions/upload-pages-artifact@v3
         with:
           path: public

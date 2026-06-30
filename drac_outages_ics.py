@@ -26,6 +26,7 @@ Usage:
 """
 
 import argparse
+import os
 import re
 import sys
 from datetime import date, datetime, timedelta
@@ -335,6 +336,80 @@ def build_calendar(incidents, tzname, calname=DEFAULT_CALNAME):
     return cal
 
 
+def _as_dt(value, tz):
+    """Coerce an icalendar date/datetime into a tz-aware datetime."""
+    if isinstance(value, datetime):           # datetime is a subclass of date
+        return value if value.tzinfo is not None else value.replace(tzinfo=tz)
+    return datetime(value.year, value.month, value.day, tzinfo=tz)
+
+
+def read_calendar(path):
+    """Load a previous-state calendar for merging.
+
+    Returns a Calendar, or None if the file does not exist (first run /
+    bootstrap). Raises if the file exists but cannot be parsed -- the caller
+    must abort rather than silently overwrite (and so destroy) accumulated
+    history.
+    """
+    if not os.path.exists(path):
+        return None
+    with open(path, "rb") as f:
+        return Calendar.from_ical(f.read())
+
+
+def merge_history(cal, prev_cal, tzname, now=None):
+    """Carry forward events that have dropped out of the fresh scrape.
+
+    For each event in the previous state that is absent from the new scrape,
+    its fate is decided by where *now* sits relative to it:
+      * already finished (end <= now)    -> keep as-is (elapsed, historical)
+      * in progress (start <= now < end) -> keep, truncate end to now (it
+                                            vanished mid-window, i.e. the
+                                            maintenance finished early)
+      * still upcoming (now < start)     -> drop (it vanished while future, so
+                                            treat it as cancelled)
+    Events still present in the scrape are left untouched -- the fresh data
+    wins, so reschedules and end-time changes update. Returns the counts
+    (carried, truncated, dropped).
+    """
+    tz = ZoneInfo(tzname)
+    now = now or datetime.now(tz)
+    have = {str(ev.get("uid")) for ev in cal.walk("VEVENT")}
+    carried = truncated = dropped = 0
+    for ev in prev_cal.walk("VEVENT"):
+        if str(ev.get("uid")) in have:
+            continue                          # in the scrape -> fresh data wins
+        ds = ev.get("dtstart")
+        if ds is None:
+            continue
+        start = _as_dt(ds.dt, tz)
+        de = ev.get("dtend")
+        end = _as_dt(de.dt, tz) if de is not None else start
+        if now < start:
+            dropped += 1                      # vanished while future -> cancelled
+            continue
+        if start <= now < end:                # vanished mid-window -> ended early
+            ev.pop("dtend", None)
+            ev.add("dtend", now)
+            ev.pop("dtstamp", None)
+            ev.add("dtstamp", now)
+            truncated += 1
+        else:
+            carried += 1                      # already over -> historical
+        cal.add_component(ev)
+    return carried, truncated, dropped
+
+
+def sort_events(cal, tzname):
+    """Order VEVENTs by start time, for stable and readable output / diffs."""
+    tz = ZoneInfo(tzname)
+    events, others = [], []
+    for c in cal.subcomponents:
+        (events if c.name == "VEVENT" else others).append(c)
+    events.sort(key=lambda e: _as_dt(e.get("dtstart").dt, tz))
+    cal.subcomponents = others + events
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -345,6 +420,10 @@ def main():
                          "this string (case-insensitive), e.g. 'Killarney'")
     ap.add_argument("--calname", default=DEFAULT_CALNAME,
                     help="calendar display name (X-WR-CALNAME)")
+    ap.add_argument("--merge-from", default=None, metavar="ICS",
+                    help="previous-state .ics to merge in: events that have "
+                         "elapsed and dropped off the status page are carried "
+                         "forward so past outages aren't lost")
     args = ap.parse_args()
 
     try:
@@ -369,17 +448,41 @@ def main():
         except requests.RequestException as e:
             print(f"  ! skip {url}: {e}", file=sys.stderr)
 
+    # Count what the scrape itself yielded *before* any service filter -- the
+    # merge guard below keys off this to tell "the scrape failed" (zero found)
+    # apart from "this cluster simply has nothing scheduled" (filtered to zero).
+    n_scraped = len(incidents)
+
     if args.service:
         needle = args.service.lower()
         incidents = [i for i in incidents if needle in i["service"].lower()]
         print(f"Filtered to service ~ {args.service!r}: {len(incidents)} incident(s)")
 
     cal = build_calendar(incidents, args.tz, args.calname)
+
+    if args.merge_from:
+        try:
+            prev = read_calendar(args.merge_from)
+        except Exception as e:
+            sys.exit(f"--merge-from {args.merge_from!r} exists but could not be "
+                     f"parsed ({e}); aborting so accumulated history isn't lost.")
+        if prev is None:
+            print(f"No previous state at {args.merge_from} -- bootstrapping fresh.")
+        elif n_scraped == 0:
+            sys.exit("Scrape found zero incidents (status page fetch failed or its "
+                     "layout changed); aborting merge so future events in the "
+                     "previous state aren't dropped as if cancelled.")
+        else:
+            carried, truncated, dropped = merge_history(cal, prev, args.tz)
+            print(f"Merged previous state: {carried} carried forward, "
+                  f"{truncated} truncated, {dropped} dropped (cancelled).")
+
+    sort_events(cal, args.tz)
     with open(args.output, "wb") as f:
         f.write(cal.to_ical())
     written = sum(1 for c in cal.walk("VEVENT"))
-    skipped = len(incidents) - written
-    note = f" ({skipped} undated, omitted)" if skipped else ""
+    undated = sum(1 for i in incidents if i["start"] is None)
+    note = f" ({undated} undated, omitted)" if undated else ""
     print(f"Wrote {written} event(s) to {args.output}{note}")
 
 

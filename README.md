@@ -9,7 +9,8 @@ events but offers no RSS or calendar feed to subscribe to. This project
 scrapes that page once a day, extracts the date and time of each scheduled
 outage, and publishes the result as an `.ics` file on GitHub Pages — so you can
 subscribe in your calendar app once and have outages show up (and stay up to
-date) automatically.
+date) automatically. Past outages are kept on the calendar as a record even
+after they drop off the status page.
 
 [drac]: https://alliancecan.ca/
 
@@ -83,6 +84,12 @@ a misleading placeholder time.
   handled).
 - Each incident gets a stable UID, so re-runs update existing events instead of
   creating duplicates.
+- Past outages are kept. The status page drops events once they're over, but the
+  feed carries an elapsed event forward so it stays on your calendar as a record
+  of what happened. (An event that disappears while still in the future is
+  treated as cancelled and removed.) The accumulated history is stored on a
+  separate `calendar-state` branch, which the workflow reads and updates each
+  run.
 - The workflow builds `outages.ics` (all clusters) and `killarney.ics`
   (filtered to Killarney) and deploys them to GitHub Pages.
 
@@ -101,4 +108,5 @@ python drac_outages_ics.py -o killarney.ics \
 
 Options: `-o/--output` (output path), `--tz` (IANA time zone for times given
 without one, default `America/Toronto`), `--service` (case-insensitive filter on
-cluster name), `--calname` (calendar display title).
+cluster name), `--calname` (calendar display title), `--merge-from` (a previous
+`.ics` whose elapsed events are carried into the new one).
