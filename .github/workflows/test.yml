@@ -1,8 +1,13 @@
 name: tests
 on:
+  # Every branch except calendar-state, the bot-managed .ics cache branch,
+  # which carries no code or tests.
   push:
-    branches: [main]      # not calendar-state (bot data branch: no code/tests)
+    branches-ignore: [calendar-state]
   pull_request:
+    branches-ignore: [calendar-state]
+  schedule:
+    - cron: "0 0 * * 1"   # weekly (Mon 00:00 UTC): catch dependency-chain rot
 permissions:
   contents: read
 jobs:
