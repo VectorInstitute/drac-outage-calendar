@@ -1,10 +1,9 @@
 #!/usr/bin/env python3
-"""
-drac_outages_ics.py
------------------------
+"""Scrape the DRAC status page into an iCalendar (.ics) feed of outages.
+
 Scrapes the Digital Research Alliance of Canada status page
-(https://status.alliancecan.ca/) and produces an iCalendar (.ics) feed of
-scheduled cluster outages / maintenance events.
+(https://status.alliancecan.ca/) for scheduled cluster outages / maintenance
+events.
 
 The status site is a self-hosted Cachet instance. It exposes no public
 RSS/iCal feed, and the structured Start/End date fields on incident pages are
@@ -31,26 +30,31 @@ import re
 import sys
 from datetime import date, datetime, timedelta
 from urllib.parse import urljoin
+from zoneinfo import ZoneInfo
 
 import requests
 from bs4 import BeautifulSoup
 from dateutil import parser as dtparser
 from icalendar import Calendar, Event
-from zoneinfo import ZoneInfo
 
 BASE = "https://status.alliancecan.ca/"
 HOME = BASE
-DEFAULT_TZ = "America/Toronto"          # EST/EDT, what the site quotes times in
+DEFAULT_TZ = "America/Toronto"  # EST/EDT, what the site quotes times in
 DEFAULT_CALNAME = "DRAC Canada Cluster Outages"
 HEADERS = {"User-Agent": "drac-outage-calendar/1.0 (personal use)"}
 
 # Map the abbreviations the site prints to tz names, so "4:00 AM EDT" resolves.
 TZINFOS = {
-    "EDT": ZoneInfo("America/Toronto"), "EST": ZoneInfo("America/Toronto"),
-    "ADT": ZoneInfo("America/Halifax"), "AST": ZoneInfo("America/Halifax"),
-    "CDT": ZoneInfo("America/Winnipeg"), "CST": ZoneInfo("America/Winnipeg"),
-    "MDT": ZoneInfo("America/Edmonton"), "MST": ZoneInfo("America/Edmonton"),
-    "PDT": ZoneInfo("America/Vancouver"), "PST": ZoneInfo("America/Vancouver"),
+    "EDT": ZoneInfo("America/Toronto"),
+    "EST": ZoneInfo("America/Toronto"),
+    "ADT": ZoneInfo("America/Halifax"),
+    "AST": ZoneInfo("America/Halifax"),
+    "CDT": ZoneInfo("America/Winnipeg"),
+    "CST": ZoneInfo("America/Winnipeg"),
+    "MDT": ZoneInfo("America/Edmonton"),
+    "MST": ZoneInfo("America/Edmonton"),
+    "PDT": ZoneInfo("America/Vancouver"),
+    "PST": ZoneInfo("America/Vancouver"),
     "UTC": ZoneInfo("UTC"),
 }
 
@@ -141,24 +145,52 @@ def safe_parse(s):
         return None
 
 
-MONTHS = {m.lower(): i for i, m in enumerate(
-    ["", "January", "February", "March", "April", "May", "June", "July",
-     "August", "September", "October", "November", "December"])}
+MONTHS = {
+    m.lower(): i
+    for i, m in enumerate(
+        [
+            "",
+            "January",
+            "February",
+            "March",
+            "April",
+            "May",
+            "June",
+            "July",
+            "August",
+            "September",
+            "October",
+            "November",
+            "December",
+        ]
+    )
+}
 
 # Map every tz abbreviation / word the site uses to an IANA zone. The site
 # quotes Eastern/Central/Mountain/Pacific/Atlantic in both DST and standard
 # forms, the bare "ET/CT/.." forms, the spelled-out "Pacific time", and the
 # French "HNC" (heure normale du Centre = CST).
 TZ_ZONE = {
-    "EDT": "America/Toronto", "EST": "America/Toronto", "ET": "America/Toronto",
+    "EDT": "America/Toronto",
+    "EST": "America/Toronto",
+    "ET": "America/Toronto",
     "EASTERN": "America/Toronto",
-    "ADT": "America/Halifax", "AST": "America/Halifax", "AT": "America/Halifax",
+    "ADT": "America/Halifax",
+    "AST": "America/Halifax",
+    "AT": "America/Halifax",
     "ATLANTIC": "America/Halifax",
-    "CDT": "America/Winnipeg", "CST": "America/Winnipeg", "CT": "America/Winnipeg",
-    "CENTRAL": "America/Winnipeg", "HNC": "America/Winnipeg",
-    "MDT": "America/Edmonton", "MST": "America/Edmonton", "MT": "America/Edmonton",
+    "CDT": "America/Winnipeg",
+    "CST": "America/Winnipeg",
+    "CT": "America/Winnipeg",
+    "CENTRAL": "America/Winnipeg",
+    "HNC": "America/Winnipeg",
+    "MDT": "America/Edmonton",
+    "MST": "America/Edmonton",
+    "MT": "America/Edmonton",
     "MOUNTAIN": "America/Edmonton",
-    "PDT": "America/Vancouver", "PST": "America/Vancouver", "PT": "America/Vancouver",
+    "PDT": "America/Vancouver",
+    "PST": "America/Vancouver",
+    "PT": "America/Vancouver",
     "PACIFIC": "America/Vancouver",
     "UTC": "UTC",
 }
@@ -184,12 +216,17 @@ TIME_RE = re.compile(
 )
 TZ_RE = re.compile(
     r"\b(EDT|EST|ET|ADT|AST|AT|CDT|CST|CT|MDT|MST|MT|PDT|PST|PT|UTC|HNC|"
-    r"Eastern|Atlantic|Central|Mountain|Pacific)\b", re.I)
+    r"Eastern|Atlantic|Central|Mountain|Pacific)\b",
+    re.I,
+)
 
 
 def english_part(s):
-    """The site appends a French translation after '//' and a system block
-    after '======'; keep only the leading English for date parsing."""
+    """Strip the French and system parts, keeping only the leading English.
+
+    The site appends a French translation after '//' and a system block after
+    '======'; only the leading English is kept, for date parsing.
+    """
     for sep in ("//", "======"):
         i = s.find(sep)
         if i != -1:
@@ -212,9 +249,11 @@ def infer_year(month, day, ref):
 
 
 def _times_in(text, start, window=40):
-    """Times appearing within `window` chars after position `start`, each as
-    (hour, minute, tzname_or_None), in order of appearance."""
-    chunk = text[start:start + window]
+    """Find clock times within `window` chars after position `start`.
+
+    Each is returned as (hour, minute, tzname_or_None), in order of appearance.
+    """
+    chunk = text[start : start + window]
     out = []
     for tm in TIME_RE.finditer(chunk):
         if tm.group("h") is not None:
@@ -227,7 +266,7 @@ def _times_in(text, start, window=40):
                 h += 12
             elif ap == "AM" and h == 12:
                 h = 0
-        tzm = TZ_RE.search(chunk[tm.end():tm.end() + 12])
+        tzm = TZ_RE.search(chunk[tm.end() : tm.end() + 12])
         out.append((h, mn, TZ_ZONE.get(tzm.group(1).upper()) if tzm else None))
     # A tz stated once (often after the last time, e.g. "2:00 PM - 2:30 PM CST")
     # applies to every time in the range; backfill the ones without their own.
@@ -294,7 +333,7 @@ def parse_dates_from_prose(summary, ref=None):
         end = _combine(date(year, month, d1), t2)
     elif t1:  # single day, one time given
         end = start + timedelta(hours=1)
-    else:     # single all-day event
+    else:  # single all-day event
         end = start + timedelta(days=1)
     return start, end
 
@@ -338,7 +377,7 @@ def build_calendar(incidents, tzname, calname=DEFAULT_CALNAME):
 
 def _as_dt(value, tz):
     """Coerce an icalendar date/datetime into a tz-aware datetime."""
-    if isinstance(value, datetime):           # datetime is a subclass of date
+    if isinstance(value, datetime):  # datetime is a subclass of date
         return value if value.tzinfo is not None else value.replace(tzinfo=tz)
     return datetime(value.year, value.month, value.day, tzinfo=tz)
 
@@ -378,7 +417,7 @@ def merge_history(cal, prev_cal, tzname, now=None):
     carried = truncated = dropped = 0
     for ev in prev_cal.walk("VEVENT"):
         if str(ev.get("uid")) in have:
-            continue                          # in the scrape -> fresh data wins
+            continue  # in the scrape -> fresh data wins
         ds = ev.get("dtstart")
         if ds is None:
             continue
@@ -386,16 +425,16 @@ def merge_history(cal, prev_cal, tzname, now=None):
         de = ev.get("dtend")
         end = _as_dt(de.dt, tz) if de is not None else start
         if now < start:
-            dropped += 1                      # vanished while future -> cancelled
+            dropped += 1  # vanished while future -> cancelled
             continue
-        if start <= now < end:                # vanished mid-window -> ended early
+        if start <= now < end:  # vanished mid-window -> ended early
             ev.pop("dtend", None)
             ev.add("dtend", now)
             ev.pop("dtstamp", None)
             ev.add("dtstamp", now)
             truncated += 1
         else:
-            carried += 1                      # already over -> historical
+            carried += 1  # already over -> historical
         cal.add_component(ev)
     return carried, truncated, dropped
 
@@ -411,19 +450,30 @@ def sort_events(cal, tzname):
 
 
 def main():
-    ap = argparse.ArgumentParser(description=__doc__,
-                                 formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap = argparse.ArgumentParser(
+        description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter
+    )
     ap.add_argument("-o", "--output", default="outages.ics")
     ap.add_argument("--tz", default=DEFAULT_TZ, help="IANA tz for naive times")
-    ap.add_argument("--service", default=None,
-                    help="only include incidents whose service name contains "
-                         "this string (case-insensitive), e.g. 'Killarney'")
-    ap.add_argument("--calname", default=DEFAULT_CALNAME,
-                    help="calendar display name (X-WR-CALNAME)")
-    ap.add_argument("--merge-from", default=None, metavar="ICS",
-                    help="previous-state .ics to merge in: events that have "
-                         "elapsed and dropped off the status page are carried "
-                         "forward so past outages aren't lost")
+    ap.add_argument(
+        "--service",
+        default=None,
+        help="only include incidents whose service name contains "
+        "this string (case-insensitive), e.g. 'Killarney'",
+    )
+    ap.add_argument(
+        "--calname",
+        default=DEFAULT_CALNAME,
+        help="calendar display name (X-WR-CALNAME)",
+    )
+    ap.add_argument(
+        "--merge-from",
+        default=None,
+        metavar="ICS",
+        help="previous-state .ics to merge in: events that have "
+        "elapsed and dropped off the status page are carried "
+        "forward so past outages aren't lost",
+    )
     args = ap.parse_args()
 
     try:
@@ -433,8 +483,9 @@ def main():
 
     urls = get_scheduled_incident_urls(home)
     if not urls:
-        print("No scheduled events found (page layout may have changed).",
-              file=sys.stderr)
+        print(
+            "No scheduled events found (page layout may have changed).", file=sys.stderr
+        )
 
     incidents = []
     for service, url in urls:
@@ -464,18 +515,24 @@ def main():
         try:
             prev = read_calendar(args.merge_from)
         except Exception as e:
-            sys.exit(f"--merge-from {args.merge_from!r} exists but could not be "
-                     f"parsed ({e}); aborting so accumulated history isn't lost.")
+            sys.exit(
+                f"--merge-from {args.merge_from!r} exists but could not be "
+                f"parsed ({e}); aborting so accumulated history isn't lost."
+            )
         if prev is None:
             print(f"No previous state at {args.merge_from} -- bootstrapping fresh.")
         elif n_scraped == 0:
-            sys.exit("Scrape found zero incidents (status page fetch failed or its "
-                     "layout changed); aborting merge so future events in the "
-                     "previous state aren't dropped as if cancelled.")
+            sys.exit(
+                "Scrape found zero incidents (status page fetch failed or its "
+                "layout changed); aborting merge so future events in the "
+                "previous state aren't dropped as if cancelled."
+            )
         else:
             carried, truncated, dropped = merge_history(cal, prev, args.tz)
-            print(f"Merged previous state: {carried} carried forward, "
-                  f"{truncated} truncated, {dropped} dropped (cancelled).")
+            print(
+                f"Merged previous state: {carried} carried forward, "
+                f"{truncated} truncated, {dropped} dropped (cancelled)."
+            )
 
     sort_events(cal, args.tz)
     with open(args.output, "wb") as f:

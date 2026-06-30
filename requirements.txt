@@ -1,4 +1,4 @@
-requests
 beautifulsoup4
-python-dateutil
 icalendar
+python-dateutil
+requests
