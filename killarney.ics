@@ -1,0 +1,24 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//DRAC Outage Calendar//EN
+X-WR-CALNAME:Killarney Cluster Outages
+X-WR-TIMEZONE:America/Toronto
+BEGIN:VEVENT
+SUMMARY:[Killarney] Planned Outage - Arrêt planifié
+DTSTART;TZID=America/Toronto:20260622T000000
+DTEND;TZID=America/Toronto:20260627T000000
+DTSTAMP:20260622T184211Z
+UID:drac-incident-1618@status.alliancecan.ca
+DESCRIPTION:On Monday to Friday\, June 22-26 \, 2026 Vector's Killarney hi
+ gh performance computing grid will be shut down as U of T/SciNet will be p
+ erforming data centre-wide maintenance upgrades to the environmental and e
+ lectrical systems. A power down of the equipment will begin June 21\, 20:0
+ 0 ET . During this period users will be unable to login . HPC compute node
+ s in all clusters will be shut down and queued jobs will not execute. Runn
+ ing jobs will be cancelled. The Scientific Computing team will take advant
+ age of these maintenance windows to perform upgrades to address security\,
+  performance and add enhancements to the environment.\n\nhttps://status.al
+ liancecan.ca/view_incident?incident=1618
+URL:https://status.alliancecan.ca/view_incident?incident=1618
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,70 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//DRAC Outage Calendar//EN
+X-WR-CALNAME:DRAC Canada Cluster Outages
+X-WR-TIMEZONE:America/Toronto
+BEGIN:VEVENT
+SUMMARY:[FRDR-DFDR] FRDR Maintenance
+DTSTART;TZID=America/Winnipeg:20260527T140000
+DTEND;TZID=America/Winnipeg:20260527T143000
+DTSTAMP:20260622T184211Z
+UID:drac-incident-1616@status.alliancecan.ca
+DESCRIPTION:FRDR will be unavailable due to scheduled maintenance for 30 m
+ ins on Wednesday\, May 27 (2:00 PM - 2:30 PM CST). We apologize for any in
+ convenience.// DFDR sera indisponible en raison d'entretien pendant 30 min
+ utes le mercredi 27 peut (14 h - 14 h 30 HNC). Nous nous excusons pour tou
+ t inconvénient. arrow_back\n\nhttps://status.alliancecan.ca/view_incident
+ ?incident=1616
+URL:https://status.alliancecan.ca/view_incident?incident=1616
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:[Killarney] Planned Outage - Arrêt planifié
+DTSTART;TZID=America/Toronto:20260622T000000
+DTEND;TZID=America/Toronto:20260627T000000
+DTSTAMP:20260622T184211Z
+UID:drac-incident-1618@status.alliancecan.ca
+DESCRIPTION:On Monday to Friday\, June 22-26 \, 2026 Vector's Killarney hi
+ gh performance computing grid will be shut down as U of T/SciNet will be p
+ erforming data centre-wide maintenance upgrades to the environmental and e
+ lectrical systems. A power down of the equipment will begin June 21\, 20:0
+ 0 ET . During this period users will be unable to login . HPC compute node
+ s in all clusters will be shut down and queued jobs will not execute. Runn
+ ing jobs will be cancelled. The Scientific Computing team will take advant
+ age of these maintenance windows to perform upgrades to address security\,
+  performance and add enhancements to the environment.\n\nhttps://status.al
+ liancecan.ca/view_incident?incident=1618
+URL:https://status.alliancecan.ca/view_incident?incident=1618
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:[Arbutus] Network Maintenance
+DTSTART;TZID=America/Vancouver:20260623T070000
+DTEND;TZID=America/Vancouver:20260623T080000
+DTSTAMP:20260622T184211Z
+UID:drac-incident-1643@status.alliancecan.ca
+DESCRIPTION:There will be external network maintenance occurring at the Ar
+ butus site on June 23 between 7AM - 8AM Pacific time. This work will invol
+ ve about 5 minutes of network impact to external networking during the win
+ dow. Network connections inside the cloud will not be impacted\, only ingr
+ ess and egress. arrow_back\n\nhttps://status.alliancecan.ca/view_incident?
+ incident=1643
+URL:https://status.alliancecan.ca/view_incident?incident=1643
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:[Nibi] Planned Outage - Arrêt planifié
+DTSTART;TZID=America/Toronto:20260712T070000
+DTEND;TZID=America/Toronto:20260713T160000
+DTSTAMP:20260622T184211Z
+UID:drac-incident-1635@status.alliancecan.ca
+DESCRIPTION:Nibi will be unavailable from 2026-07-12 7AM to 2026-07-13 4PM
+ . During this time\, you will not be able to log in or run jobs on the clu
+ ster. Any jobs that are running at the time of the outage will be terminat
+ ed and you will need to re-submit them once the cluster is back online. ==
+ ==== SYSTEM ne sera pas disponible 2026-07-12 7AM to 2026-07-13 4PM. Duran
+ t cette période\, les utilisateurs ne pourront pas se connecter ni exécu
+ ter des tâches sur SYSTEM. Toute tâche en cours au moment de l’arrêt 
+ de service sera arrêtée et devra être soumise à nouveau une fois les t
+ ravaux terminés. arrow_back\n\nhttps://status.alliancecan.ca/view_inciden
+ t?incident=1635
+URL:https://status.alliancecan.ca/view_incident?incident=1635
+END:VEVENT
+END:VCALENDAR
