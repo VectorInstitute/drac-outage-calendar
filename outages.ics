@@ -7,7 +7,7 @@ BEGIN:VEVENT
 SUMMARY:[FRDR-DFDR] FRDR Maintenance
 DTSTART;TZID=America/Winnipeg:20260527T140000
 DTEND;TZID=America/Winnipeg:20260527T143000
-DTSTAMP:20260622T184211Z
+DTSTAMP:20260630T181035Z
 UID:drac-incident-1616@status.alliancecan.ca
 DESCRIPTION:FRDR will be unavailable due to scheduled maintenance for 30 m
  ins on Wednesday\, May 27 (2:00 PM - 2:30 PM CST). We apologize for any in
@@ -52,19 +52,34 @@ END:VEVENT
 BEGIN:VEVENT
 SUMMARY:[Nibi] Planned Outage - Arrêt planifié
 DTSTART;TZID=America/Toronto:20260712T070000
-DTEND;TZID=America/Toronto:20260713T160000
-DTSTAMP:20260622T184211Z
+DTEND;TZID=America/Toronto:20260713T120000
+DTSTAMP:20260630T181035Z
 UID:drac-incident-1635@status.alliancecan.ca
-DESCRIPTION:Nibi will be unavailable from 2026-07-12 7AM to 2026-07-13 4PM
- . During this time\, you will not be able to log in or run jobs on the clu
- ster. Any jobs that are running at the time of the outage will be terminat
- ed and you will need to re-submit them once the cluster is back online. ==
- ==== SYSTEM ne sera pas disponible 2026-07-12 7AM to 2026-07-13 4PM. Duran
+DESCRIPTION:Nibi will be unavailable from 2026-07-12 7AM to 2026-07-13 12P
+ M. During this time\, you will not be able to log in or run jobs on the cl
+ uster. Any jobs that are running at the time of the outage will be termina
+ ted and you will need to re-submit them once the cluster is back online. =
+ ===== Nibi ne sera pas disponible 2026-07-12 7AM to 2026-07-13 12PM. Duran
  t cette période\, les utilisateurs ne pourront pas se connecter ni exécu
- ter des tâches sur SYSTEM. Toute tâche en cours au moment de l’arrêt 
- de service sera arrêtée et devra être soumise à nouveau une fois les t
- ravaux terminés. arrow_back\n\nhttps://status.alliancecan.ca/view_inciden
- t?incident=1635
+ ter des tâches sur Nibi. Toute tâche en cours au moment de l’arrêt de
+  service sera arrêtée et devra être soumise à nouveau une fois les tra
+ vaux terminés.\n\nhttps://status.alliancecan.ca/view_incident?incident=16
+ 35
 URL:https://status.alliancecan.ca/view_incident?incident=1635
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:[Vulcan] Planned Outage - Arrêt planifié
+DTSTART;TZID=America/Toronto:20260822T000000
+DTEND;TZID=America/Toronto:20260823T000000
+DTSTAMP:20260630T181035Z
+UID:drac-incident-1644@status.alliancecan.ca
+DESCRIPTION:Vulcan will be unavailable August 22nd to 24th. During this ti
+ me\, you will not be able to log in or run jobs on the cluster. Any jobs t
+ hat are running at the time of the outage will be terminated and you will 
+ need to re-submit them once the cluster is back online. Power will be shut
+  off to the data center which means the file system will not be available 
+ and the login nodes will not be accessible. arrow_back\n\nhttps://status.a
+ lliancecan.ca/view_incident?incident=1644
+URL:https://status.alliancecan.ca/view_incident?incident=1644
 END:VEVENT
 END:VCALENDAR
