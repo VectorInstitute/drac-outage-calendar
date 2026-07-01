@@ -7,7 +7,7 @@ BEGIN:VEVENT
 SUMMARY:[FRDR-DFDR] FRDR Maintenance
 DTSTART;TZID=America/Winnipeg:20260527T140000
 DTEND;TZID=America/Winnipeg:20260527T143000
-DTSTAMP:20260630T181035Z
+DTSTAMP:20260701T074122Z
 UID:drac-incident-1616@status.alliancecan.ca
 DESCRIPTION:FRDR will be unavailable due to scheduled maintenance for 30 m
  ins on Wednesday\, May 27 (2:00 PM - 2:30 PM CST). We apologize for any in
@@ -53,7 +53,7 @@ BEGIN:VEVENT
 SUMMARY:[Nibi] Planned Outage - Arrêt planifié
 DTSTART;TZID=America/Toronto:20260712T070000
 DTEND;TZID=America/Toronto:20260713T120000
-DTSTAMP:20260630T181035Z
+DTSTAMP:20260701T074122Z
 UID:drac-incident-1635@status.alliancecan.ca
 DESCRIPTION:Nibi will be unavailable from 2026-07-12 7AM to 2026-07-13 12P
  M. During this time\, you will not be able to log in or run jobs on the cl
@@ -71,7 +71,7 @@ BEGIN:VEVENT
 SUMMARY:[Vulcan] Planned Outage - Arrêt planifié
 DTSTART;TZID=America/Toronto:20260822T000000
 DTEND;TZID=America/Toronto:20260823T000000
-DTSTAMP:20260630T181035Z
+DTSTAMP:20260701T074122Z
 UID:drac-incident-1644@status.alliancecan.ca
 DESCRIPTION:Vulcan will be unavailable August 22nd to 24th. During this ti
  me\, you will not be able to log in or run jobs on the cluster. Any jobs t
