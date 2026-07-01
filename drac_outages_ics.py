@@ -92,9 +92,61 @@ def get_scheduled_incident_urls(home_html):
     return out
 
 
-def parse_incident(html, url):
+def get_current_incident_urls(home_html):
+    """Return [(service, incident_url)] for services with an active incident.
+
+    Unplanned outages live in the home page's status table, one row per
+    service, with a link in the trailing "Current incidents" column -- distinct
+    from the "Scheduled events" block handled above.
+    """
+    soup = BeautifulSoup(home_html, "html.parser")
+    out, seen = [], set()
+    for table in soup.find_all("table"):
+        for tr in table.find_all("tr"):
+            cells = tr.find_all(("td", "th"))
+            if len(cells) < 3:
+                continue
+            a = cells[-1].find("a", href=lambda h: h and h.startswith("/view_incident"))
+            if not a:
+                continue
+            url = urljoin(BASE, a["href"])
+            service = cells[0].get_text(strip=True) or "DRAC"
+            if url not in seen:
+                seen.add(url)
+                out.append((service, url))
+    return out
+
+
+# Incident pages print their created/updated timestamps via a
+# change_date_full("YYYY-MM-DD HH:MM", ..) script call. The one in the
+# "Created by" block is when the incident began; the "Updated by" one is the
+# last update (≈ resolution for a closed incident).
+_TS_RE = re.compile(r'change_date_full\("(\d{4})-(\d{2})-(\d{2}) (\d{2}):(\d{2})')
+
+
+def _block_timestamp(html, label, tz):
+    i = html.find(label)
+    if i < 0:
+        return None
+    m = _TS_RE.search(html, i)
+    if not m:
+        return None
+    y, mo, d, h, mn = (int(x) for x in m.groups())
+    return datetime(y, mo, d, h, mn, tzinfo=ZoneInfo(tz))
+
+
+def page_timestamps(html, tz=DEFAULT_TZ):
+    """Return (created, updated) datetimes for an incident page (each or None)."""
+    return (
+        _block_timestamp(html, "Created by", tz),
+        _block_timestamp(html, "Updated by", tz),
+    )
+
+
+def parse_incident(html, url, tz=DEFAULT_TZ):
     soup = BeautifulSoup(html, "html.parser")
     text = soup.get_text("\n", strip=True)
+    created, updated = page_timestamps(html, tz)
 
     # --- service, structured start/end from the description table ---
     service = start = end = None
@@ -126,7 +178,9 @@ def parse_incident(html, url):
     if end:
         dt_end = safe_parse(end)
     if not dt_start:
-        dt_start, dt_end = parse_dates_from_prose(summary)
+        # Anchor the year to when the incident was posted, not "now" -- matters
+        # for historic incidents whose summary omits the year.
+        dt_start, dt_end = parse_dates_from_prose(summary, ref=created)
 
     return {
         "service": service or "DRAC",
@@ -135,6 +189,8 @@ def parse_incident(html, url):
         "url": url,
         "start": dt_start,
         "end": dt_end,
+        "created": created,
+        "updated": updated,
     }
 
 
@@ -361,6 +417,7 @@ def build_calendar(incidents, tzname, calname=DEFAULT_CALNAME):
         ev.add("url", inc["url"])
 
         ev.add("summary", f"[{inc['service']}] {inc['title']}")
+        ev.add("categories", [inc.get("kind", "scheduled").upper()])
         if start.tzinfo is None:
             start = start.replace(tzinfo=tz)
         if end is None:
@@ -474,6 +531,12 @@ def main():
         "elapsed and dropped off the status page are carried "
         "forward so past outages aren't lost",
     )
+    ap.add_argument(
+        "--include-unplanned",
+        action="store_true",
+        help="also include current unplanned outages (from the status "
+        "table), dated by the incident's created/updated timestamps",
+    )
     args = ap.parse_args()
 
     try:
@@ -490,14 +553,44 @@ def main():
     incidents = []
     for service, url in urls:
         try:
-            inc = parse_incident(fetch(url), url)
+            inc = parse_incident(fetch(url), url, args.tz)
             if inc["service"] in (None, "DRAC"):
                 inc["service"] = service
+            inc["kind"] = "scheduled"
             incidents.append(inc)
             when = inc["start"].isoformat() if inc["start"] else "date TBD"
             print(f"  • {inc['service']}: {inc['title']} — {when}")
         except requests.RequestException as e:
             print(f"  ! skip {url}: {e}", file=sys.stderr)
+
+    if args.include_unplanned:
+        scheduled_urls = {u for _, u in urls}
+        for service, url in get_current_incident_urls(home):
+            if url in scheduled_urls:
+                continue  # already captured as a scheduled event
+            try:
+                inc = parse_incident(fetch(url), url, args.tz)
+            except requests.RequestException as e:
+                print(f"  ! skip {url}: {e}", file=sys.stderr)
+                continue
+            if inc["service"] in (None, "DRAC"):
+                inc["service"] = service
+            inc["kind"] = "unplanned"
+            # Unplanned outages rarely carry a parseable date -- fall back to
+            # the incident's own timestamps: it began when created, and (once
+            # closed) ended at its last update.
+            if inc["start"] is None:
+                inc["start"] = inc["created"]
+            if (
+                inc["start"] is not None
+                and inc["end"] is None
+                and inc["updated"] is not None
+                and inc["updated"] > inc["start"]
+            ):
+                inc["end"] = inc["updated"]
+            incidents.append(inc)
+            when = inc["start"].isoformat() if inc["start"] else "date TBD"
+            print(f"  ⚠ {inc['service']}: {inc['title']} — {when} (unplanned)")
 
     # Count what the scrape itself yielded *before* any service filter -- the
     # merge guard below keys off this to tell "the scrape failed" (zero found)

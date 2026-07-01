@@ -23,21 +23,6 @@ HEADERS = {"User-Agent": "drac-outage-calendar/1.0 (personal use)"}
 DELAY = 0.5
 
 SCHED_MARKERS = re.compile(r"planned|planifi|maintenance|scheduled", re.I)
-# The page prints its created/updated timestamps via change_date_full("YYYY-MM-DD ..").
-# The FIRST occurrence is the created date -- our anchor for year inference, since
-# scheduled maintenance is always announced shortly before it happens.
-CREATED_RE = re.compile(r'change_date_full\("(\d{4})-(\d{2})-(\d{2})')
-
-
-def created_date(html):
-    from datetime import datetime
-    from zoneinfo import ZoneInfo
-
-    m = CREATED_RE.search(html)
-    if not m:
-        return None
-    y, mo, d = (int(x) for x in m.groups())
-    return datetime(y, mo, d, tzinfo=ZoneInfo("America/Toronto"))
 
 
 def cache_path(n):
@@ -84,9 +69,10 @@ def crawl():
     print(f"crawl complete: {done} newly fetched, cache in {CACHE_DIR}", flush=True)
 
 
-def analyse():
-    rows = []  # dicts for scheduled+dated incidents
+def analyse(include_unplanned=False):
+    rows = []  # dated incidents (scheduled, plus unplanned when requested)
     n_empty = n_incident = n_sched = n_sched_dated = n_unplanned = n_parse_err = 0
+    n_unplanned_dated = 0
     for n in range(LO, HI + 1):
         html = get_html(n, fetch=False)
         if html is None:
@@ -98,28 +84,41 @@ def analyse():
         n_incident += 1
         url = f"https://status.alliancecan.ca/view_incident?incident={n}"
         try:
+            # parse_incident anchors the year to the incident's created date,
+            # so undated-year historic events (2019..) don't collapse onto now.
             inc = M.parse_incident(html, url)
-            # Re-derive prose dates anchored to when the incident was POSTED,
-            # not "now" -- otherwise every undated-year historic event (2019..)
-            # collapses onto the current year.
-            ref = created_date(html)
-            if ref is not None:
-                ps, pe = M.parse_dates_from_prose(inc["summary"], ref=ref)
-                if ps is not None:
-                    inc["start"], inc["end"] = ps, pe
         except Exception as e:
             n_parse_err += 1
             print(f"  PARSE ERROR id {n}: {e}", file=sys.stderr)
             continue
+        inc["id"] = n
+
         if not is_scheduled(html):
             n_unplanned += 1
-            continue
-        n_sched += 1
-        inc["created"] = created_date(html)
+            if not include_unplanned:
+                continue
+            inc["kind"] = "unplanned"
+            # Unplanned outages rarely carry a parseable date -- fall back to
+            # the incident's timestamps (began when created, ended at last update).
+            if inc["start"] is None:
+                inc["start"] = inc["created"]
+            if (
+                inc["start"] is not None
+                and inc["end"] is None
+                and inc["updated"] is not None
+                and inc["updated"] > inc["start"]
+            ):
+                inc["end"] = inc["updated"]
+            if inc["start"] is not None:
+                n_unplanned_dated += 1
+        else:
+            n_sched += 1
+            inc["kind"] = "scheduled"
+            if inc["start"] is not None:
+                n_sched_dated += 1
+
         if inc["start"] is None:
             continue
-        n_sched_dated += 1
-        inc["id"] = n
         rows.append(inc)
 
     print("\n=== crawl summary ===")
@@ -127,7 +126,10 @@ def analyse():
     print(f"  empty / no event:       {n_empty}")
     print(f"  real incidents:         {n_incident}")
     print(f"    parse errors:         {n_parse_err}")
-    print(f"    unplanned (excluded): {n_unplanned}")
+    tag = "included" if include_unplanned else "excluded"
+    print(f"    unplanned ({tag}):  {n_unplanned}")
+    if include_unplanned:
+        print(f"      unplanned + dated:  {n_unplanned_dated}")
     print(f"    scheduled:            {n_sched}")
     print(f"      scheduled + dated:  {n_sched_dated}")
     print(f"      scheduled undated:  {n_sched - n_sched_dated}")
@@ -190,12 +192,18 @@ def main():
     ap.add_argument("--no-crawl", action="store_true", help="use cache only")
     ap.add_argument("--cache-dir", default=CACHE_DIR, help="dir of cached pages")
     ap.add_argument("-o", "--output", default="historic.ics")
+    ap.add_argument(
+        "--include-unplanned",
+        action="store_true",
+        help="also include unplanned outages, dated by their created/updated "
+        "timestamps (default: scheduled maintenance only)",
+    )
     args = ap.parse_args()
     CACHE_DIR = args.cache_dir
 
     if not args.no_crawl:
         crawl()
-    rows = analyse()
+    rows = analyse(include_unplanned=args.include_unplanned)
     deduped = dedup_report(rows)
 
     cal = M.build_calendar(

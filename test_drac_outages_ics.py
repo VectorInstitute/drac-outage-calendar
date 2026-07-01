@@ -190,6 +190,51 @@ class ProseDateTests(unittest.TestCase):
         )
 
 
+class PageTimestampTests(unittest.TestCase):
+    HTML = """
+    <small>Created by David Magda on
+      <script>change_date_full("2026-05-22 20:16", "en");</script>
+    </small>
+    <i>Updated by David Magda on
+      <script>change_date_full("2026-06-26 22:14", "en");</script>
+    </i>
+    """
+
+    def test_extracts_created_and_updated(self):
+        created, updated = M.page_timestamps(self.HTML, "America/Toronto")
+        self.assertEqual(created, datetime(2026, 5, 22, 20, 16, tzinfo=TORONTO))
+        self.assertEqual(updated, datetime(2026, 6, 26, 22, 14, tzinfo=TORONTO))
+
+    def test_missing_timestamps_return_none(self):
+        self.assertEqual(M.page_timestamps("<p>no timestamps</p>"), (None, None))
+
+
+class CurrentIncidentTests(unittest.TestCase):
+    HOME = """
+    <table>
+      <tr><th>Service</th><th>Status</th><th>Current incidents</th></tr>
+      <tr><td>Arbutus</td><td>check</td><td></td></tr>
+      <tr><td>Fir</td><td>warning</td>
+          <td><a href="/view_incident?incident=1614">Filesystem problem</a></td></tr>
+      <tr><td>Killarney</td><td>warning</td>
+          <td><a href="/view_incident?incident=1648">Outage</a></td></tr>
+    </table>
+    """
+
+    def test_collects_only_rows_with_an_incident_link(self):
+        got = M.get_current_incident_urls(self.HOME)
+        self.assertEqual(
+            got,
+            [
+                ("Fir", "https://status.alliancecan.ca/view_incident?incident=1614"),
+                (
+                    "Killarney",
+                    "https://status.alliancecan.ca/view_incident?incident=1648",
+                ),
+            ],
+        )
+
+
 class InferYearTests(unittest.TestCase):
     def test_picks_year_closest_to_reference(self):
         # Mid-January reference: "December 25" belongs to the prior year.

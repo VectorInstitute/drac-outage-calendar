@@ -23,6 +23,23 @@ app can subscribe by URL and refresh automatically.
 - `--service NAME` filters to incidents whose service name contains NAME
   (case-insensitive); `--calname` sets the calendar's display title. These let
   one script produce both the all-clusters feed and per-cluster feeds.
+- `--include-unplanned` (opt-in, default off) also emits *unplanned* outages, in
+  addition to scheduled maintenance. These come from the home page's status
+  table ("Current incidents" column) rather than the "Scheduled events" block.
+  Unplanned incidents rarely have a parseable prose date, so they're dated from
+  the incident page's own timestamps — start = when it was created (parsed from
+  the `change_date_full("YYYY-MM-DD HH:MM", ..)` script the page emits), end =
+  its last update (≈ resolution) when that's later, else a default duration.
+  Every event carries `CATEGORIES:SCHEDULED` or `CATEGORIES:UNPLANNED` so a
+  calendar can style or filter them. The deployed workflow does not pass this
+  flag, so the published feeds stay scheduled-only unless that changes.
+- `backfill_historic.py` is a one-off (not part of the daily job) that crawls the
+  full incident-id range (252..1644), caching one page per id so re-runs don't
+  re-fetch. It reuses this module's parsing, anchors each event's year to its
+  created date (so undated-year events from 2019.. don't collapse onto the
+  current year), and dedups the site's edit re-publications (a new incident id is
+  minted on every edit) by service + identical start/end day. It writes
+  `historic.ics` + `historic_killarney.ics`, and also honours `--include-unplanned`.
 - `--merge-from PREV.ics` carries history forward. The status page drops events
   once they're over, so without this a past outage vanishes from the feed. With
   it, the script reads the previous published `.ics` and, for each event missing
