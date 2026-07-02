@@ -489,6 +489,27 @@ def read_calendar(path):
         return Calendar.from_ical(f.read())
 
 
+def _event_service(ev):
+    """Service name from an event summary formatted '[service] title'."""
+    summ = str(ev.get("summary", ""))
+    if summ.startswith("[") and "]" in summ:
+        return summ[1 : summ.index("]")].strip().lower()
+    return summ.strip().lower()
+
+
+def _content_key(ev, tz):
+    """Return a UID-independent identity: (service, start-day).
+
+    Lets the merge recognise a re-published incident whose id (and thus UID)
+    changed on edit -- the status site mints a new id per edit -- as the same
+    outage: such copies keep the same service and start day.
+    """
+    ds = ev.get("dtstart")
+    if ds is None:
+        return None
+    return (_event_service(ev), _as_dt(ds.dt, tz).date())
+
+
 def merge_history(cal, prev_cal, tzname, now=None):
     """Carry forward events that have dropped out of the fresh scrape.
 
@@ -501,16 +522,24 @@ def merge_history(cal, prev_cal, tzname, now=None):
       * still upcoming (now < start)     -> drop (it vanished while future, so
                                             treat it as cancelled)
     Events still present in the scrape are left untouched -- the fresh data
-    wins, so reschedules and end-time changes update. Returns the counts
-    (carried, truncated, dropped).
+    wins, so reschedules and end-time changes update. A previous event whose id
+    changed on edit (new UID) but whose (service, start-day) still matches a
+    fresh event is treated as superseded and dropped, so a re-published ongoing
+    outage isn't carried forward as a stale duplicate of its new id. Returns the
+    counts (carried, truncated, dropped, superseded).
     """
     tz = ZoneInfo(tzname)
     now = now or datetime.now(tz)
     have = {str(ev.get("uid")) for ev in cal.walk("VEVENT")}
-    carried = truncated = dropped = 0
+    have_content = {_content_key(ev, tz) for ev in cal.walk("VEVENT")}
+    have_content.discard(None)
+    carried = truncated = dropped = superseded = 0
     for ev in prev_cal.walk("VEVENT"):
         if str(ev.get("uid")) in have:
             continue  # in the scrape -> fresh data wins
+        if _content_key(ev, tz) in have_content:
+            superseded += 1  # same outage, re-published under a new id
+            continue
         ds = ev.get("dtstart")
         if ds is None:
             continue
@@ -529,7 +558,7 @@ def merge_history(cal, prev_cal, tzname, now=None):
         else:
             carried += 1  # already over -> historical
         cal.add_component(ev)
-    return carried, truncated, dropped
+    return carried, truncated, dropped, superseded
 
 
 def sort_events(cal, tzname):
@@ -651,10 +680,11 @@ def main():
                 "previous state aren't dropped as if cancelled."
             )
         else:
-            carried, truncated, dropped = merge_history(cal, prev, args.tz)
+            carried, truncated, dropped, superseded = merge_history(cal, prev, args.tz)
             print(
                 f"Merged previous state: {carried} carried forward, "
-                f"{truncated} truncated, {dropped} dropped (cancelled)."
+                f"{truncated} truncated, {dropped} dropped (cancelled), "
+                f"{superseded} superseded (re-published under a new id)."
             )
 
     sort_events(cal, args.tz)

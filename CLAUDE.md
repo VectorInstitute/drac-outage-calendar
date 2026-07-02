@@ -61,6 +61,18 @@ app can subscribe by URL and refresh automatically.
   the fresh data, so reschedules / end-time changes update. Output is sorted by
   start time. Carried events keep their original `DTSTAMP`; only live events get
   a fresh stamp, so the file still changes (and commits) on most daily runs.
+  The merge matches a previous event to the fresh scrape by UID (= incident id).
+  Because the site mints a *new* id when an incident is edited, an ongoing
+  outage re-published between runs would otherwise be carried forward under its
+  old id *and* re-added under the new one — a duplicate. So the merge also drops
+  a previous event as "superseded" when the fresh scrape already holds one with
+  the same `(service, start-day)` (`_content_key`), even though its UID differs.
+  This is a day-granularity heuristic: re-published copies keep the same service
+  and start day (their `created` timestamps sit minutes apart), but two genuinely
+  distinct same-service, same-day outages would be collapsed — an accepted, rare
+  trade-off. Future scheduled events self-heal without it (a re-id'd future event
+  vanishes while still future, so it's dropped as cancelled); the content check
+  matters for in-progress / just-finished events, which are carried, not dropped.
 - Two merge guards protect the accumulated history: if `--merge-from` points at
   a file that exists but won't parse, the run aborts rather than overwrite it;
   and if the scrape returns zero incidents at all (fetch failed / layout

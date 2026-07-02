@@ -54,10 +54,10 @@ class MergeHistoryTests(unittest.TestCase):
             )
         )
         fresh = _calendar()  # scrape no longer lists it
-        carried, truncated, dropped = M.merge_history(
-            fresh, prev, "America/Toronto", now=self.NOW
+        self.assertEqual(
+            M.merge_history(fresh, prev, "America/Toronto", now=self.NOW),
+            (1, 0, 0, 0),
         )
-        self.assertEqual((carried, truncated, dropped), (1, 0, 0))
         self.assertIn("drac-incident-100@status.alliancecan.ca", _uids(fresh))
 
     def test_future_event_is_dropped_as_cancelled(self):
@@ -69,10 +69,10 @@ class MergeHistoryTests(unittest.TestCase):
             )
         )
         fresh = _calendar()
-        carried, truncated, dropped = M.merge_history(
-            fresh, prev, "America/Toronto", now=self.NOW
+        self.assertEqual(
+            M.merge_history(fresh, prev, "America/Toronto", now=self.NOW),
+            (0, 0, 1, 0),
         )
-        self.assertEqual((carried, truncated, dropped), (0, 0, 1))
         self.assertEqual(_uids(fresh), set())
 
     def test_in_progress_event_is_truncated_to_now(self):
@@ -84,10 +84,10 @@ class MergeHistoryTests(unittest.TestCase):
             )
         )
         fresh = _calendar()
-        carried, truncated, dropped = M.merge_history(
-            fresh, prev, "America/Toronto", now=self.NOW
+        self.assertEqual(
+            M.merge_history(fresh, prev, "America/Toronto", now=self.NOW),
+            (0, 1, 0, 0),
         )
-        self.assertEqual((carried, truncated, dropped), (0, 1, 0))
         ev = next(iter(fresh.walk("VEVENT")))
         self.assertEqual(M._as_dt(ev.get("dtend").dt, TORONTO), self.NOW)
 
@@ -106,10 +106,11 @@ class MergeHistoryTests(unittest.TestCase):
         )  # new end
         prev = _calendar(stale)
         fresh = _calendar(fresh_ev)
-        carried, truncated, dropped = M.merge_history(
-            fresh, prev, "America/Toronto", now=self.NOW
+        # UID match takes precedence over the content check, so no supersede.
+        self.assertEqual(
+            M.merge_history(fresh, prev, "America/Toronto", now=self.NOW),
+            (0, 0, 0, 0),
         )
-        self.assertEqual((carried, truncated, dropped), (0, 0, 0))
         ends = [M._as_dt(ev.get("dtend").dt, TORONTO) for ev in fresh.walk("VEVENT")]
         self.assertEqual(ends, [datetime(2026, 7, 13, 12, 0, tzinfo=TORONTO)])
 
@@ -133,8 +134,32 @@ class MergeHistoryTests(unittest.TestCase):
         )
         fresh = _calendar()
         self.assertEqual(
-            M.merge_history(fresh, prev, "America/Toronto", now=self.NOW), (1, 1, 1)
+            M.merge_history(fresh, prev, "America/Toronto", now=self.NOW),
+            (1, 1, 1, 0),
         )
+
+    def test_reid_ongoing_event_is_superseded_not_duplicated(self):
+        # Same outage (same service + start day) republished under a new id:
+        # the stale cached copy must be dropped, not carried as a duplicate.
+        prev = _calendar(
+            _event(
+                "1648",
+                datetime(2026, 6, 29, 8, 0, tzinfo=TORONTO),
+                datetime(2026, 6, 29, 12, 0, tzinfo=TORONTO),  # frozen yesterday
+            )
+        )
+        fresh = _calendar(
+            _event(
+                "1652",  # new id, still ongoing (ends at now)
+                datetime(2026, 6, 29, 8, 5, tzinfo=TORONTO),
+                self.NOW,
+            )
+        )
+        carried, truncated, dropped, superseded = M.merge_history(
+            fresh, prev, "America/Toronto", now=self.NOW
+        )
+        self.assertEqual((carried, truncated, dropped, superseded), (0, 0, 0, 1))
+        self.assertEqual(_uids(fresh), {"drac-incident-1652@status.alliancecan.ca"})
 
 
 class SortEventsTests(unittest.TestCase):
