@@ -405,6 +405,29 @@ class ParseIncidentTests(unittest.TestCase):
         inc = M.parse_incident(html, "x?incident=1614")
         self.assertEqual(inc["summary"], "Fir is unavailable, investigating.")
 
+    def test_summary_preserves_en_fr_line_breaks(self):
+        # EN / "======" / FR on separate lines must stay on separate lines, and
+        # the date must still parse (from a flattened copy).
+        html = """
+        <p>Incident description</p>
+        <table><tr><th>h</th></tr>
+        <tr><td>Nibi</td><td>Scheduled</td><td></td><td></td></tr></table>
+        <p>Title</p><p>Planned Outage</p>
+        <p>Summary</p>
+        <p>Nibi unavailable from 2026-07-12 7AM to 2026-07-13 12PM.</p>
+        <p>======</p>
+        <p>Nibi ne sera pas disponible.</p>
+        <p>Updated by X on</p>
+        """
+        inc = M.parse_incident(html, "x?incident=1635")
+        self.assertEqual(
+            inc["summary"],
+            "Nibi unavailable from 2026-07-12 7AM to 2026-07-13 12PM.\n"
+            "======\n"
+            "Nibi ne sera pas disponible.",
+        )
+        self.assertEqual(inc["start"].date(), date(2026, 7, 12))
+
 
 class ScanStateTests(unittest.TestCase):
     def test_roundtrip(self):

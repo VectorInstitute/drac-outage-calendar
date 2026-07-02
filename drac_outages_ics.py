@@ -206,7 +206,12 @@ def parse_incident(html, url, tz=DEFAULT_TZ):
         r"Summary\s*\n+(.*?)(?:\nUpdated by|\narrow_back|\nBack|\Z)", text, re.S
     )
     if m:
-        summary = re.sub(r"\s+", " ", m.group(1)).strip()
+        # Keep line breaks -- many incidents put an English and a French block on
+        # separate lines around a "======" separator, and flattening them into
+        # one paragraph is hard to read. Only collapse horizontal whitespace
+        # within each line and drop blank lines.
+        lines = [re.sub(r"[ \t]+", " ", ln).strip() for ln in m.group(1).splitlines()]
+        summary = "\n".join(ln for ln in lines if ln)
 
     dt_start = dt_end = None
     if start:
@@ -215,8 +220,10 @@ def parse_incident(html, url, tz=DEFAULT_TZ):
         dt_end = safe_parse(end)
     if not dt_start:
         # Anchor the year to when the incident was posted, not "now" -- matters
-        # for historic incidents whose summary omits the year.
-        dt_start, dt_end = parse_dates_from_prose(summary, ref=created)
+        # for historic incidents whose summary omits the year. Date-parse a
+        # flattened copy so a date spanning a line break still matches.
+        flat = " ".join(summary.split())
+        dt_start, dt_end = parse_dates_from_prose(flat, ref=created)
 
     return {
         "service": service or "DRAC",
