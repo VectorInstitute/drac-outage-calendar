@@ -432,6 +432,19 @@ def build_calendar(incidents, tzname, calname=DEFAULT_CALNAME):
     return cal
 
 
+def matches_service(inc, needle):
+    """Return True if `needle` appears in the incident's service, title, or summary.
+
+    Matching the prose as well as the structured service field catches
+    multi-cluster outages that name an affected cluster only in the write-up
+    (e.g. a SciNet maintenance window that lists Killarney among the systems it
+    takes down, but is filed under another service).
+    """
+    needle = needle.lower()
+    blob = " ".join(str(inc.get(k, "")) for k in ("service", "title", "summary"))
+    return needle in blob.lower()
+
+
 def _as_dt(value, tz):
     """Coerce an icalendar date/datetime into a tz-aware datetime."""
     if isinstance(value, datetime):  # datetime is a subclass of date
@@ -515,8 +528,10 @@ def main():
     ap.add_argument(
         "--service",
         default=None,
-        help="only include incidents whose service name contains "
-        "this string (case-insensitive), e.g. 'Killarney'",
+        help="only include incidents that mention this string "
+        "(case-insensitive) in their service, title, or summary, "
+        "e.g. 'Killarney' -- prose matching catches multi-cluster "
+        "outages filed under another service",
     )
     ap.add_argument(
         "--calname",
@@ -598,9 +613,11 @@ def main():
     n_scraped = len(incidents)
 
     if args.service:
-        needle = args.service.lower()
-        incidents = [i for i in incidents if needle in i["service"].lower()]
-        print(f"Filtered to service ~ {args.service!r}: {len(incidents)} incident(s)")
+        incidents = [i for i in incidents if matches_service(i, args.service)]
+        print(
+            f"Filtered to ~ {args.service!r} (service/title/summary): "
+            f"{len(incidents)} incident(s)"
+        )
 
     cal = build_calendar(incidents, args.tz, args.calname)
 

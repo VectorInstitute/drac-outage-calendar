@@ -21,8 +21,13 @@ app can subscribe by URL and refresh automatically.
   future time). They're still logged to the run output (and counted in the
   final summary as "N undated, omitted") so they're visible in CI logs.
 - `--service NAME` filters to incidents whose service name contains NAME
-  (case-insensitive); `--calname` sets the calendar's display title. These let
-  one script produce both the all-clusters feed and per-cluster feeds.
+  (case-insensitive) in its service name, title, OR summary; `--calname` sets
+  the calendar's display title. These let one script produce both the
+  all-clusters feed and per-cluster feeds. Matching the title/summary and not
+  just the structured service field is deliberate: a multi-cluster outage (e.g.
+  a SciNet maintenance that names Killarney among the systems it takes down) is
+  often filed under a different service, and a per-cluster feed should still
+  include it. `matches_service()` is the shared predicate.
 - `--include-unplanned` (opt-in, default off) also emits *unplanned* outages, in
   addition to scheduled maintenance. These come from the home page's status
   table ("Current incidents" column) rather than the "Scheduled events" block.

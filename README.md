@@ -107,8 +107,10 @@ python drac_outages_ics.py -o killarney.ics \
 ```
 
 Options: `-o/--output` (output path), `--tz` (IANA time zone for times given
-without one, default `America/Toronto`), `--service` (case-insensitive filter on
-cluster name), `--calname` (calendar display title), `--merge-from` (a previous
+without one, default `America/Toronto`), `--service` (case-insensitive filter
+that keeps incidents mentioning the string in their service, title, or summary,
+so a per-cluster feed also catches multi-cluster outages filed under another
+service), `--calname` (calendar display title), `--merge-from` (a previous
 `.ics` whose elapsed events are carried into the new one), `--include-unplanned`
 (also add current *unplanned* outages from the status table, dated by the
 incident's created/updated timestamps and tagged `CATEGORIES:UNPLANNED`;

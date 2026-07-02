@@ -190,6 +190,25 @@ class ProseDateTests(unittest.TestCase):
         )
 
 
+class MatchesServiceTests(unittest.TestCase):
+    def test_matches_on_service_field(self):
+        inc = {"service": "Killarney", "title": "Planned Outage", "summary": ""}
+        self.assertTrue(M.matches_service(inc, "killarney"))
+
+    def test_matches_on_title_or_summary(self):
+        # Filed under another service, but names Killarney in the write-up.
+        inc = {
+            "service": "Trillium",
+            "title": "Planned Outage",
+            "summary": "SciNet maintenance takes down Killarney and other systems.",
+        }
+        self.assertTrue(M.matches_service(inc, "Killarney"))
+
+    def test_no_match(self):
+        inc = {"service": "Cedar", "title": "Planned Outage", "summary": "Cedar only"}
+        self.assertFalse(M.matches_service(inc, "Killarney"))
+
+
 class PageTimestampTests(unittest.TestCase):
     HTML = """
     <small>Created by David Magda on

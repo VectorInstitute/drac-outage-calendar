@@ -215,12 +215,10 @@ def main():
     print(f"\nWrote {sum(1 for _ in cal.walk('VEVENT'))} event(s) to {args.output}")
 
     # --- Killarney-only historic feed ---
-    def has_kill(r, fields):
-        blob = " ".join(str(r.get(k, "")) for k in fields).lower()
-        return "killarney" in blob
-
-    by_service = [r for r in deduped if has_kill(r, ("service",))]
-    by_mention = [r for r in deduped if has_kill(r, ("service", "title", "summary"))]
+    # Match prose too (M.matches_service), so multi-cluster outages that name
+    # Killarney only in the write-up are included -- same rule as the live feed.
+    by_service = [r for r in deduped if "killarney" in r["service"].lower()]
+    by_mention = [r for r in deduped if M.matches_service(r, "Killarney")]
     mention_only = [r for r in by_mention if r not in by_service]
 
     print("\n=== Killarney ===")
