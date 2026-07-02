@@ -34,12 +34,16 @@ app can subscribe by URL and refresh automatically.
   Unplanned incidents rarely have a parseable prose date, so they're dated from
   the incident page's own timestamps (`date_unplanned()`) — start = when it was
   created (parsed from the `change_date_full("YYYY-MM-DD HH:MM", ..)` script the
-  page emits); end = its last update (≈ resolution) once it has one, otherwise
-  the incident is still ongoing and end = *now*, marking it in progress. An
-  ongoing outage therefore grows a little each daily run; when it finally
-  resolves it drops off the status table and the `--merge-from` carry-forward
-  freezes it at its last-seen end (≈ resolution, to the daily polling interval)
-  — the same lifecycle as a scheduled "in progress → truncate to now" event.
+  page emits); end = its last update (≈ resolution) once it has one. With no
+  resolution timestamp, the end depends on whether the incident is live: a
+  *live* one (still on the status page, `ongoing=True`) is in progress, so end =
+  *now* — it grows a little each daily run, and when it resolves and drops off
+  the table the `--merge-from` carry-forward freezes it at its last-seen end (≈
+  resolution, to the daily polling interval), the same lifecycle as a scheduled
+  "in progress → truncate to now" event. A *past* one (`ongoing=False` — reached
+  via the gap scan or backfill, already off the page, so already resolved) is
+  not still running; its end is left unset so `build_calendar` applies the
+  `DEFAULT_DURATION` (24h) rather than stretching a long-resolved outage to now.
   Every event carries `CATEGORIES:SCHEDULED` or `CATEGORIES:UNPLANNED` so a
   calendar can style or filter them. The deployed workflow does not pass this
   flag, so the published feeds stay scheduled-only unless that changes.

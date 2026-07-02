@@ -244,6 +244,30 @@ class DateUnplannedTests(unittest.TestCase):
         self.assertEqual(inc["start"], datetime(2026, 5, 21, 20, 1, tzinfo=TORONTO))
         self.assertEqual(inc["end"], self.NOW)
 
+    def test_past_without_resolution_leaves_end_unset(self):
+        # ongoing=False (gap/backfill): a resolved incident with no resolution
+        # timestamp must NOT stretch to now -- end stays None for the default.
+        inc = {
+            "start": None,
+            "end": None,
+            "created": datetime(2026, 5, 21, 20, 1, tzinfo=TORONTO),
+            "updated": None,
+        }
+        M.date_unplanned(inc, self.NOW, ongoing=False)
+        self.assertEqual(inc["start"], datetime(2026, 5, 21, 20, 1, tzinfo=TORONTO))
+        self.assertIsNone(inc["end"])
+
+    def test_past_still_uses_resolution_when_present(self):
+        # ongoing=False, but a real resolution timestamp is still honoured.
+        inc = {
+            "start": None,
+            "end": None,
+            "created": datetime(2026, 5, 21, 20, 1, tzinfo=TORONTO),
+            "updated": datetime(2026, 5, 21, 22, 30, tzinfo=TORONTO),
+        }
+        M.date_unplanned(inc, self.NOW, ongoing=False)
+        self.assertEqual(inc["end"], datetime(2026, 5, 21, 22, 30, tzinfo=TORONTO))
+
     def test_undateable_left_none(self):
         inc = {"start": None, "end": None, "created": None, "updated": None}
         M.date_unplanned(inc, self.NOW)
@@ -416,6 +440,25 @@ class ScanGapTests(unittest.TestCase):
     def test_unplanned_dropped_when_not_included(self):
         got = self._run(include_unplanned=False)
         self.assertEqual([g["kind"] for g in got], ["scheduled"])
+
+
+class BuildCalendarTests(unittest.TestCase):
+    def test_missing_end_uses_default_duration(self):
+        inc = {
+            "service": "Killarney",
+            "title": "Outage",
+            "summary": "",
+            "url": "https://status.alliancecan.ca/view_incident?incident=1700",
+            "start": datetime(2026, 6, 15, 9, 0, tzinfo=TORONTO),
+            "end": None,
+            "kind": "unplanned",
+        }
+        cal = M.build_calendar([inc], "America/Toronto")
+        ev = next(iter(cal.walk("VEVENT")))
+        start = M._as_dt(ev.get("dtstart").dt, TORONTO)
+        end = M._as_dt(ev.get("dtend").dt, TORONTO)
+        self.assertEqual(end - start, M.DEFAULT_DURATION)
+        self.assertEqual(M.DEFAULT_DURATION, timedelta(hours=24))
 
 
 if __name__ == "__main__":

@@ -121,7 +121,9 @@ By default only scheduled maintenance is published. `--include-unplanned` is
 opt-in because unplanned outages are dated only approximately (from when the
 incident was posted and last updated). An outage that is still ongoing is shown
 as running until "now" and extends each daily run; once it resolves and drops
-off the status page, the carried-forward copy freezes at its last-seen time.
+off the status page, the carried-forward copy freezes at its last-seen time. A
+past outage that has no recorded resolution time is given a default 24-hour
+duration instead of being stretched to the scan time.
 
 Because the scrape runs once a day, an outage that appears and clears between
 two runs is never seen on the status page. `--scan-state FILE` closes that gap:

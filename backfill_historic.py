@@ -101,7 +101,9 @@ def analyse(include_unplanned=False):
             if not include_unplanned:
                 continue
             inc["kind"] = "unplanned"
-            M.date_unplanned(inc, now)
+            # Historic incidents are all resolved -> ongoing=False, so one with
+            # no resolution timestamp gets the default duration, not end=now.
+            M.date_unplanned(inc, now, ongoing=False)
             if inc["start"] is not None:
                 n_unplanned_dated += 1
         else:

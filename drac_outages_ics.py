@@ -43,6 +43,10 @@ HOME = BASE
 DEFAULT_TZ = "America/Toronto"  # EST/EDT, what the site quotes times in
 DEFAULT_CALNAME = "DRAC Canada Cluster Outages"
 HEADERS = {"User-Agent": "drac-outage-calendar/1.0 (personal use)"}
+# Event length used when an incident gives a start but no end -- and, for a
+# *past* (resolved) outage with no recorded resolution time, the length it's
+# shown as instead of being stretched to the scan time.
+DEFAULT_DURATION = timedelta(hours=24)
 # Cap on how many ids one gap scan will fetch, so a corrupt/reset state file
 # can't trigger a full-history crawl (that's backfill_historic.py's job).
 SCAN_CAP = 200
@@ -443,7 +447,7 @@ def build_calendar(incidents, tzname, calname=DEFAULT_CALNAME):
         if start.tzinfo is None:
             start = start.replace(tzinfo=tz)
         if end is None:
-            end = start + timedelta(hours=8)
+            end = start + DEFAULT_DURATION
         if end.tzinfo is None:
             end = end.replace(tzinfo=tz)
 
@@ -454,19 +458,21 @@ def build_calendar(incidents, tzname, calname=DEFAULT_CALNAME):
     return cal
 
 
-def date_unplanned(inc, now):
+def date_unplanned(inc, now, ongoing=True):
     """Fill in an unplanned incident's start/end from its page timestamps.
 
     Unplanned outages rarely carry a parseable prose date, so fall back to the
     incident's own timeline:
       * start  -> when it was created (if prose gave nothing);
-      * end    -> its last update once resolved (`updated` after `start`),
-                  otherwise -- it's still open -- `now`, marking it in progress.
-    An ongoing outage therefore grows a little each run; when it finally
-    resolves it drops off the status page and the carry-forward merge freezes
-    it at its last-seen end, i.e. ≈ the resolution time (to the polling
-    interval). Leaves start None (undateable) for very old incidents whose page
-    carries no created timestamp; such events are omitted downstream.
+      * end    -> its last update once resolved (`updated` after `start`).
+    With no resolution timestamp, the end depends on `ongoing`: a live incident
+    (still on the status page) is in progress, so end = `now` and it grows each
+    run until it resolves, when the carry-forward merge freezes it at its
+    last-seen end (≈ the resolution time). A *past* incident (`ongoing=False` --
+    reached via the gap scan or backfill, already off the page) is not still
+    running, so its end is left unset for `build_calendar`'s `DEFAULT_DURATION`
+    rather than stretched to now. Leaves start None (undateable) for very old
+    incidents whose page carries no created timestamp; such events are omitted.
     """
     if inc.get("start") is None:
         inc["start"] = inc.get("created")
@@ -474,7 +480,11 @@ def date_unplanned(inc, now):
         return
     if inc.get("end") is None:
         upd = inc.get("updated")
-        inc["end"] = upd if (upd is not None and upd > inc["start"]) else now
+        if upd is not None and upd > inc["start"]:
+            inc["end"] = upd
+        elif ongoing:
+            inc["end"] = now  # still open -> in progress as of this scan
+        # else: past, no resolution time -> leave end unset (default duration)
 
 
 def matches_service(inc, needle):
@@ -640,7 +650,9 @@ def scan_gap(ids, tzname, include_unplanned, now, delay=0.5):
             inc["kind"] = "scheduled"
         elif include_unplanned:
             inc["kind"] = "unplanned"
-            date_unplanned(inc, now)
+            # Gap incidents are off the home page, i.e. already resolved -- so
+            # don't stretch a missing end to now; use the default duration.
+            date_unplanned(inc, now, ongoing=False)
         else:
             continue  # unplanned, but not requested
         if inc["start"] is None:
