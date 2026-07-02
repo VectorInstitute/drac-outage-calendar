@@ -28,6 +28,7 @@ import argparse
 import os
 import re
 import sys
+import time
 from datetime import date, datetime, timedelta
 from urllib.parse import urljoin
 from zoneinfo import ZoneInfo
@@ -42,6 +43,12 @@ HOME = BASE
 DEFAULT_TZ = "America/Toronto"  # EST/EDT, what the site quotes times in
 DEFAULT_CALNAME = "DRAC Canada Cluster Outages"
 HEADERS = {"User-Agent": "drac-outage-calendar/1.0 (personal use)"}
+# Cap on how many ids one gap scan will fetch, so a corrupt/reset state file
+# can't trigger a full-history crawl (that's backfill_historic.py's job).
+SCAN_CAP = 200
+# An incident page is planned maintenance if its text carries one of these; an
+# unplanned incident page carries none.
+SCHED_MARKERS = re.compile(r"planned|planifi|maintenance|scheduled", re.I)
 
 # Map the abbreviations the site prints to tz names, so "4:00 AM EDT" resolves.
 TZINFOS = {
@@ -115,6 +122,21 @@ def get_current_incident_urls(home_html):
                 seen.add(url)
                 out.append((service, url))
     return out
+
+
+def incident_id(url):
+    """Return the integer incident id from a view_incident URL."""
+    return int(url.rstrip("/").split("=")[-1])
+
+
+def is_incident_page(html):
+    """Return True for a real incident page (vs the empty-id home stub)."""
+    return "Incident description" in html
+
+
+def is_scheduled_page(html):
+    """Return True if the incident page is planned maintenance, not unplanned."""
+    return bool(SCHED_MARKERS.search(html))
 
 
 # Incident pages print their created/updated timestamps via a
@@ -571,6 +593,62 @@ def sort_events(cal, tzname):
     cal.subcomponents = others + events
 
 
+def read_scan_state(path):
+    """Return the last-scanned incident id from `path`, or None if unavailable.
+
+    None means "no high-water mark yet" (missing / empty / unparseable file);
+    the caller bootstraps rather than crawling the whole history.
+    """
+    try:
+        with open(path) as f:
+            return int(f.read().strip())
+    except (OSError, ValueError):
+        return None
+
+
+def write_scan_state(path, last_id):
+    """Persist the high-water incident id so the next run resumes after it."""
+    with open(path, "w") as f:
+        f.write(f"{last_id}\n")
+
+
+def scan_gap(ids, tzname, include_unplanned, now, delay=0.5):
+    """Fetch each incident id in `ids`, returning the dated outages among them.
+
+    This is the catch-up crawl for outages the daily poll skipped: incidents
+    created and resolved between two runs never appear on the home page, but
+    their sequential ids sit in the gap since we last looked. Each page is
+    classified (scheduled vs unplanned) and dated the same way the live scrape
+    dates its incidents -- scheduled from the prose, unplanned from the
+    created/updated timestamps -- so results flow through the same pipeline.
+    Unplanned outages are only kept when `include_unplanned` is set; scheduled
+    ones are always kept. Undated and non-incident (empty) ids are skipped.
+    """
+    out = []
+    for i in ids:
+        url = f"{BASE}view_incident?incident={i}"
+        try:
+            html = fetch(url)
+        except requests.RequestException as e:
+            print(f"  ! skip {url}: {e}", file=sys.stderr)
+            continue
+        time.sleep(delay)  # polite pacing between fetches
+        if not is_incident_page(html):
+            continue
+        inc = parse_incident(html, url, tzname)
+        if is_scheduled_page(html):
+            inc["kind"] = "scheduled"
+        elif include_unplanned:
+            inc["kind"] = "unplanned"
+            date_unplanned(inc, now)
+        else:
+            continue  # unplanned, but not requested
+        if inc["start"] is None:
+            continue
+        out.append(inc)
+    return out
+
+
 def main():
     ap = argparse.ArgumentParser(
         description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter
@@ -603,6 +681,16 @@ def main():
         action="store_true",
         help="also include current unplanned outages (from the status "
         "table), dated by the incident's created/updated timestamps",
+    )
+    ap.add_argument(
+        "--scan-state",
+        default=None,
+        metavar="FILE",
+        help="enable the catch-up gap scan: read the last-scanned incident "
+        "id from FILE, fetch the newer ids up to the highest one currently "
+        "visible to capture sub-day outages the daily poll skipped, then "
+        "write the new high-water id back to FILE (bootstraps silently if "
+        f"FILE is absent; at most {SCAN_CAP} ids per run)",
     )
     args = ap.parse_args()
     now = datetime.now(ZoneInfo(args.tz))
@@ -654,6 +742,42 @@ def main():
     # apart from "this cluster simply has nothing scheduled" (filtered to zero).
     n_scraped = len(incidents)
 
+    # Catch-up gap scan: fetch the incident ids between the last one we scanned
+    # and the highest currently visible, to capture sub-day outages the daily
+    # poll skipped. Runs on the unfiltered scrape (so per-cluster feeds still
+    # see the whole gap), and its results join `incidents` before the filter.
+    new_scan_mark = None
+    if args.scan_state:
+        visible = {incident_id(u) for _, u in urls}
+        visible |= {incident_id(u) for _, u in get_current_incident_urls(home)}
+        if not visible:
+            print("Scan-gap: no visible incidents; skipping.", file=sys.stderr)
+        else:
+            current_max = max(visible)
+            last = read_scan_state(args.scan_state)
+            if last is None:
+                new_scan_mark = current_max
+                print(f"Scan-gap: no prior state; mark bootstrapped to {current_max}.")
+            else:
+                gap = [i for i in range(last + 1, current_max + 1) if i not in visible]
+                capped = len(gap) > SCAN_CAP
+                to_scan = gap[:SCAN_CAP]
+                found = scan_gap(to_scan, args.tz, args.include_unplanned, now)
+                incidents.extend(found)
+                # Advance only over the contiguous range actually covered, so a
+                # capped run resumes at the right place next time.
+                new_scan_mark = to_scan[-1] if capped else current_max
+                for inc in found:
+                    when = inc["start"].isoformat() if inc["start"] else "date TBD"
+                    print(f"  + {inc['service']}: {inc['title']} — {when} (gap)")
+                msg = (
+                    f"Scan-gap: {len(to_scan)} id(s) in ({last}, {current_max}], "
+                    f"{len(found)} outage(s) found"
+                )
+                if capped:
+                    msg += f"; capped at {SCAN_CAP}, resuming after {new_scan_mark}"
+                print(msg + ".")
+
     if args.service:
         incidents = [i for i in incidents if matches_service(i, args.service)]
         print(
@@ -694,6 +818,12 @@ def main():
     undated = sum(1 for i in incidents if i["start"] is None)
     note = f" ({undated} undated, omitted)" if undated else ""
     print(f"Wrote {written} event(s) to {args.output}{note}")
+
+    # Persist the high-water id only after a successful build, and only when the
+    # scrape actually saw something (new_scan_mark stays None on an empty scrape).
+    if args.scan_state and new_scan_mark is not None:
+        write_scan_state(args.scan_state, new_scan_mark)
+        print(f"Scan-gap: state saved (last scanned id = {new_scan_mark}).")
 
 
 if __name__ == "__main__":

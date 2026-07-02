@@ -8,8 +8,11 @@ No network: every test builds its inputs in memory. Run with
 (or `pytest`, which also discovers unittest.TestCase classes).
 """
 
+import os
+import tempfile
 import unittest
 from datetime import date, datetime, timedelta
+from unittest import mock
 from zoneinfo import ZoneInfo
 
 from icalendar import Calendar, Event
@@ -329,6 +332,90 @@ class InferYearTests(unittest.TestCase):
         self.assertEqual(M.infer_year(12, 25, ref), 2025)
         # Same reference, "February 1" belongs to the same year.
         self.assertEqual(M.infer_year(2, 1, ref), 2026)
+
+
+class IncidentHelperTests(unittest.TestCase):
+    def test_incident_id(self):
+        self.assertEqual(
+            M.incident_id("https://status.alliancecan.ca/view_incident?incident=1650"),
+            1650,
+        )
+
+    def test_page_classifiers(self):
+        self.assertTrue(M.is_incident_page("... Incident description ..."))
+        self.assertFalse(M.is_incident_page("home page, no such marker"))
+        self.assertTrue(M.is_scheduled_page("Planned Outage - Arrêt planifié"))
+        self.assertFalse(M.is_scheduled_page("Filesystem problem - investigating"))
+
+
+class ScanStateTests(unittest.TestCase):
+    def test_roundtrip(self):
+        with tempfile.TemporaryDirectory() as d:
+            p = os.path.join(d, "last_scanned.txt")
+            self.assertIsNone(M.read_scan_state(p))  # missing -> None
+            M.write_scan_state(p, 1650)
+            self.assertEqual(M.read_scan_state(p), 1650)
+
+    def test_unparseable_returns_none(self):
+        with tempfile.TemporaryDirectory() as d:
+            p = os.path.join(d, "bad.txt")
+            with open(p, "w") as f:
+                f.write("not-a-number")
+            self.assertIsNone(M.read_scan_state(p))
+
+
+# Minimal incident pages, in the real page's element order (created block, then
+# Title/Summary, then the Updated block), so parse_incident + the classifiers
+# behave as they do on the live site.
+_SCHEDULED_HTML = """
+<p>Incident description</p>
+<table><tr><th>h</th></tr>
+<tr><td>Killarney</td><td>Closed</td><td></td><td></td></tr></table>
+<p>Title</p><p>Planned Outage</p>
+<p>Summary</p><p>Killarney maintenance on 2026-06-15 from 08:00 to 10:00.</p>
+<p>Back</p>
+"""
+
+_UNPLANNED_HTML = """
+<p>Incident description</p>
+<table><tr><th>h</th></tr>
+<tr><td>Fir</td><td>Open</td><td></td><td></td></tr></table>
+<small>Created by X on
+  <script>change_date_full("2026-06-15 09:00", "en")</script></small>
+<p>Title</p><p>Network problem</p>
+<p>Summary</p><p>Fir is unavailable, investigating.</p>
+<i>Updated by X on
+  <script>change_date_full("2026-06-15 09:00", "en")</script></i>
+<p>Back</p>
+"""
+
+
+class ScanGapTests(unittest.TestCase):
+    NOW = datetime(2026, 6, 20, 12, 0, tzinfo=TORONTO)
+    PAGES = {
+        "1": _SCHEDULED_HTML,
+        "2": _UNPLANNED_HTML,
+        "3": "<p>home stub, not an incident</p>",  # empty id
+    }
+
+    def _run(self, include_unplanned):
+        def fake_fetch(url):
+            return self.PAGES[url.split("=")[-1]]
+
+        with (
+            mock.patch.object(M, "fetch", fake_fetch),
+            mock.patch.object(M.time, "sleep", lambda *_: None),
+        ):
+            return M.scan_gap([1, 2, 3], "America/Toronto", include_unplanned, self.NOW)
+
+    def test_both_kinds_when_unplanned_included(self):
+        got = self._run(include_unplanned=True)
+        kinds = sorted(g["kind"] for g in got)
+        self.assertEqual(kinds, ["scheduled", "unplanned"])  # id 3 skipped (empty)
+
+    def test_unplanned_dropped_when_not_included(self):
+        got = self._run(include_unplanned=False)
+        self.assertEqual([g["kind"] for g in got], ["scheduled"])
 
 
 if __name__ == "__main__":

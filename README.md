@@ -114,10 +114,19 @@ service), `--calname` (calendar display title), `--merge-from` (a previous
 `.ics` whose elapsed events are carried into the new one), `--include-unplanned`
 (also add current *unplanned* outages from the status table, dated by the
 incident's created/updated timestamps and tagged `CATEGORIES:UNPLANNED`;
-scheduled maintenance is tagged `SCHEDULED`).
+scheduled maintenance is tagged `SCHEDULED`), `--scan-state FILE` (catch-up scan
+for sub-day outages — see below).
 
 By default only scheduled maintenance is published. `--include-unplanned` is
 opt-in because unplanned outages are dated only approximately (from when the
 incident was posted and last updated). An outage that is still ongoing is shown
 as running until "now" and extends each daily run; once it resolves and drops
 off the status page, the carried-forward copy freezes at its last-seen time.
+
+Because the scrape runs once a day, an outage that appears and clears between
+two runs is never seen on the status page. `--scan-state FILE` closes that gap:
+it remembers the last incident id it examined in FILE and, each run, fetches the
+newer ids up to the highest one currently visible — catching those short
+outages — then records the new high-water id. Each feed needs its own state
+file. It's bounded (at most 200 ids per run) and bootstraps from the current max
+on first use, so it never crawls the whole history.

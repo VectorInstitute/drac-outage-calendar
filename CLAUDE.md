@@ -43,6 +43,22 @@ app can subscribe by URL and refresh automatically.
   Every event carries `CATEGORIES:SCHEDULED` or `CATEGORIES:UNPLANNED` so a
   calendar can style or filter them. The deployed workflow does not pass this
   flag, so the published feeds stay scheduled-only unless that changes.
+- `--scan-state FILE` enables the catch-up gap scan, which captures outages the
+  once-a-day poll skips entirely: an incident created and resolved between two
+  runs never appears on the home page, but its (sequential) id sits in the gap.
+  FILE holds the last-scanned id; each run fetches the ids from there up to the
+  highest one currently visible, classifies + dates each the same way the live
+  scrape does (scheduled always kept; unplanned kept only with
+  `--include-unplanned`), and joins them to the scrape before the `--service`
+  filter and merge. It runs on the unfiltered scrape, so a per-cluster feed
+  still sees the whole gap. The new high-water id is written back to FILE only
+  after a successful build. A missing FILE bootstraps silently to the current
+  max (no history crawl — that's `backfill_historic.py`); `SCAN_CAP` (200) bounds
+  one run so a reset FILE can't trigger a full crawl. Limitation: an outage
+  whose id exceeds every currently-visible id (created after the newest visible
+  incident, then resolved) is caught next run, once a higher visible id appears.
+  Each feed needs its OWN state file (the two feeds run as separate invocations;
+  a shared file would let the first advance the mark past the second's scan).
 - `backfill_historic.py` is a one-off (not part of the daily job) that crawls the
   full incident-id range (252..1644), caching one page per id so re-runs don't
   re-fetch. It reuses this module's parsing, anchors each event's year to its
