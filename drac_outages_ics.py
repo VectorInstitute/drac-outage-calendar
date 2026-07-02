@@ -197,8 +197,14 @@ def parse_incident(html, url, tz=DEFAULT_TZ):
         title = m.group(1).strip()
 
     # --- summary ---
+    # Stop at the "Updated by" block or the "Back" navigation button. On a page
+    # with no "Updated by", the back button's Material-icon glyph ("arrow_back",
+    # on its own line just before "Back") would otherwise be swept in, so it's a
+    # boundary too.
     summary = ""
-    m = re.search(r"Summary\s*\n+(.*?)(?:\nUpdated by|\nBack|\Z)", text, re.S)
+    m = re.search(
+        r"Summary\s*\n+(.*?)(?:\nUpdated by|\narrow_back|\nBack|\Z)", text, re.S
+    )
     if m:
         summary = re.sub(r"\s+", " ", m.group(1)).strip()
 

@@ -389,6 +389,23 @@ class IncidentHelperTests(unittest.TestCase):
         self.assertFalse(M.is_scheduled_page("Filesystem problem - investigating"))
 
 
+class ParseIncidentTests(unittest.TestCase):
+    def test_summary_excludes_back_button_glyph(self):
+        # A page with no "Updated by" ends "...text\narrow_back\nBack\n..."; the
+        # back-button glyph must not leak into the summary/description.
+        html = """
+        <p>Incident description</p>
+        <table><tr><th>h</th></tr>
+        <tr><td>Fir</td><td>Open</td><td></td><td></td></tr></table>
+        <p>Title</p><p>Filesystem problem</p>
+        <p>Summary</p><p>Fir is unavailable, investigating.</p>
+        <i class="material-icons">arrow_back</i>
+        <p>Back</p>
+        """
+        inc = M.parse_incident(html, "x?incident=1614")
+        self.assertEqual(inc["summary"], "Fir is unavailable, investigating.")
+
+
 class ScanStateTests(unittest.TestCase):
     def test_roundtrip(self):
         with tempfile.TemporaryDirectory() as d:
