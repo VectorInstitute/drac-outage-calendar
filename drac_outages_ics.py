@@ -432,6 +432,29 @@ def build_calendar(incidents, tzname, calname=DEFAULT_CALNAME):
     return cal
 
 
+def date_unplanned(inc, now):
+    """Fill in an unplanned incident's start/end from its page timestamps.
+
+    Unplanned outages rarely carry a parseable prose date, so fall back to the
+    incident's own timeline:
+      * start  -> when it was created (if prose gave nothing);
+      * end    -> its last update once resolved (`updated` after `start`),
+                  otherwise -- it's still open -- `now`, marking it in progress.
+    An ongoing outage therefore grows a little each run; when it finally
+    resolves it drops off the status page and the carry-forward merge freezes
+    it at its last-seen end, i.e. ≈ the resolution time (to the polling
+    interval). Leaves start None (undateable) for very old incidents whose page
+    carries no created timestamp; such events are omitted downstream.
+    """
+    if inc.get("start") is None:
+        inc["start"] = inc.get("created")
+    if inc.get("start") is None:
+        return
+    if inc.get("end") is None:
+        upd = inc.get("updated")
+        inc["end"] = upd if (upd is not None and upd > inc["start"]) else now
+
+
 def matches_service(inc, needle):
     """Return True if `needle` appears in the incident's service, title, or summary.
 
@@ -553,6 +576,7 @@ def main():
         "table), dated by the incident's created/updated timestamps",
     )
     args = ap.parse_args()
+    now = datetime.now(ZoneInfo(args.tz))
 
     try:
         home = fetch(HOME)
@@ -591,18 +615,7 @@ def main():
             if inc["service"] in (None, "DRAC"):
                 inc["service"] = service
             inc["kind"] = "unplanned"
-            # Unplanned outages rarely carry a parseable date -- fall back to
-            # the incident's own timestamps: it began when created, and (once
-            # closed) ended at its last update.
-            if inc["start"] is None:
-                inc["start"] = inc["created"]
-            if (
-                inc["start"] is not None
-                and inc["end"] is None
-                and inc["updated"] is not None
-                and inc["updated"] > inc["start"]
-            ):
-                inc["end"] = inc["updated"]
+            date_unplanned(inc, now)
             incidents.append(inc)
             when = inc["start"].isoformat() if inc["start"] else "date TBD"
             print(f"  ⚠ {inc['service']}: {inc['title']} — {when} (unplanned)")

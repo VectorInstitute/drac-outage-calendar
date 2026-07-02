@@ -10,6 +10,8 @@ import os
 import re
 import sys
 import time
+from datetime import datetime
+from zoneinfo import ZoneInfo
 
 import requests
 
@@ -73,6 +75,7 @@ def analyse(include_unplanned=False):
     rows = []  # dated incidents (scheduled, plus unplanned when requested)
     n_empty = n_incident = n_sched = n_sched_dated = n_unplanned = n_parse_err = 0
     n_unplanned_dated = 0
+    now = datetime.now(ZoneInfo("America/Toronto"))
     for n in range(LO, HI + 1):
         html = get_html(n, fetch=False)
         if html is None:
@@ -98,17 +101,7 @@ def analyse(include_unplanned=False):
             if not include_unplanned:
                 continue
             inc["kind"] = "unplanned"
-            # Unplanned outages rarely carry a parseable date -- fall back to
-            # the incident's timestamps (began when created, ended at last update).
-            if inc["start"] is None:
-                inc["start"] = inc["created"]
-            if (
-                inc["start"] is not None
-                and inc["end"] is None
-                and inc["updated"] is not None
-                and inc["updated"] > inc["start"]
-            ):
-                inc["end"] = inc["updated"]
+            M.date_unplanned(inc, now)
             if inc["start"] is not None:
                 n_unplanned_dated += 1
         else:

@@ -118,4 +118,6 @@ scheduled maintenance is tagged `SCHEDULED`).
 
 By default only scheduled maintenance is published. `--include-unplanned` is
 opt-in because unplanned outages are dated only approximately (from when the
-incident was posted and last updated).
+incident was posted and last updated). An outage that is still ongoing is shown
+as running until "now" and extends each daily run; once it resolves and drops
+off the status page, the carried-forward copy freezes at its last-seen time.

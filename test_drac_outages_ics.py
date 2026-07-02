@@ -190,6 +190,49 @@ class ProseDateTests(unittest.TestCase):
         )
 
 
+class DateUnplannedTests(unittest.TestCase):
+    NOW = datetime(2026, 7, 2, 12, 0, tzinfo=TORONTO)
+
+    def test_resolved_uses_created_and_updated(self):
+        inc = {
+            "start": None,
+            "end": None,
+            "created": datetime(2026, 6, 30, 8, 0, tzinfo=TORONTO),
+            "updated": datetime(2026, 6, 30, 15, 0, tzinfo=TORONTO),
+        }
+        M.date_unplanned(inc, self.NOW)
+        self.assertEqual(inc["start"], datetime(2026, 6, 30, 8, 0, tzinfo=TORONTO))
+        self.assertEqual(inc["end"], datetime(2026, 6, 30, 15, 0, tzinfo=TORONTO))
+
+    def test_ongoing_ends_at_now(self):
+        # Still open (no later update) -> in progress, end = now.
+        inc = {
+            "start": None,
+            "end": None,
+            "created": datetime(2026, 5, 21, 20, 1, tzinfo=TORONTO),
+            "updated": None,
+        }
+        M.date_unplanned(inc, self.NOW)
+        self.assertEqual(inc["start"], datetime(2026, 5, 21, 20, 1, tzinfo=TORONTO))
+        self.assertEqual(inc["end"], self.NOW)
+
+    def test_undateable_left_none(self):
+        inc = {"start": None, "end": None, "created": None, "updated": None}
+        M.date_unplanned(inc, self.NOW)
+        self.assertIsNone(inc["start"])
+
+    def test_prose_dates_are_kept(self):
+        # If the summary already yielded dates, don't override them.
+        inc = {
+            "start": datetime(2026, 6, 1, 9, 0, tzinfo=TORONTO),
+            "end": datetime(2026, 6, 1, 11, 0, tzinfo=TORONTO),
+            "created": datetime(2026, 5, 30, tzinfo=TORONTO),
+            "updated": None,
+        }
+        M.date_unplanned(inc, self.NOW)
+        self.assertEqual(inc["end"], datetime(2026, 6, 1, 11, 0, tzinfo=TORONTO))
+
+
 class MatchesServiceTests(unittest.TestCase):
     def test_matches_on_service_field(self):
         inc = {"service": "Killarney", "title": "Planned Outage", "summary": ""}
