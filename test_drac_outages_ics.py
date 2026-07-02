@@ -164,6 +164,20 @@ class MergeHistoryTests(unittest.TestCase):
         self.assertEqual((carried, truncated, dropped, superseded), (0, 0, 0, 1))
         self.assertEqual(_uids(fresh), {"drac-incident-1652@status.alliancecan.ca"})
 
+    def test_carried_event_loses_ongoing_marker(self):
+        # A previously-live outage that resolved and dropped out of the scrape
+        # is carried forward, but its title must no longer say "(ongoing)".
+        ev = Event()
+        ev.add("uid", "drac-incident-1700@status.alliancecan.ca")
+        ev.add("summary", f"[Fir] {M.ONGOING_MARKER} Filesystem problem")
+        ev.add("dtstart", datetime(2026, 6, 20, 9, 0, tzinfo=TORONTO))
+        ev.add("dtend", datetime(2026, 6, 20, 12, 0, tzinfo=TORONTO))  # < NOW
+        ev.add("dtstamp", datetime(2026, 6, 20, tzinfo=TORONTO))
+        fresh = _calendar()
+        M.merge_history(fresh, _calendar(ev), "America/Toronto", now=self.NOW)
+        carried = next(iter(fresh.walk("VEVENT")))
+        self.assertEqual(str(carried.get("summary")), "[Fir] Filesystem problem")
+
 
 class SortEventsTests(unittest.TestCase):
     def test_events_sorted_by_start(self):
@@ -243,6 +257,7 @@ class DateUnplannedTests(unittest.TestCase):
         M.date_unplanned(inc, self.NOW)
         self.assertEqual(inc["start"], datetime(2026, 5, 21, 20, 1, tzinfo=TORONTO))
         self.assertEqual(inc["end"], self.NOW)
+        self.assertTrue(inc.get("ongoing"))  # tagged so the title can show it
 
     def test_past_without_resolution_leaves_end_unset(self):
         # ongoing=False (gap/backfill): a resolved incident with no resolution
@@ -256,6 +271,7 @@ class DateUnplannedTests(unittest.TestCase):
         M.date_unplanned(inc, self.NOW, ongoing=False)
         self.assertEqual(inc["start"], datetime(2026, 5, 21, 20, 1, tzinfo=TORONTO))
         self.assertIsNone(inc["end"])
+        self.assertFalse(inc.get("ongoing"))  # past -> not tagged ongoing
 
     def test_past_still_uses_resolution_when_present(self):
         # ongoing=False, but a real resolution timestamp is still honoured.
@@ -459,6 +475,34 @@ class BuildCalendarTests(unittest.TestCase):
         end = M._as_dt(ev.get("dtend").dt, TORONTO)
         self.assertEqual(end - start, M.DEFAULT_DURATION)
         self.assertEqual(M.DEFAULT_DURATION, timedelta(hours=24))
+
+    def _incident(self, **over):
+        inc = {
+            "service": "Fir",
+            "title": "Filesystem problem",
+            "summary": "",
+            "url": "https://status.alliancecan.ca/view_incident?incident=1700",
+            "start": datetime(2026, 6, 15, 9, 0, tzinfo=TORONTO),
+            "end": datetime(2026, 6, 15, 12, 0, tzinfo=TORONTO),
+            "kind": "unplanned",
+        }
+        inc.update(over)
+        return inc
+
+    def test_ongoing_incident_title_marked(self):
+        # Marker sits after the "[service]" prefix, not at the end (where a long
+        # title would truncate it away).
+        cal = M.build_calendar([self._incident(ongoing=True)], "America/Toronto")
+        ev = next(iter(cal.walk("VEVENT")))
+        self.assertEqual(
+            str(ev.get("summary")),
+            f"[Fir] {M.ONGOING_MARKER} Filesystem problem",
+        )
+
+    def test_non_ongoing_incident_title_plain(self):
+        cal = M.build_calendar([self._incident()], "America/Toronto")
+        ev = next(iter(cal.walk("VEVENT")))
+        self.assertEqual(str(ev.get("summary")), "[Fir] Filesystem problem")
 
 
 if __name__ == "__main__":

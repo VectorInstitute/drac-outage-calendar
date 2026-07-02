@@ -42,6 +42,10 @@ BASE = "https://status.alliancecan.ca/"
 HOME = BASE
 DEFAULT_TZ = "America/Toronto"  # EST/EDT, what the site quotes times in
 DEFAULT_CALNAME = "DRAC Canada Cluster Outages"
+# Inserted after the "[service]" prefix of a live, still-open outage's title so
+# it doesn't read as finished in a calendar (its end is only the scan time) --
+# e.g. "[Fir] (unresolved) Filesystem problem". Stripped once it resolves.
+ONGOING_MARKER = "(unresolved)"
 HEADERS = {"User-Agent": "drac-outage-calendar/1.0 (personal use)"}
 # Event length used when an incident gives a start but no end -- and, for a
 # *past* (resolved) outage with no recorded resolution time, the length it's
@@ -442,7 +446,11 @@ def build_calendar(incidents, tzname, calname=DEFAULT_CALNAME):
         ev.add("description", f"{desc}\n\n{inc['url']}".strip())
         ev.add("url", inc["url"])
 
-        ev.add("summary", f"[{inc['service']}] {inc['title']}")
+        if inc.get("ongoing"):
+            summary = f"[{inc['service']}] {ONGOING_MARKER} {inc['title']}"
+        else:
+            summary = f"[{inc['service']}] {inc['title']}"
+        ev.add("summary", summary)
         ev.add("categories", [inc.get("kind", "scheduled").upper()])
         if start.tzinfo is None:
             start = start.replace(tzinfo=tz)
@@ -484,6 +492,7 @@ def date_unplanned(inc, now, ongoing=True):
             inc["end"] = upd
         elif ongoing:
             inc["end"] = now  # still open -> in progress as of this scan
+            inc["ongoing"] = True  # tag so the title shows it hasn't ended
         # else: past, no resolution time -> leave end unset (default duration)
 
 
@@ -527,6 +536,19 @@ def _event_service(ev):
     if summ.startswith("[") and "]" in summ:
         return summ[1 : summ.index("]")].strip().lower()
     return summ.strip().lower()
+
+
+def _strip_ongoing_marker(ev):
+    """Remove the live-outage title marker from an event being finalized.
+
+    A carried/truncated event has dropped out of the scrape, so it is no longer
+    live -- its title should read as a finished outage.
+    """
+    s = str(ev.get("summary", ""))
+    tag = f"] {ONGOING_MARKER} "
+    if tag in s:
+        ev.pop("summary", None)
+        ev.add("summary", s.replace(tag, "] ", 1))
 
 
 def _content_key(ev, tz):
@@ -589,6 +611,7 @@ def merge_history(cal, prev_cal, tzname, now=None):
             truncated += 1
         else:
             carried += 1  # already over -> historical
+        _strip_ongoing_marker(ev)  # no longer live -> title reads as finished
         cal.add_component(ev)
     return carried, truncated, dropped, superseded
 
