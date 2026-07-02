@@ -246,8 +246,9 @@ class DateUnplannedTests(unittest.TestCase):
         self.assertEqual(inc["start"], datetime(2026, 6, 30, 8, 0, tzinfo=TORONTO))
         self.assertEqual(inc["end"], datetime(2026, 6, 30, 15, 0, tzinfo=TORONTO))
 
-    def test_ongoing_ends_at_now(self):
-        # Still open (no later update) -> in progress, end = now.
+    def test_ongoing_ends_after_now(self):
+        # Still open (no later update) -> in progress, end projected past now so
+        # it doesn't read as already finished in a calendar.
         inc = {
             "start": None,
             "end": None,
@@ -256,7 +257,7 @@ class DateUnplannedTests(unittest.TestCase):
         }
         M.date_unplanned(inc, self.NOW)
         self.assertEqual(inc["start"], datetime(2026, 5, 21, 20, 1, tzinfo=TORONTO))
-        self.assertEqual(inc["end"], self.NOW)
+        self.assertEqual(inc["end"], self.NOW + M.DEFAULT_DURATION)
         self.assertTrue(inc.get("ongoing"))  # tagged so the title can show it
 
     def test_past_without_resolution_leaves_end_unset(self):

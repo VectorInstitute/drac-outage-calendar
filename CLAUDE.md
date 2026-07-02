@@ -36,16 +36,17 @@ app can subscribe by URL and refresh automatically.
   created (parsed from the `change_date_full("YYYY-MM-DD HH:MM", ..)` script the
   page emits); end = its last update (≈ resolution) once it has one. With no
   resolution timestamp, the end depends on whether the incident is live: a
-  *live* one (still on the status page, `ongoing=True`) is in progress, so end =
-  *now* — it grows a little each daily run, and when it resolves and drops off
-  the table the `--merge-from` carry-forward freezes it at its last-seen end (≈
-  resolution, to the daily polling interval), the same lifecycle as a scheduled
-  "in progress → truncate to now" event. Because such an event's end is only the
-  scan time (so it would otherwise read as already finished), its title gets an
-  `ONGOING_MARKER` ("(unresolved)") inserted after the `[service]` prefix (e.g.
-  `[Fir] (unresolved) Filesystem problem` — kept off the end, where a long title
-  would truncate it away); the merge strips that marker when it finalizes the
-  event (carried/truncated), since it's no longer live. A *past* one (`ongoing=False` — reached
+  *live* one (still on the status page, `ongoing=True`) is in progress, so its
+  end is projected to *now + `DEFAULT_DURATION` (24h)* — past the present, so it
+  doesn't read as already finished in a calendar (a bare "now" end sits in the
+  viewer's past). It moves forward each daily run, and when it resolves and drops
+  off the table the `--merge-from` carry-forward truncates it back to ~the
+  resolution time (to the daily polling interval), the same lifecycle as a
+  scheduled "in progress → truncate to now" event. As a further cue its title
+  gets an `ONGOING_MARKER` ("(unresolved)") inserted after the `[service]` prefix
+  (e.g. `[Fir] (unresolved) Filesystem problem` — kept off the end, where a long
+  title would truncate it away); the merge strips that marker when it finalizes
+  the event (carried/truncated), since it's no longer live. A *past* one (`ongoing=False` — reached
   via the gap scan or backfill, already off the page, so already resolved) is
   not still running; its end is left unset so `build_calendar` applies the
   `DEFAULT_DURATION` (24h) rather than stretching a long-resolved outage to now.

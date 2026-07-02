@@ -474,13 +474,16 @@ def date_unplanned(inc, now, ongoing=True):
       * start  -> when it was created (if prose gave nothing);
       * end    -> its last update once resolved (`updated` after `start`).
     With no resolution timestamp, the end depends on `ongoing`: a live incident
-    (still on the status page) is in progress, so end = `now` and it grows each
-    run until it resolves, when the carry-forward merge freezes it at its
-    last-seen end (≈ the resolution time). A *past* incident (`ongoing=False` --
-    reached via the gap scan or backfill, already off the page) is not still
-    running, so its end is left unset for `build_calendar`'s `DEFAULT_DURATION`
-    rather than stretched to now. Leaves start None (undateable) for very old
-    incidents whose page carries no created timestamp; such events are omitted.
+    (still on the status page) is in progress, so its end is projected to
+    `now + DEFAULT_DURATION` -- past the present, so it doesn't read as already
+    ended in a calendar (a bare "now" end sits in the viewer's past) -- and it
+    moves forward each run until the incident resolves, when the carry-forward
+    merge truncates it back to ~the resolution time. A *past* incident
+    (`ongoing=False` -- reached via the gap scan or backfill, already off the
+    page) is not still running, so its end is left unset for `build_calendar`'s
+    `DEFAULT_DURATION` from its start, rather than projected forward. Leaves
+    start None (undateable) for very old incidents with no created timestamp;
+    such events are omitted.
     """
     if inc.get("start") is None:
         inc["start"] = inc.get("created")
@@ -491,8 +494,9 @@ def date_unplanned(inc, now, ongoing=True):
         if upd is not None and upd > inc["start"]:
             inc["end"] = upd
         elif ongoing:
-            inc["end"] = now  # still open -> in progress as of this scan
-            inc["ongoing"] = True  # tag so the title shows it hasn't ended
+            # Still open: project past now so it doesn't read as already ended.
+            inc["end"] = now + DEFAULT_DURATION
+            inc["ongoing"] = True  # also tag the title
         # else: past, no resolution time -> leave end unset (default duration)
 
 

@@ -120,11 +120,11 @@ for sub-day outages — see below).
 By default only scheduled maintenance is published. `--include-unplanned` is
 opt-in because unplanned outages are dated only approximately (from when the
 incident was posted and last updated). An outage that is still ongoing is shown
-as running until "now" and extends each daily run, with an "(unresolved)" tag
-inserted after the "[service]" prefix in its title (e.g. `[Fir] (unresolved)
-Filesystem problem`) so it doesn't read as already finished; once it resolves
-and drops off the status page, the carried-forward copy drops the tag and
-freezes at its last-seen time. A past outage that has no recorded resolution time is given a
+as running until 24 hours past the last scan — so it projects into the future
+and doesn't read as already finished — and also carries an "(unresolved)" tag
+after the "[service]" prefix in its title (e.g. `[Fir] (unresolved) Filesystem
+problem`). Once it resolves and drops off the status page, the carried-forward
+copy drops the tag and is truncated back to ~the resolution time. A past outage that has no recorded resolution time is given a
 default 24-hour duration instead of being stretched to the scan time.
 
 Because the scrape runs once a day, an outage that appears and clears between
