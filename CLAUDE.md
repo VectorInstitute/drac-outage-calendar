@@ -110,14 +110,15 @@ app can subscribe by URL and refresh automatically.
 
 ## Deployment
 - Hosted as a public repo under the VectorInstitute GitHub org.
-- `.github/workflows/outages.yml` runs daily (cron) + on manual dispatch, builds
-  four feeds, and deploys via the official `upload-pages-artifact` /
-  `deploy-pages` actions. Two are *full* feeds (scheduled + unplanned, via
-  `--include-unplanned`): `public/outages.ics` (all clusters) and
-  `public/killarney.ics` (Killarney). Two are *planned-only* (scheduled
-  maintenance): `public/outages-planned-only.ics` and
+- `.github/workflows/outages.yml` runs every 6 hours (cron `0 */6 * * *`) + on
+  manual dispatch, builds four feeds, and deploys via the official
+  `upload-pages-artifact` / `deploy-pages` actions. Two are *full* feeds
+  (scheduled + unplanned, via `--include-unplanned`): `public/outages.ics` (all
+  clusters) and `public/killarney.ics` (Killarney). Two are *planned-only*
+  (scheduled maintenance): `public/outages-planned-only.ics` and
   `public/killarney-planned-only.ics`. The script is invoked once per feed, so
-  the site is scraped four times per daily run — still within polite limits.
+  each run scrapes the site four times (four runs/day) — still within polite
+  limits.
 - History lives on the `calendar-state` orphan branch (no shared history with
   `main`), which holds the four `.ics` files (plus a README and a
   `.gitattributes` marking `*.ics -text` so CRLF line endings are byte-preserved
@@ -146,7 +147,9 @@ app can subscribe by URL and refresh automatically.
 ## Known caveats / open items
 - Depends on the current status-page HTML layout; brittle if Cachet markup changes.
 - Depends on outage dates being written parseably in incident summaries.
-- Be a polite scraper: keep the schedule modest (daily is plenty). No official ToS feed.
+- Be a polite scraper: keep the schedule modest. Currently every 6 hours (four
+  runs/day, each scraping once per feed); don't push it much higher without a
+  reason — there's no official ToS feed.
 - Org policy must permit public Pages; a custom org Pages domain would change the URL.
 - Timezone handling for a time's zone, in precedence order: (1) an explicit zone
   written in the summary (EDT, CST, PT, ...) mapped via TZINFOS/`TZ_ZONE`;
