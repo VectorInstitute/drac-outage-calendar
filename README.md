@@ -10,5 +10,7 @@ commits the updated files back here before deploying them to GitHub Pages.
 
 Do not edit these files by hand; they will be overwritten by the next run.
 
-- `outages.ics` — all clusters
-- `killarney.ics` — Killarney only
+- `outages.ics` — all clusters, scheduled maintenance **and** unplanned outages
+- `outages-planned-only.ics` — all clusters, scheduled maintenance only
+- `killarney.ics` — Killarney only, scheduled **and** unplanned
+- `killarney-planned-only.ics` — Killarney only, scheduled maintenance only

@@ -1,52 +1,8 @@
 BEGIN:VCALENDAR
 VERSION:2.0
 PRODID:-//DRAC Outage Calendar//EN
-X-WR-CALNAME:Killarney Cluster Outages
+X-WR-CALNAME:Killarney Cluster Scheduled Outages
 X-WR-TIMEZONE:America/Toronto
-BEGIN:VEVENT
-SUMMARY:[Killarney] External network outage - Panne du réseau externe
-DTSTART;TZID=America/Toronto:20250618T235300
-DTEND;TZID=America/Toronto:20250619T003200
-DTSTAMP:20260703T134918Z
-UID:drac-incident-1339@status.alliancecan.ca
-CATEGORIES:UNPLANNED
-DESCRIPTION:The external network is down.\n/ Le réseau externe est hors l
- igne.\n\nhttps://status.alliancecan.ca/view_incident?incident=1339
-URL:https://status.alliancecan.ca/view_incident?incident=1339
-END:VEVENT
-BEGIN:VEVENT
-SUMMARY:[Killarney] External network outage - Panne du réseau externe
-DTSTART;TZID=America/Toronto:20250619T221400
-DTEND;TZID=America/Toronto:20250619T235100
-DTSTAMP:20260703T134918Z
-UID:drac-incident-1340@status.alliancecan.ca
-CATEGORIES:UNPLANNED
-DESCRIPTION:The external network is down.\n/ Le réseau externe est hors l
- igne.\n\nhttps://status.alliancecan.ca/view_incident?incident=1340
-URL:https://status.alliancecan.ca/view_incident?incident=1340
-END:VEVENT
-BEGIN:VEVENT
-SUMMARY:[Killarney] External network outage - Panne du réseau externe
-DTSTART;TZID=America/Toronto:20250630T203200
-DTEND;TZID=America/Toronto:20250630T213900
-DTSTAMP:20260703T134918Z
-UID:drac-incident-1352@status.alliancecan.ca
-CATEGORIES:UNPLANNED
-DESCRIPTION:The external network is down.\n/ Le réseau externe est hors l
- igne.\n\nhttps://status.alliancecan.ca/view_incident?incident=1352
-URL:https://status.alliancecan.ca/view_incident?incident=1352
-END:VEVENT
-BEGIN:VEVENT
-SUMMARY:[Killarney] External network outage - Panne du réseau externe
-DTSTART;TZID=America/Toronto:20250704T205200
-DTEND;TZID=America/Toronto:20250704T221200
-DTSTAMP:20260703T134918Z
-UID:drac-incident-1357@status.alliancecan.ca
-CATEGORIES:UNPLANNED
-DESCRIPTION:The external network is down.\n/ Le réseau externe est hors l
- igne.\n\nhttps://status.alliancecan.ca/view_incident?incident=1357
-URL:https://status.alliancecan.ca/view_incident?incident=1357
-END:VEVENT
 BEGIN:VEVENT
 SUMMARY:[DRAC] 2025-09-16 Planned Outage - Arrêt planifié
 DTSTART;TZID=America/Toronto:20250916T070000
@@ -64,53 +20,6 @@ DESCRIPTION:Killarney will be unavailable on 2025-09-16 07:00. During this
  rrêtée et devra être soumise à nouveau une fois les travaux terminés.
  \n\nhttps://status.alliancecan.ca/view_incident?incident=1395
 URL:https://status.alliancecan.ca/view_incident?incident=1395
-END:VEVENT
-BEGIN:VEVENT
-SUMMARY:[Killarney] Authentication issues
-DTSTART;TZID=America/Toronto:20251017T141900
-DTEND;TZID=America/Toronto:20251018T141900
-DTSTAMP:20260703T134918Z
-UID:drac-incident-1442@status.alliancecan.ca
-CATEGORIES:UNPLANNED
-DESCRIPTION:Auth malfunctioning\, not allowing anyone to log in to login n
- odes. Running jobs not affected.\n\nhttps://status.alliancecan.ca/view_inc
- ident?incident=1442
-URL:https://status.alliancecan.ca/view_incident?incident=1442
-END:VEVENT
-BEGIN:VEVENT
-SUMMARY:[Killarney] Outage - Panne
-DTSTART;TZID=America/Toronto:20251120T165900
-DTEND;TZID=America/Toronto:20251121T004800
-DTSTAMP:20260703T134918Z
-UID:drac-incident-1470@status.alliancecan.ca
-CATEGORIES:UNPLANNED
-DESCRIPTION:SYSTEM is currently offline due to an unknown issue. We are in
- vestigating.\n\nhttps://status.alliancecan.ca/view_incident?incident=1470
-URL:https://status.alliancecan.ca/view_incident?incident=1470
-END:VEVENT
-BEGIN:VEVENT
-SUMMARY:[Killarney] Power outage - Panne électrique
-DTSTART;TZID=America/Toronto:20260217T044700
-DTEND;TZID=America/Toronto:20260217T153500
-DTSTAMP:20260703T134918Z
-UID:drac-incident-1536@status.alliancecan.ca
-CATEGORIES:UNPLANNED
-DESCRIPTION:There is a power outage at this site.\n/ Il y a une panne de c
- ourant sur ce site.\n\nhttps://status.alliancecan.ca/view_incident?inciden
- t=1536
-URL:https://status.alliancecan.ca/view_incident?incident=1536
-END:VEVENT
-BEGIN:VEVENT
-SUMMARY:[Killarney] Power outage - Panne électrique
-DTSTART;TZID=America/Toronto:20260316T170700
-DTEND;TZID=America/Toronto:20260318T154500
-DTSTAMP:20260703T134918Z
-UID:drac-incident-1556@status.alliancecan.ca
-CATEGORIES:UNPLANNED
-DESCRIPTION:There is a power outage at this site.\n/ Il y a une panne de c
- ourant sur ce site.\n\nhttps://status.alliancecan.ca/view_incident?inciden
- t=1556
-URL:https://status.alliancecan.ca/view_incident?incident=1556
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:[Killarney] Planned Outage - Arrêt planifié
@@ -142,20 +51,6 @@ DESCRIPTION:Killarney will be unavailable Wednesday\, May 20\, 2026\, from
  is back online. Pending/queued jobs will be scheduled once service has bee
  n restored.\n\nhttps://status.alliancecan.ca/view_incident?incident=1619
 URL:https://status.alliancecan.ca/view_incident?incident=1619
-END:VEVENT
-BEGIN:VEVENT
-SUMMARY:[Killarney] Killarney has reduced availability due to implementing
-  security fixes.
-DTSTART;TZID=America/Toronto:20260520T192300
-DTEND;TZID=America/Toronto:20260520T201700
-DTSTAMP:20260703T134918Z
-UID:drac-incident-1610@status.alliancecan.ca
-CATEGORIES:UNPLANNED
-DESCRIPTION:Killarney has reduced availability due to implementing securit
- y fixes. Upgrading of nvidia driver to 580 series.\nExpectation for fill b
- ack in service: 4:00pm EDT ~\n\nhttps://status.alliancecan.ca/view_inciden
- t?incident=1610
-URL:https://status.alliancecan.ca/view_incident?incident=1610
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:[Killarney] Planned Outage - Arrêt planifié
@@ -211,19 +106,5 @@ DESCRIPTION:On Monday to Friday\, June 22-26 \, 2026 Vector's Killarney h
  y\, performance and add enhancements to the environment.\n\nhttps://status
  .alliancecan.ca/view_incident?incident=1618
 URL:https://status.alliancecan.ca/view_incident?incident=1618
-END:VEVENT
-BEGIN:VEVENT
-SUMMARY:[Killarney] Outage - Panne
-DTSTART;TZID=America/Toronto:20260629T221700
-DTEND;TZID=America/Toronto:20260702T171900
-DTSTAMP:20260703T134918Z
-UID:drac-incident-1648@status.alliancecan.ca
-CATEGORIES:UNPLANNED
-DESCRIPTION:Killarney is completely currently offline due to a cooling iss
- ue at the SciNet data centre. SciNet is investigating.\nRunning jobs would
-  have died. Pending jobs would remain in the queue. Logins and accessing d
- ata is not possible.\n\nhttps://status.alliancecan.ca/view_incident?incide
- nt=1648
-URL:https://status.alliancecan.ca/view_incident?incident=1648
 END:VEVENT
 END:VCALENDAR
