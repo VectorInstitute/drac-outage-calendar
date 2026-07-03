@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""One-off backfill: crawl historic DRAC incident pages 252..1644.
+"""One-off backfill: crawl historic DRAC incident pages 252..1651.
 
 Fetches each view_incident page once (cached to CACHE_DIR), then classifies,
 parses dates, dedups, and writes historic.ics. Re-running only re-parses the
@@ -20,7 +20,7 @@ import drac_outages_ics as M
 # Where fetched incident pages are cached (one .html per id). Overridable with
 # --cache-dir; the crawl only hits the network for ids not already cached.
 CACHE_DIR = os.environ.get("BACKFILL_CACHE", "historic_cache")
-LO, HI = 252, 1644
+LO, HI = 252, 1651
 HEADERS = {"User-Agent": "drac-outage-calendar/1.0 (personal use)"}
 DELAY = 0.5
 
