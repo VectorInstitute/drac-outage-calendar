@@ -173,6 +173,34 @@ def page_timestamps(html, tz=DEFAULT_TZ):
     )
 
 
+_SEP_LINE = re.compile(r"^[=\-*_–—]{3,}$")
+_SENTENCE_END = re.compile(r"[.!?:][\"')\]]*$")
+
+
+def _reflow_summary_lines(lines):
+    r"""Re-join inline-split lines, keeping only genuine block breaks.
+
+    ``get_text("\n")`` puts every inline element (a link, a styled span) on its
+    own line, so a URL mid-sentence looks like a paragraph break. Join such soft
+    breaks back together, but keep a break at a separator line ("======") or
+    after a line that ends a sentence -- i.e. the real English/French paragraph
+    breaks stay, an inline URL does not.
+    """
+    out = []
+    for ln in lines:
+        soft = (
+            out
+            and not _SEP_LINE.match(ln)
+            and not _SEP_LINE.match(out[-1])
+            and not _SENTENCE_END.search(out[-1])
+        )
+        if soft:
+            out[-1] = f"{out[-1]} {ln}"
+        else:
+            out.append(ln)
+    return out
+
+
 def parse_incident(html, url, tz=DEFAULT_TZ):
     soup = BeautifulSoup(html, "html.parser")
     text = soup.get_text("\n", strip=True)
@@ -216,7 +244,7 @@ def parse_incident(html, url, tz=DEFAULT_TZ):
         # one paragraph is hard to read. Only collapse horizontal whitespace
         # within each line and drop blank lines.
         lines = [re.sub(r"[ \t]+", " ", ln).strip() for ln in m.group(1).splitlines()]
-        summary = "\n".join(ln for ln in lines if ln)
+        summary = "\n".join(_reflow_summary_lines([ln for ln in lines if ln]))
 
     dt_start = dt_end = None
     if start:

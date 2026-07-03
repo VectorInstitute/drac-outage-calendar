@@ -432,6 +432,35 @@ class ParseIncidentTests(unittest.TestCase):
         inc = M.parse_incident(html, "x?incident=1614")
         self.assertEqual(inc["summary"], "Fir is unavailable, investigating.")
 
+    def test_summary_inline_url_not_broken(self):
+        # An inline <a> link mid-sentence must stay on the line, not split it.
+        html = (
+            "<p>Incident description</p>"
+            "<table><tr><th>h</th></tr>"
+            "<tr><td>Trillium</td><td>Open</td><td></td><td></td></tr></table>"
+            "<p>Title</p><p>Outage</p>"
+            "<p>Summary</p>"
+            "<p><span>Systems are down. Please see </span>"
+            '<a href="https://x.example">https://x.example</a>'
+            "<span> for updates.</span></p>"
+            "<p>Updated by X on</p>"
+        )
+        inc = M.parse_incident(html, "x?incident=1649")
+        self.assertEqual(
+            inc["summary"],
+            "Systems are down. Please see https://x.example for updates.",
+        )
+
+    def test_reflow_keeps_separator_and_sentence_breaks(self):
+        self.assertEqual(
+            M._reflow_summary_lines(["Please see", "http://x", "for details."]),
+            ["Please see http://x for details."],
+        )
+        self.assertEqual(
+            M._reflow_summary_lines(["English text.", "======", "Texte français."]),
+            ["English text.", "======", "Texte français."],
+        )
+
     def test_summary_skips_update_block(self):
         # Incidents with status updates repeat a "Summary" for the latest update
         # before the "Incident description" block; take the canonical one.
