@@ -1,7 +1,7 @@
 name: Build outage calendar
 on:
   schedule:
-    - cron: "0 * * * *"      # hourly (on the hour, UTC)
+    - cron: "41 * * * *"     # hourly at :41 (off the congested top of the hour)
   workflow_dispatch:          # lets you run it manually
 permissions:
   contents: write          # to commit accumulated state back to calendar-state

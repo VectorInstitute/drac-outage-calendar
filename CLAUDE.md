@@ -115,7 +115,8 @@ app can subscribe by URL and refresh automatically.
 
 ## Deployment
 - Hosted as a public repo under the VectorInstitute GitHub org.
-- `.github/workflows/outages.yml` runs hourly (cron `0 * * * *`) + on
+- `.github/workflows/outages.yml` runs hourly (cron `41 * * * *`, offset off the
+  congested top of the hour for more reliable scheduling) + on
   manual dispatch. It calls `build_feeds.py`, which scrapes the site **once** and
   writes all four feeds from that shared incident set, then deploys via the
   official `upload-pages-artifact` / `deploy-pages` actions. Two are *full* feeds
