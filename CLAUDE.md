@@ -69,8 +69,10 @@ app can subscribe by URL and refresh automatically.
   one run so a reset FILE can't trigger a full crawl. Limitation: an outage
   whose id exceeds every currently-visible id (created after the newest visible
   incident, then resolved) is caught next run, once a higher visible id appears.
-  Each feed needs its OWN state file (the two feeds run as separate invocations;
-  a shared file would let the first advance the mark past the second's scan).
+  In the deployed job all feeds share ONE scrape (`build_feeds.py`), so they
+  share a single gap-scan state file, run once for the whole run. (The standalone
+  `drac_outages_ics.py --scan-state` still takes a per-invocation file; only give
+  separate invocations separate files, since each would advance the mark.)
 - `backfill_historic.py` is a one-off (not part of the daily job) that crawls the
   full incident-id range (252..1644), caching one page per id so re-runs don't
   re-fetch. It reuses this module's parsing, anchors each event's year to its
@@ -104,21 +106,25 @@ app can subscribe by URL and refresh automatically.
 - Two merge guards protect the accumulated history: if `--merge-from` points at
   a file that exists but won't parse, the run aborts rather than overwrite it;
   and if the scrape returns zero incidents at all (fetch failed / layout
-  changed), the merge aborts so future events aren't dropped as if cancelled. A
+  changed), `build_feed` preserves the previous feed file unchanged rather than
+  merging an empty scrape (which would drop future events as if cancelled). A
   per-cluster feed legitimately filtering to zero is fine — the guard keys off
-  the unfiltered scrape count, not the post-filter one.
+  the pre-filter scrape count (total for a full feed, scheduled-only for a
+  planned feed), not the post-service-filter one.
 
 ## Deployment
 - Hosted as a public repo under the VectorInstitute GitHub org.
 - `.github/workflows/outages.yml` runs every 6 hours (cron `0 */6 * * *`) + on
-  manual dispatch, builds four feeds, and deploys via the official
-  `upload-pages-artifact` / `deploy-pages` actions. Two are *full* feeds
-  (scheduled + unplanned, via `--include-unplanned`): `public/outages.ics` (all
-  clusters) and `public/killarney.ics` (Killarney). Two are *planned-only*
-  (scheduled maintenance): `public/outages-planned-only.ics` and
-  `public/killarney-planned-only.ics`. The script is invoked once per feed, so
-  each run scrapes the site four times (four runs/day) — still within polite
-  limits.
+  manual dispatch. It calls `build_feeds.py`, which scrapes the site **once** and
+  writes all four feeds from that shared incident set, then deploys via the
+  official `upload-pages-artifact` / `deploy-pages` actions. Two are *full* feeds
+  (scheduled + unplanned): `public/outages.ics` (all clusters) and
+  `public/killarney.ics` (Killarney). Two are *planned-only* (scheduled
+  maintenance): `public/outages-planned-only.ics` and
+  `public/killarney-planned-only.ics`. One scrape per run × four runs/day — well
+  within polite limits. (`build_feeds.py` holds the feed list and reuses
+  `drac_outages_ics.scrape_incidents` / `build_feed`; the `drac_outages_ics.py`
+  CLI still builds a single feed for local/manual use.)
 - History lives on the `calendar-state` orphan branch (no shared history with
   `main`), which holds the four `.ics` files (plus a README and a
   `.gitattributes` marking `*.ics -text` so CRLF line endings are byte-preserved
@@ -143,13 +149,14 @@ app can subscribe by URL and refresh automatically.
         --service Killarney --calname "Killarney Cluster Outages"
     python drac_outages_ics.py -o outages.ics \
         --merge-from outages.ics      # carry past events forward (in-place merge)
+    python build_feeds.py --out-dir public --state-dir state   # all feeds, one scrape
 
 ## Known caveats / open items
 - Depends on the current status-page HTML layout; brittle if Cachet markup changes.
 - Depends on outage dates being written parseably in incident summaries.
 - Be a polite scraper: keep the schedule modest. Currently every 6 hours (four
-  runs/day, each scraping once per feed); don't push it much higher without a
-  reason — there's no official ToS feed.
+  runs/day, one scrape per run via `build_feeds.py`); don't push it much higher
+  without a reason — there's no official ToS feed.
 - Org policy must permit public Pages; a custom org Pages domain would change the URL.
 - Timezone handling for a time's zone, in precedence order: (1) an explicit zone
   written in the summary (EDT, CST, PT, ...) mapped via TZINFOS/`TZ_ZONE`;

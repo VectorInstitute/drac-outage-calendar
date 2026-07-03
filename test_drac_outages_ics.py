@@ -11,6 +11,7 @@ No network: every test builds its inputs in memory. Run with
 import os
 import tempfile
 import unittest
+from collections import Counter
 from datetime import date, datetime, timedelta
 from unittest import mock
 from zoneinfo import ZoneInfo
@@ -694,6 +695,79 @@ class ClusterTzTests(unittest.TestCase):
     def test_national_or_unknown_is_none(self):
         for s in ("DRAC", "FRDR-DFDR", "DMP Assistant", "", None):
             self.assertIsNone(M.cluster_tz(s))
+
+
+class BuildFeedTests(unittest.TestCase):
+    TZ = "America/Toronto"
+
+    def setUp(self):
+        self.tmp = tempfile.mkdtemp()
+
+    def _incidents(self):
+        def inc(svc, title, day, kind):
+            return {
+                "service": svc,
+                "title": title,
+                "summary": "",
+                "url": f"u?incident={day}",
+                "start": datetime(2026, 6, day, 9, 0, tzinfo=TORONTO),
+                "end": datetime(2026, 6, day, 12, 0, tzinfo=TORONTO),
+                "kind": kind,
+            }
+
+        return [
+            inc("Fir", "Sched", 1, "scheduled"),
+            inc("Nibi", "Unpl", 2, "unplanned"),
+            inc("Killarney", "KillSched", 3, "scheduled"),
+        ]
+
+    def _cats(self, path):
+        cal = Calendar.from_ical(open(path, "rb").read())
+        return Counter(
+            str(e.get("categories")).split("'")[1] for e in cal.walk("VEVENT")
+        )
+
+    def test_full_feed_includes_both_kinds(self):
+        out = os.path.join(self.tmp, "o.ics")
+        M.build_feed(self._incidents(), 3, self.TZ, out)
+        self.assertEqual(dict(self._cats(out)), {"SCHEDULED": 2, "UNPLANNED": 1})
+
+    def test_scheduled_only_drops_unplanned(self):
+        out = os.path.join(self.tmp, "o.ics")
+        M.build_feed(self._incidents(), 2, self.TZ, out, scheduled_only=True)
+        self.assertEqual(dict(self._cats(out)), {"SCHEDULED": 2})
+
+    def test_service_filter(self):
+        out = os.path.join(self.tmp, "o.ics")
+        M.build_feed(self._incidents(), 3, self.TZ, out, service="Killarney")
+        cal = Calendar.from_ical(open(out, "rb").read())
+        self.assertEqual(
+            [str(e.get("summary")) for e in cal.walk("VEVENT")],
+            ["[Killarney] KillSched"],
+        )
+
+    def test_zero_scrape_preserves_previous_state(self):
+        # A previous feed holding a FUTURE event; a zero-yield scrape must keep
+        # it (not merge an empty scrape that would drop it as cancelled).
+        prev = [
+            {
+                "service": "Fir",
+                "title": "Future",
+                "summary": "",
+                "url": "u?incident=9",
+                "start": datetime(2027, 1, 1, 9, 0, tzinfo=TORONTO),
+                "end": datetime(2027, 1, 1, 12, 0, tzinfo=TORONTO),
+                "kind": "scheduled",
+            }
+        ]
+        prev_path = os.path.join(self.tmp, "feed.ics")
+        M.build_feed(prev, 1, self.TZ, prev_path)
+        out = os.path.join(self.tmp, "feed_out.ics")
+        M.build_feed([], 0, self.TZ, out, merge_from=prev_path)
+        cal = Calendar.from_ical(open(out, "rb").read())
+        self.assertEqual(
+            [str(e.get("summary")) for e in cal.walk("VEVENT")], ["[Fir] Future"]
+        )
 
 
 if __name__ == "__main__":

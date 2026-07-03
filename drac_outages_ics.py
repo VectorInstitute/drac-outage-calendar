@@ -833,6 +833,164 @@ def scan_gap(ids, tzname, include_unplanned, now, delay=0.5):
     return out
 
 
+def scrape_incidents(tz, include_unplanned, now=None, scan_state=None):
+    """Fetch and parse every current incident once -- the shared scrape.
+
+    Returns ``(incidents, n_scheduled, n_total, new_scan_mark)``: the full list
+    (scheduled, plus unplanned when requested, plus any catch-up gap-scan hits),
+    the home-page counts *before* the gap scan (the merge guard keys off these),
+    and the gap-scan high-water id to persist (or None). Exits on a home-page
+    fetch failure. Every feed is built from one call to this, so a run hits the
+    site once no matter how many feeds it produces.
+    """
+    now = now or datetime.now(ZoneInfo(tz))
+    try:
+        home = fetch(HOME)
+    except requests.RequestException as e:
+        sys.exit(f"Could not fetch status page: {e}")
+
+    urls = get_scheduled_incident_urls(home)
+    if not urls:
+        print(
+            "No scheduled events found (page layout may have changed).", file=sys.stderr
+        )
+
+    incidents = []
+    for service, url in urls:
+        try:
+            inc = parse_incident(fetch(url), url, tz)
+            if inc["service"] in (None, "DRAC"):
+                inc["service"] = service
+            inc["kind"] = "scheduled"
+            incidents.append(inc)
+            when = inc["start"].isoformat() if inc["start"] else "date TBD"
+            print(f"  • {inc['service']}: {inc['title']} — {when}")
+        except requests.RequestException as e:
+            print(f"  ! skip {url}: {e}", file=sys.stderr)
+
+    n_scheduled = len(incidents)
+
+    if include_unplanned:
+        scheduled_urls = {u for _, u in urls}
+        for service, url in get_current_incident_urls(home):
+            if url in scheduled_urls:
+                continue  # already captured as a scheduled event
+            try:
+                inc = parse_incident(fetch(url), url, tz)
+            except requests.RequestException as e:
+                print(f"  ! skip {url}: {e}", file=sys.stderr)
+                continue
+            if inc["service"] in (None, "DRAC"):
+                inc["service"] = service
+            inc["kind"] = "unplanned"
+            date_unplanned(inc, now)
+            incidents.append(inc)
+            when = inc["start"].isoformat() if inc["start"] else "date TBD"
+            print(f"  ⚠ {inc['service']}: {inc['title']} — {when} (unplanned)")
+
+    # Home-page counts before the gap scan: the merge guard keys off these to
+    # tell "the scrape failed" (zero found) from "nothing currently scheduled".
+    n_total = len(incidents)
+
+    # Catch-up gap scan: fetch the incident ids between the last one we scanned
+    # and the highest currently visible, to capture sub-day outages the poll
+    # skipped. Its results join `incidents`; the feeds' service filters run later.
+    new_scan_mark = None
+    if scan_state:
+        visible = {incident_id(u) for _, u in urls}
+        visible |= {incident_id(u) for _, u in get_current_incident_urls(home)}
+        if not visible:
+            print("Scan-gap: no visible incidents; skipping.", file=sys.stderr)
+        else:
+            current_max = max(visible)
+            last = read_scan_state(scan_state)
+            if last is None:
+                new_scan_mark = current_max
+                print(f"Scan-gap: no prior state; mark bootstrapped to {current_max}.")
+            else:
+                gap = [i for i in range(last + 1, current_max + 1) if i not in visible]
+                capped = len(gap) > SCAN_CAP
+                to_scan = gap[:SCAN_CAP]
+                found = scan_gap(to_scan, tz, include_unplanned, now)
+                incidents.extend(found)
+                # Advance only over the contiguous range actually covered, so a
+                # capped run resumes at the right place next time.
+                new_scan_mark = to_scan[-1] if capped else current_max
+                for inc in found:
+                    when = inc["start"].isoformat() if inc["start"] else "date TBD"
+                    print(f"  + {inc['service']}: {inc['title']} — {when} (gap)")
+                msg = (
+                    f"Scan-gap: {len(to_scan)} id(s) in ({last}, {current_max}], "
+                    f"{len(found)} outage(s) found"
+                )
+                if capped:
+                    msg += f"; capped at {SCAN_CAP}, resuming after {new_scan_mark}"
+                print(msg + ".")
+
+    return incidents, n_scheduled, n_total, new_scan_mark
+
+
+def build_feed(
+    incidents,
+    guard_count,
+    tzname,
+    output,
+    calname=DEFAULT_CALNAME,
+    service=None,
+    scheduled_only=False,
+    merge_from=None,
+):
+    """Build one feed from the shared incident set: filter, merge, write.
+
+    ``guard_count`` is the relevant pre-filter scrape count (total for a full
+    feed, scheduled-only for a planned feed); when it's zero and a previous
+    state exists, the scrape is treated as failed and the previous file is
+    preserved unchanged rather than merged -- so a broken scrape can't drop the
+    accumulated history's future events. Returns the number of events written.
+    """
+    prev = None
+    if merge_from:
+        try:
+            prev = read_calendar(merge_from)
+        except Exception as e:
+            sys.exit(
+                f"--merge-from {merge_from!r} exists but could not be parsed "
+                f"({e}); aborting so accumulated history isn't lost."
+            )
+
+    sel = incidents
+    if scheduled_only:
+        sel = [i for i in sel if i.get("kind", "scheduled") == "scheduled"]
+    if service:
+        sel = [i for i in sel if matches_service(i, service)]
+        print(f"  Filtered to ~ {service!r} (service/title/summary): {len(sel)}")
+
+    if prev is not None and guard_count == 0:
+        # Zero-yield scrape (fetch failed / layout changed): keep the previous
+        # feed exactly as-is rather than merging an empty scrape into it.
+        cal = prev
+        print(f"  Scrape yielded 0 incidents; preserving {output} unchanged.")
+    else:
+        cal = build_calendar(sel, tzname, calname)
+        if prev is not None:
+            carried, truncated, dropped, superseded = merge_history(cal, prev, tzname)
+            print(
+                f"  Merged previous state: {carried} carried, {truncated} "
+                f"truncated, {dropped} dropped, {superseded} superseded."
+            )
+        elif merge_from:
+            print(f"  No previous state at {merge_from} -- bootstrapping fresh.")
+
+    sort_events(cal, tzname)
+    with open(output, "wb") as f:
+        f.write(cal.to_ical())
+    written = sum(1 for _ in cal.walk("VEVENT"))
+    undated = sum(1 for i in sel if i["start"] is None)
+    note = f" ({undated} undated, omitted)" if undated else ""
+    print(f"  Wrote {written} event(s) to {output}{note}")
+    return written
+
+
 def main():
     ap = argparse.ArgumentParser(
         description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter
@@ -877,131 +1035,19 @@ def main():
         f"FILE is absent; at most {SCAN_CAP} ids per run)",
     )
     args = ap.parse_args()
-    now = datetime.now(ZoneInfo(args.tz))
 
-    try:
-        home = fetch(HOME)
-    except requests.RequestException as e:
-        sys.exit(f"Could not fetch status page: {e}")
-
-    urls = get_scheduled_incident_urls(home)
-    if not urls:
-        print(
-            "No scheduled events found (page layout may have changed).", file=sys.stderr
-        )
-
-    incidents = []
-    for service, url in urls:
-        try:
-            inc = parse_incident(fetch(url), url, args.tz)
-            if inc["service"] in (None, "DRAC"):
-                inc["service"] = service
-            inc["kind"] = "scheduled"
-            incidents.append(inc)
-            when = inc["start"].isoformat() if inc["start"] else "date TBD"
-            print(f"  • {inc['service']}: {inc['title']} — {when}")
-        except requests.RequestException as e:
-            print(f"  ! skip {url}: {e}", file=sys.stderr)
-
-    if args.include_unplanned:
-        scheduled_urls = {u for _, u in urls}
-        for service, url in get_current_incident_urls(home):
-            if url in scheduled_urls:
-                continue  # already captured as a scheduled event
-            try:
-                inc = parse_incident(fetch(url), url, args.tz)
-            except requests.RequestException as e:
-                print(f"  ! skip {url}: {e}", file=sys.stderr)
-                continue
-            if inc["service"] in (None, "DRAC"):
-                inc["service"] = service
-            inc["kind"] = "unplanned"
-            date_unplanned(inc, now)
-            incidents.append(inc)
-            when = inc["start"].isoformat() if inc["start"] else "date TBD"
-            print(f"  ⚠ {inc['service']}: {inc['title']} — {when} (unplanned)")
-
-    # Count what the scrape itself yielded *before* any service filter -- the
-    # merge guard below keys off this to tell "the scrape failed" (zero found)
-    # apart from "this cluster simply has nothing scheduled" (filtered to zero).
-    n_scraped = len(incidents)
-
-    # Catch-up gap scan: fetch the incident ids between the last one we scanned
-    # and the highest currently visible, to capture sub-day outages the daily
-    # poll skipped. Runs on the unfiltered scrape (so per-cluster feeds still
-    # see the whole gap), and its results join `incidents` before the filter.
-    new_scan_mark = None
-    if args.scan_state:
-        visible = {incident_id(u) for _, u in urls}
-        visible |= {incident_id(u) for _, u in get_current_incident_urls(home)}
-        if not visible:
-            print("Scan-gap: no visible incidents; skipping.", file=sys.stderr)
-        else:
-            current_max = max(visible)
-            last = read_scan_state(args.scan_state)
-            if last is None:
-                new_scan_mark = current_max
-                print(f"Scan-gap: no prior state; mark bootstrapped to {current_max}.")
-            else:
-                gap = [i for i in range(last + 1, current_max + 1) if i not in visible]
-                capped = len(gap) > SCAN_CAP
-                to_scan = gap[:SCAN_CAP]
-                found = scan_gap(to_scan, args.tz, args.include_unplanned, now)
-                incidents.extend(found)
-                # Advance only over the contiguous range actually covered, so a
-                # capped run resumes at the right place next time.
-                new_scan_mark = to_scan[-1] if capped else current_max
-                for inc in found:
-                    when = inc["start"].isoformat() if inc["start"] else "date TBD"
-                    print(f"  + {inc['service']}: {inc['title']} — {when} (gap)")
-                msg = (
-                    f"Scan-gap: {len(to_scan)} id(s) in ({last}, {current_max}], "
-                    f"{len(found)} outage(s) found"
-                )
-                if capped:
-                    msg += f"; capped at {SCAN_CAP}, resuming after {new_scan_mark}"
-                print(msg + ".")
-
-    if args.service:
-        incidents = [i for i in incidents if matches_service(i, args.service)]
-        print(
-            f"Filtered to ~ {args.service!r} (service/title/summary): "
-            f"{len(incidents)} incident(s)"
-        )
-
-    cal = build_calendar(incidents, args.tz, args.calname)
-
-    if args.merge_from:
-        try:
-            prev = read_calendar(args.merge_from)
-        except Exception as e:
-            sys.exit(
-                f"--merge-from {args.merge_from!r} exists but could not be "
-                f"parsed ({e}); aborting so accumulated history isn't lost."
-            )
-        if prev is None:
-            print(f"No previous state at {args.merge_from} -- bootstrapping fresh.")
-        elif n_scraped == 0:
-            sys.exit(
-                "Scrape found zero incidents (status page fetch failed or its "
-                "layout changed); aborting merge so future events in the "
-                "previous state aren't dropped as if cancelled."
-            )
-        else:
-            carried, truncated, dropped, superseded = merge_history(cal, prev, args.tz)
-            print(
-                f"Merged previous state: {carried} carried forward, "
-                f"{truncated} truncated, {dropped} dropped (cancelled), "
-                f"{superseded} superseded (re-published under a new id)."
-            )
-
-    sort_events(cal, args.tz)
-    with open(args.output, "wb") as f:
-        f.write(cal.to_ical())
-    written = sum(1 for c in cal.walk("VEVENT"))
-    undated = sum(1 for i in incidents if i["start"] is None)
-    note = f" ({undated} undated, omitted)" if undated else ""
-    print(f"Wrote {written} event(s) to {args.output}{note}")
+    incidents, _n_sched, n_total, new_scan_mark = scrape_incidents(
+        args.tz, args.include_unplanned, scan_state=args.scan_state
+    )
+    build_feed(
+        incidents,
+        n_total,
+        args.tz,
+        args.output,
+        calname=args.calname,
+        service=args.service,
+        merge_from=args.merge_from,
+    )
 
     # Persist the high-water id only after a successful build, and only when the
     # scrape actually saw something (new_scan_mark stays None on an empty scrape).

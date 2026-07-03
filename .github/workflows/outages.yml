@@ -23,25 +23,9 @@ jobs:
         with:
           python-version: "3.12"
       - run: pip install -r requirements.txt
-      - name: Build feeds (carrying forward elapsed events)
+      - name: Build feeds (one scrape, carrying forward elapsed events)
         run: |
-          mkdir -p public
-          # Full feeds: scheduled maintenance + unplanned outages.
-          python drac_outages_ics.py -o public/outages.ics \
-            --include-unplanned --calname "DRAC Cluster Outages" \
-            --merge-from state/outages.ics
-          python drac_outages_ics.py -o public/killarney.ics \
-            --service Killarney --include-unplanned \
-            --calname "Killarney Cluster Outages" \
-            --merge-from state/killarney.ics
-          # Planned-only feeds: scheduled maintenance only.
-          python drac_outages_ics.py -o public/outages-planned-only.ics \
-            --calname "DRAC Cluster Scheduled Outages" \
-            --merge-from state/outages-planned-only.ics
-          python drac_outages_ics.py -o public/killarney-planned-only.ics \
-            --service Killarney \
-            --calname "Killarney Cluster Scheduled Outages" \
-            --merge-from state/killarney-planned-only.ics
+          python build_feeds.py --out-dir public --state-dir state
       - name: Persist updated state to calendar-state
         run: |
           cp public/outages.ics public/outages-planned-only.ics \
