@@ -144,10 +144,15 @@ def _overlap(a, b, tz):
 
 
 def _daykey(inc):
-    """Group key: service + start-day + end-day (day granularity)."""
+    """Group key: kind + service + start-day + end-day (day granularity).
+
+    Includes kind so a scheduled maintenance and a coincidental unplanned outage
+    on the same cluster/day aren't collapsed -- edit-republications keep their
+    kind, so real duplicates still group, but distinct kinds stay separate.
+    """
     s = inc["start"]
     e = inc["end"] or inc["start"]
-    return (inc["service"].lower(), s.date(), e.date())
+    return (inc.get("kind", "scheduled"), inc["service"].lower(), s.date(), e.date())
 
 
 def dedup_report(rows, tz="America/Toronto"):
