@@ -45,8 +45,10 @@ app can subscribe by URL and refresh automatically.
   scheduled "in progress → truncate to now" event. As a further cue its title
   gets an `ONGOING_MARKER` ("(unresolved)") inserted after the `[service]` prefix
   (e.g. `[Fir] (unresolved) Filesystem problem` — kept off the end, where a long
-  title would truncate it away); the merge strips that marker when it finalizes
-  the event (carried/truncated), since it's no longer live. A *past* one (`ongoing=False` — reached
+  title would truncate it away), and its description opens with an `ONGOING_NOTE`
+  ("Unresolved: This is an ongoing issue without a definitive end date.") that
+  spells the same thing out in the body; the merge strips both the marker and the
+  note when it finalizes the event (carried/truncated), since it's no longer live. A *past* one (`ongoing=False` — reached
   via the gap scan or backfill, already off the page, so already resolved) is
   not still running; its end is left unset so `build_calendar` applies the
   `DEFAULT_DURATION` (24h) rather than stretching a long-resolved outage to now.

@@ -46,6 +46,9 @@ DEFAULT_CALNAME = "DRAC Canada Cluster Outages"
 # it doesn't read as finished in a calendar (its end is only the scan time) --
 # e.g. "[Fir] (unresolved) Filesystem problem". Stripped once it resolves.
 ONGOING_MARKER = "(unresolved)"
+# Prepended to a live outage's description so the body spells out what the title
+# marker signals; stripped (like the marker) once the outage resolves.
+ONGOING_NOTE = "Unresolved: This is an ongoing issue without a definitive end date."
 HEADERS = {"User-Agent": "drac-outage-calendar/1.0 (personal use)"}
 # Event length used when an incident gives a start but no end -- and, for a
 # *past* (resolved) outage with no recorded resolution time, the length it's
@@ -575,6 +578,8 @@ def build_calendar(incidents, tzname, calname=DEFAULT_CALNAME):
         uid = inc["url"].split("=")[-1]
         ev.add("uid", f"drac-incident-{uid}@status.alliancecan.ca")
         desc = (inc["summary"] or "").strip()
+        if inc.get("ongoing"):
+            desc = f"{ONGOING_NOTE}\n\n{desc}".strip()
         ev.add("description", f"{desc}\n\n{inc['url']}".strip())
         ev.add("url", inc["url"])
 
@@ -678,16 +683,21 @@ def _event_service(ev):
 
 
 def _strip_ongoing_marker(ev):
-    """Remove the live-outage title marker from an event being finalized.
+    """Remove the live-outage title marker and description note when finalizing.
 
     A carried/truncated event has dropped out of the scrape, so it is no longer
-    live -- its title should read as a finished outage.
+    live -- its title and description should read as a finished outage.
     """
     s = str(ev.get("summary", ""))
     tag = f"] {ONGOING_MARKER} "
     if tag in s:
         ev.pop("summary", None)
         ev.add("summary", s.replace(tag, "] ", 1))
+    d = str(ev.get("description", ""))
+    note = f"{ONGOING_NOTE}\n\n"
+    if d.startswith(note):
+        ev.pop("description", None)
+        ev.add("description", d[len(note) :])
 
 
 def _content_key(ev, tz):

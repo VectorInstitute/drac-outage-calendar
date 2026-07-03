@@ -178,6 +178,27 @@ class MergeHistoryTests(unittest.TestCase):
         carried = next(iter(fresh.walk("VEVENT")))
         self.assertEqual(str(carried.get("summary")), "[Fir] Filesystem problem")
 
+    def test_carried_event_loses_ongoing_note(self):
+        # Build a real ongoing event, round-trip through .ics, then resolve it:
+        # the description note is stripped but the real summary text stays.
+        inc = {
+            "service": "Fir",
+            "title": "Filesystem problem",
+            "summary": "It broke.",
+            "url": "https://status.alliancecan.ca/view_incident?incident=1700",
+            "start": datetime(2026, 6, 20, 9, 0, tzinfo=TORONTO),
+            "end": datetime(2026, 6, 20, 12, 0, tzinfo=TORONTO),  # < NOW
+            "kind": "unplanned",
+            "ongoing": True,
+        }
+        prev = Calendar.from_ical(M.build_calendar([inc], "America/Toronto").to_ical())
+        fresh = _calendar()
+        M.merge_history(fresh, prev, "America/Toronto", now=self.NOW)
+        carried = next(iter(fresh.walk("VEVENT")))
+        self.assertNotIn(M.ONGOING_NOTE, str(carried.get("description")))
+        self.assertIn("It broke.", str(carried.get("description")))
+        self.assertNotIn(M.ONGOING_MARKER, str(carried.get("summary")))
+
 
 class SortEventsTests(unittest.TestCase):
     def test_events_sorted_by_start(self):
@@ -646,6 +667,16 @@ class BuildCalendarTests(unittest.TestCase):
         )
         ev = next(iter(M.build_calendar([inc], "America/Toronto").walk("VEVENT")))
         self.assertEqual(ev.get("dtstart").dt.utcoffset(), timedelta(hours=-4))
+
+    def test_ongoing_description_opens_with_note(self):
+        cal = M.build_calendar([self._incident(ongoing=True)], "America/Toronto")
+        ev = next(iter(cal.walk("VEVENT")))
+        self.assertTrue(str(ev.get("description")).startswith(M.ONGOING_NOTE))
+
+    def test_non_ongoing_description_has_no_note(self):
+        cal = M.build_calendar([self._incident()], "America/Toronto")
+        ev = next(iter(cal.walk("VEVENT")))
+        self.assertNotIn(M.ONGOING_NOTE, str(ev.get("description")))
 
 
 class ClusterTzTests(unittest.TestCase):
