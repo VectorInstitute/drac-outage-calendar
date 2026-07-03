@@ -69,10 +69,11 @@ app can subscribe by URL and refresh automatically.
   one run so a reset FILE can't trigger a full crawl. Limitation: an outage
   whose id exceeds every currently-visible id (created after the newest visible
   incident, then resolved) is caught next run, once a higher visible id appears.
-  In the deployed job all feeds share ONE scrape (`build_feeds.py`), so they
-  share a single gap-scan state file, run once for the whole run. (The standalone
-  `drac_outages_ics.py --scan-state` still takes a per-invocation file; only give
-  separate invocations separate files, since each would advance the mark.)
+  The deployed job runs all feeds from ONE scrape (`build_feeds.py`) with one
+  shared `--scan-state` (`state/scan-state.txt` on `calendar-state`), so the gap
+  scan runs once for the whole run. (The standalone `drac_outages_ics.py
+  --scan-state` still takes a per-invocation file; only give separate invocations
+  separate files, since each would advance the mark.)
 - `backfill_historic.py` is a one-off (not part of the daily job) that crawls the
   full incident-id range (252..1644), caching one page per id so re-runs don't
   re-fetch. It reuses this module's parsing, anchors each event's year to its
@@ -126,15 +127,19 @@ app can subscribe by URL and refresh automatically.
   `drac_outages_ics.scrape_incidents` / `build_feed`; the `drac_outages_ics.py`
   CLI still builds a single feed for local/manual use.)
 - History lives on the `calendar-state` orphan branch (no shared history with
-  `main`), which holds the four `.ics` files (plus a README and a
-  `.gitattributes` marking `*.ics -text` so CRLF line endings are byte-preserved
-  — the iCal spec wants CRLF). Each run checks that branch out into `state/`,
-  builds with `--merge-from state/<feed>.ics`, copies the merged result back, and
-  commits + pushes it to `calendar-state` (only when it changed). This is the
-  durable, version-controlled store of past events; the Pages CDN copy is just an
-  output. The branch was seeded from the historic backfill (`backfill_historic.py`
-  regenerated from the cache), so the feeds carry the full 2019→now history. The
-  workflow needs `contents: write` for the commit-back.
+  `main`), which holds the feed `.ics` files and `scan-state.txt` (the gap-scan
+  high-water id), plus a README and a `.gitattributes` marking `*.ics -text` so
+  CRLF line endings are byte-preserved — the iCal spec wants CRLF. Each run
+  checks that branch out into `state/`, builds with `--merge-from state/<feed>.ics`
+  and one shared `--scan-state state/scan-state.txt`, copies the merged result
+  back, and commits + pushes the whole `state/` (feeds + scan-state) to
+  `calendar-state` (only when it changed). This is the durable, version-controlled
+  store of past events; the Pages CDN copy is just an output. The branch was
+  seeded from the historic backfill (`backfill_historic.py` regenerated from the
+  cache), so the feeds start with the full 2019→now history; the gap scan then
+  keeps them as complete as a fresh backfill — accumulating each new sub-day
+  outage over time rather than ever re-crawling. The workflow needs
+  `contents: write` for the commit-back.
 - Pages source must be set to "GitHub Actions" in repo Settings -> Pages.
 - Subscribe URLs (project site), `https://vectorinstitute.github.io/<repo-name>/`:
   - all clusters, full: `outages.ics` — scheduled only: `outages-planned-only.ics`
