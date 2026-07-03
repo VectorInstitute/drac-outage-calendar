@@ -486,6 +486,43 @@ def parse_dates_from_prose(summary, ref=None):
     return start, end
 
 
+# Best-effort home timezone for each cluster, used to interpret bare times the
+# site quotes without an explicit zone. Only the non-Eastern clusters actually
+# change anything (Eastern == the America/Toronto default), but the Eastern ones
+# are listed for clarity. National / multi-site services (DRAC, FRDR, DMP
+# Assistant, ...) are absent, so they fall back to the calendar default.
+CLUSTER_TZ = {
+    "fir": "America/Vancouver",  # SFU, BC
+    "cedar": "America/Vancouver",  # SFU, BC
+    "arbutus": "America/Vancouver",  # UVic, BC
+    "vulcan": "America/Edmonton",  # Amii, Edmonton AB
+    "nibi": "America/Toronto",  # Waterloo, ON
+    "graham": "America/Toronto",  # Waterloo, ON
+    "trillium": "America/Toronto",  # Toronto, ON
+    "niagara": "America/Toronto",  # Toronto, ON
+    "killarney": "America/Toronto",  # Vector, Toronto ON
+    "narval": "America/Toronto",  # Montreal, QC
+    "rorqual": "America/Toronto",  # Montreal, QC
+    "beluga": "America/Toronto",  # Montreal, QC
+    "tamia": "America/Toronto",  # Quebec City, QC
+}
+
+
+def cluster_tz(service):
+    """Return a cluster's home timezone name from its service, else None.
+
+    The site quotes a bare time (no zone written out) in the cluster's local
+    zone, so infer it from the service rather than assuming Eastern for all.
+    Accents are folded so "Béluga" matches "beluga"; national / multi-site
+    services match nothing and fall back to the calendar default.
+    """
+    s = (service or "").lower().replace("é", "e").replace("è", "e")
+    for name, tz in CLUSTER_TZ.items():
+        if re.search(rf"\b{name}\b", s):
+            return tz
+    return None
+
+
 def build_calendar(incidents, tzname, calname=DEFAULT_CALNAME):
     tz = ZoneInfo(tzname)
     cal = Calendar()
@@ -514,12 +551,15 @@ def build_calendar(incidents, tzname, calname=DEFAULT_CALNAME):
             summary = f"[{inc['service']}] {inc['title']}"
         ev.add("summary", summary)
         ev.add("categories", [inc.get("kind", "scheduled").upper()])
+        # Bare (zone-less) times are the cluster's local time; fall back to the
+        # calendar default for national / unrecognised services.
+        inc_tz = ZoneInfo(cluster_tz(inc.get("service")) or tzname)
         if start.tzinfo is None:
-            start = start.replace(tzinfo=tz)
+            start = start.replace(tzinfo=inc_tz)
         if end is None:
             end = start + DEFAULT_DURATION
         if end.tzinfo is None:
-            end = end.replace(tzinfo=tz)
+            end = end.replace(tzinfo=inc_tz)
 
         ev.add("dtstart", start)
         ev.add("dtend", end)

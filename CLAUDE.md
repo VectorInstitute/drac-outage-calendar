@@ -141,5 +141,12 @@ app can subscribe by URL and refresh automatically.
 - Depends on outage dates being written parseably in incident summaries.
 - Be a polite scraper: keep the schedule modest (daily is plenty). No official ToS feed.
 - Org policy must permit public Pages; a custom org Pages domain would change the URL.
-- Times are interpreted in America/Toronto (EST/EDT) by default; the site quotes
-  several Canadian timezones, mapped in TZINFOS in the script.
+- Timezone handling for a time's zone, in precedence order: (1) an explicit zone
+  written in the summary (EDT, CST, PT, ...) mapped via TZINFOS/`TZ_ZONE`;
+  (2) otherwise the cluster's home zone inferred from the service (`CLUSTER_TZ` /
+  `cluster_tz()` — e.g. Fir/Cedar/Arbutus → Pacific, Vulcan → Mountain, the ON/QC
+  clusters → Eastern); (3) otherwise the calendar default, America/Toronto
+  (EST/EDT), also used for national / multi-site services (DRAC, FRDR, ...). The
+  cluster inference is applied in `build_calendar` to any still-naive datetime,
+  so it covers bare prose times (e.g. "4-8PM today") and zone-less structured
+  fields alike. Cluster→zone entries are best-effort by host site.

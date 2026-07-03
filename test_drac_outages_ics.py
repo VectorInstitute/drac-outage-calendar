@@ -572,6 +572,54 @@ class BuildCalendarTests(unittest.TestCase):
         ev = next(iter(cal.walk("VEVENT")))
         self.assertEqual(str(ev.get("summary")), "[Fir] Filesystem problem")
 
+    def test_bare_time_uses_cluster_timezone(self):
+        # A zone-less prose time on a Pacific cluster is read as Pacific, even
+        # though the calendar default is Eastern.
+        inc = self._incident(
+            service="Fir",
+            start=datetime(2026, 7, 3, 16, 0),  # naive
+            end=datetime(2026, 7, 3, 20, 0),
+        )
+        ev = next(iter(M.build_calendar([inc], "America/Toronto").walk("VEVENT")))
+        self.assertEqual(str(ev.get("dtstart").dt.tzinfo), "America/Vancouver")
+        self.assertEqual(ev.get("dtstart").dt.utcoffset(), timedelta(hours=-7))
+
+    def test_bare_time_unknown_service_uses_default(self):
+        inc = self._incident(
+            service="DRAC",
+            start=datetime(2026, 7, 3, 16, 0),  # naive
+            end=datetime(2026, 7, 3, 20, 0),
+        )
+        ev = next(iter(M.build_calendar([inc], "America/Toronto").walk("VEVENT")))
+        self.assertEqual(str(ev.get("dtstart").dt.tzinfo), "America/Toronto")
+
+    def test_explicit_zone_not_overridden_by_cluster(self):
+        # An aware time (zone written in the summary) is left untouched.
+        inc = self._incident(
+            service="Fir",
+            start=datetime(2026, 7, 3, 16, 0, tzinfo=TORONTO),
+            end=datetime(2026, 7, 3, 20, 0, tzinfo=TORONTO),
+        )
+        ev = next(iter(M.build_calendar([inc], "America/Toronto").walk("VEVENT")))
+        self.assertEqual(ev.get("dtstart").dt.utcoffset(), timedelta(hours=-4))
+
+
+class ClusterTzTests(unittest.TestCase):
+    def test_pacific(self):
+        self.assertEqual(M.cluster_tz("Fir"), "America/Vancouver")
+        self.assertEqual(M.cluster_tz("Arbutus Object Storage"), "America/Vancouver")
+
+    def test_mountain(self):
+        self.assertEqual(M.cluster_tz("Vulcan"), "America/Edmonton")
+
+    def test_eastern_and_accents(self):
+        self.assertEqual(M.cluster_tz("Nibi"), "America/Toronto")
+        self.assertEqual(M.cluster_tz("Béluga"), "America/Toronto")
+
+    def test_national_or_unknown_is_none(self):
+        for s in ("DRAC", "FRDR-DFDR", "DMP Assistant", "", None):
+            self.assertIsNone(M.cluster_tz(s))
+
 
 if __name__ == "__main__":
     unittest.main()
