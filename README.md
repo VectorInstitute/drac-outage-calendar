@@ -27,7 +27,7 @@ Killarney:
 | **Killarney** (full) | `https://vectorinstitute.github.io/drac-outage-calendar/killarney.ics` |
 | **Killarney** (scheduled only) | `https://vectorinstitute.github.io/drac-outage-calendar/killarney-planned-only.ics` |
 
-All refresh every 6 hours (though calendar apps poll on their own schedule).
+All refresh hourly (though calendar apps poll on their own schedule).
 
 ## How to subscribe
 
@@ -79,7 +79,7 @@ a misleading placeholder time.
 
 ## How it works
 
-- A GitHub Actions workflow (`.github/workflows/outages.yml`) runs every 6 hours
+- A GitHub Actions workflow (`.github/workflows/outages.yml`) runs hourly
   and on manual dispatch.
 - `drac_outages_ics.py` fetches the status home page, follows each incident
   linked under "Scheduled events", and reads the date/time — from the structured

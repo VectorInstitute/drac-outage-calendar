@@ -115,14 +115,14 @@ app can subscribe by URL and refresh automatically.
 
 ## Deployment
 - Hosted as a public repo under the VectorInstitute GitHub org.
-- `.github/workflows/outages.yml` runs every 6 hours (cron `0 */6 * * *`) + on
+- `.github/workflows/outages.yml` runs hourly (cron `0 * * * *`) + on
   manual dispatch. It calls `build_feeds.py`, which scrapes the site **once** and
   writes all four feeds from that shared incident set, then deploys via the
   official `upload-pages-artifact` / `deploy-pages` actions. Two are *full* feeds
   (scheduled + unplanned): `public/outages.ics` (all clusters) and
   `public/killarney.ics` (Killarney). Two are *planned-only* (scheduled
   maintenance): `public/outages-planned-only.ics` and
-  `public/killarney-planned-only.ics`. One scrape per run × four runs/day — well
+  `public/killarney-planned-only.ics`. One scrape per run × 24 runs/day — well
   within polite limits. (`build_feeds.py` holds the feed list and reuses
   `drac_outages_ics.scrape_incidents` / `build_feed`; the `drac_outages_ics.py`
   CLI still builds a single feed for local/manual use.)
@@ -159,9 +159,9 @@ app can subscribe by URL and refresh automatically.
 ## Known caveats / open items
 - Depends on the current status-page HTML layout; brittle if Cachet markup changes.
 - Depends on outage dates being written parseably in incident summaries.
-- Be a polite scraper: keep the schedule modest. Currently every 6 hours (four
-  runs/day, one scrape per run via `build_feeds.py`); don't push it much higher
-  without a reason — there's no official ToS feed.
+- Be a polite scraper: keep the schedule modest. Currently hourly (24 runs/day,
+  one scrape per run via `build_feeds.py`); don't push it much higher without a
+  reason — there's no official ToS feed.
 - Org policy must permit public Pages; a custom org Pages domain would change the URL.
 - Timezone handling for a time's zone, in precedence order: (1) an explicit zone
   written in the summary (EDT, CST, PT, ...) mapped via TZINFOS/`TZ_ZONE`;
