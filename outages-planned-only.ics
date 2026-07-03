@@ -4323,7 +4323,7 @@ BEGIN:VEVENT
 SUMMARY:[FRDR-DFDR] FRDR Maintenance
 DTSTART;TZID=America/Winnipeg:20260527T140000
 DTEND;TZID=America/Winnipeg:20260527T143000
-DTSTAMP:20260703T134918Z
+DTSTAMP:20260703T170021Z
 UID:drac-incident-1616@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:FRDR will be unavailable due to scheduled maintenance for 30 m
@@ -4557,7 +4557,7 @@ BEGIN:VEVENT
 SUMMARY:[Nibi] Planned Outage - Arrêt planifié
 DTSTART;TZID=America/Toronto:20260712T070000
 DTEND;TZID=America/Toronto:20260713T120000
-DTSTAMP:20260703T134918Z
+DTSTAMP:20260703T170021Z
 UID:drac-incident-1635@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:Nibi will be unavailable from 2026-07-12 7AM to 2026-07-13 12P
@@ -4573,45 +4573,10 @@ DESCRIPTION:Nibi will be unavailable from 2026-07-12 7AM to 2026-07-13 12P
 URL:https://status.alliancecan.ca/view_incident?incident=1635
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:[Cedar] Cedar Planned Outage - Arrêt planifié
-DTSTART;TZID=America/Vancouver:20260717T000000
-DTEND;TZID=America/Vancouver:20260718T000000
-DTSTAMP:20260703T134918Z
-UID:drac-incident-274@status.alliancecan.ca
-CATEGORIES:SCHEDULED
-DESCRIPTION:Outage extended to end of day July 17. Unfortunately some extr
- a work is required to complete the outage and it had to be extended by one
-  day. Apologies for the unexpected increase. An outage is planned to do Fi
- lesystem maintenance and node upgrades\, expected outage to last until end
-  of day July 17. The Cedar facility will be unavailable on July 15\, 16 an
- d 17 because of necessary upgrades to the /home and /scratch filesystems. 
- These upgrades require a filesystem check which is estimated to run for ab
- out two days. All jobs that are still running in the morning of the 15th w
- ill need to be terminated. We apologize for the inconvenience.\n\nhttps://
- status.alliancecan.ca/view_incident?incident=274
-URL:https://status.alliancecan.ca/view_incident?incident=274
-END:VEVENT
-BEGIN:VEVENT
-SUMMARY:[Niagara] Planned Outage - Arrêt planifié
-DTSTART;TZID=America/Toronto:20260801T070000
-DTEND;TZID=America/Toronto:20260801T080000
-DTSTAMP:20260703T134918Z
-UID:drac-incident-272@status.alliancecan.ca
-CATEGORIES:SCHEDULED
-DESCRIPTION:The SciNet datacentre will undergo a maintenance shutdown on A
- ugust 1st\, starting at 7 am EDT. There will be no access to any of the Sc
- iNet systems (Niagara\, P8\, SGC\, HPSS\, Teach cluster\, or the file syst
- ems) during this time. This is necessary to finish the installation of an 
- emergency power generator and to perform scheduled maintenance. We expect 
- to be able to bring the systems back online the evening of August 1st.\n\n
- https://status.alliancecan.ca/view_incident?incident=272
-URL:https://status.alliancecan.ca/view_incident?incident=272
-END:VEVENT
-BEGIN:VEVENT
 SUMMARY:[Vulcan] Planned Outage - Arrêt planifié
 DTSTART;TZID=America/Edmonton:20260822T000000
 DTEND;TZID=America/Edmonton:20260823T000000
-DTSTAMP:20260703T134918Z
+DTSTAMP:20260703T170021Z
 UID:drac-incident-1644@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:Vulcan will be unavailable August 22nd to 24th. During this ti
@@ -4622,142 +4587,5 @@ DESCRIPTION:Vulcan will be unavailable August 22nd to 24th. During this ti
  and the login nodes will not be accessible.\n\nhttps://status.alliancecan.
  ca/view_incident?incident=1644
 URL:https://status.alliancecan.ca/view_incident?incident=1644
-END:VEVENT
-BEGIN:VEVENT
-SUMMARY:[Graham] Graham Planned Outage - Arrêt planifié
-DTSTART;TZID=America/Toronto:20260925T000000
-DTEND;TZID=America/Toronto:20260926T000000
-DTSTAMP:20260703T134918Z
-UID:drac-incident-302@status.alliancecan.ca
-CATEGORIES:SCHEDULED
-DESCRIPTION:Due to site electrical changes\, there will be a brief outage 
- of some Graham components\, for up to 2 hours\, on Wednesday\, September 2
- 5.\nThis will affect most compute nodes\, so the scheduler will be configu
- red to avoid scheduling jobs that would be affected. Login\, storage and c
- loud nodes will NOT be affected.\n\nhttps://status.alliancecan.ca/view_inc
- ident?incident=302
-URL:https://status.alliancecan.ca/view_incident?incident=302
-END:VEVENT
-BEGIN:VEVENT
-SUMMARY:[Arbutus] Scheduled maintenance for Arbutus - September 25 / Maint
- enance sur Arbutus le 25 Septembre 2019\,
-DTSTART;TZID=America/Vancouver:20260925T000000
-DTEND;TZID=America/Vancouver:20260926T000000
-DTSTAMP:20260703T134918Z
-UID:drac-incident-301@status.alliancecan.ca
-CATEGORIES:SCHEDULED
-DESCRIPTION:On Wednesday\, September 25\, external network access to the A
- rbutus cloud will be interrupted for at least 1 hour during a 3-hour netwo
- rk maintenance window from 7:00 p.m. to 10:00 p.m. (PDT) / 10:00 p.m. to 1
- :00 a.m. (EDT). During this time\, virtual machines on Arbutus will contin
- ue running.\nL’accès externe au nuage Arbutus sera interrompu le mercre
- di 25 septembre\, en raison de travaux de maintenance. L’interruption d
- ’au moins une heure aura lieu entre 22h et 1h (HAE) / 19h et 22h (HAP). 
- Les instances virtuelles en cours avant l’interruption de service ne ser
- ont pas arrêtées.\n\nhttps://status.alliancecan.ca/view_incident?inciden
- t=301
-URL:https://status.alliancecan.ca/view_incident?incident=301
-END:VEVENT
-BEGIN:VEVENT
-SUMMARY:[DRAC] Cedar Outage\, Oct. 28
-DTSTART;TZID=America/Toronto:20261028T000000
-DTEND;TZID=America/Toronto:20261029T000000
-DTSTAMP:20260703T134918Z
-UID:drac-incident-343@status.alliancecan.ca
-CATEGORIES:SCHEDULED
-DESCRIPTION:Update Oct. 28\, 19:30:\nThe migration of the /home filesystem
-  has been completed successfully.\nWe also upgraded the scheduling softwar
- e (we were running an unsupported version). However\, we are running into 
- problems with the new version. We have submitted a bug support and are wai
- ting for a resolution. Until then scheduling of jobs has been paused and w
- e cannot allow submission of new jobs. For that reason Cedar remains unava
- ilable for now. We will update this note as soon as we know more about han
- dling this problem.\nCedar will be unavailable on Monday\, October 28\, be
- cause we are replacing the hardware for the /home filesystem to improve pe
- rformance and reliability. All jobs still running the morning of October 2
- 8 will be terminated.\nCedar will become available again on October 29\; h
- owever\, without the /scratch filesystem. On October 29-30 the architectur
- e of the /scratch filesystem will be changed\; therefore\, any jobs that r
- equire data to be read or written to /scratch during this time will fail. 
- Please see below for more details on this outage\, including how to put jo
- bs on hold.\nDetails about the outage:\n1) The /home filesystem and /scrat
- ch filesystem currently reside on the same storage appliance. This is prob
- lematic because when the /scratch filesystem is overloaded (typically due 
- to jobs that put a high input/output load on the filesystem) the /home fil
- esystem is negatively impacted as well\, resulting in slow response times 
- on the headnodes and an unsatisfactory work environment. On October 28\, a
- ll data stored in the /home filesystem will be transferred to a different 
- storage system so that /home becomes independent of /scratch. This should 
- improve performance of the /home filesystem significantly. We expect this 
- final transfer of data to take the entire day of October 28. Please do not
-  make massive changes/additions to your data stored in the /home filesyste
- m before the outage in order to minimize the time needed for this final sy
- nchronization.\n2) On October 29-30\, Cedar will be available. However\, t
- he /scratch filesystem will not be mounted and data stored in /scratch wil
- l not be accessible. During these two days\, we will replace the controlle
- r and storage servers for the /scratch filesystem to improve performance o
- f that filesystem and prepare it for the upcoming expansion of Cedar. Ther
- efore\, any jobs that require data to be read or written to /scratch durin
- g this time will fail. Such jobs still in the queue before the outage\, sh
- ould be placed on hold to prevent them from running on October 29-30.\nTo 
- place a job on hold issue the following command on the headnode:\nscontrol
-  hold jobid=<list of jobids> where <list of jobids> is a comma separated l
- ist of jobids (no spaces). When the system is available again these holds 
- can be released with the command "scontrol release <list of jobids>".\n3) 
- Loss of data: we do not expect any loss of data. We already created a copy
-  of all data in /home\, which will repeatedly be update until Oct. 28. On 
- Oct. 28 the remaining changes will be copied once more. Furthermore\, all 
- data in /home are backed up daily. Data in /scratch are not backed up - th
- ey are meant to be stored temporarily. Nevertheless\, our supporting vendo
- r has informed us that all data in /scratch will be preserved in the conve
- rsion process.\nWe strongly encourage all users to move essential data out
-  of the /scratch filesystem to their /project directories.\nThis should be
-  a regular practice\; /scratch is not the place to store data that cannot 
- be easily reproduced.\nIf there are additional questions\, please email [e
- mail protected] .\nCedar non disponible le lundi 28 octobre La grappe Ced
- ar ne sera pas disponible le 28 octobre prochain\; ce jour-là\, nous remp
- lacerons le matériel pour le système de fichiers /home en vue d’améli
- orer la performance et la fiabilité. Les tâches en cours au matin du 28 
- seront annulées.\nCedar sera à nouveau disponible le lendemain 29 octobr
- e\, à l’exception du système de fichiers /scratch. Les 29 et 30 octobr
- e\, nous ferons des modifications à ce système\; les tâches nécessitan
- t des opérations de lecture ou d’écriture dans /scratch au cours des 2
- 9 et 30 octobre seront arrêtées. Voyez comment bloquer des tâches\, ci-
- dessous.\nInformation sur l’arrêt de service 1) Les systèmes de fichie
- rs /home et /scratch utilisent présentement le même matériel\, de sorte
-  que lorsque /scratch est surchargé (typiquement en raison de tâches à 
- haut volume d’opérations IO)\, /home est aussi affecté\, ce qui ralent
- it le temps de réponse du nœud frontal et nuit à l’environnement de t
- ravail. Le 28 octobre\, nous isolerons les deux systèmes en transférant 
- les données de /home vers du matériel différent\; ce travail devrait n
- écessiter une journée complète. Nous vous demandons d’éviter de fair
- e de gros ajouts ou changements à vos données stockées dans /home avant
-  cet arrêt de service pour minimiser le temps de synchronisation au terme
-  des travaux.\n2) Cedar sera disponible les 29 et 30 octobre\, mais le sys
- tème de fichiers /scratch n’aura pas été monté et l’accès aux don
- nées ne sera pas possible. Nous remplacerons alors le contrôleur et les 
- serveurs de stockage de /scratch pour en améliorer la performance et pré
- parer l’expansion prochaine de Cedar. Les tâches nécessitant des opér
- ations de lecture ou d’écriture dans /scratch au cours des 29 et 30 oct
- obre seront arrêtées. Nous vous recommandons de mettre en suspens les t
- âches qui utilisent /scratch et qui se trouveraient en attente dans la qu
- eue le 28 octobre afin qu’elles ne soient pas lancées le 29 ou le 30 oc
- tobre..\nBloquer des tâches Sur le nœud frontal\, lancez scontrol hold j
- obid=<list of jobids> où <list of jobids> est la liste des identifiants d
- e tâches séparés par des virgules et sans espace. Quand Cedar redeviend
- ra disponible\, débloquez les tâches avec scontrol release <list of jobi
- ds> 3) Nous ne prévoyons aucune perte de données. Toutes les données da
- ns /home ont été copiées et une mise à jour est faite quotidiennement.
-  Une copie des modifications sera faite encore le 28 octobre. Les données
-  dans /scratch ne sont pas sauvegardées puisqu’il s’agit d’un espac
- e de stockage temporaire. Notre fournisseur nous a cependant informés que
-  les données ne seront pas affectées par la conversion.\nIl est fortemen
- t recommandé de déplacer les données importantes de votre espace /scrat
- ch à votre espace /project.\nCeci devrait être une pratique usuelle puis
- que /scratch n’est pas un endroit où stocker des données qui ne sont p
- as facilement reproduites.\nPour toute information en rapport avec cet arr
- êt de service\, écrivez à [email protected] .\n\nhttps://status.allian
- cecan.ca/view_incident?incident=343
-URL:https://status.alliancecan.ca/view_incident?incident=343
 END:VEVENT
 END:VCALENDAR
