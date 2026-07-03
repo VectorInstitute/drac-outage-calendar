@@ -26,21 +26,34 @@ jobs:
       - name: Build feeds (carrying forward elapsed events)
         run: |
           mkdir -p public
+          # Full feeds: scheduled maintenance + unplanned outages.
           python drac_outages_ics.py -o public/outages.ics \
+            --include-unplanned --calname "DRAC Cluster Outages" \
             --merge-from state/outages.ics
           python drac_outages_ics.py -o public/killarney.ics \
-            --service Killarney --calname "Killarney Cluster Outages" \
+            --service Killarney --include-unplanned \
+            --calname "Killarney Cluster Outages" \
             --merge-from state/killarney.ics
+          # Planned-only feeds: scheduled maintenance only.
+          python drac_outages_ics.py -o public/outages-planned-only.ics \
+            --calname "DRAC Cluster Scheduled Outages" \
+            --merge-from state/outages-planned-only.ics
+          python drac_outages_ics.py -o public/killarney-planned-only.ics \
+            --service Killarney \
+            --calname "Killarney Cluster Scheduled Outages" \
+            --merge-from state/killarney-planned-only.ics
       - name: Persist updated state to calendar-state
         run: |
-          cp public/outages.ics public/killarney.ics state/
+          cp public/outages.ics public/outages-planned-only.ics \
+             public/killarney.ics public/killarney-planned-only.ics state/
           cd state
           if git diff --quiet; then
             echo "State unchanged; nothing to commit."
           else
             git config user.name  "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add outages.ics killarney.ics
+            git add outages.ics outages-planned-only.ics \
+                    killarney.ics killarney-planned-only.ics
             git commit -m "Update calendar state ($(date -u +%Y-%m-%dT%H:%MZ))"
             git push
           fi

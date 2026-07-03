@@ -16,14 +16,18 @@ after they drop off the status page.
 
 ## Calendars
 
-Two feeds are published:
+Four feeds are published — a *full* feed (scheduled maintenance **and**
+unplanned outages) and a *scheduled-only* feed, each for all clusters and for
+Killarney:
 
 | Calendar | Subscribe URL |
 | --- | --- |
-| **All clusters** | `https://vectorinstitute.github.io/drac-outage-calendar/outages.ics` |
-| **Killarney only** | `https://vectorinstitute.github.io/drac-outage-calendar/killarney.ics` |
+| **All clusters** (full) | `https://vectorinstitute.github.io/drac-outage-calendar/outages.ics` |
+| **All clusters** (scheduled only) | `https://vectorinstitute.github.io/drac-outage-calendar/outages-planned-only.ics` |
+| **Killarney** (full) | `https://vectorinstitute.github.io/drac-outage-calendar/killarney.ics` |
+| **Killarney** (scheduled only) | `https://vectorinstitute.github.io/drac-outage-calendar/killarney-planned-only.ics` |
 
-Both refresh daily.
+All refresh daily.
 
 ## How to subscribe
 
@@ -90,8 +94,10 @@ a misleading placeholder time.
   treated as cancelled and removed.) The accumulated history is stored on a
   separate `calendar-state` branch, which the workflow reads and updates each
   run.
-- The workflow builds `outages.ics` (all clusters) and `killarney.ics`
-  (filtered to Killarney) and deploys them to GitHub Pages.
+- The workflow builds four feeds and deploys them to GitHub Pages: full feeds
+  with scheduled maintenance **and** unplanned outages (`outages.ics`,
+  `killarney.ics`), and planned-only feeds with scheduled maintenance alone
+  (`outages-planned-only.ics`, `killarney-planned-only.ics`).
 
 ## Run locally
 

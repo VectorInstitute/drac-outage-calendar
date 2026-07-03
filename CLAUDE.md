@@ -111,22 +111,27 @@ app can subscribe by URL and refresh automatically.
 ## Deployment
 - Hosted as a public repo under the VectorInstitute GitHub org.
 - `.github/workflows/outages.yml` runs daily (cron) + on manual dispatch, builds
-  `public/outages.ics` (all clusters) and `public/killarney.ics` (Killarney
-  only), and deploys via the official `upload-pages-artifact` / `deploy-pages`
-  actions. The script is invoked once per feed, so the site is scraped twice per
-  daily run — still well within polite limits.
+  four feeds, and deploys via the official `upload-pages-artifact` /
+  `deploy-pages` actions. Two are *full* feeds (scheduled + unplanned, via
+  `--include-unplanned`): `public/outages.ics` (all clusters) and
+  `public/killarney.ics` (Killarney). Two are *planned-only* (scheduled
+  maintenance): `public/outages-planned-only.ics` and
+  `public/killarney-planned-only.ics`. The script is invoked once per feed, so
+  the site is scraped four times per daily run — still within polite limits.
 - History lives on the `calendar-state` orphan branch (no shared history with
-  `main`), which holds just `outages.ics` + `killarney.ics` (plus a README and a
+  `main`), which holds the four `.ics` files (plus a README and a
   `.gitattributes` marking `*.ics -text` so CRLF line endings are byte-preserved
   — the iCal spec wants CRLF). Each run checks that branch out into `state/`,
   builds with `--merge-from state/<feed>.ics`, copies the merged result back, and
   commits + pushes it to `calendar-state` (only when it changed). This is the
   durable, version-controlled store of past events; the Pages CDN copy is just an
-  output. The workflow needs `contents: write` for the commit-back.
+  output. The branch was seeded from the historic backfill (`backfill_historic.py`
+  regenerated from the cache), so the feeds carry the full 2019→now history. The
+  workflow needs `contents: write` for the commit-back.
 - Pages source must be set to "GitHub Actions" in repo Settings -> Pages.
-- Subscribe URLs (project site):
-  - all clusters: https://vectorinstitute.github.io/<repo-name>/outages.ics
-  - Killarney only: https://vectorinstitute.github.io/<repo-name>/killarney.ics
+- Subscribe URLs (project site), `https://vectorinstitute.github.io/<repo-name>/`:
+  - all clusters, full: `outages.ics` — scheduled only: `outages-planned-only.ics`
+  - Killarney, full: `killarney.ics` — scheduled only: `killarney-planned-only.ics`
   (could differ if the org has a custom Pages domain).
 
 ## Run locally
