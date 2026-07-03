@@ -432,6 +432,21 @@ class ParseIncidentTests(unittest.TestCase):
         inc = M.parse_incident(html, "x?incident=1614")
         self.assertEqual(inc["summary"], "Fir is unavailable, investigating.")
 
+    def test_summary_skips_update_block(self):
+        # Incidents with status updates repeat a "Summary" for the latest update
+        # before the "Incident description" block; take the canonical one.
+        html = """
+        <p>Summary</p><p>Repairs are still underway.</p>
+        <p>Incident description</p>
+        <table><tr><th>h</th></tr>
+        <tr><td>Trillium</td><td>Open</td><td></td><td></td></tr></table>
+        <p>Title</p><p>Outage - Panne</p>
+        <p>Summary</p><p>Systems are down due to cooling emergency.</p>
+        <p>Updated by X on</p>
+        """
+        inc = M.parse_incident(html, "x?incident=1649")
+        self.assertEqual(inc["summary"], "Systems are down due to cooling emergency.")
+
     def test_summary_preserves_en_fr_line_breaks(self):
         # EN / "======" / FR on separate lines must stay on separate lines, and
         # the date must still parse (from a flattened copy).

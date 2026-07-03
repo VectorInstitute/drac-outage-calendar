@@ -197,13 +197,18 @@ def parse_incident(html, url, tz=DEFAULT_TZ):
         title = m.group(1).strip()
 
     # --- summary ---
+    # Anchor to the structured "Incident description" block: an incident with
+    # status updates repeats a "Summary" label at the top (the latest update),
+    # and searching from the description block skips it to the canonical one.
     # Stop at the "Updated by" block or the "Back" navigation button. On a page
     # with no "Updated by", the back button's Material-icon glyph ("arrow_back",
     # on its own line just before "Back") would otherwise be swept in, so it's a
     # boundary too.
     summary = ""
+    block_at = text.find("Incident description")
+    block = text[block_at:] if block_at != -1 else text
     m = re.search(
-        r"Summary\s*\n+(.*?)(?:\nUpdated by|\narrow_back|\nBack|\Z)", text, re.S
+        r"Summary\s*\n+(.*?)(?:\nUpdated by|\narrow_back|\nBack|\Z)", block, re.S
     )
     if m:
         # Keep line breaks -- many incidents put an English and a French block on
