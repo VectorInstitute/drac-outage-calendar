@@ -226,6 +226,33 @@ class ProseDateTests(unittest.TestCase):
         # A multi-day range spans through the end of the last day.
         self.assertEqual(end, datetime(2026, 6, 26, 0, 0))
 
+    def test_relative_today_compact_range(self):
+        # "4-8PM today": a shared-meridian range on the created (ref) day.
+        start, end = M.parse_dates_from_prose(
+            "Reduce power usage between 4-8PM today.", ref=self.REF
+        )
+        self.assertEqual(start, datetime(2026, 6, 30, 16, 0))
+        self.assertEqual(end, datetime(2026, 6, 30, 20, 0))
+
+    def test_relative_today_explicit_times(self):
+        start, end = M.parse_dates_from_prose(
+            "Outage from 4PM to 8PM today.", ref=self.REF
+        )
+        self.assertEqual(start, datetime(2026, 6, 30, 16, 0))
+        self.assertEqual(end, datetime(2026, 6, 30, 20, 0))
+
+    def test_relative_range_crossing_noon(self):
+        # "11-2PM" reads as 11AM-2PM, not 11PM-2PM.
+        start, end = M.parse_dates_from_prose("Downtime 11-2PM today.", ref=self.REF)
+        self.assertEqual(start, datetime(2026, 6, 30, 11, 0))
+        self.assertEqual(end, datetime(2026, 6, 30, 14, 0))
+
+    def test_time_range_without_today_is_ignored(self):
+        # No relative-day cue and no explicit date -> don't guess a day.
+        self.assertEqual(
+            M.parse_dates_from_prose("Maintenance 4-8PM.", ref=self.REF), (None, None)
+        )
+
     def test_unparseable_returns_none(self):
         self.assertEqual(
             M.parse_dates_from_prose("no date here", ref=self.REF), (None, None)

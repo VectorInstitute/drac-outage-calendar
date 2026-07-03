@@ -318,6 +318,13 @@ TZ_RE = re.compile(
     r"Eastern|Atlantic|Central|Mountain|Pacific)\b",
     re.I,
 )
+# A compact same-day time range sharing one trailing meridian, e.g. "4-8PM"
+# (= 4PM to 8PM) or "4:30-8:00PM". Used for relative-day summaries ("... today").
+RANGE_RE = re.compile(
+    r"(?P<h1>\d{1,2})(?::(?P<m1>\d{2}))?\s*[-–—]\s*"
+    r"(?P<h2>\d{1,2})(?::(?P<m2>\d{2}))?\s*(?P<ap>AM|PM)\b",
+    re.I,
+)
 
 
 def english_part(s):
@@ -384,6 +391,46 @@ def _combine(d, t):
     return dt.replace(tzinfo=ZoneInfo(tzname)) if tzname else dt
 
 
+def _relative_day_times(text, ref):
+    """Parse clock times on a relative "today"/"tonight" day, anchored to ref.
+
+    Some incidents give a time but only a relative day, e.g. "reduce power usage
+    between 4-8PM today". Anchor to the incident's created day (`ref`) and read
+    the times: a compact shared-meridian range ("4-8PM"), else explicit clock
+    times ("4PM to 8PM today"). Returns (start, end), or None if it doesn't fit.
+    """
+    if not re.search(r"\btoday\b|\btonight\b", text, re.I):
+        return None
+    day = ref.date()
+    rng = RANGE_RE.search(text)
+    if rng:
+        ap = rng["ap"].upper()
+
+        def to24(h):
+            h = int(h)
+            if ap == "PM" and h != 12:
+                h += 12
+            elif ap == "AM" and h == 12:
+                h = 0
+            return h
+
+        h1, h2 = to24(rng["h1"]), to24(rng["h2"])
+        if h1 > h2:  # range crosses noon, e.g. "11-2PM" means 11AM-2PM
+            raw = int(rng["h1"])
+            h1 = 0 if raw == 12 else raw
+        tzm = TZ_RE.search(text[rng.end() : rng.end() + 12])
+        tzname = TZ_ZONE.get(tzm.group(1).upper()) if tzm else None
+        start = _combine(day, (h1, int(rng["m1"] or 0), tzname))
+        end = _combine(day, (h2, int(rng["m2"] or 0), tzname))
+        return start, end
+    times = _times_in(text, 0, window=len(text))
+    if times:
+        start = _combine(day, times[0])
+        end = _combine(day, times[1]) if len(times) > 1 else start + timedelta(hours=1)
+        return start, end
+    return None
+
+
 def parse_dates_from_prose(summary, ref=None):
     """Best-effort extraction of a start/end datetime from free text."""
     if not summary:
@@ -408,7 +455,9 @@ def parse_dates_from_prose(summary, ref=None):
     # Otherwise a "Month DD[-DD][, YYYY]" form.
     m = MONTH_RE.search(text)
     if not m:
-        return None, None
+        # No explicit month/ISO date -- fall back to a relative "today"/"tonight"
+        # reference with clock times, anchored to the created day.
+        return _relative_day_times(text, ref) or (None, None)
     month = MONTHS[m["month"].lower()]
     d1 = int(m["d1"])
     d2 = int(m["d2"]) if m["d2"] else None
