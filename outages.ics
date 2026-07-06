@@ -15850,8 +15850,8 @@ BEGIN:VEVENT
 SUMMARY:[Fir] (unresolved) Filesystem problem - Problème de système de f
  ichiers
 DTSTART;TZID=America/Toronto:20260521T200100
-DTEND;TZID=America/Toronto:20260707T095952
-DTSTAMP:20260706T135954Z
+DTEND;TZID=America/Toronto:20260707T115532
+DTSTAMP:20260706T155535Z
 UID:drac-incident-1614@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:Unresolved: This is an ongoing issue without a definitive end 
@@ -15921,7 +15921,7 @@ BEGIN:VEVENT
 SUMMARY:[FRDR-DFDR] FRDR Maintenance
 DTSTART;TZID=America/Winnipeg:20260527T140000
 DTEND;TZID=America/Winnipeg:20260527T143000
-DTSTAMP:20260706T135954Z
+DTSTAMP:20260706T155535Z
 UID:drac-incident-1616@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:FRDR will be unavailable due to scheduled maintenance for 30 m
@@ -16357,7 +16357,7 @@ BEGIN:VEVENT
 SUMMARY:[Nibi] Reduced throughput / power shedding
 DTSTART;TZID=America/Toronto:20260702T160000
 DTEND;TZID=America/Toronto:20260702T200000
-DTSTAMP:20260706T135954Z
+DTSTAMP:20260706T155535Z
 UID:drac-incident-1651@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:The power utility has requested that we reduce power usage bet
@@ -16371,7 +16371,7 @@ BEGIN:VEVENT
 SUMMARY:[tamIA] Maintenance - travaux mécanique - mecanical work
 DTSTART;TZID=America/Toronto:20260706T070000
 DTEND;TZID=America/Toronto:20260706T070000
-DTSTAMP:20260706T135954Z
+DTSTAMP:20260706T155535Z
 UID:drac-incident-1652@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:En raison de travaux mécanique\, nous sommes contraints de me
@@ -16385,10 +16385,43 @@ DESCRIPTION:En raison de travaux mécanique\, nous sommes contraints de me
 URL:https://status.alliancecan.ca/view_incident?incident=1652
 END:VEVENT
 BEGIN:VEVENT
+SUMMARY:[Rorqual] (unresolved) Replacing hard drives for /project - Rempla
+ cement de disques durs pour /project
+DTSTART;TZID=America/Toronto:20260706T153900
+DTEND;TZID=America/Toronto:20260707T115532
+DTSTAMP:20260706T155535Z
+UID:drac-incident-1654@status.alliancecan.ca
+CATEGORIES:UNPLANNED
+DESCRIPTION:Unresolved: This is an ongoing issue without a definitive end 
+ date.\n\nReplacing a hard-drive is usually transparent to users\, but the 
+ storage system has been very sensitive to such operation. To prevent any a
+ dditional problem\, we have to pause read and write operations for a certa
+ in time period (in the order of 30-45 minutes if no issue).\nActive jobs a
+ ccessing /project will hang until read and write operations are resumed . 
+ The jobs will continue as usual after that\, but their time limit will not
+  be increased.\nThe access from login nodes and via Globus is also affecte
+ d.\nReplacing the hard drives is relatively urgent and we cannot wait for 
+ a proper maintenance period. We apologize for the impacts on your research
+  activities.\n======\nLe remplacement d'un disque dur est généralement t
+ ransparent pour les usagers\, mais le système de stockage s'est montré t
+ rès sensible à ce type d'opération. Afin d'éviter tout problème suppl
+ émentaire\, nous devons mettre sur pause les opérations de lecture et d'
+ écriture pendant une certaine période (de l'ordre de 30 à 45 minutes si
+  tout va bien).\nLes tâches en cours accédant à /project subiront la pa
+ use jusqu'à la reprise des opérations de lecture et d'écriture . Elles 
+ reprendront ensuite leur cours normal\, mais leur durée limite ne sera pa
+ s prolongée.\nL'accès à partir des nœuds de connexion et via Globus se
+ ra aussi affecté.\nLe remplacement de ces disques durs est relativement u
+ rgent et nous ne pouvons pas attendre une période de maintenance plus app
+ ropriée. Nous sommes désolés pour les impacts sur vos activités de rec
+ herche.\n\nhttps://status.alliancecan.ca/view_incident?incident=1654
+URL:https://status.alliancecan.ca/view_incident?incident=1654
+END:VEVENT
+BEGIN:VEVENT
 SUMMARY:[Nibi] Planned Outage - Arrêt planifié
 DTSTART;TZID=America/Toronto:20260712T070000
 DTEND;TZID=America/Toronto:20260713T120000
-DTSTAMP:20260706T135954Z
+DTSTAMP:20260706T155535Z
 UID:drac-incident-1635@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:Nibi will be unavailable from 2026-07-12 7AM to 2026-07-13 12P
@@ -16404,10 +16437,28 @@ DESCRIPTION:Nibi will be unavailable from 2026-07-12 7AM to 2026-07-13 12P
 URL:https://status.alliancecan.ca/view_incident?incident=1635
 END:VEVENT
 BEGIN:VEVENT
+SUMMARY:[Trillium] SciNet Data Centre Maintenance
+DTSTART;TZID=America/Toronto:20260713T070000
+DTEND;TZID=America/Toronto:20260713T080000
+DTSTAMP:20260706T155535Z
+UID:drac-incident-1653@status.alliancecan.ca
+CATEGORIES:SCHEDULED
+DESCRIPTION:This maintenance window\, related to the Trillium expansion fo
+ r Canada’s Sovereign Computing Capacity Strategy for AI\, will be start 
+ on July 13\, 2026\, at 7 AM EDT and will last until July 24\, 2026. During
+  this time which all *Trillium compute nodes* will be unavailable.  The *
+ login nodes*\, storage\, HPSS\, Globus\, Open Ondemand\, as well as the S4
+ H\, Balam\, Neptune\, and Teach clusters\, will all remain up\, except for
+  brief periods on July 21st when transformer maintenance will take place.\
+ nMaintenance updates will be published on https://docs.scinet.utoronto.ca 
+ .\n\nhttps://status.alliancecan.ca/view_incident?incident=1653
+URL:https://status.alliancecan.ca/view_incident?incident=1653
+END:VEVENT
+BEGIN:VEVENT
 SUMMARY:[Vulcan] Planned Outage - Arrêt planifié
 DTSTART;TZID=America/Edmonton:20260822T000000
 DTEND;TZID=America/Edmonton:20260823T000000
-DTSTAMP:20260706T135954Z
+DTSTAMP:20260706T155535Z
 UID:drac-incident-1644@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:Vulcan will be unavailable August 22nd to 24th. During this ti

@@ -4323,7 +4323,7 @@ BEGIN:VEVENT
 SUMMARY:[FRDR-DFDR] FRDR Maintenance
 DTSTART;TZID=America/Winnipeg:20260527T140000
 DTEND;TZID=America/Winnipeg:20260527T143000
-DTSTAMP:20260706T135954Z
+DTSTAMP:20260706T155535Z
 UID:drac-incident-1616@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:FRDR will be unavailable due to scheduled maintenance for 30 m
@@ -4557,7 +4557,7 @@ BEGIN:VEVENT
 SUMMARY:[tamIA] Maintenance - travaux mécanique - mecanical work
 DTSTART;TZID=America/Toronto:20260706T070000
 DTEND;TZID=America/Toronto:20260706T070000
-DTSTAMP:20260706T135954Z
+DTSTAMP:20260706T155535Z
 UID:drac-incident-1652@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:En raison de travaux mécanique\, nous sommes contraints de me
@@ -4574,7 +4574,7 @@ BEGIN:VEVENT
 SUMMARY:[Nibi] Planned Outage - Arrêt planifié
 DTSTART;TZID=America/Toronto:20260712T070000
 DTEND;TZID=America/Toronto:20260713T120000
-DTSTAMP:20260706T135954Z
+DTSTAMP:20260706T155535Z
 UID:drac-incident-1635@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:Nibi will be unavailable from 2026-07-12 7AM to 2026-07-13 12P
@@ -4590,10 +4590,28 @@ DESCRIPTION:Nibi will be unavailable from 2026-07-12 7AM to 2026-07-13 12P
 URL:https://status.alliancecan.ca/view_incident?incident=1635
 END:VEVENT
 BEGIN:VEVENT
+SUMMARY:[Trillium] SciNet Data Centre Maintenance
+DTSTART;TZID=America/Toronto:20260713T070000
+DTEND;TZID=America/Toronto:20260713T080000
+DTSTAMP:20260706T155535Z
+UID:drac-incident-1653@status.alliancecan.ca
+CATEGORIES:SCHEDULED
+DESCRIPTION:This maintenance window\, related to the Trillium expansion fo
+ r Canada’s Sovereign Computing Capacity Strategy for AI\, will be start 
+ on July 13\, 2026\, at 7 AM EDT and will last until July 24\, 2026. During
+  this time which all *Trillium compute nodes* will be unavailable.  The *
+ login nodes*\, storage\, HPSS\, Globus\, Open Ondemand\, as well as the S4
+ H\, Balam\, Neptune\, and Teach clusters\, will all remain up\, except for
+  brief periods on July 21st when transformer maintenance will take place.\
+ nMaintenance updates will be published on https://docs.scinet.utoronto.ca 
+ .\n\nhttps://status.alliancecan.ca/view_incident?incident=1653
+URL:https://status.alliancecan.ca/view_incident?incident=1653
+END:VEVENT
+BEGIN:VEVENT
 SUMMARY:[Vulcan] Planned Outage - Arrêt planifié
 DTSTART;TZID=America/Edmonton:20260822T000000
 DTEND;TZID=America/Edmonton:20260823T000000
-DTSTAMP:20260706T135954Z
+DTSTAMP:20260706T155535Z
 UID:drac-incident-1644@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:Vulcan will be unavailable August 22nd to 24th. During this ti
