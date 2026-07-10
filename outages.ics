@@ -15847,19 +15847,17 @@ DESCRIPTION:Starting May 21 at 1:00 p.m. ET: rolling update of Nvidia driv
 URL:https://status.alliancecan.ca/view_incident?incident=1612
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:[Fir] (unresolved) Filesystem problem - Problème de système de f
- ichiers
+SUMMARY:[Fir] Filesystem problem - Problème de système de fichiers
 DTSTART;TZID=America/Toronto:20260521T200100
-DTEND;TZID=America/Toronto:20260711T103308
-DTSTAMP:20260710T143309Z
+DTEND;TZID=America/Toronto:20260710T113309
+DTSTAMP:20260710T153309Z
 UID:drac-incident-1614@status.alliancecan.ca
 CATEGORIES:UNPLANNED
-DESCRIPTION:Unresolved: This is an ongoing issue without a definitive end 
- date.\n\nThere is a problem with the filesystem on Fir\, which seems to be
-  unresponsive. We are investigating.\n/ Il y a un problème avec le systè
- me de fichiers sur la grappe Fir\, qui ne réagit pas correctement. Nous i
- nvestiguons actuellement ce qui se passe.\n\nhttps://status.alliancecan.ca
- /view_incident?incident=1614
+DESCRIPTION:There is a problem with the filesystem on Fir\, which seems to
+  be unresponsive. We are investigating.\n/ Il y a un problème avec le sys
+ tème de fichiers sur la grappe Fir\, qui ne réagit pas correctement. Nou
+ s investiguons actuellement ce qui se passe.\n\nhttps://status.alliancecan
+ .ca/view_incident?incident=1614
 URL:https://status.alliancecan.ca/view_incident?incident=1614
 END:VEVENT
 BEGIN:VEVENT
@@ -15921,7 +15919,7 @@ BEGIN:VEVENT
 SUMMARY:[FRDR-DFDR] FRDR Maintenance
 DTSTART;TZID=America/Winnipeg:20260527T140000
 DTEND;TZID=America/Winnipeg:20260527T143000
-DTSTAMP:20260710T143309Z
+DTSTAMP:20260710T153309Z
 UID:drac-incident-1616@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:FRDR will be unavailable due to scheduled maintenance for 30 m
@@ -16419,25 +16417,45 @@ END:VEVENT
 BEGIN:VEVENT
 SUMMARY:[tamIA] Interruption de courant planifiée - Planned power outage
 DTSTART;TZID=America/Toronto:20260709T070000
-DTEND;TZID=America/Toronto:20260709T120000
-DTSTAMP:20260709T154601Z
+DTEND;TZID=America/Toronto:20260709T121500
+DTSTAMP:20260710T153309Z
 UID:drac-incident-1655@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:En raison de travaux électriques\, nous sommes contraints de 
  mettre hors service les nœuds de calcul de Tamia.\nJeudi 9 juillet de 7:0
- 0 à 12:00.\nLes nœuds de connexion et le système de fichier Lustre ne s
+ 0 à 12:15.\nLes nœuds de connexion et le système de fichier Lustre ne s
  ont pas touchés par cette maintenance.\n===\nDue to electrical work\, we 
  are forced to shut down Tamia's compute nodes.\nThursday\, july 9th from 7
- :00 a.m. to 12:00 a.m.\nThe login nodes and the Lustre file system are not
+ :00 a.m. to 12:15 p.m.\nThe login nodes and the Lustre file system are not
   affected by this maintenance.\n\nhttps://status.alliancecan.ca/view_incid
  ent?incident=1655
 URL:https://status.alliancecan.ca/view_incident?incident=1655
 END:VEVENT
 BEGIN:VEVENT
+SUMMARY:[Fir] (unresolved) GPUs errors
+DTSTART;TZID=America/Toronto:20260710T152600
+DTEND;TZID=America/Toronto:20260711T113305
+DTSTAMP:20260710T153309Z
+UID:drac-incident-1657@status.alliancecan.ca
+CATEGORIES:UNPLANNED
+DESCRIPTION:Unresolved: This is an ongoing issue without a definitive end 
+ date.\n\nThere is an issue with GPUs erroring and needing a reset\, on Fir
+ . You can check the state of the devices with the command `nvidia-smi`.\nY
+ ou can also exclude faulty nodes from your job submission with: `--exclude
+ =node[01-05\,12]`.\nWe are investigating.\nUn problème affecte les GPUs s
+ ur Fir\, provoquant des erreurs et nécessitant une réinitialisation. Vou
+ s pouvez vérifier l'état des périphériques à l'aide de la commande `n
+ vidia-smi`.\nVous pouvez également exclure les nœuds défectueux lors de
+  la soumission de vos tâches en utilisant : `--exclude=node[01-05\,12]`.\
+ nNous enquêtons actuellement sur ce problème.\n\nhttps://status.alliance
+ can.ca/view_incident?incident=1657
+URL:https://status.alliancecan.ca/view_incident?incident=1657
+END:VEVENT
+BEGIN:VEVENT
 SUMMARY:[Nibi] Planned Outage - Arrêt planifié
 DTSTART;TZID=America/Toronto:20260712T070000
 DTEND;TZID=America/Toronto:20260713T120000
-DTSTAMP:20260710T143309Z
+DTSTAMP:20260710T153309Z
 UID:drac-incident-1635@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:Nibi will be unavailable from 2026-07-12 7AM to 2026-07-13 12P
@@ -16456,7 +16474,7 @@ BEGIN:VEVENT
 SUMMARY:[Trillium] SciNet Data Centre Maintenance
 DTSTART;TZID=America/Toronto:20260713T070000
 DTEND;TZID=America/Toronto:20260713T080000
-DTSTAMP:20260710T143309Z
+DTSTAMP:20260710T153309Z
 UID:drac-incident-1653@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:This maintenance window\, related to the Trillium expansion fo
@@ -16474,7 +16492,7 @@ BEGIN:VEVENT
 SUMMARY:[Vulcan] Planned Outage - Arrêt planifié
 DTSTART;TZID=America/Edmonton:20260822T000000
 DTEND;TZID=America/Edmonton:20260823T000000
-DTSTAMP:20260710T143309Z
+DTSTAMP:20260710T153309Z
 UID:drac-incident-1644@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:Vulcan will be unavailable August 22nd to 24th. During this ti
