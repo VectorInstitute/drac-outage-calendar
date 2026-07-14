@@ -15850,8 +15850,8 @@ BEGIN:VEVENT
 SUMMARY:[Fir] (unresolved) Filesystem problem - Problème de système de f
  ichiers
 DTSTART;TZID=America/Toronto:20260521T200100
-DTEND;TZID=America/Toronto:20260715T042655
-DTSTAMP:20260714T082656Z
+DTEND;TZID=America/Toronto:20260715T052051
+DTSTAMP:20260714T092055Z
 UID:drac-incident-1614@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:Unresolved: This is an ongoing issue without a definitive end 
@@ -15921,7 +15921,7 @@ BEGIN:VEVENT
 SUMMARY:[FRDR-DFDR] FRDR Maintenance
 DTSTART;TZID=America/Winnipeg:20260527T140000
 DTEND;TZID=America/Winnipeg:20260527T143000
-DTSTAMP:20260714T082656Z
+DTSTAMP:20260714T092055Z
 UID:drac-incident-1616@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:FRDR will be unavailable due to scheduled maintenance for 30 m
@@ -16420,7 +16420,7 @@ BEGIN:VEVENT
 SUMMARY:[tamIA] Interruption de courant planifiée - Planned power outage
 DTSTART;TZID=America/Toronto:20260709T070000
 DTEND;TZID=America/Toronto:20260709T121500
-DTSTAMP:20260710T153309Z
+DTSTAMP:20260714T092055Z
 UID:drac-incident-1655@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:En raison de travaux électriques\, nous sommes contraints de 
@@ -16432,6 +16432,43 @@ DESCRIPTION:En raison de travaux électriques\, nous sommes contraints de
   affected by this maintenance.\n\nhttps://status.alliancecan.ca/view_incid
  ent?incident=1655
 URL:https://status.alliancecan.ca/view_incident?incident=1655
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:[Fir] GPUs errors - Erreurs GPUs
+DTSTART;TZID=America/Toronto:20260710T152600
+DTEND;TZID=America/Toronto:20260710T153600
+DTSTAMP:20260714T092055Z
+UID:drac-incident-1657@status.alliancecan.ca
+CATEGORIES:UNPLANNED
+DESCRIPTION:There is an issue with GPUs erroring and needing a reset\, on 
+ Fir. You can check the state of the devices with the command `nvidia-smi`.
+ \nYou can also exclude faulty nodes from your job submission with: `--excl
+ ude=node[01-05\,12]`.\nWe are investigating.\nUn problème affecte les GPU
+ s sur Fir\, provoquant des erreurs et nécessitant une réinitialisation. 
+ Vous pouvez vérifier l'état des périphériques à l'aide de la commande
+  `nvidia-smi`.\nVous pouvez également exclure les nœuds défectueux lors
+  de la soumission de vos tâches en utilisant : `--exclude=node[01-05\,12]
+ `.\nNous enquêtons actuellement sur ce problème.\n\nhttps://status.allia
+ ncecan.ca/view_incident?incident=1657
+URL:https://status.alliancecan.ca/view_incident?incident=1657
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:[Fir] Login nodes - noeuds de connexion | Input/Output errors/erre
+ urs
+DTSTART;TZID=America/Toronto:20260710T153300
+DTEND;TZID=America/Toronto:20260710T153700
+DTSTAMP:20260714T092055Z
+UID:drac-incident-1658@status.alliancecan.ca
+CATEGORIES:UNPLANNED
+DESCRIPTION:There is a problem with the logins nodes on Fir\, mainly `logi
+ n1` and `login3`\, which exhibit itself with errors like `Cannot send afte
+ r transport endpoint shutdown` or `Input/Output error`.\nWe are investigat
+ ing.\nUn problème affecte les nœuds de connexion de Fir\, principalement
+  `login1` et `login3`\, se manifestant par des erreurs telles que « Canno
+ t send after transport endpoint shutdown » ou « Input/Output error ».\n
+ Nous enquêtons actuellement sur la situation.\n\nhttps://status.alliancec
+ an.ca/view_incident?incident=1658
+URL:https://status.alliancecan.ca/view_incident?incident=1658
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:[Nibi] Planned Outage - Arrêt planifié
@@ -16456,7 +16493,7 @@ BEGIN:VEVENT
 SUMMARY:[Trillium] SciNet Data Centre Maintenance
 DTSTART;TZID=America/Toronto:20260713T070000
 DTEND;TZID=America/Toronto:20260713T080000
-DTSTAMP:20260714T082656Z
+DTSTAMP:20260714T092055Z
 UID:drac-incident-1653@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:This maintenance window\, related to the Trillium expansion fo
@@ -16471,10 +16508,26 @@ DESCRIPTION:This maintenance window\, related to the Trillium expansion fo
 URL:https://status.alliancecan.ca/view_incident?incident=1653
 END:VEVENT
 BEGIN:VEVENT
+SUMMARY:[Rorqual] (unresolved) Filesystem problem - Problème de système 
+ de fichiers
+DTSTART;TZID=America/Toronto:20260714T091500
+DTEND;TZID=America/Toronto:20260715T052051
+DTSTAMP:20260714T092055Z
+UID:drac-incident-1659@status.alliancecan.ca
+CATEGORIES:UNPLANNED
+DESCRIPTION:Unresolved: This is an ongoing issue without a definitive end 
+ date.\n\nThere is a problem with the /project filesystem on Rorqual\, whic
+ h seems to be unresponsive. We are investigating.\n/ Il y a un problème a
+ vec le système de fichiers /project  sur la grappe Rorqual\, qui ne réa
+ git pas correctement. Nous investiguons actuellement ce qui se passe.\n\nh
+ ttps://status.alliancecan.ca/view_incident?incident=1659
+URL:https://status.alliancecan.ca/view_incident?incident=1659
+END:VEVENT
+BEGIN:VEVENT
 SUMMARY:[Vulcan] Planned Outage - Arrêt planifié
 DTSTART;TZID=America/Edmonton:20260822T000000
 DTEND;TZID=America/Edmonton:20260823T000000
-DTSTAMP:20260714T082656Z
+DTSTAMP:20260714T092055Z
 UID:drac-incident-1644@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:Vulcan will be unavailable August 22nd to 24th. During this ti
