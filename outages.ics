@@ -15850,8 +15850,8 @@ BEGIN:VEVENT
 SUMMARY:[Fir] (unresolved) Filesystem problem - Problème de système de f
  ichiers
 DTSTART;TZID=America/Toronto:20260521T200100
-DTEND;TZID=America/Toronto:20260715T090545
-DTSTAMP:20260714T130547Z
+DTEND;TZID=America/Toronto:20260715T102102
+DTSTAMP:20260714T142104Z
 UID:drac-incident-1614@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:Unresolved: This is an ongoing issue without a definitive end 
@@ -15921,7 +15921,7 @@ BEGIN:VEVENT
 SUMMARY:[FRDR-DFDR] FRDR Maintenance
 DTSTART;TZID=America/Winnipeg:20260527T140000
 DTEND;TZID=America/Winnipeg:20260527T143000
-DTSTAMP:20260714T130547Z
+DTSTAMP:20260714T142104Z
 UID:drac-incident-1616@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:FRDR will be unavailable due to scheduled maintenance for 30 m
@@ -16493,7 +16493,7 @@ BEGIN:VEVENT
 SUMMARY:[Trillium] SciNet Data Centre Maintenance
 DTSTART;TZID=America/Toronto:20260713T070000
 DTEND;TZID=America/Toronto:20260713T080000
-DTSTAMP:20260714T130547Z
+DTSTAMP:20260714T142104Z
 UID:drac-incident-1653@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:This maintenance window\, related to the Trillium expansion fo
@@ -16508,26 +16508,58 @@ DESCRIPTION:This maintenance window\, related to the Trillium expansion fo
 URL:https://status.alliancecan.ca/view_incident?incident=1653
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:[Rorqual] (unresolved) Filesystem problem - Problème de système 
- de fichiers
+SUMMARY:[Rorqual] Filesystem problem - Problème de système de fichiers
 DTSTART;TZID=America/Toronto:20260714T091500
-DTEND;TZID=America/Toronto:20260715T090545
-DTSTAMP:20260714T130547Z
+DTEND;TZID=America/Toronto:20260714T102104
+DTSTAMP:20260714T142104Z
 UID:drac-incident-1659@status.alliancecan.ca
 CATEGORIES:UNPLANNED
-DESCRIPTION:Unresolved: This is an ongoing issue without a definitive end 
- date.\n\nThere is a problem with the /project filesystem on Rorqual\, whic
- h seems to be unresponsive. We are investigating.\n/ Il y a un problème a
- vec le système de fichiers /project  sur la grappe Rorqual\, qui ne réa
- git pas correctement. Nous investiguons actuellement ce qui se passe.\n\nh
- ttps://status.alliancecan.ca/view_incident?incident=1659
+DESCRIPTION:There is a problem with the /project filesystem on Rorqual\, w
+ hich seems to be unresponsive. We are investigating.\n/ Il y a un problèm
+ e avec le système de fichiers /project  sur la grappe Rorqual\, qui ne r
+ éagit pas correctement. Nous investiguons actuellement ce qui se passe.\n
+ \nhttps://status.alliancecan.ca/view_incident?incident=1659
 URL:https://status.alliancecan.ca/view_incident?incident=1659
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:[Nibi] Reduced Throughput / Power Shedding
+DTSTART;TZID=America/Toronto:20260714T170000
+DTEND;TZID=America/Toronto:20260714T210000
+DTSTAMP:20260714T142104Z
+UID:drac-incident-1661@status.alliancecan.ca
+CATEGORIES:UNPLANNED
+DESCRIPTION:The power utility has requested that we reduce power usage bet
+ ween 5-9pm today\, Jul 14/26.\nThe scheduler has been configured to drain 
+ nodes during this time\, so your job may be delayed in starting. Note that
+  already running jobs will not be affected - neither will short jobs which
+  end before the event.\n\nhttps://status.alliancecan.ca/view_incident?inci
+ dent=1661
+URL:https://status.alliancecan.ca/view_incident?incident=1661
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:[Killarney] Planned Outage - Arrêt planifié
+DTSTART;TZID=America/Toronto:20260720T200000
+DTEND;TZID=America/Toronto:20260721T170000
+DTSTAMP:20260714T142104Z
+UID:drac-incident-1660@status.alliancecan.ca
+CATEGORIES:SCHEDULED
+DESCRIPTION:Killarney will be unavailable 2026-07-20 (20:00 ET) to 2026-07
+ -21 (17:00)\, Monday and Tuesday. During this time\, you will not be able 
+ to log in or run jobs on the cluster. Any jobs that are running at the tim
+ e of the outage will be terminated and you will need to re-submit them onc
+ e the cluster is back online.\n======\nKillarney ne sera pas disponible 20
+ 26-07-20 (20:00 ET) to 2026-07-21 (17:00)\, lundi et mardi. Durant cette p
+ ériode\, les utilisateurs ne pourront pas se connecter ni exécuter des t
+ âches sur Killarney. Toute tâche en cours au moment de l’arrêt de ser
+ vice sera arrêtée et devra être soumise à nouveau une fois les travaux
+  terminés.\n\nhttps://status.alliancecan.ca/view_incident?incident=1660
+URL:https://status.alliancecan.ca/view_incident?incident=1660
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:[Vulcan] Planned Outage - Arrêt planifié
 DTSTART;TZID=America/Edmonton:20260822T000000
 DTEND;TZID=America/Edmonton:20260823T000000
-DTSTAMP:20260714T130547Z
+DTSTAMP:20260714T142104Z
 UID:drac-incident-1644@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:Vulcan will be unavailable August 22nd to 24th. During this ti

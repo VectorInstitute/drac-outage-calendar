@@ -226,4 +226,23 @@ DESCRIPTION:Killarney is completely currently offline due to a cooling iss
  nt=1648
 URL:https://status.alliancecan.ca/view_incident?incident=1648
 END:VEVENT
+BEGIN:VEVENT
+SUMMARY:[Killarney] Planned Outage - Arrêt planifié
+DTSTART;TZID=America/Toronto:20260720T200000
+DTEND;TZID=America/Toronto:20260721T170000
+DTSTAMP:20260714T142104Z
+UID:drac-incident-1660@status.alliancecan.ca
+CATEGORIES:SCHEDULED
+DESCRIPTION:Killarney will be unavailable 2026-07-20 (20:00 ET) to 2026-07
+ -21 (17:00)\, Monday and Tuesday. During this time\, you will not be able 
+ to log in or run jobs on the cluster. Any jobs that are running at the tim
+ e of the outage will be terminated and you will need to re-submit them onc
+ e the cluster is back online.\n======\nKillarney ne sera pas disponible 20
+ 26-07-20 (20:00 ET) to 2026-07-21 (17:00)\, lundi et mardi. Durant cette p
+ ériode\, les utilisateurs ne pourront pas se connecter ni exécuter des t
+ âches sur Killarney. Toute tâche en cours au moment de l’arrêt de ser
+ vice sera arrêtée et devra être soumise à nouveau une fois les travaux
+  terminés.\n\nhttps://status.alliancecan.ca/view_incident?incident=1660
+URL:https://status.alliancecan.ca/view_incident?incident=1660
+END:VEVENT
 END:VCALENDAR
