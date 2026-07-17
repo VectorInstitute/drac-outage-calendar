@@ -15919,7 +15919,7 @@ BEGIN:VEVENT
 SUMMARY:[FRDR-DFDR] FRDR Maintenance
 DTSTART;TZID=America/Winnipeg:20260527T140000
 DTEND;TZID=America/Winnipeg:20260527T143000
-DTSTAMP:20260717T150533Z
+DTSTAMP:20260717T160611Z
 UID:drac-incident-1616@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:FRDR will be unavailable due to scheduled maintenance for 30 m
@@ -16491,7 +16491,7 @@ BEGIN:VEVENT
 SUMMARY:[Trillium] SciNet Data Centre Maintenance
 DTSTART;TZID=America/Toronto:20260713T070000
 DTEND;TZID=America/Toronto:20260713T080000
-DTSTAMP:20260717T150533Z
+DTSTAMP:20260717T160611Z
 UID:drac-incident-1653@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:This maintenance window\, related to the Trillium expansion fo
@@ -16509,7 +16509,7 @@ BEGIN:VEVENT
 SUMMARY:[Arbutus] Arbutus Instance Reboots for Patching
 DTSTART;TZID=America/Vancouver:20260714T000000
 DTEND;TZID=America/Vancouver:20260715T000000
-DTSTAMP:20260717T150533Z
+DTSTAMP:20260717T160611Z
 UID:drac-incident-1663@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:In order to provide necessary security patching\, compute flav
@@ -16633,7 +16633,7 @@ BEGIN:VEVENT
 SUMMARY:[Fir] Outage
 DTSTART;TZID=America/Vancouver:20260716T160000
 DTEND;TZID=America/Vancouver:20260716T170000
-DTSTAMP:20260717T150533Z
+DTSTAMP:20260717T160611Z
 UID:drac-incident-1667@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:Hello\, The Fir cluster is currently undergoing unscheduled ma
@@ -16655,7 +16655,7 @@ BEGIN:VEVENT
 SUMMARY:[Killarney] Planned Outage - Arrêt planifié
 DTSTART;TZID=America/Toronto:20260720T200000
 DTEND;TZID=America/Toronto:20260721T170000
-DTSTAMP:20260717T150533Z
+DTSTAMP:20260717T160611Z
 UID:drac-incident-1660@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:Killarney will be unavailable 2026-07-20 (20:00 ET) to 2026-07
@@ -16674,7 +16674,7 @@ BEGIN:VEVENT
 SUMMARY:[Vulcan] Planned Outage - Arrêt planifié
 DTSTART;TZID=America/Edmonton:20260822T000000
 DTEND;TZID=America/Edmonton:20260823T000000
-DTSTAMP:20260717T150533Z
+DTSTAMP:20260717T160611Z
 UID:drac-incident-1644@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:Vulcan will be unavailable August 22nd to 24th. During this ti
