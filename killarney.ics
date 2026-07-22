@@ -229,16 +229,16 @@ END:VEVENT
 BEGIN:VEVENT
 SUMMARY:[Killarney] Planned Outage - Arrêt planifié
 DTSTART;TZID=America/Toronto:20260720T200000
-DTEND;TZID=America/Toronto:20260722T170000
-DTSTAMP:20260722T200536Z
+DTEND;TZID=America/Toronto:20260722T190000
+DTSTAMP:20260722T210425Z
 UID:drac-incident-1660@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:Killarney will be unavailable 2026-07-20 (20:00 ET) to 2026-07
- -22 (17:00)\, Monday to Wednesday. During this time\, you will not be able
+ -22 (19:00)\, Monday to Wednesday. During this time\, you will not be able
   to log in or run jobs on the cluster. Any jobs that are running at the ti
  me of the outage will be terminated and you will need to re-submit them on
  ce the cluster is back online.\n======\nKillarney ne sera pas disponible 2
- 026-07-20 (20:00 ET) to 2026-07-22 (17:00)\, lundi au mercerdi. Durant cet
+ 026-07-20 (20:00 ET) to 2026-07-22 (19:00)\, lundi au mercerdi. Durant cet
  te période\, les utilisateurs ne pourront pas se connecter ni exécuter d
  es tâches sur Killarney. Toute tâche en cours au moment de l’arrêt de
   service sera arrêtée et devra être soumise à nouveau une fois les tra
