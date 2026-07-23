@@ -15850,8 +15850,8 @@ BEGIN:VEVENT
 SUMMARY:[Fir] (unresolved) Filesystem problem - Problème de système de f
  ichiers
 DTSTART;TZID=America/Toronto:20260521T200100
-DTEND;TZID=America/Toronto:20260724T150443
-DTSTAMP:20260723T190444Z
+DTEND;TZID=America/Toronto:20260724T160545
+DTSTAMP:20260723T200557Z
 UID:drac-incident-1614@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:Unresolved: This is an ongoing issue without a definitive end 
@@ -15921,7 +15921,7 @@ BEGIN:VEVENT
 SUMMARY:[FRDR-DFDR] FRDR Maintenance
 DTSTART;TZID=America/Winnipeg:20260527T140000
 DTEND;TZID=America/Winnipeg:20260527T143000
-DTSTAMP:20260723T190444Z
+DTSTAMP:20260723T200557Z
 UID:drac-incident-1616@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:FRDR will be unavailable due to scheduled maintenance for 30 m
@@ -16420,7 +16420,7 @@ BEGIN:VEVENT
 SUMMARY:[tamIA] Interruption de courant planifiée - Planned power outage
 DTSTART;TZID=America/Toronto:20260709T070000
 DTEND;TZID=America/Toronto:20260709T121500
-DTSTAMP:20260714T092055Z
+DTSTAMP:20260723T200557Z
 UID:drac-incident-1655@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:En raison de travaux électriques\, nous sommes contraints de 
@@ -16437,7 +16437,7 @@ BEGIN:VEVENT
 SUMMARY:[Fir] GPUs errors - Erreurs GPUs
 DTSTART;TZID=America/Toronto:20260710T152600
 DTEND;TZID=America/Toronto:20260710T153600
-DTSTAMP:20260714T092055Z
+DTSTAMP:20260723T200557Z
 UID:drac-incident-1657@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:There is an issue with GPUs erroring and needing a reset\, on 
@@ -16456,18 +16456,18 @@ BEGIN:VEVENT
 SUMMARY:[Fir] Login nodes - noeuds de connexion | Input/Output errors/erre
  urs
 DTSTART;TZID=America/Toronto:20260710T153300
-DTEND;TZID=America/Toronto:20260710T153700
-DTSTAMP:20260714T092055Z
+DTEND;TZID=America/Toronto:20260715T122600
+DTSTAMP:20260723T200557Z
 UID:drac-incident-1658@status.alliancecan.ca
 CATEGORIES:UNPLANNED
-DESCRIPTION:There is a problem with the logins nodes on Fir\, mainly `logi
- n1` and `login3`\, which exhibit itself with errors like `Cannot send afte
- r transport endpoint shutdown` or `Input/Output error`.\nWe are investigat
- ing.\nUn problème affecte les nœuds de connexion de Fir\, principalement
-  `login1` et `login3`\, se manifestant par des erreurs telles que « Canno
- t send after transport endpoint shutdown » ou « Input/Output error ».\n
- Nous enquêtons actuellement sur la situation.\n\nhttps://status.alliancec
- an.ca/view_incident?incident=1658
+DESCRIPTION:There is a problem with the logins nodes on Fir\, which refuse
+  or close connections\, or return errors like `Cannot send after transport
+  endpoint shutdown` or `Input/Output error`.\nWe are investigating.\nUn pr
+ oblème affecte les nœuds de connexion de Fir\, qui refusent ou ferment l
+ es connexions ou retournent des erreurs telles que « Cannot send after tr
+ ansport endpoint shutdown » ou « Input/Output error ».\nNous enquêtons
+  actuellement sur la situation.\n\nhttps://status.alliancecan.ca/view_inci
+ dent?incident=1658
 URL:https://status.alliancecan.ca/view_incident?incident=1658
 END:VEVENT
 BEGIN:VEVENT
@@ -16493,7 +16493,7 @@ BEGIN:VEVENT
 SUMMARY:[Trillium] SciNet Data Centre Maintenance
 DTSTART;TZID=America/Toronto:20260713T070000
 DTEND;TZID=America/Toronto:20260713T080000
-DTSTAMP:20260723T190444Z
+DTSTAMP:20260723T200557Z
 UID:drac-incident-1653@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:This maintenance window\, related to the Trillium expansion fo
@@ -16511,9 +16511,9 @@ BEGIN:VEVENT
 SUMMARY:[Arbutus] Arbutus Instance Reboots for Patching
 DTSTART;TZID=America/Vancouver:20260714T000000
 DTEND;TZID=America/Vancouver:20260715T000000
-DTSTAMP:20260717T200359Z
+DTSTAMP:20260723T200557Z
 UID:drac-incident-1663@status.alliancecan.ca
-CATEGORIES:SCHEDULED
+CATEGORIES:UNPLANNED
 DESCRIPTION:In order to provide necessary security patching\, compute flav
  or instances in new Arbutus will be rebooted. The time window for instance
   reboots is from July 14th up to and including July 17th.\n\nhttps://statu
@@ -16523,8 +16523,8 @@ END:VEVENT
 BEGIN:VEVENT
 SUMMARY:[Rorqual] Filesystem problem - Problème de système de fichiers
 DTSTART;TZID=America/Toronto:20260714T091500
-DTEND;TZID=America/Toronto:20260714T102104
-DTSTAMP:20260714T142104Z
+DTEND;TZID=America/Toronto:20260714T134200
+DTSTAMP:20260723T200557Z
 UID:drac-incident-1659@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:There is a problem with the /project filesystem on Rorqual\, w
@@ -16538,7 +16538,7 @@ BEGIN:VEVENT
 SUMMARY:[Nibi] Reduced Throughput / Power Shedding
 DTSTART;TZID=America/Toronto:20260714T170000
 DTEND;TZID=America/Toronto:20260714T210000
-DTSTAMP:20260715T010610Z
+DTSTAMP:20260723T200557Z
 UID:drac-incident-1661@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:The power utility has requested that we reduce power usage bet
@@ -16552,25 +16552,25 @@ END:VEVENT
 BEGIN:VEVENT
 SUMMARY:[tamIA] Maintenance - travaux mécanique - mecanical work
 DTSTART;TZID=America/Toronto:20260715T070000
-DTEND;TZID=America/Toronto:20260715T033000
-DTSTAMP:20260715T190431Z
+DTEND;TZID=America/Toronto:20260715T040000
+DTSTAMP:20260723T200557Z
 UID:drac-incident-1664@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:En raison de travaux mécanique\, nous sommes contraints de me
  ttre hors service les nœuds de calcul de Tamia.\nMercredi 15 juillet de 7
- :00 à 15:30 (planifié).\nLes nœuds de connexion et le système de fichi
- er Lustre ne sont pas touchés par cette maintenance.\n===\nDue to mecanic
- al work\, we are forced to shut down Tamia's compute nodes.\nWednesday\, j
- uly 15th from 7:00 a.m. to 3:30 p.m. (planned).\nThe login nodes and the L
- ustre file system are not affected by this maintenance.\n\nhttps://status.
- alliancecan.ca/view_incident?incident=1664
+ :00 à 16:00.\nLes nœuds de connexion et le système de fichier Lustre ne
+  sont pas touchés par cette maintenance.\n===\nDue to mecanical work\, we
+  are forced to shut down Tamia's compute nodes.\nWednesday\, july 15th fro
+ m 7:00 a.m. to 4:00 p.m.\nThe login nodes and the Lustre file system are n
+ ot affected by this maintenance.\n\nhttps://status.alliancecan.ca/view_inc
+ ident?incident=1664
 URL:https://status.alliancecan.ca/view_incident?incident=1664
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:[Nibi] Reduced Throughput / Power Shedding for July 15/26
 DTSTART;TZID=America/Toronto:20260715T130000
 DTEND;TZID=America/Toronto:20260715T170000
-DTSTAMP:20260716T170521Z
+DTSTAMP:20260723T200557Z
 UID:drac-incident-1665@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:The power utility has requested that we reduce power usage bet
@@ -16585,8 +16585,8 @@ BEGIN:VEVENT
 SUMMARY:[Rorqual] 2026-07-16 - Replacing hard drives for /project - Rempla
  cement de disques durs pour /project
 DTSTART;TZID=America/Toronto:20260716T000000
-DTEND;TZID=America/Toronto:20260716T120647
-DTSTAMP:20260716T160647Z
+DTEND;TZID=America/Toronto:20260717T000000
+DTSTAMP:20260723T200557Z
 UID:drac-incident-1662@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:Replacing hard-drives is usually transparent to users\, but Ro
@@ -16617,27 +16617,27 @@ END:VEVENT
 BEGIN:VEVENT
 SUMMARY:[tamIA] Maintenance - travaux mécanique - mecanical work
 DTSTART;TZID=America/Toronto:20260716T070000
-DTEND;TZID=America/Toronto:20260716T120000
-DTSTAMP:20260716T190411Z
+DTEND;TZID=America/Toronto:20260716T040000
+DTSTAMP:20260723T200557Z
 UID:drac-incident-1666@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:En raison de travaux mécanique\, nous sommes contraints de me
  ttre hors service les nœuds de calcul de Tamia.\nJeudi 16 juillet de 7:00
-  à 12:00 (planifié).\nLes nœuds de connexion et le système de fichier 
- Lustre ne sont pas touchés par cette maintenance.\n===\nDue to mecanical 
- work\, we are forced to shut down Tamia's compute nodes.\nThursday\, july 
- 16th from 7:00 a.m. to 12:00 p.m. (planned).\nThe login nodes and the Lust
- re file system are not affected by this maintenance.\n\nhttps://status.all
- iancecan.ca/view_incident?incident=1666
+  à 16:00.\nLes nœuds de connexion et le système de fichier Lustre ne so
+ nt pas touchés par cette maintenance.\n===\nDue to mecanical work\, we ar
+ e forced to shut down Tamia's compute nodes.\nThursday\, july 16th from 7:
+ 00 a.m. to 4:00 p.m.\nThe login nodes and the Lustre file system are not a
+ ffected by this maintenance.\n\nhttps://status.alliancecan.ca/view_inciden
+ t?incident=1666
 URL:https://status.alliancecan.ca/view_incident?incident=1666
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:[Fir] Outage
 DTSTART;TZID=America/Vancouver:20260716T160000
 DTEND;TZID=America/Vancouver:20260716T170000
-DTSTAMP:20260721T180616Z
+DTSTAMP:20260723T200557Z
 UID:drac-incident-1667@status.alliancecan.ca
-CATEGORIES:UNPLANNED
+CATEGORIES:SCHEDULED
 DESCRIPTION:Hello\, The Fir cluster is currently undergoing unscheduled ma
  intenance to apply kernel security updates. This work requires rebooting c
  ompute nodes and cannot be deferred.\nWhat to expect:\n- Some running jobs
@@ -16656,16 +16656,16 @@ END:VEVENT
 BEGIN:VEVENT
 SUMMARY:[Killarney] Planned Outage - Arrêt planifié
 DTSTART;TZID=America/Toronto:20260720T200000
-DTEND;TZID=America/Toronto:20260722T190000
-DTSTAMP:20260722T220332Z
+DTEND;TZID=America/Toronto:20260722T180000
+DTSTAMP:20260723T200557Z
 UID:drac-incident-1660@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:Killarney will be unavailable 2026-07-20 (20:00 ET) to 2026-07
- -22 (19:00)\, Monday to Wednesday. During this time\, you will not be able
+ -22 (18:00)\, Monday to Wednesday. During this time\, you will not be able
   to log in or run jobs on the cluster. Any jobs that are running at the ti
  me of the outage will be terminated and you will need to re-submit them on
  ce the cluster is back online.\n======\nKillarney ne sera pas disponible 2
- 026-07-20 (20:00 ET) to 2026-07-22 (19:00)\, lundi au mercerdi. Durant cet
+ 026-07-20 (20:00 ET) to 2026-07-22 (18:00)\, lundi au mercerdi. Durant cet
  te période\, les utilisateurs ne pourront pas se connecter ni exécuter d
  es tâches sur Killarney. Toute tâche en cours au moment de l’arrêt de
   service sera arrêtée et devra être soumise à nouveau une fois les tra
@@ -16674,10 +16674,80 @@ DESCRIPTION:Killarney will be unavailable 2026-07-20 (20:00 ET) to 2026-07
 URL:https://status.alliancecan.ca/view_incident?incident=1660
 END:VEVENT
 BEGIN:VEVENT
+SUMMARY:[Rorqual] 2026-08-05 - Planned Maintenance: Backup Service Unavail
+ able - Services de sauvegarde non disponibles
+DTSTART;TZID=America/Toronto:20260805T120000
+DTEND;TZID=America/Toronto:20260806T000000
+DTSTAMP:20260723T200557Z
+UID:drac-incident-1668@status.alliancecan.ca
+CATEGORIES:SCHEDULED
+DESCRIPTION:Due to a scheduled upgrade\, our backup services for this syst
+ em will be unavailable from 8:00 AM on Wednesday\, August 5 to 5:00 PM on 
+ Thursday\, August 6 (ET) .\nImpacts:\nNew files will not be backed up.\nRe
+ storation operations will not be possible.\nData stored on tape (including
+  /nearline files migrated to tape) will not be accessible.\nOther services
+ \, including compute and primary storage services\, will remain available.
+ \n======\nEn raison d'une mise à niveau planifiée\, les services de sauv
+ egarde pour ce système seront indisponibles de 8h (AM) mercredi 5 août 
+ à 17h jeudi 6 août (HE) .\nImpacts:\nLes nouveaux fichiers ne seront pas
+  sauvegardés.\nLa restauration ne sera pas possible.\nLes données stock
+ ées sur rubans (y compris les fichiers /nearline migrés sur bande) ne se
+ ront pas accessibles.\nLes autres services ne seront pas touchés\, notamm
+ ent les services de calcul et de stockage principal.\n\nhttps://status.all
+ iancecan.ca/view_incident?incident=1668
+URL:https://status.alliancecan.ca/view_incident?incident=1668
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:[Narval] 2026-08-05 - Planned Maintenance: Backup Service Unavaila
+ ble - Services de sauvegarde non disponibles
+DTSTART;TZID=America/Toronto:20260805T120000
+DTEND;TZID=America/Toronto:20260806T000000
+DTSTAMP:20260723T200557Z
+UID:drac-incident-1669@status.alliancecan.ca
+CATEGORIES:SCHEDULED
+DESCRIPTION:Due to a scheduled upgrade\, our backup services for this syst
+ em will be unavailable from 8:00 AM on Wednesday\, August 5 to 5:00 PM on 
+ Thursday\, August 6 (ET) .\nImpacts:\nNew files will not be backed up.\nRe
+ storation operations will not be possible.\nData stored on tape (including
+  /nearline files migrated to tape) will not be accessible.\nOther services
+ \, including compute and primary storage services\, will remain available.
+ \n======\nEn raison d'une mise à niveau planifiée\, les services de sauv
+ egarde pour ce système seront indisponibles de 8h (AM) mercredi 5 août 
+ à 17h jeudi 6 août (HE) .\nImpacts:\nLes nouveaux fichiers ne seront pas
+  sauvegardés.\nLa restauration ne sera pas possible.\nLes données stock
+ ées sur rubans (y compris les fichiers /nearline migrés sur bande) ne se
+ ront pas accessibles.\nLes autres services ne seront pas touchés\, notamm
+ ent les services de calcul et de stockage principal.\n\nhttps://status.all
+ iancecan.ca/view_incident?incident=1669
+URL:https://status.alliancecan.ca/view_incident?incident=1669
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:[Juno] 2026-08-05 - Planned Maintenance: Backup Service Unavailabl
+ e - Services de sauvegarde non disponibles
+DTSTART;TZID=America/Toronto:20260805T120000
+DTEND;TZID=America/Toronto:20260806T000000
+DTSTAMP:20260723T200557Z
+UID:drac-incident-1670@status.alliancecan.ca
+CATEGORIES:SCHEDULED
+DESCRIPTION:Due to a scheduled upgrade\, our backup services for this syst
+ em will be unavailable from 8:00 AM on Wednesday\, August 5 to 5:00 PM on 
+ Thursday\, August 6 (ET) .\nImpacts:\nNew files will not be backed up.\nRe
+ storation operations will not be possible.\nData stored on tape will not b
+ e accessible.\nOther services\, including cloud\, will remain available.\n
+ ======\nEn raison d'une mise à niveau planifiée\, les services de sauveg
+ arde pour ce système seront indisponibles de 8h (AM) mercredi 5 août à 
+ 17h jeudi 6 août (HE) .\nImpacts:\nLes nouveaux fichiers ne seront pas sa
+ uvegardés.\nLa restauration ne sera pas possible.\nLes données stockées
+  sur rubans ne seront pas accessibles.\nLes autres services ne seront pas 
+ touchés\, notamment les services d'infonuagique.\n\nhttps://status.allian
+ cecan.ca/view_incident?incident=1670
+URL:https://status.alliancecan.ca/view_incident?incident=1670
+END:VEVENT
+BEGIN:VEVENT
 SUMMARY:[Vulcan] Planned Outage - Arrêt planifié
 DTSTART;TZID=America/Edmonton:20260822T000000
 DTEND;TZID=America/Edmonton:20260823T000000
-DTSTAMP:20260723T190444Z
+DTSTAMP:20260723T200557Z
 UID:drac-incident-1644@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:Vulcan will be unavailable August 22nd to 24th. During this ti
