@@ -15850,8 +15850,8 @@ BEGIN:VEVENT
 SUMMARY:[Fir] (unresolved) Filesystem problem - Problème de système de f
  ichiers
 DTSTART;TZID=America/Toronto:20260521T200100
-DTEND;TZID=America/Toronto:20260802T110252
-DTSTAMP:20260801T150253Z
+DTEND;TZID=America/Toronto:20260802T120252
+DTSTAMP:20260801T160256Z
 UID:drac-incident-1614@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:Unresolved: This is an ongoing issue without a definitive end 
@@ -15921,7 +15921,7 @@ BEGIN:VEVENT
 SUMMARY:[FRDR-DFDR] FRDR Maintenance
 DTSTART;TZID=America/Winnipeg:20260527T140000
 DTEND;TZID=America/Winnipeg:20260527T143000
-DTSTAMP:20260801T150253Z
+DTSTAMP:20260801T160256Z
 UID:drac-incident-1616@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:FRDR will be unavailable due to scheduled maintenance for 30 m
@@ -16678,7 +16678,7 @@ SUMMARY:[Rorqual] /project filesystem problem - Problème avec le système
   de fichiers /project
 DTSTART;TZID=America/Toronto:20260724T130500
 DTEND;TZID=America/Toronto:20260724T185900
-DTSTAMP:20260729T142904Z
+DTSTAMP:20260801T160256Z
 UID:drac-incident-1671@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:There is a problem with the /project filesystem.\nImpacts: slo
@@ -16694,7 +16694,7 @@ BEGIN:VEVENT
 SUMMARY:[Fir] Planned Maintenance: Fir Cluster Shutdown
 DTSTART;TZID=America/Vancouver:20260727T120000
 DTEND;TZID=America/Vancouver:20260705T000000
-DTSTAMP:20260729T142904Z
+DTSTAMP:20260801T160256Z
 UID:drac-incident-1672@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:Due to urgent cooling system maintenance\, the Fir cluster wil
@@ -16711,7 +16711,7 @@ BEGIN:VEVENT
 SUMMARY:[Trillium] Outage - Panne
 DTSTART;TZID=America/Toronto:20260728T170800
 DTEND;TZID=America/Toronto:20260728T181200
-DTSTAMP:20260729T142904Z
+DTSTAMP:20260801T160256Z
 UID:drac-incident-1673@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:Trillium is currently offline due to a cooling issue. We are i
@@ -16719,43 +16719,58 @@ DESCRIPTION:Trillium is currently offline due to a cooling issue. We are i
 URL:https://status.alliancecan.ca/view_incident?incident=1673
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:[Rorqual] Replacing hard drives for /project - Remplacement de dis
- ques durs pour /project
-DTSTART;TZID=America/Toronto:20260729T144000
-DTEND;TZID=America/Toronto:20260729T144100
-DTSTAMP:20260730T180611Z
-UID:drac-incident-1675@status.alliancecan.ca
+SUMMARY:[Rorqual] Filesystem problem - Problème de système de fichiers
+DTSTART;TZID=America/Toronto:20260729T142200
+DTEND;TZID=America/Toronto:20260729T150000
+DTSTAMP:20260801T160256Z
+UID:drac-incident-1674@status.alliancecan.ca
 CATEGORIES:UNPLANNED
-DESCRIPTION:Replacing a hard-drive is usually transparent to users\, but t
- he storage system has been very sensitive to such operation. To prevent an
- y additional problem\, we have to pause read and write operations for a ce
- rtain time period (in the order of 30-45 minutes if no issue).\nActive job
- s accessing /project will hang until read and write operations are resumed
-  . The jobs will continue as usual after that\, but their time limit will 
- not be increased.\nThe access from login nodes and via Globus is also affe
- cted.\nReplacing the hard drives is relatively urgent and we cannot wait f
- or a proper maintenance period. We apologize for the impacts on your resea
- rch activities.\n======\nLe remplacement d'un disque dur est généralemen
- t transparent pour les usagers\, mais le système de stockage s'est montr
- é très sensible à ce type d'opération. Afin d'éviter tout problème s
- upplémentaire\, nous devons mettre sur pause les opérations de lecture e
- t d'écriture pendant une certaine période (de l'ordre de 30 à 45 minute
- s si tout va bien).\nLes tâches en cours accédant à /project subiront l
- a pause jusqu'à la reprise des opérations de lecture et d'écriture . El
- les reprendront ensuite leur cours normal\, mais leur durée limite ne ser
- a pas prolongée.\nL'accès à partir des nœuds de connexion et via Globu
- s sera aussi affecté.\nLe remplacement de ces disques durs est relativeme
- nt urgent et nous ne pouvons pas attendre une période de maintenance plus
-  appropriée. Nous sommes désolés pour les impacts sur vos activités de
-  recherche.\n\nhttps://status.alliancecan.ca/view_incident?incident=1675
-URL:https://status.alliancecan.ca/view_incident?incident=1675
+DESCRIPTION:There is a problem with the /project filesystem on Rorqual\, w
+ hich seems to be unresponsive. We are investigating.\n/ Il y a un problèm
+ e avec le système de fichiers /project sur la grappe Rorqual\, qui ne ré
+ agit pas correctement. Nous investiguons actuellement ce qui se passe.\n\n
+ https://status.alliancecan.ca/view_incident?incident=1674
+URL:https://status.alliancecan.ca/view_incident?incident=1674
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:[Rorqual] (unresolved) Replacing hard drives for /project - Rempla
+ cement de disques durs pour /project
+DTSTART;TZID=America/Toronto:20260801T153600
+DTEND;TZID=America/Toronto:20260802T120252
+DTSTAMP:20260801T160256Z
+UID:drac-incident-1676@status.alliancecan.ca
+CATEGORIES:UNPLANNED
+DESCRIPTION:Unresolved: This is an ongoing issue without a definitive end 
+ date.\n\nReplacing a hard-drive is usually transparent to users\, but the 
+ storage system has been very sensitive to such operation. To prevent any a
+ dditional problem\, we have to pause read and write operations for a certa
+ in time period (in the order of 30-45 minutes if no issue).\nActive jobs a
+ ccessing /project will hang until read and write operations are resumed . 
+ The jobs will continue as usual after that\, but their time limit will not
+  be increased.\nThe access from login nodes and via Globus is also affecte
+ d.\nReplacing the hard drives is relatively urgent and we cannot wait for 
+ a proper maintenance period. We apologize for the impacts on your research
+  activities.\n======\nLe remplacement d'un disque dur est généralement t
+ ransparent pour les usagers\, mais le système de stockage s'est montré t
+ rès sensible à ce type d'opération. Afin d'éviter tout problème suppl
+ émentaire\, nous devons mettre sur pause les opérations de lecture et d'
+ écriture pendant une certaine période (de l'ordre de 30 à 45 minutes si
+  tout va bien).\nLes tâches en cours accédant à /project subiront la pa
+ use jusqu'à la reprise des opérations de lecture et d'écriture . Elles 
+ reprendront ensuite leur cours normal\, mais leur durée limite ne sera pa
+ s prolongée.\nL'accès à partir des nœuds de connexion et via Globus se
+ ra aussi affecté.\nLe remplacement de ces disques durs est relativement u
+ rgent et nous ne pouvons pas attendre une période de maintenance plus app
+ ropriée. Nous sommes désolés pour les impacts sur vos activités de rec
+ herche.\n\nhttps://status.alliancecan.ca/view_incident?incident=1676
+URL:https://status.alliancecan.ca/view_incident?incident=1676
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:[Rorqual] 2026-08-05 - Planned Maintenance: Backup Service Unavail
  able - Services de sauvegarde non disponibles
 DTSTART;TZID=America/Toronto:20260805T120000
 DTEND;TZID=America/Toronto:20260806T000000
-DTSTAMP:20260801T150253Z
+DTSTAMP:20260801T160256Z
 UID:drac-incident-1668@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:Due to a scheduled upgrade\, our backup services for this syst
@@ -16779,7 +16794,7 @@ SUMMARY:[Narval] 2026-08-05 - Planned Maintenance: Backup Service Unavaila
  ble - Services de sauvegarde non disponibles
 DTSTART;TZID=America/Toronto:20260805T120000
 DTEND;TZID=America/Toronto:20260806T000000
-DTSTAMP:20260801T150253Z
+DTSTAMP:20260801T160256Z
 UID:drac-incident-1669@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:Due to a scheduled upgrade\, our backup services for this syst
@@ -16803,7 +16818,7 @@ SUMMARY:[Juno] 2026-08-05 - Planned Maintenance: Backup Service Unavailabl
  e - Services de sauvegarde non disponibles
 DTSTART;TZID=America/Toronto:20260805T120000
 DTEND;TZID=America/Toronto:20260806T000000
-DTSTAMP:20260801T150253Z
+DTSTAMP:20260801T160256Z
 UID:drac-incident-1670@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:Due to a scheduled upgrade\, our backup services for this syst
@@ -16824,7 +16839,7 @@ BEGIN:VEVENT
 SUMMARY:[Vulcan] Planned Outage - Arrêt planifié
 DTSTART;TZID=America/Edmonton:20260822T000000
 DTEND;TZID=America/Edmonton:20260823T000000
-DTSTAMP:20260801T150253Z
+DTSTAMP:20260801T160256Z
 UID:drac-incident-1644@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:Vulcan will be unavailable August 22nd to 24th. During this ti
