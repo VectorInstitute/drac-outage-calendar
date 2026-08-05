@@ -4323,7 +4323,7 @@ BEGIN:VEVENT
 SUMMARY:[FRDR-DFDR] FRDR Maintenance
 DTSTART;TZID=America/Winnipeg:20260527T140000
 DTEND;TZID=America/Winnipeg:20260527T143000
-DTSTAMP:20260805T171036Z
+DTSTAMP:20260805T181047Z
 UID:drac-incident-1616@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:FRDR will be unavailable due to scheduled maintenance for 30 m
@@ -4768,7 +4768,7 @@ SUMMARY:[Rorqual] 2026-08-05 - Planned Maintenance: Backup Service Unavail
  able - Services de sauvegarde non disponibles
 DTSTART;TZID=America/Toronto:20260805T120000
 DTEND;TZID=America/Toronto:20260806T000000
-DTSTAMP:20260805T171036Z
+DTSTAMP:20260805T181047Z
 UID:drac-incident-1668@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:Due to a scheduled upgrade\, our backup services for this syst
@@ -4792,7 +4792,7 @@ SUMMARY:[Narval] 2026-08-05 - Planned Maintenance: Backup Service Unavaila
  ble - Services de sauvegarde non disponibles
 DTSTART;TZID=America/Toronto:20260805T120000
 DTEND;TZID=America/Toronto:20260806T000000
-DTSTAMP:20260805T171036Z
+DTSTAMP:20260805T181047Z
 UID:drac-incident-1669@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:Due to a scheduled upgrade\, our backup services for this syst
@@ -4816,7 +4816,7 @@ SUMMARY:[Juno] 2026-08-05 - Planned Maintenance: Backup Service Unavailabl
  e - Services de sauvegarde non disponibles
 DTSTART;TZID=America/Toronto:20260805T120000
 DTEND;TZID=America/Toronto:20260806T000000
-DTSTAMP:20260805T171036Z
+DTSTAMP:20260805T181047Z
 UID:drac-incident-1670@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:Due to a scheduled upgrade\, our backup services for this syst
@@ -4834,27 +4834,10 @@ DESCRIPTION:Due to a scheduled upgrade\, our backup services for this syst
 URL:https://status.alliancecan.ca/view_incident?incident=1670
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:[tamIA] Maintenance - travaux mécanique - mecanical work
-DTSTART;TZID=America/Toronto:20260807T070000
-DTEND;TZID=America/Toronto:20260807T070000
-DTSTAMP:20260805T171036Z
-UID:drac-incident-1677@status.alliancecan.ca
-CATEGORIES:SCHEDULED
-DESCRIPTION:En raison de travaux mécanique\, nous sommes contraints de me
- ttre hors service les nœuds de calcul de Tamia.\nVendredi 7 août de 7:00
-  à 19:00.\nLes nœuds de connexion et le système de fichier Lustre ne so
- nt pas touchés par cette maintenance.\n===\nDue to mecanical work\, we ar
- e forced to shut down Tamia's compute nodes.\nFriday\, August 7th from 7:0
- 0 a.m. to 7:00 p.m.\nThe login nodes and the Lustre file system are not af
- fected by this maintenance.\n\nhttps://status.alliancecan.ca/view_incident
- ?incident=1677
-URL:https://status.alliancecan.ca/view_incident?incident=1677
-END:VEVENT
-BEGIN:VEVENT
 SUMMARY:[Vulcan] Planned Outage - Arrêt planifié
 DTSTART;TZID=America/Edmonton:20260822T000000
 DTEND;TZID=America/Edmonton:20260823T000000
-DTSTAMP:20260805T171036Z
+DTSTAMP:20260805T181047Z
 UID:drac-incident-1644@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:Vulcan will be unavailable August 22nd to 24th. During this ti
