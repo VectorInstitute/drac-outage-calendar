@@ -15850,8 +15850,8 @@ BEGIN:VEVENT
 SUMMARY:[Fir] (unresolved) Filesystem problem - Problème de système de f
  ichiers
 DTSTART;TZID=America/Toronto:20260521T200100
-DTEND;TZID=America/Toronto:20260806T141044
-DTSTAMP:20260805T181047Z
+DTEND;TZID=America/Toronto:20260806T150643
+DTSTAMP:20260805T190645Z
 UID:drac-incident-1614@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:Unresolved: This is an ongoing issue without a definitive end 
@@ -15921,7 +15921,7 @@ BEGIN:VEVENT
 SUMMARY:[FRDR-DFDR] FRDR Maintenance
 DTSTART;TZID=America/Winnipeg:20260527T140000
 DTEND;TZID=America/Winnipeg:20260527T143000
-DTSTAMP:20260805T181047Z
+DTSTAMP:20260805T190645Z
 UID:drac-incident-1616@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:FRDR will be unavailable due to scheduled maintenance for 30 m
@@ -16765,37 +16765,35 @@ DESCRIPTION:Replacing a hard-drive is usually transparent to users\, but t
 URL:https://status.alliancecan.ca/view_incident?incident=1676
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:[Rorqual] 2026-08-05 - Planned Maintenance: Backup Service Unavail
- able - Services de sauvegarde non disponibles
+SUMMARY:[Juno] 2026-08-05 - Planned Maintenance: Backup Service Unavailabl
+ e - Services de sauvegarde non disponibles
 DTSTART;TZID=America/Toronto:20260805T120000
 DTEND;TZID=America/Toronto:20260806T000000
-DTSTAMP:20260805T181047Z
-UID:drac-incident-1668@status.alliancecan.ca
-CATEGORIES:SCHEDULED
+DTSTAMP:20260805T190645Z
+UID:drac-incident-1670@status.alliancecan.ca
+CATEGORIES:UNPLANNED
 DESCRIPTION:Due to a scheduled upgrade\, our backup services for this syst
  em will be unavailable from 8:00 AM on Wednesday\, August 5 to 5:00 PM on 
  Thursday\, August 6 (ET) .\nImpacts:\nNew files will not be backed up.\nRe
- storation operations will not be possible.\nData stored on tape (including
-  /nearline files migrated to tape) will not be accessible.\nOther services
- \, including compute and primary storage services\, will remain available.
- \n======\nEn raison d'une mise à niveau planifiée\, les services de sauv
- egarde pour ce système seront indisponibles de 8h (AM) mercredi 5 août 
- à 17h jeudi 6 août (HE) .\nImpacts:\nLes nouveaux fichiers ne seront pas
-  sauvegardés.\nLa restauration ne sera pas possible.\nLes données stock
- ées sur rubans (y compris les fichiers /nearline migrés sur bande) ne se
- ront pas accessibles.\nLes autres services ne seront pas touchés\, notamm
- ent les services de calcul et de stockage principal.\n\nhttps://status.all
- iancecan.ca/view_incident?incident=1668
-URL:https://status.alliancecan.ca/view_incident?incident=1668
+ storation operations will not be possible.\nData stored on tape will not b
+ e accessible.\nOther services\, including cloud\, will remain available.\n
+ ======\nEn raison d'une mise à niveau planifiée\, les services de sauveg
+ arde pour ce système seront indisponibles de 8h (AM) mercredi 5 août à 
+ 17h jeudi 6 août (HE) .\nImpacts:\nLes nouveaux fichiers ne seront pas sa
+ uvegardés.\nLa restauration ne sera pas possible.\nLes données stockées
+  sur rubans ne seront pas accessibles.\nLes autres services ne seront pas 
+ touchés\, notamment les services d'infonuagique.\n\nhttps://status.allian
+ cecan.ca/view_incident?incident=1670
+URL:https://status.alliancecan.ca/view_incident?incident=1670
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:[Narval] 2026-08-05 - Planned Maintenance: Backup Service Unavaila
  ble - Services de sauvegarde non disponibles
 DTSTART;TZID=America/Toronto:20260805T120000
 DTEND;TZID=America/Toronto:20260806T000000
-DTSTAMP:20260805T181047Z
+DTSTAMP:20260805T190645Z
 UID:drac-incident-1669@status.alliancecan.ca
-CATEGORIES:SCHEDULED
+CATEGORIES:UNPLANNED
 DESCRIPTION:Due to a scheduled upgrade\, our backup services for this syst
  em will be unavailable from 8:00 AM on Wednesday\, August 5 to 5:00 PM on 
  Thursday\, August 6 (ET) .\nImpacts:\nNew files will not be backed up.\nRe
@@ -16813,32 +16811,34 @@ DESCRIPTION:Due to a scheduled upgrade\, our backup services for this syst
 URL:https://status.alliancecan.ca/view_incident?incident=1669
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:[Juno] 2026-08-05 - Planned Maintenance: Backup Service Unavailabl
- e - Services de sauvegarde non disponibles
+SUMMARY:[Rorqual] 2026-08-05 - Planned Maintenance: Backup Service Unavail
+ able - Services de sauvegarde non disponibles
 DTSTART;TZID=America/Toronto:20260805T120000
 DTEND;TZID=America/Toronto:20260806T000000
-DTSTAMP:20260805T181047Z
-UID:drac-incident-1670@status.alliancecan.ca
-CATEGORIES:SCHEDULED
+DTSTAMP:20260805T190645Z
+UID:drac-incident-1668@status.alliancecan.ca
+CATEGORIES:UNPLANNED
 DESCRIPTION:Due to a scheduled upgrade\, our backup services for this syst
  em will be unavailable from 8:00 AM on Wednesday\, August 5 to 5:00 PM on 
  Thursday\, August 6 (ET) .\nImpacts:\nNew files will not be backed up.\nRe
- storation operations will not be possible.\nData stored on tape will not b
- e accessible.\nOther services\, including cloud\, will remain available.\n
- ======\nEn raison d'une mise à niveau planifiée\, les services de sauveg
- arde pour ce système seront indisponibles de 8h (AM) mercredi 5 août à 
- 17h jeudi 6 août (HE) .\nImpacts:\nLes nouveaux fichiers ne seront pas sa
- uvegardés.\nLa restauration ne sera pas possible.\nLes données stockées
-  sur rubans ne seront pas accessibles.\nLes autres services ne seront pas 
- touchés\, notamment les services d'infonuagique.\n\nhttps://status.allian
- cecan.ca/view_incident?incident=1670
-URL:https://status.alliancecan.ca/view_incident?incident=1670
+ storation operations will not be possible.\nData stored on tape (including
+  /nearline files migrated to tape) will not be accessible.\nOther services
+ \, including compute and primary storage services\, will remain available.
+ \n======\nEn raison d'une mise à niveau planifiée\, les services de sauv
+ egarde pour ce système seront indisponibles de 8h (AM) mercredi 5 août 
+ à 17h jeudi 6 août (HE) .\nImpacts:\nLes nouveaux fichiers ne seront pas
+  sauvegardés.\nLa restauration ne sera pas possible.\nLes données stock
+ ées sur rubans (y compris les fichiers /nearline migrés sur bande) ne se
+ ront pas accessibles.\nLes autres services ne seront pas touchés\, notamm
+ ent les services de calcul et de stockage principal.\n\nhttps://status.all
+ iancecan.ca/view_incident?incident=1668
+URL:https://status.alliancecan.ca/view_incident?incident=1668
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:[Nibi] Reduced throughput / power shedding
 DTSTART;TZID=America/Toronto:20260805T160000
 DTEND;TZID=America/Toronto:20260805T200000
-DTSTAMP:20260805T181047Z
+DTSTAMP:20260805T190645Z
 UID:drac-incident-1679@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:The power utility has requested that we reduce power usage bet
@@ -16853,7 +16853,7 @@ BEGIN:VEVENT
 SUMMARY:[Vulcan] Planned Outage - Arrêt planifié
 DTSTART;TZID=America/Edmonton:20260822T000000
 DTEND;TZID=America/Edmonton:20260823T000000
-DTSTAMP:20260805T181047Z
+DTSTAMP:20260805T190645Z
 UID:drac-incident-1644@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:Vulcan will be unavailable August 22nd to 24th. During this ti
