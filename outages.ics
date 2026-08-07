@@ -15847,19 +15847,17 @@ DESCRIPTION:Starting May 21 at 1:00 p.m. ET: rolling update of Nvidia driv
 URL:https://status.alliancecan.ca/view_incident?incident=1612
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:[Fir] (unresolved) Filesystem problem - Problème de système de f
- ichiers
+SUMMARY:[Fir] Filesystem problem - Problème de système de fichiers
 DTSTART;TZID=America/Toronto:20260521T200100
-DTEND;TZID=America/Toronto:20260808T165702
-DTSTAMP:20260807T205704Z
+DTEND;TZID=America/Toronto:20260807T175532
+DTSTAMP:20260807T215532Z
 UID:drac-incident-1614@status.alliancecan.ca
 CATEGORIES:UNPLANNED
-DESCRIPTION:Unresolved: This is an ongoing issue without a definitive end 
- date.\n\nThere is a problem with the filesystem on Fir\, which seems to be
-  unresponsive. We are investigating.\n/ Il y a un problème avec le systè
- me de fichiers sur la grappe Fir\, qui ne réagit pas correctement. Nous i
- nvestiguons actuellement ce qui se passe.\n\nhttps://status.alliancecan.ca
- /view_incident?incident=1614
+DESCRIPTION:There is a problem with the filesystem on Fir\, which seems to
+  be unresponsive. We are investigating.\n/ Il y a un problème avec le sys
+ tème de fichiers sur la grappe Fir\, qui ne réagit pas correctement. Nou
+ s investiguons actuellement ce qui se passe.\n\nhttps://status.alliancecan
+ .ca/view_incident?incident=1614
 URL:https://status.alliancecan.ca/view_incident?incident=1614
 END:VEVENT
 BEGIN:VEVENT
@@ -16853,7 +16851,7 @@ BEGIN:VEVENT
 SUMMARY:[Nibi] Reduced throughput / power shedding
 DTSTART;TZID=America/Toronto:20260806T150000
 DTEND;TZID=America/Toronto:20260806T190000
-DTSTAMP:20260807T205704Z
+DTSTAMP:20260807T215532Z
 UID:drac-incident-1681@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:The power utility has requested that we reduce power usage bet
@@ -16882,7 +16880,7 @@ BEGIN:VEVENT
 SUMMARY:[Vulcan] Planned Outage - Arrêt planifié
 DTSTART;TZID=America/Edmonton:20260822T000000
 DTEND;TZID=America/Edmonton:20260823T000000
-DTSTAMP:20260807T205704Z
+DTSTAMP:20260807T215532Z
 UID:drac-incident-1644@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:Vulcan will be unavailable August 22nd to 24th. During this ti
