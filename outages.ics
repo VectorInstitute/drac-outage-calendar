@@ -16851,7 +16851,7 @@ BEGIN:VEVENT
 SUMMARY:[Nibi] Reduced throughput / power shedding
 DTSTART;TZID=America/Toronto:20260806T150000
 DTEND;TZID=America/Toronto:20260806T190000
-DTSTAMP:20260808T215117Z
+DTSTAMP:20260808T225156Z
 UID:drac-incident-1681@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:The power utility has requested that we reduce power usage bet
@@ -16880,7 +16880,7 @@ BEGIN:VEVENT
 SUMMARY:[Vulcan] Planned Outage - Arrêt planifié
 DTSTART;TZID=America/Edmonton:20260822T000000
 DTEND;TZID=America/Edmonton:20260823T000000
-DTSTAMP:20260808T215117Z
+DTSTAMP:20260808T225156Z
 UID:drac-incident-1644@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:Vulcan will be unavailable August 22nd to 24th. During this ti
