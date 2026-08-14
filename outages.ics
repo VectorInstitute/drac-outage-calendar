@@ -16851,7 +16851,7 @@ BEGIN:VEVENT
 SUMMARY:[Nibi] Reduced throughput / power shedding
 DTSTART;TZID=America/Toronto:20260806T150000
 DTEND;TZID=America/Toronto:20260806T190000
-DTSTAMP:20260814T150128Z
+DTSTAMP:20260814T160026Z
 UID:drac-incident-1681@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:The power utility has requested that we reduce power usage bet
@@ -16911,8 +16911,8 @@ END:VEVENT
 BEGIN:VEVENT
 SUMMARY:[Arbutus] (unresolved) Arbutus Cloud External Network Maintenance
 DTSTART;TZID=America/Toronto:20260811T195000
-DTEND;TZID=America/Toronto:20260815T110126
-DTSTAMP:20260814T150128Z
+DTEND;TZID=America/Toronto:20260815T120020
+DTSTAMP:20260814T160026Z
 UID:drac-incident-1683@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:Unresolved: This is an ongoing issue without a definitive end 
@@ -16923,12 +16923,12 @@ URL:https://status.alliancecan.ca/view_incident?incident=1683
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:[Vulcan] Planned Outage - Arrêt planifié
-DTSTART;TZID=America/Edmonton:20260822T000000
-DTEND;TZID=America/Edmonton:20260823T000000
-DTSTAMP:20260814T150128Z
+DTSTART;TZID=America/Edmonton:20260821T000000
+DTEND;TZID=America/Edmonton:20260822T000000
+DTSTAMP:20260814T160026Z
 UID:drac-incident-1644@status.alliancecan.ca
 CATEGORIES:SCHEDULED
-DESCRIPTION:Vulcan will be unavailable August 22nd to 24th. During this ti
+DESCRIPTION:Vulcan will be unavailable August 21st to 26th. During this ti
  me\, you will not be able to log in or run jobs on the cluster. Any jobs t
  hat are running at the time of the outage will be terminated and you will 
  need to re-submit them once the cluster is back online. Power will be shut

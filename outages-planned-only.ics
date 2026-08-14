@@ -4835,12 +4835,12 @@ URL:https://status.alliancecan.ca/view_incident?incident=1670
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:[Vulcan] Planned Outage - Arrêt planifié
-DTSTART;TZID=America/Edmonton:20260822T000000
-DTEND;TZID=America/Edmonton:20260823T000000
-DTSTAMP:20260814T150128Z
+DTSTART;TZID=America/Edmonton:20260821T000000
+DTEND;TZID=America/Edmonton:20260822T000000
+DTSTAMP:20260814T160027Z
 UID:drac-incident-1644@status.alliancecan.ca
 CATEGORIES:SCHEDULED
-DESCRIPTION:Vulcan will be unavailable August 22nd to 24th. During this ti
+DESCRIPTION:Vulcan will be unavailable August 21st to 26th. During this ti
  me\, you will not be able to log in or run jobs on the cluster. Any jobs t
  hat are running at the time of the outage will be terminated and you will 
  need to re-submit them once the cluster is back online. Power will be shut
