@@ -16851,7 +16851,7 @@ BEGIN:VEVENT
 SUMMARY:[Nibi] Reduced throughput / power shedding
 DTSTART;TZID=America/Toronto:20260806T150000
 DTEND;TZID=America/Toronto:20260806T190000
-DTSTAMP:20260817T145018Z
+DTSTAMP:20260817T165106Z
 UID:drac-incident-1681@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:The power utility has requested that we reduce power usage bet
@@ -16911,8 +16911,8 @@ END:VEVENT
 BEGIN:VEVENT
 SUMMARY:[Arbutus] (unresolved) Arbutus Cloud External Network Maintenance
 DTSTART;TZID=America/Toronto:20260811T195000
-DTEND;TZID=America/Toronto:20260818T105016
-DTSTAMP:20260817T145018Z
+DTEND;TZID=America/Toronto:20260818T125104
+DTSTAMP:20260817T165106Z
 UID:drac-incident-1683@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:Unresolved: This is an ongoing issue without a definitive end 
@@ -16922,10 +16922,70 @@ DESCRIPTION:Unresolved: This is an ongoing issue without a definitive end
 URL:https://status.alliancecan.ca/view_incident?incident=1683
 END:VEVENT
 BEGIN:VEVENT
+SUMMARY:[Narval] (unresolved) Problem with backup system - Problème avec 
+ le système de copies de sauvegarde
+DTSTART;TZID=America/Toronto:20260817T163800
+DTEND;TZID=America/Toronto:20260818T125104
+DTSTAMP:20260817T165106Z
+UID:drac-incident-1685@status.alliancecan.ca
+CATEGORIES:UNPLANNED
+DESCRIPTION:Unresolved: This is an ongoing issue without a definitive end 
+ date.\n\nThe tape storage system is currently having an issue after a soft
+ ware upgrade. Consequently\, the backup system does not work: no new backu
+ p is being done\, and no data retrieval can be made. We are investigating.
+ \n======\nLe système de stockage sur ruban a présentement un problème s
+ uite à une mise à jour logicielle. Par conséquent\, le système de copi
+ es de sauvegarde ne fonctionne pas en ce moment: aucune copie ne peut êtr
+ e faite et aucune récupération de données n'est possible. Nous analyson
+ s le problème.\n\nhttps://status.alliancecan.ca/view_incident?incident=16
+ 85
+URL:https://status.alliancecan.ca/view_incident?incident=1685
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:[Rorqual] (unresolved) Problem with backup system - Problème avec
+  le système de copies de sauvegarde
+DTSTART;TZID=America/Toronto:20260817T163900
+DTEND;TZID=America/Toronto:20260818T125104
+DTSTAMP:20260817T165106Z
+UID:drac-incident-1686@status.alliancecan.ca
+CATEGORIES:UNPLANNED
+DESCRIPTION:Unresolved: This is an ongoing issue without a definitive end 
+ date.\n\nThe tape storage system is currently having an issue after a soft
+ ware upgrade. Consequently\, the backup system does not work: no new backu
+ p is being done\, and no data retrieval can be made. We are investigating.
+ \n======\nLe système de stockage sur ruban a présentement un problème s
+ uite à une mise à jour logicielle. Par conséquent\, le système de copi
+ es de sauvegarde ne fonctionne pas en ce moment: aucune copie ne peut êtr
+ e faite et aucune récupération de données n'est possible. Nous analyson
+ s le problème.\n\nhttps://status.alliancecan.ca/view_incident?incident=16
+ 86
+URL:https://status.alliancecan.ca/view_incident?incident=1686
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:[Juno] (unresolved) Problem with backup system - Problème avec le
+  système de copies de sauvegarde
+DTSTART;TZID=America/Toronto:20260817T164000
+DTEND;TZID=America/Toronto:20260818T125104
+DTSTAMP:20260817T165106Z
+UID:drac-incident-1687@status.alliancecan.ca
+CATEGORIES:UNPLANNED
+DESCRIPTION:Unresolved: This is an ongoing issue without a definitive end 
+ date.\n\nThe tape storage system is currently having an issue after a soft
+ ware upgrade. Consequently\, the backup system does not work: no new backu
+ p is being done\, and no data retrieval can be made. We are investigating.
+ \n======\nLe système de stockage sur ruban a présentement un problème s
+ uite à une mise à jour logicielle. Par conséquent\, le système de copi
+ es de sauvegarde ne fonctionne pas en ce moment: aucune copie ne peut êtr
+ e faite et aucune récupération de données n'est possible. Nous analyson
+ s le problème.\n\nhttps://status.alliancecan.ca/view_incident?incident=16
+ 87
+URL:https://status.alliancecan.ca/view_incident?incident=1687
+END:VEVENT
+BEGIN:VEVENT
 SUMMARY:[Vulcan] Planned Outage - Arrêt planifié
 DTSTART;TZID=America/Edmonton:20260821T000000
 DTEND;TZID=America/Edmonton:20260822T000000
-DTSTAMP:20260817T145018Z
+DTSTAMP:20260817T165106Z
 UID:drac-incident-1644@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:Vulcan will be unavailable August 21st to 26th. During this ti
