@@ -16851,7 +16851,7 @@ BEGIN:VEVENT
 SUMMARY:[Nibi] Reduced throughput / power shedding
 DTSTART;TZID=America/Toronto:20260806T150000
 DTEND;TZID=America/Toronto:20260806T190000
-DTSTAMP:20260818T045415Z
+DTSTAMP:20260818T055039Z
 UID:drac-incident-1681@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:The power utility has requested that we reduce power usage bet
@@ -16911,8 +16911,8 @@ END:VEVENT
 BEGIN:VEVENT
 SUMMARY:[Arbutus] (unresolved) Arbutus Cloud External Network Maintenance
 DTSTART;TZID=America/Toronto:20260811T195000
-DTEND;TZID=America/Toronto:20260819T005412
-DTSTAMP:20260818T045415Z
+DTEND;TZID=America/Toronto:20260819T015038
+DTSTAMP:20260818T055039Z
 UID:drac-incident-1683@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:Unresolved: This is an ongoing issue without a definitive end 
@@ -16926,7 +16926,7 @@ SUMMARY:[Narval] Problem with backup system - Problème avec le système d
  e copies de sauvegarde
 DTSTART;TZID=America/Toronto:20260817T163800
 DTEND;TZID=America/Toronto:20260817T200500
-DTSTAMP:20260818T045415Z
+DTSTAMP:20260818T055039Z
 UID:drac-incident-1685@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:The tape storage system is currently having an issue after a s
@@ -16945,7 +16945,7 @@ SUMMARY:[Rorqual] Problem with backup system - Problème avec le système
  de copies de sauvegarde
 DTSTART;TZID=America/Toronto:20260817T163900
 DTEND;TZID=America/Toronto:20260817T200500
-DTSTAMP:20260818T045415Z
+DTSTAMP:20260818T055039Z
 UID:drac-incident-1686@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:The tape storage system is currently having an issue after a s
@@ -16964,7 +16964,7 @@ SUMMARY:[Juno] Problem with backup system - Problème avec le système de
  copies de sauvegarde
 DTSTART;TZID=America/Toronto:20260817T164000
 DTEND;TZID=America/Toronto:20260817T200600
-DTSTAMP:20260818T045415Z
+DTSTAMP:20260818T055039Z
 UID:drac-incident-1687@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:The tape storage system is currently having an issue after a s
@@ -16982,7 +16982,7 @@ BEGIN:VEVENT
 SUMMARY:[Vulcan] Planned Outage - Arrêt planifié
 DTSTART;TZID=America/Edmonton:20260821T000000
 DTEND;TZID=America/Edmonton:20260822T000000
-DTSTAMP:20260818T045415Z
+DTSTAMP:20260818T055039Z
 UID:drac-incident-1644@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:Vulcan will be unavailable August 21st to 26th. During this ti
