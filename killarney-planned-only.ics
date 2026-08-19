@@ -66,8 +66,8 @@ DESCRIPTION:On Tuesday and Wednesday\, June 9-10 \, 2026 Vector's Killarn
  . HPC compute nodes in the cluster will be shut down and queued jobs will 
  not execute. Running jobs will be cancelled.\nThe Scientific Computing tea
  m will take advantage of these maintenance windows to perform upgrades to 
- address security\, performance and add enhancements to the environment.\n\
- nhttps://status.alliancecan.ca/view_incident?incident=1617
+ address security\, performance and add enhancements to the environment.\n
+ \nhttps://status.alliancecan.ca/view_incident?incident=1617
 URL:https://status.alliancecan.ca/view_incident?incident=1617
 END:VEVENT
 BEGIN:VEVENT

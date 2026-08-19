@@ -568,22 +568,22 @@ CATEGORIES:SCHEDULED
 DESCRIPTION:Between 5am February 25 and 9pm February 27 (2 days)\, we will
   be upgrading the storage infrastructure behind /project and conducting ma
  intenance work on the datacenter’s electrical system.\nAll services prov
- ided by the Graham compute cluster will be unavailable during this outage\
- , including job scheduling\, access to login nodes\, access to storage (in
- cluding via Globus and the DTN) and the access to VDI nodes\, but the main
- tenance will not affect the Graham Cloud. The scheduler will avoid startin
- g jobs that would extend into the outage. Any jobs running at the time of 
- the outage will be killed.\n---\nEntre 5h (HE) le 25 février et 21h (HE) 
- le 27 février\, nous effectuerons une mise à jour de l’infrastructure 
- de stockage derrière /project ainsi que des travaux de maintenance au sys
- tème d’alimentation électrique du centre de données.\nLes services de
-  la grappe de calcul ne seront pas disponibles\, y compris l’ordonnancem
- ent des tâches et l’accès aux nœuds de connexion\, au stockage (inclu
- ant via Globus et le DTN) et aux nœuds VDI. Le service Graham cloud ne se
- ra pas affecté. L’ordonnanceur retiendra les tâches dont l’exécutio
- n est prévue à l’intérieur de la période d’arrêt de service\, mai
- s les tâches en cours d'exécution seront supprimées.\n\nhttps://status.
- alliancecan.ca/view_incident?incident=397
+ ided by the Graham compute cluster will be unavailable during this outage
+ \, including job scheduling\, access to login nodes\, access to storage (i
+ ncluding via Globus and the DTN) and the access to VDI nodes\, but the mai
+ ntenance will not affect the Graham Cloud. The scheduler will avoid starti
+ ng jobs that would extend into the outage. Any jobs running at the time of
+  the outage will be killed.\n---\nEntre 5h (HE) le 25 février et 21h (HE)
+  le 27 février\, nous effectuerons une mise à jour de l’infrastructure
+  de stockage derrière /project ainsi que des travaux de maintenance au sy
+ stème d’alimentation électrique du centre de données.\nLes services d
+ e la grappe de calcul ne seront pas disponibles\, y compris l’ordonnance
+ ment des tâches et l’accès aux nœuds de connexion\, au stockage (incl
+ uant via Globus et le DTN) et aux nœuds VDI. Le service Graham cloud ne s
+ era pas affecté. L’ordonnanceur retiendra les tâches dont l’exécuti
+ on est prévue à l’intérieur de la période d’arrêt de service\, ma
+ is les tâches en cours d'exécution seront supprimées.\n\nhttps://status
+ .alliancecan.ca/view_incident?incident=397
 URL:https://status.alliancecan.ca/view_incident?incident=397
 END:VEVENT
 BEGIN:VEVENT
@@ -608,13 +608,13 @@ DTSTAMP:20260703T134918Z
 UID:drac-incident-405@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:There has been a power outage at this site\, from 4:45 PM (EST
- ) until 5:00 PM. The whole compute cluster\, including the storage system\
- , will remain unavailable until Saturday\, probably by the end of the day.
-  We apologize for the inconvenience.\n/ Il y a eu une panne de courant sur
-  ce site\, de 16h45 (EST) à 17h. Toute la grappe de calcul\, incluant le 
- système de stockage\, restera indisponible jusqu'à ce samedi\, probablem
- ent vers la fin de la journée. Nous sommes désolés pour cet arrêt de s
- ervice.\n\nhttps://status.alliancecan.ca/view_incident?incident=405
+ ) until 5:00 PM. The whole compute cluster\, including the storage system
+ \, will remain unavailable until Saturday\, probably by the end of the day
+ . We apologize for the inconvenience.\n/ Il y a eu une panne de courant su
+ r ce site\, de 16h45 (EST) à 17h. Toute la grappe de calcul\, incluant le
+  système de stockage\, restera indisponible jusqu'à ce samedi\, probable
+ ment vers la fin de la journée. Nous sommes désolés pour cet arrêt de 
+ service.\n\nhttps://status.alliancecan.ca/view_incident?incident=405
 URL:https://status.alliancecan.ca/view_incident?incident=405
 END:VEVENT
 BEGIN:VEVENT
@@ -884,11 +884,11 @@ DTSTAMP:20260703T134918Z
 UID:drac-incident-425@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:Maintenance will be performed on Graham's cooling system betwe
- en 7 and 11AM on Wednesday\, April 22. During and leading up to this time\
- , the cluster will avoid starting jobs\, but running jobs will continue. Y
- ou will be able to login\, access files and submit jobs\, but jobs won't s
- tart until after the maintenance.\nMaintenance was completed successfully.
- \n\nhttps://status.alliancecan.ca/view_incident?incident=425
+ en 7 and 11AM on Wednesday\, April 22. During and leading up to this time
+ \, the cluster will avoid starting jobs\, but running jobs will continue. 
+ You will be able to login\, access files and submit jobs\, but jobs won't 
+ start until after the maintenance.\nMaintenance was completed successfully
+ .\n\nhttps://status.alliancecan.ca/view_incident?incident=425
 URL:https://status.alliancecan.ca/view_incident?incident=425
 END:VEVENT
 BEGIN:VEVENT
@@ -1021,8 +1021,8 @@ CATEGORIES:UNPLANNED
 DESCRIPTION:UPDATE:\nArbutus API authentication is available once again.\n
  -- We are experiencing high-load on the authentication service and this is
   causing issues accessing the Arbutus API. System administrators are inves
- tigating the issue. Instances should continue to run and be accessible.\n\
- nhttps://status.alliancecan.ca/view_incident?incident=434
+ tigating the issue. Instances should continue to run and be accessible.\n
+ \nhttps://status.alliancecan.ca/view_incident?incident=434
 URL:https://status.alliancecan.ca/view_incident?incident=434
 END:VEVENT
 BEGIN:VEVENT
@@ -1986,8 +1986,8 @@ DTSTAMP:20260703T134918Z
 UID:drac-incident-505@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:We will do maintenance work on the login portal\, which may be
- come unavailable for a short time period between 18:00 and 19:00 tonight.\
- n\nhttps://status.alliancecan.ca/view_incident?incident=505
+ come unavailable for a short time period between 18:00 and 19:00 tonight.
+ \n\nhttps://status.alliancecan.ca/view_incident?incident=505
 URL:https://status.alliancecan.ca/view_incident?incident=505
 END:VEVENT
 BEGIN:VEVENT
@@ -2104,11 +2104,11 @@ UID:drac-incident-514@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:Update: A large amount of jobs had been submitted\, it overloa
  ded the max limit on the scheduler queue\, we've removed this accidental f
- lood and service has resumed to normal.\nThe job scheduler is misbehaving\
- , which may impair the ability to start new jobs. We are investigating.\n/
-  L'ordonnanceur a un problème\, ce qui peut empêcher de démarrer de nou
- velles tâches. Nous investiguons actuellement ce qui se passe.\n\nhttps:/
- /status.alliancecan.ca/view_incident?incident=514
+ lood and service has resumed to normal.\nThe job scheduler is misbehaving
+ \, which may impair the ability to start new jobs. We are investigating.\n
+ / L'ordonnanceur a un problème\, ce qui peut empêcher de démarrer de no
+ uvelles tâches. Nous investiguons actuellement ce qui se passe.\n\nhttps:
+ //status.alliancecan.ca/view_incident?incident=514
 URL:https://status.alliancecan.ca/view_incident?incident=514
 END:VEVENT
 BEGIN:VEVENT
@@ -2262,11 +2262,11 @@ CATEGORIES:UNPLANNED
 DESCRIPTION:Update:\nWe replaced the failed switch\; we needed to cycle ce
  rtain services and validate consistency during bringing services back onli
  ne. As such\, while most research will have continued uninterrupted\, some
-  might have reached timeout due to waiting on services during the outage.\
- nThanks for your patience.\nOriginal:\nCedar is currently offline due to a
-  switch failure. We are investigating and work is underway to restore serv
- ices. Will update when more is known.\n\nhttps://status.alliancecan.ca/vie
- w_incident?incident=524
+  might have reached timeout due to waiting on services during the outage.
+ \nThanks for your patience.\nOriginal:\nCedar is currently offline due to 
+ a switch failure. We are investigating and work is underway to restore ser
+ vices. Will update when more is known.\n\nhttps://status.alliancecan.ca/vi
+ ew_incident?incident=524
 URL:https://status.alliancecan.ca/view_incident?incident=524
 END:VEVENT
 BEGIN:VEVENT
@@ -2387,10 +2387,10 @@ DESCRIPTION:There will be a one-day maintenance shutdown on December 7th 2
  SS or teach\, nor to their file systems during this time. We expect to be 
  able to bring the systems back online in the evening of the same day.\n/ I
  l y aura un arrêt de maintenance d'une journée le 7 décembre 2020\, à 
- partir de 8h (heure de l'Est). Il n'y aura aucun accès à Niagara\, Mist\
- , HPSS ou teach\, ni à leurs systèmes de fichiers pendant cette période
- . Nous espérons pouvoir remettre les systèmes en ligne le soir même.\n\
- nhttps://status.alliancecan.ca/view_incident?incident=525
+ partir de 8h (heure de l'Est). Il n'y aura aucun accès à Niagara\, Mist
+ \, HPSS ou teach\, ni à leurs systèmes de fichiers pendant cette périod
+ e. Nous espérons pouvoir remettre les systèmes en ligne le soir même.\n
+ \nhttps://status.alliancecan.ca/view_incident?incident=525
 URL:https://status.alliancecan.ca/view_incident?incident=525
 END:VEVENT
 BEGIN:VEVENT
@@ -3207,8 +3207,8 @@ DESCRIPTION:There is a problem with the /home filesystem.\nCause: Defectiv
  r at the ZFS level Estimate time to solution: Done\n======\nIl y a un prob
  lème avec le système de fichiers /home.\nCause : Disque défectueux caus
  ant une accumulation d'opérations de lecture-écritures Solution : Change
- r le disque au niveau de ZFS Heure estimée de résolution : Complété\n\
- nhttps://status.alliancecan.ca/view_incident?incident=599
+ r le disque au niveau de ZFS Heure estimée de résolution : Complété\n
+ \nhttps://status.alliancecan.ca/view_incident?incident=599
 URL:https://status.alliancecan.ca/view_incident?incident=599
 END:VEVENT
 BEGIN:VEVENT
@@ -3540,10 +3540,10 @@ DESCRIPTION:Dû à une faille de sécurité critique\, les noeuds de tête
  à jour et les redémarrer\, ce qui peut affecter le lancement des tâches
  .\n---\nIn response to a critical security update\, all nodes are being dr
  ained to allow them to be rebooted into a new kernel.\nLogin nodes have be
- en rebooted\, so you may have noticed disconnection of your SSH sessions.\
- nCompute nodes are set to drain (not accept jobs)\, so your jobs may wait 
- in the queue longer.\n\nhttps://status.alliancecan.ca/view_incident?incide
- nt=633
+ en rebooted\, so you may have noticed disconnection of your SSH sessions.
+ \nCompute nodes are set to drain (not accept jobs)\, so your jobs may wait
+  in the queue longer.\n\nhttps://status.alliancecan.ca/view_incident?incid
+ ent=633
 URL:https://status.alliancecan.ca/view_incident?incident=633
 END:VEVENT
 BEGIN:VEVENT
@@ -3962,9 +3962,9 @@ UID:drac-incident-665@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:UPDATE:\nService is now restored to all tenant networks.\n-- O
  ne of four Arbutus Cloud network (neutron) servers failed. Virtual routers
-  and services are in the process of being migrated to the 3 healthy nodes\
- , but networking issues will persist for some tenants until the migration 
- is complete.\n\nhttps://status.alliancecan.ca/view_incident?incident=665
+  and services are in the process of being migrated to the 3 healthy nodes
+ \, but networking issues will persist for some tenants until the migration
+  is complete.\n\nhttps://status.alliancecan.ca/view_incident?incident=665
 URL:https://status.alliancecan.ca/view_incident?incident=665
 END:VEVENT
 BEGIN:VEVENT
@@ -4302,14 +4302,14 @@ DTEND;TZID=America/Toronto:20220106T163300
 DTSTAMP:20260703T134918Z
 UID:drac-incident-691@status.alliancecan.ca
 CATEGORIES:UNPLANNED
-DESCRIPTION:UPDATE: DNS resolvers are back online in all tenant networks.\
- n-- Some Arbutus tenant networks may experience degraded DNS resolver acce
- ss during the next several hours as cloud infrastructure is rebalanced aft
- er a message queueing issue. If an instance's primary DNS resolver is not 
- available\, DNS resolution may be delayed until the request times out and 
- an available resolver is selected. Cloud administrators are aware of the i
- ssue and actively working towards resolution.\n\nhttps://status.allianceca
- n.ca/view_incident?incident=691
+DESCRIPTION:UPDATE: DNS resolvers are back online in all tenant networks.
+ \n-- Some Arbutus tenant networks may experience degraded DNS resolver acc
+ ess during the next several hours as cloud infrastructure is rebalanced af
+ ter a message queueing issue. If an instance's primary DNS resolver is not
+  available\, DNS resolution may be delayed until the request times out and
+  an available resolver is selected. Cloud administrators are aware of the 
+ issue and actively working towards resolution.\n\nhttps://status.alliancec
+ an.ca/view_incident?incident=691
 URL:https://status.alliancecan.ca/view_incident?incident=691
 END:VEVENT
 BEGIN:VEVENT
@@ -4336,12 +4336,12 @@ DTSTAMP:20260703T134918Z
 UID:drac-incident-695@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:There is a power outage at this site.\n/ Il y a une panne de c
- ourant sur ce site.\nDetails North of BEAVERBROOK CRS\, West of AILSA AVE\
- , South-East of UNIVERSITY DR Outage cause Snow storm Crew status Crew on-
- site Est. time on Jan 6\, 6:00 p.m.\nLast updated Jan 6\, 1:59 p.m.\nFor u
- pdates see https://www.bchydro.com/power-outages/app/outage-map.html with 
- the zipcode V5A 4Y4\n\nhttps://status.alliancecan.ca/view_incident?inciden
- t=695
+ ourant sur ce site.\nDetails North of BEAVERBROOK CRS\, West of AILSA AVE
+ \, South-East of UNIVERSITY DR Outage cause Snow storm Crew status Crew on
+ -site Est. time on Jan 6\, 6:00 p.m.\nLast updated Jan 6\, 1:59 p.m.\nFor 
+ updates see https://www.bchydro.com/power-outages/app/outage-map.html with
+  the zipcode V5A 4Y4\n\nhttps://status.alliancecan.ca/view_incident?incide
+ nt=695
 URL:https://status.alliancecan.ca/view_incident?incident=695
 END:VEVENT
 BEGIN:VEVENT
@@ -4886,25 +4886,25 @@ UID:drac-incident-741@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:Starting Monday\, March 28th\, 2022\, at 10 am ET\, the Graham
   cluster will be unavailable to all users as we perform regular maintenanc
- e. Running jobs will be terminated. The work will be completed by Tuesday\
- , March 29th\, 2022 at 10 am. During this maintenance window we will be up
- grading the scratch file system.\nPlease watch http://status.computecanada
- .ca for updates on the availability of Graham and all other national syste
- ms.\nWe are upgrading the scratch file system to provide better overall pe
- rformance. The upgrade is not expected to impact any files stored on scrat
- ch\; however\, as with any file system maintenance\, issues could potentia
- lly arise. Therefore\, users are encouraged to copy any critical data stor
- ed on scratch to another filesystem ahead of this maintenance.\nAs a gener
- al reminder: the scratch file system is intended for temporary files\; not
- hing that can’t be recovered or recreated. The scratch file system is no
- t backed up.\nThis outage will impact the cluster\, login nodes\, visualiz
- ation nodes (VDI) as well as data transfer nodes (DTN). There will be no i
- mpact to the Graham cloud.\nStart Time : 10 am ET\, Monday\, March 28\, 20
- 22 Anticipated End Time : 10 am ET\, Tuesday\, March 29\, 2022 Users will 
- be notified by email when the cluster is up and running again.\nFor questi
- ons\, or assistance migrating to other national systems\, please email [em
- ail protected] Thank you\, Graham Team\, Compute Canada Federation\n\nhtt
- ps://status.alliancecan.ca/view_incident?incident=741
+ e. Running jobs will be terminated. The work will be completed by Tuesday
+ \, March 29th\, 2022 at 10 am. During this maintenance window we will be u
+ pgrading the scratch file system.\nPlease watch http://status.computecanad
+ a.ca for updates on the availability of Graham and all other national syst
+ ems.\nWe are upgrading the scratch file system to provide better overall p
+ erformance. The upgrade is not expected to impact any files stored on scra
+ tch\; however\, as with any file system maintenance\, issues could potenti
+ ally arise. Therefore\, users are encouraged to copy any critical data sto
+ red on scratch to another filesystem ahead of this maintenance.\nAs a gene
+ ral reminder: the scratch file system is intended for temporary files\; no
+ thing that can’t be recovered or recreated. The scratch file system is n
+ ot backed up.\nThis outage will impact the cluster\, login nodes\, visuali
+ zation nodes (VDI) as well as data transfer nodes (DTN). There will be no 
+ impact to the Graham cloud.\nStart Time : 10 am ET\, Monday\, March 28\, 2
+ 022 Anticipated End Time : 10 am ET\, Tuesday\, March 29\, 2022 Users will
+  be notified by email when the cluster is up and running again.\nFor quest
+ ions\, or assistance migrating to other national systems\, please email [e
+ mail protected] Thank you\, Graham Team\, Compute Canada Federation\n\nht
+ tps://status.alliancecan.ca/view_incident?incident=741
 URL:https://status.alliancecan.ca/view_incident?incident=741
 END:VEVENT
 BEGIN:VEVENT
@@ -4978,8 +4978,8 @@ DESCRIPTION:This is a reminder advisory that the planned activity BCNET Co
   assess the risk for your organization.\nContact: Please contact the BCNET
   Operations Center at 604-424-0489 option 3 or [email protected] when net
  work problems are experienced outside of a maintenance window.\nPosted By:
-  BCNET Network Management Center 604-424-0489 option 3 [email protected]\
- n\nhttps://status.alliancecan.ca/view_incident?incident=746
+  BCNET Network Management Center 604-424-0489 option 3 [email protected]
+ \n\nhttps://status.alliancecan.ca/view_incident?incident=746
 URL:https://status.alliancecan.ca/view_incident?incident=746
 END:VEVENT
 BEGIN:VEVENT
@@ -4992,13 +4992,13 @@ CATEGORIES:UNPLANNED
 DESCRIPTION:The connectivity to the SciNet datacentre will be disrupted at
   11:00 AM EDT on Thursday April 14th for a few minutes\, in order to deplo
  y a new network core switch.  Any SSH connections or data transfers to Sc
- iNet systems (Niagara\, Mist\, etc.) may be terminated at that time.\n---\
- nLa connectivité réseautique au centre de données SciNet sera interromp
- ue à 11h00 (Heure Avancée de l'Est) le jeudi 14 avril pendant quelques m
- inutes\, afin de déployer un nouveau commutateur réseau.  Toute connexi
- on SSH ou transfert de données vers les systèmes SciNet (Niagara\, Mist\
- , etc.) pourraient être interrompus à ce moment-là.\n\nhttps://status.a
- lliancecan.ca/view_incident?incident=749
+ iNet systems (Niagara\, Mist\, etc.) may be terminated at that time.\n---
+ \nLa connectivité réseautique au centre de données SciNet sera interrom
+ pue à 11h00 (Heure Avancée de l'Est) le jeudi 14 avril pendant quelques 
+ minutes\, afin de déployer un nouveau commutateur réseau.  Toute connex
+ ion SSH ou transfert de données vers les systèmes SciNet (Niagara\, Mist
+ \, etc.) pourraient être interrompus à ce moment-là.\n\nhttps://status.
+ alliancecan.ca/view_incident?incident=749
 URL:https://status.alliancecan.ca/view_incident?incident=749
 END:VEVENT
 BEGIN:VEVENT
@@ -5957,16 +5957,16 @@ DESCRIPTION:This is complete. C'est complet.\n----\nOn Sunday\, October 16
   between 6:00am and 8:00am (PDT) / 9:00am and 11:00am (EDT) \, the Arbutus
  /UVIC network supplier BCNET will perform network maintenance impacting ex
  ternal connectivity to Arbutus. During the maintenance\, external network 
- access will not function for all Arbutus services including the dashboard\
- , OpenStack APIs\, Object Storage\, and virtual machines (VMs). The active
-  VMs will continue running and will be accessible once the maintenance is 
- complete.\n----\nLe dimanche 16 octobre entre 6h et 8h (HP) / 9h et 11h (H
- E) \, le fournisseur de réseau BCNET pour Arbutus/UVIC effectuera des tra
- vaux qui empêcheront l’accès externe à la grappe\, incluant le tablea
- u de bord\, les interfaces de programmation (API)\, le stockage objet et l
- ’accès aux machines virtuelles. Les machines virtuelles en cours ne ser
- ont pas interrompues\, mais il sera impossible d'y accéder avant la fin d
- es travaux.\n\nhttps://status.alliancecan.ca/view_incident?incident=833
+ access will not function for all Arbutus services including the dashboard
+ \, OpenStack APIs\, Object Storage\, and virtual machines (VMs). The activ
+ e VMs will continue running and will be accessible once the maintenance is
+  complete.\n----\nLe dimanche 16 octobre entre 6h et 8h (HP) / 9h et 11h (
+ HE) \, le fournisseur de réseau BCNET pour Arbutus/UVIC effectuera des tr
+ avaux qui empêcheront l’accès externe à la grappe\, incluant le table
+ au de bord\, les interfaces de programmation (API)\, le stockage objet et 
+ l’accès aux machines virtuelles. Les machines virtuelles en cours ne se
+ ront pas interrompues\, mais il sera impossible d'y accéder avant la fin 
+ des travaux.\n\nhttps://status.alliancecan.ca/view_incident?incident=833
 URL:https://status.alliancecan.ca/view_incident?incident=833
 END:VEVENT
 BEGIN:VEVENT
@@ -7431,11 +7431,11 @@ DTEND;TZID=America/Toronto:20230712T145500
 DTSTAMP:20260703T134918Z
 UID:drac-incident-959@status.alliancecan.ca
 CATEGORIES:UNPLANNED
-DESCRIPTION:There is a problem with the  /scratch  filesystem on Narval\
- , which seems to be unresponsive. We are investigating.\n/ Il y a un probl
- ème avec le système de fichiers  /scratch  sur la grappe Narval\, qui 
- ne réagit pas correctement. Nous investiguons actuellement ce qui se pass
- e.\n\nhttps://status.alliancecan.ca/view_incident?incident=959
+DESCRIPTION:There is a problem with the  /scratch  filesystem on Narval
+ \, which seems to be unresponsive. We are investigating.\n/ Il y a un prob
+ lème avec le système de fichiers  /scratch  sur la grappe Narval\, qui
+  ne réagit pas correctement. Nous investiguons actuellement ce qui se pas
+ se.\n\nhttps://status.alliancecan.ca/view_incident?incident=959
 URL:https://status.alliancecan.ca/view_incident?incident=959
 END:VEVENT
 BEGIN:VEVENT
@@ -7672,8 +7672,8 @@ CATEGORIES:SCHEDULED
 DESCRIPTION:FRDR will be unavailable due to scheduled maintenance on Monda
  y\, August 7th (9:00 AM CST - 11:59 PM CST). We apologize for any inconven
  ience.// DFDR sera indisponible en raison d'entretien pendant le lundi 7 a
- oût (9 h -  23 h 59 HNC). Nous nous excusons pour tout inconvénient.\n\
- nhttps://status.alliancecan.ca/view_incident?incident=978
+ oût (9 h -  23 h 59 HNC). Nous nous excusons pour tout inconvénient.\n
+ \nhttps://status.alliancecan.ca/view_incident?incident=978
 URL:https://status.alliancecan.ca/view_incident?incident=978
 END:VEVENT
 BEGIN:VEVENT
@@ -7844,8 +7844,8 @@ DESCRIPTION:There is a problem with the /project filesystem.\nImpacts: slo
  oting that server Estimate time to solution: To be determined\n======\nIl 
  y a un problème avec le système de fichiers /project.\nImpacts : accès 
  lents ou accès bloquants Cause : un serveur de stockage est gelé Solutio
- n : redémarrer ce serveur Heure estimée de résolution : à déterminer\
- n\nhttps://status.alliancecan.ca/view_incident?incident=994
+ n : redémarrer ce serveur Heure estimée de résolution : à déterminer
+ \n\nhttps://status.alliancecan.ca/view_incident?incident=994
 URL:https://status.alliancecan.ca/view_incident?incident=994
 END:VEVENT
 BEGIN:VEVENT
@@ -8342,9 +8342,9 @@ DTSTAMP:20260703T134918Z
 UID:drac-incident-1033@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:SFU Network Services will perform firmware upgrade for Edge sw
- itch in Vancouver on Nov. 4 7AM PDT. Access to public internet from Cedar\
- , LHCONE and LHCOPN will not be available. Expected outage period is about
-  20 minutes.\n\nhttps://status.alliancecan.ca/view_incident?incident=1033
+ itch in Vancouver on Nov. 4 7AM PDT. Access to public internet from Cedar
+ \, LHCONE and LHCOPN will not be available. Expected outage period is abou
+ t 20 minutes.\n\nhttps://status.alliancecan.ca/view_incident?incident=1033
 URL:https://status.alliancecan.ca/view_incident?incident=1033
 END:VEVENT
 BEGIN:VEVENT
@@ -8491,17 +8491,17 @@ DESCRIPTION:A maintenance period is planned on Béluga and Narval from 8:3
  ue until each cluster is back in service.\n======\nUne période de mainten
  ance est prévue du 28 novembre 2023 à 8h30 (HE) jusqu'au 29 novembre à 
  17h (HE).\nLes grappes de calcul Béluga et Narval ainsi que les systèmes
-  de sauvegarde seront inaccessibles durant cette période de maintenance.\
- nLes accès aux nœuds de connexion et aux données seront bloqués. Les t
- ransferts via Globus vers Narval seront uniquement mis sur pause. Par cont
- re\, les transferts Globus via le point de chute de Béluga seront interro
- mpus et annulés afin d’effectuer une mise à jour à la version 5 de ce
-  service .\nD’ici la maintenance\, seules les tâches pouvant se termine
- r avant le 28 novembre à 8h seront démarrées\, car une réservation de 
- tous les nœuds s’assurera qu’aucune tâche ne sera active au moment d
- e commencer la maintenance. Les autres tâches resteront en file d’atten
- te jusqu’au retour en service de chacune des grappes.\n\nhttps://status.
- alliancecan.ca/view_incident?incident=1039
+  de sauvegarde seront inaccessibles durant cette période de maintenance.
+ \nLes accès aux nœuds de connexion et aux données seront bloqués. Les 
+ transferts via Globus vers Narval seront uniquement mis sur pause. Par con
+ tre\, les transferts Globus via le point de chute de Béluga seront interr
+ ompus et annulés afin d’effectuer une mise à jour à la version 5 de c
+ e service .\nD’ici la maintenance\, seules les tâches pouvant se termin
+ er avant le 28 novembre à 8h seront démarrées\, car une réservation de
+  tous les nœuds s’assurera qu’aucune tâche ne sera active au moment 
+ de commencer la maintenance. Les autres tâches resteront en file d’atte
+ nte jusqu’au retour en service de chacune des grappes.\n\nhttps://status
+ .alliancecan.ca/view_incident?incident=1039
 URL:https://status.alliancecan.ca/view_incident?incident=1039
 END:VEVENT
 BEGIN:VEVENT
@@ -8882,8 +8882,8 @@ DESCRIPTION:Lustre file servers crashed. Recovered now.\nThere is a proble
  To be determined Solution: To be determined Estimate time to solution: To 
  be determined\n======\nIl y a un problème avec le système de fichiers /p
  roject.\nImpacts : accès lents ou accès bloquants Cause : à déterminer
-  Solution : à déterminer Heure estimée de résolution : à déterminer\
- n\nhttps://status.alliancecan.ca/view_incident?incident=1073
+  Solution : à déterminer Heure estimée de résolution : à déterminer
+ \n\nhttps://status.alliancecan.ca/view_incident?incident=1073
 URL:https://status.alliancecan.ca/view_incident?incident=1073
 END:VEVENT
 BEGIN:VEVENT
@@ -8954,23 +8954,23 @@ DTEND;TZID=America/Vancouver:20240131T050000
 DTSTAMP:20260703T134918Z
 UID:drac-incident-1079@status.alliancecan.ca
 CATEGORIES:SCHEDULED
-DESCRIPTION:The CCDB is scheduled for routine maintenance on January 31st\
- , commencing at 8 am EST / 5 am PST. We anticipate that the maintenance wi
- ll conclude within fifteen minutes\; however\, we have allocated an hour f
- or the outage as a precautionary measure.\nWhile server maintenance is in 
- progress\, the CCDB may remain accessible but is expected to experience di
- minished speeds\, page timeouts\, and unresponsiveness. Consequently\, we 
- advise individuals to refrain from using the service until the maintenance
-  is successfully completed.\nLe CCDB fera l'objet d'une maintenance planif
- iée le 31 janvier\, débutant à 8h HNE / 5h HNP. Nous prévoyons que la 
- maintenance ne prendra pas plus de quinze minutes\, mais avons prévu une 
- interruption d'une heure par mesure de précaution.\nPendant que nous effe
- ctuons la maintenance sur le serveur\, le CCDB pourrait demeurer accessibl
- e\, mais pourrait subir des ralentissements\, des délais d'affichage de p
- ages et une absence de réactivité. Pour cette raison\, nous recommandons
-  aux utilisateurs d'attendre que la maintenance soit complète avant d'uti
- liser le service.\n\nhttps://status.alliancecan.ca/view_incident?incident=
- 1079
+DESCRIPTION:The CCDB is scheduled for routine maintenance on January 31st
+ \, commencing at 8 am EST / 5 am PST. We anticipate that the maintenance w
+ ill conclude within fifteen minutes\; however\, we have allocated an hour 
+ for the outage as a precautionary measure.\nWhile server maintenance is in
+  progress\, the CCDB may remain accessible but is expected to experience d
+ iminished speeds\, page timeouts\, and unresponsiveness. Consequently\, we
+  advise individuals to refrain from using the service until the maintenanc
+ e is successfully completed.\nLe CCDB fera l'objet d'une maintenance plani
+ fiée le 31 janvier\, débutant à 8h HNE / 5h HNP. Nous prévoyons que la
+  maintenance ne prendra pas plus de quinze minutes\, mais avons prévu une
+  interruption d'une heure par mesure de précaution.\nPendant que nous eff
+ ectuons la maintenance sur le serveur\, le CCDB pourrait demeurer accessib
+ le\, mais pourrait subir des ralentissements\, des délais d'affichage de 
+ pages et une absence de réactivité. Pour cette raison\, nous recommandon
+ s aux utilisateurs d'attendre que la maintenance soit complète avant d'ut
+ iliser le service.\n\nhttps://status.alliancecan.ca/view_incident?incident
+ =1079
 URL:https://status.alliancecan.ca/view_incident?incident=1079
 END:VEVENT
 BEGIN:VEVENT
@@ -9166,11 +9166,11 @@ DESCRIPTION:On Monday March 11th 2024\, there will be a shutdown of the fi
  .\nUpdates will be posted on https://docs.scinet.utoronto.ca .\n-- Le lund
  i 11 mars 2024\, il y aura un arrêt du système de stockage de SciNet pou
  r permettre une réparation d'urgence.  Par conséquent\, les nœuds de 
- connection en les nœuds de calcul de tous les grappes de SciNet (Niagara\
- , Mist\, Balam\, Rouge et Teach) seront étaints. L'interruption durera de
-  11 h HNE jusqu'à plus tard dans l'après-midi.  Les mises-à-jour seron
- t publiées sur https://docs.scinet.utoronto.ca .\n\nhttps://status.allian
- cecan.ca/view_incident?incident=1101
+ connection en les nœuds de calcul de tous les grappes de SciNet (Niagara
+ \, Mist\, Balam\, Rouge et Teach) seront étaints. L'interruption durera d
+ e 11 h HNE jusqu'à plus tard dans l'après-midi.  Les mises-à-jour sero
+ nt publiées sur https://docs.scinet.utoronto.ca .\n\nhttps://status.allia
+ ncecan.ca/view_incident?incident=1101
 URL:https://status.alliancecan.ca/view_incident?incident=1101
 END:VEVENT
 BEGIN:VEVENT
@@ -9230,19 +9230,19 @@ DESCRIPTION:The cluster will be offline from Tuesday April 2\, 2024 8:30 a
  go from CentOS 7 to Rocky Linux 8\, compiled codes and software using syst
  em dependencies may need to be recompiled or reinstalled. This is not the 
  case for software packages that rely solely on modules provided by our sof
- tware environment. Jobs may need to be resubmitted after the maintenance.\
- nIf you have any questions\, please contact [email protected] .\n======\n
- La grappe ne sera pas disponible à partir du 2 avril\, 8 h 30 jusqu
- ’au 3 avril 2024\, 18 h (HAE) pour des travaux planifiés de mainten
- ance qui permettront la mise à jour du système d'exploitation.\nPuisque 
- le système d'exploitation passera de CentOS 7 à Rocky Linux 8\, il se pe
- ut que du code compilé et des logiciels qui dépendent étroitement du sy
- stème d’exploitation doivent être recompilés ou réinstallés. Par co
- ntre\, la mise à jour ne touche pas les logiciels qui dépendent de modul
- es fournis avec notre environnement logiciel. D’autre part\, il est poss
- ible que certaines tâches doivent être soumises de nouveau après la mai
- ntenance.\nPour plus d’information\, veuillez écrire à [email protect
- ed] .\n\nhttps://status.alliancecan.ca/view_incident?incident=1102
+ tware environment. Jobs may need to be resubmitted after the maintenance.
+ \nIf you have any questions\, please contact [email protected] .\n======
+ \nLa grappe ne sera pas disponible à partir du 2 avril\, 8 h 30 jus
+ qu’au 3 avril 2024\, 18 h (HAE) pour des travaux planifiés de maint
+ enance qui permettront la mise à jour du système d'exploitation.\nPuisqu
+ e le système d'exploitation passera de CentOS 7 à Rocky Linux 8\, il se 
+ peut que du code compilé et des logiciels qui dépendent étroitement du 
+ système d’exploitation doivent être recompilés ou réinstallés. Par 
+ contre\, la mise à jour ne touche pas les logiciels qui dépendent de mod
+ ules fournis avec notre environnement logiciel. D’autre part\, il est po
+ ssible que certaines tâches doivent être soumises de nouveau après la m
+ aintenance.\nPour plus d’information\, veuillez écrire à [email prote
+ cted] .\n\nhttps://status.alliancecan.ca/view_incident?incident=1102
 URL:https://status.alliancecan.ca/view_incident?incident=1102
 END:VEVENT
 BEGIN:VEVENT
@@ -9704,15 +9704,15 @@ CATEGORIES:UNPLANNED
 DESCRIPTION:You may experience slowness with the /scratch filesystem.\nIt 
  is not broken\, but heavily loaded.  In addition to normal user load\, we
   are migrating data off some older disks\, onto new ones.  This extra act
- ivity is perceptible as sluggishness.  The migration is partly completed\
- , but will continue for some days.\nPlease use the /project filesystem as 
- your primary storage - this is the design and policy on all national syste
- ms.  /scratch is only ever intended for transient\, temporary files: if y
- ou can re-download or re-generate the file\, it is probably appropriate fo
- r /scratch.  You should not use /scratch as your normal or default storag
- e.  The current performance problem is at least partly due people attempt
- ing to defeat the 60-day /scratch expiration policy.\n\nhttps://status.all
- iancecan.ca/view_incident?incident=1140
+ ivity is perceptible as sluggishness.  The migration is partly completed
+ \, but will continue for some days.\nPlease use the /project filesystem as
+  your primary storage - this is the design and policy on all national syst
+ ems.  /scratch is only ever intended for transient\, temporary files: if 
+ you can re-download or re-generate the file\, it is probably appropriate f
+ or /scratch.  You should not use /scratch as your normal or default stora
+ ge.  The current performance problem is at least partly due people attemp
+ ting to defeat the 60-day /scratch expiration policy.\n\nhttps://status.al
+ liancecan.ca/view_incident?incident=1140
 URL:https://status.alliancecan.ca/view_incident?incident=1140
 END:VEVENT
 BEGIN:VEVENT
@@ -9884,9 +9884,9 @@ DTEND;TZID=America/Toronto:20240727T000000
 DTSTAMP:20260703T134918Z
 UID:drac-incident-1155@status.alliancecan.ca
 CATEGORIES:SCHEDULED
-DESCRIPTION:Nextcloud services will be unavailable until Friday\, July 26\
- , due to scheduled maintenance.\n\nhttps://status.alliancecan.ca/view_inci
- dent?incident=1155
+DESCRIPTION:Nextcloud services will be unavailable until Friday\, July 26
+ \, due to scheduled maintenance.\n\nhttps://status.alliancecan.ca/view_inc
+ ident?incident=1155
 URL:https://status.alliancecan.ca/view_incident?incident=1155
 END:VEVENT
 BEGIN:VEVENT
@@ -10077,10 +10077,10 @@ DESCRIPTION:The annual cooling tower maintenance for the SciNet data centr
  e début des travaux seront retenues par l’ordonnanceur jusqu’à la re
  mise en service. Nous vous suggérons de lancer de courtes tâches nécess
  itant peu de ressources\, que l’ordonnanceur pourra placer à l’avance
-  en utilisant la capacité potentiellement disponible de certains nœuds.\
- nLe statut des grappes Niagara et Mist peut être vérifié ici et sur htt
- ps://docs.scinet.utoronto.ca.\n\nhttps://status.alliancecan.ca/view_incide
- nt?incident=1169
+  en utilisant la capacité potentiellement disponible de certains nœuds.
+ \nLe statut des grappes Niagara et Mist peut être vérifié ici et sur ht
+ tps://docs.scinet.utoronto.ca.\n\nhttps://status.alliancecan.ca/view_incid
+ ent?incident=1169
 URL:https://status.alliancecan.ca/view_incident?incident=1169
 END:VEVENT
 BEGIN:VEVENT
@@ -10307,10 +10307,10 @@ UID:drac-incident-1187@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:Some network problem\, still under investigation\, has caused 
  many compute nodes to go offline. Most of these nodes are now back online.
- \n===\nUn certain problème de réseautique\, toujours en cours d'analyse\
- , a causé la mise hors-ligne de plusieurs nœuds de calcul. La plupart de
-  ces nœuds sont de retour en service.\n\nhttps://status.alliancecan.ca/vi
- ew_incident?incident=1187
+ \n===\nUn certain problème de réseautique\, toujours en cours d'analyse
+ \, a causé la mise hors-ligne de plusieurs nœuds de calcul. La plupart d
+ e ces nœuds sont de retour en service.\n\nhttps://status.alliancecan.ca/v
+ iew_incident?incident=1187
 URL:https://status.alliancecan.ca/view_incident?incident=1187
 END:VEVENT
 BEGIN:VEVENT
@@ -10374,8 +10374,8 @@ DTSTAMP:20260703T134918Z
 UID:drac-incident-1193@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:We are experiencing issues connecting local LDAP servers. Acce
- ssing cedar is current unavailable. We hope to resolve this issue soon.\n\
- nhttps://status.alliancecan.ca/view_incident?incident=1193
+ ssing cedar is current unavailable. We hope to resolve this issue soon.\n
+ \nhttps://status.alliancecan.ca/view_incident?incident=1193
 URL:https://status.alliancecan.ca/view_incident?incident=1193
 END:VEVENT
 BEGIN:VEVENT
@@ -10512,8 +10512,8 @@ DESCRIPTION:Scheduled electrical maintenance will require us to shut down
  œuds de connexion et de transfert sera à nouveau ouvert lorsque le stock
  age sera à nouveau disponible.\nNotez que les instances infonuagiques du 
  nuage Béluga ainsi que les instances du nuage Juno situées dans la zone 
- de haute disponibilité ne seront pas affectées par ces interruptions.\n\
- nhttps://status.alliancecan.ca/view_incident?incident=1191
+ de haute disponibilité ne seront pas affectées par ces interruptions.\n
+ \nhttps://status.alliancecan.ca/view_incident?incident=1191
 URL:https://status.alliancecan.ca/view_incident?incident=1191
 END:VEVENT
 BEGIN:VEVENT
@@ -11028,11 +11028,11 @@ DTSTAMP:20260703T134918Z
 UID:drac-incident-1242@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:There is a problem with the /home\, /project and /scratch file
- system on Béluga\, which seems to be unresponsive. We are investigating.\
- n/ Il y a un problème avec le système de fichiers /home\, /project et /s
- cratch ) sur la grappe Béluga\, qui ne réagit pas correctement. Nous inv
- estiguons actuellement ce qui se passe.\n\nhttps://status.alliancecan.ca/v
- iew_incident?incident=1242
+ system on Béluga\, which seems to be unresponsive. We are investigating.
+ \n/ Il y a un problème avec le système de fichiers /home\, /project et /
+ scratch ) sur la grappe Béluga\, qui ne réagit pas correctement. Nous in
+ vestiguons actuellement ce qui se passe.\n\nhttps://status.alliancecan.ca/
+ view_incident?incident=1242
 URL:https://status.alliancecan.ca/view_incident?incident=1242
 END:VEVENT
 BEGIN:VEVENT
@@ -11189,16 +11189,16 @@ DTSTAMP:20260703T134918Z
 UID:drac-incident-1256@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:From January 6th\, 2025 onward\, Niagara will operate at a red
- uced capacity of 50% capacity and Mist at 35% until Trillium comes online\
- , which is expected to be in the spring of 2025.  The reduction will requ
- ire Mist to be shutdown for a few hours on January 6th.\nThe system was de
- commissioned for regular users on September 30\, 2025.\n===\nÀ partir du 
- 6 janvier 2025\, la capacité de calcul sera réduite à 50% pour Niagara 
- et à 35% pour Mist jusqu'à la mise en service de Trillium prévue au pri
- ntemps de 2025.  La réduction nécessitera l'arrêt de Mist pendant quel
- ques heures le janvier 6.\nLe système a été mis hors service pour les u
- sagers réguliers le 30 septembre 2025.\n\nhttps://status.alliancecan.ca/v
- iew_incident?incident=1256
+ uced capacity of 50% capacity and Mist at 35% until Trillium comes online
+ \, which is expected to be in the spring of 2025.  The reduction will req
+ uire Mist to be shutdown for a few hours on January 6th.\nThe system was d
+ ecommissioned for regular users on September 30\, 2025.\n===\nÀ partir du
+  6 janvier 2025\, la capacité de calcul sera réduite à 50% pour Niagara
+  et à 35% pour Mist jusqu'à la mise en service de Trillium prévue au pr
+ intemps de 2025.  La réduction nécessitera l'arrêt de Mist pendant que
+ lques heures le janvier 6.\nLe système a été mis hors service pour les 
+ usagers réguliers le 30 septembre 2025.\n\nhttps://status.alliancecan.ca/
+ view_incident?incident=1256
 URL:https://status.alliancecan.ca/view_incident?incident=1256
 END:VEVENT
 BEGIN:VEVENT
@@ -11238,12 +11238,12 @@ CATEGORIES:SCHEDULED
 DESCRIPTION:Cedar will be unavailable January 13 - January 22\, 2025. Duri
  ng this time\, you will not be able to log in or run jobs on the cluster. 
  Any jobs that are running at the time of the outage will be terminated and
-  you will need to re-submit them once the cluster is back online.\n======\
- nCedar will be unavailable January 13 - January 22\, 2025 . Durant cette p
- ériode\, les utilisateurs ne pourront pas se connecter ni exécuter des t
- âches sur SYSTEM. Toute tâche en cours au moment de l’arrêt de servic
- e sera arrêtée et devra être soumise à nouveau une fois les travaux te
- rminés.\n\nhttps://status.alliancecan.ca/view_incident?incident=1253
+  you will need to re-submit them once the cluster is back online.\n======
+ \nCedar will be unavailable January 13 - January 22\, 2025 . Durant cette 
+ période\, les utilisateurs ne pourront pas se connecter ni exécuter des 
+ tâches sur SYSTEM. Toute tâche en cours au moment de l’arrêt de servi
+ ce sera arrêtée et devra être soumise à nouveau une fois les travaux t
+ erminés.\n\nhttps://status.alliancecan.ca/view_incident?incident=1253
 URL:https://status.alliancecan.ca/view_incident?incident=1253
 END:VEVENT
 BEGIN:VEVENT
@@ -11709,8 +11709,8 @@ DESCRIPTION:Access to login nodes is disrupted because of some issue with
  the /home partition. A "fail over" on the storage system is ongoing\, and 
  the problem should be fixed soon.\n===\nL'accès aux nœuds de connexion e
  st interrompu à cause d'un problème avec la partition /home. Une "bascul
- e de charge" est en cours et le problème devrait être résolu bientôt.\
- n\nhttps://status.alliancecan.ca/view_incident?incident=1297
+ e de charge" est en cours et le problème devrait être résolu bientôt.
+ \n\nhttps://status.alliancecan.ca/view_incident?incident=1297
 URL:https://status.alliancecan.ca/view_incident?incident=1297
 END:VEVENT
 BEGIN:VEVENT
@@ -11923,18 +11923,18 @@ DTEND;TZID=America/Vancouver:20250429T030000
 DTSTAMP:20260703T134918Z
 UID:drac-incident-1313@status.alliancecan.ca
 CATEGORIES:SCHEDULED
-DESCRIPTION:As part of the preparations for bringing new equipment online\
- , a planned outage is scheduled for Tuesday\, April 29\, 2025\, from 7:00 
- a.m. to 3:00 p.m. (PDT) to support infrastructure work.\nDuring this windo
- w:\nCedar compute resources will be unavailable.\nJobs can still be submit
- ted\, but they will not run until after the outage is complete.\nOther Ced
- ar services (e.g.\, login nodes and storage) are currently expected to rem
- ain available.\nCedar cloud will remain operational.\nNo action is require
- d\, but please plan accordingly for job scheduling.\nWe recognize that thi
- s may cause disruption for those relying on Cedar\, but these modification
- s are necessary to support the installation of the new system\, Fir\, whic
- h will provide even greater capacity and capabilities.\n\nhttps://status.a
- lliancecan.ca/view_incident?incident=1313
+DESCRIPTION:As part of the preparations for bringing new equipment online
+ \, a planned outage is scheduled for Tuesday\, April 29\, 2025\, from 7:00
+  a.m. to 3:00 p.m. (PDT) to support infrastructure work.\nDuring this wind
+ ow:\nCedar compute resources will be unavailable.\nJobs can still be submi
+ tted\, but they will not run until after the outage is complete.\nOther Ce
+ dar services (e.g.\, login nodes and storage) are currently expected to re
+ main available.\nCedar cloud will remain operational.\nNo action is requir
+ ed\, but please plan accordingly for job scheduling.\nWe recognize that th
+ is may cause disruption for those relying on Cedar\, but these modificatio
+ ns are necessary to support the installation of the new system\, Fir\, whi
+ ch will provide even greater capacity and capabilities.\n\nhttps://status.
+ alliancecan.ca/view_incident?incident=1313
 URL:https://status.alliancecan.ca/view_incident?incident=1313
 END:VEVENT
 BEGIN:VEVENT
@@ -12624,11 +12624,11 @@ DESCRIPTION:From July 15 to September 8\, 2025 \, the tape storage system
  sponibles pendant la période de déplacement.\nPour savoir quels fichiers
   sont exclusivement sur ruban\, voir Transférer des données à partir de
   /nearline .\nLe service TSM ne sera pas disponible.\nRemarques :\nLes a
- utres systèmes de stockage et les nœuds de calcul ne sont pas touchés.\
- nLe service de transfert de données via Globus ne sera affecté que si vo
- us tentez d’accéder aux fichiers de /nearline qui sont exclusivement st
- ockés sur ruban. Les autres fichiers resteront accessibles.\n\nhttps://st
- atus.alliancecan.ca/view_incident?incident=1359
+ utres systèmes de stockage et les nœuds de calcul ne sont pas touchés.
+ \nLe service de transfert de données via Globus ne sera affecté que si v
+ ous tentez d’accéder aux fichiers de /nearline qui sont exclusivement s
+ tockés sur ruban. Les autres fichiers resteront accessibles.\n\nhttps://s
+ tatus.alliancecan.ca/view_incident?incident=1359
 URL:https://status.alliancecan.ca/view_incident?incident=1359
 END:VEVENT
 BEGIN:VEVENT
@@ -12672,11 +12672,11 @@ DESCRIPTION:From July 15 to September 8\, 2025 \, the tape storage system
  sponibles pendant la période de déplacement.\nPour savoir quels fichiers
   sont exclusivement sur ruban\, voir Transférer des données à partir de
   /nearline .\nLe service TSM ne sera pas disponible.\nRemarques :\nLes a
- utres systèmes de stockage et les nœuds de calcul ne sont pas touchés.\
- nLe service de transfert de données via Globus ne sera affecté que si vo
- us tentez d’accéder aux fichiers de /nearline qui sont exclusivement st
- ockés sur ruban. Les autres fichiers resteront accessibles.\n\nhttps://st
- atus.alliancecan.ca/view_incident?incident=1360
+ utres systèmes de stockage et les nœuds de calcul ne sont pas touchés.
+ \nLe service de transfert de données via Globus ne sera affecté que si v
+ ous tentez d’accéder aux fichiers de /nearline qui sont exclusivement s
+ tockés sur ruban. Les autres fichiers resteront accessibles.\n\nhttps://s
+ tatus.alliancecan.ca/view_incident?incident=1360
 URL:https://status.alliancecan.ca/view_incident?incident=1360
 END:VEVENT
 BEGIN:VEVENT
@@ -12787,10 +12787,10 @@ DTSTAMP:20260703T134918Z
 UID:drac-incident-1367@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:The documentation site (wiki) is currently down or very slow t
- o respond. We are investigating and trying to reduce the effect on users.\
- nLe site de documentation (wiki) est présentement en panne ou très lent 
- à répondre. Nous analysons les causes et nous tentons de réduire les im
- pacts.\n\nhttps://status.alliancecan.ca/view_incident?incident=1367
+ o respond. We are investigating and trying to reduce the effect on users.
+ \nLe site de documentation (wiki) est présentement en panne ou très lent
+  à répondre. Nous analysons les causes et nous tentons de réduire les i
+ mpacts.\n\nhttps://status.alliancecan.ca/view_incident?incident=1367
 URL:https://status.alliancecan.ca/view_incident?incident=1367
 END:VEVENT
 BEGIN:VEVENT
@@ -13167,10 +13167,10 @@ DTSTAMP:20260703T134918Z
 UID:drac-incident-1391@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:The job scheduler is misbehaving\, which may impair the abilit
- y to start new jobs. We are investigating.\nL'ordonnanceur a un problème\
- , ce qui peut empêcher de démarrer de nouvelles tâches. Nous investiguo
- ns actuellement ce qui se passe.\n\nhttps://status.alliancecan.ca/view_inc
- ident?incident=1391
+ y to start new jobs. We are investigating.\nL'ordonnanceur a un problème
+ \, ce qui peut empêcher de démarrer de nouvelles tâches. Nous investigu
+ ons actuellement ce qui se passe.\n\nhttps://status.alliancecan.ca/view_in
+ cident?incident=1391
 URL:https://status.alliancecan.ca/view_incident?incident=1391
 END:VEVENT
 BEGIN:VEVENT
@@ -13433,8 +13433,8 @@ DESCRIPTION:An emergency power outage TODAY will affect all Nibi compute n
  d when the cluster returns to service.\nLogin nodes should not be affected
  .\nWe do not have a firm estimate of how long the outage will last - perha
  ps an hour\, but there will be some time required after that to ensure tha
- t nodes are operating correctly before allowing them to run jobs again.\n\
- nhttps://status.alliancecan.ca/view_incident?incident=1417
+ t nodes are operating correctly before allowing them to run jobs again.\n
+ \nhttps://status.alliancecan.ca/view_incident?incident=1417
 URL:https://status.alliancecan.ca/view_incident?incident=1417
 END:VEVENT
 BEGIN:VEVENT
@@ -13455,8 +13455,8 @@ DESCRIPTION:The Cedar compute cluster will be retired on September 12\, 20
   déjà disponibles sur Fir\, car les deux grappes partagent les mêmes sy
  stèmes de fichiers.\nAucune action n’est requise concernant vos fichier
  s stockés.\nÀ partir du 12 septembre\, veuillez soumettre vos travaux à
-  Fir ou à une autre grappe de notre nouvelle infrastructure nationale.\n\
- nhttps://status.alliancecan.ca/view_incident?incident=1414
+  Fir ou à une autre grappe de notre nouvelle infrastructure nationale.\n
+ \nhttps://status.alliancecan.ca/view_incident?incident=1414
 URL:https://status.alliancecan.ca/view_incident?incident=1414
 END:VEVENT
 BEGIN:VEVENT
@@ -13811,10 +13811,10 @@ CATEGORIES:UNPLANNED
 DESCRIPTION:The `diskusage_report` command returns an error on Narval. We 
  are working to correct the issue\, which only affects this command: the fi
  lesystems and data are unaffected.\n---\nLa commande `diskusage_report` su
- r Narval retourne une erreur. Nous travaillons pour corriger ce problème\
- , qui n’affecte que cette commande : les systèmes de fichiers et les do
- nnées ne sont pas affectés.\n\nhttps://status.alliancecan.ca/view_incide
- nt?incident=1445
+ r Narval retourne une erreur. Nous travaillons pour corriger ce problème
+ \, qui n’affecte que cette commande : les systèmes de fichiers et les d
+ onnées ne sont pas affectés.\n\nhttps://status.alliancecan.ca/view_incid
+ ent?incident=1445
 URL:https://status.alliancecan.ca/view_incident?incident=1445
 END:VEVENT
 BEGIN:VEVENT
@@ -13896,8 +13896,8 @@ UID:drac-incident-1451@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:Il y a une panne de courant partielle sur ce site. Les serveur
  s de trois baies se sont arrêtés abruptement.\nThere is a partial power 
- outage at this site. Servers from three racks were shutdown unexpectedly.\
- n\nhttps://status.alliancecan.ca/view_incident?incident=1451
+ outage at this site. Servers from three racks were shutdown unexpectedly.
+ \n\nhttps://status.alliancecan.ca/view_incident?incident=1451
 URL:https://status.alliancecan.ca/view_incident?incident=1451
 END:VEVENT
 BEGIN:VEVENT
@@ -14399,10 +14399,10 @@ DTSTAMP:20260703T134918Z
 UID:drac-incident-1492@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:A problem with the external DNS affects certain Béluga Cloud 
- services. We are working on resolving this DNS issue as soon as possible.\
- n======\nUn problème avec le DNS externe impacte certains services de Nua
- ge Béluga. Nous travaillons à résoudre ce problème de DNS dès que pos
- sible.\n\nhttps://status.alliancecan.ca/view_incident?incident=1492
+ services. We are working on resolving this DNS issue as soon as possible.
+ \n======\nUn problème avec le DNS externe impacte certains services de Nu
+ age Béluga. Nous travaillons à résoudre ce problème de DNS dès que po
+ ssible.\n\nhttps://status.alliancecan.ca/view_incident?incident=1492
 URL:https://status.alliancecan.ca/view_incident?incident=1492
 END:VEVENT
 BEGIN:VEVENT
@@ -14929,11 +14929,11 @@ CATEGORIES:SCHEDULED
 DESCRIPTION:Fir's nearline backup service will be undergoing maintenance o
  n 2026-02-04 During this time restores from tape will be unavailable.\nThe
   work is expected to be completed by the end of the day.\n======\nIl y aur
- a une maintenance du service de sauvegarde nearline de Fir le 4 février.\
- nPendant ce temps\, il ne sera pas possible de restaurer des données à p
- artir des sauvegardes sur ruban.\nNous planifions que le service sera de r
- etour en fin de journée.\n\nhttps://status.alliancecan.ca/view_incident?i
- ncident=1515
+ a une maintenance du service de sauvegarde nearline de Fir le 4 février.
+ \nPendant ce temps\, il ne sera pas possible de restaurer des données à 
+ partir des sauvegardes sur ruban.\nNous planifions que le service sera de 
+ retour en fin de journée.\n\nhttps://status.alliancecan.ca/view_incident?
+ incident=1515
 URL:https://status.alliancecan.ca/view_incident?incident=1515
 END:VEVENT
 BEGIN:VEVENT
@@ -15145,11 +15145,11 @@ DTSTAMP:20260703T134918Z
 UID:drac-incident-1542@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:Please be advised that CCDB will be temporarily unavailable st
- arting at 11:00 AM PST today for necessary system upgrades.\nExpect brief\
- , intermittent interruptions for approximately one hour while we finalize 
- these improvements.\nThanks for your patience while we get these updates p
- ushed through!\n\nhttps://status.alliancecan.ca/view_incident?incident=154
- 2
+ arting at 11:00 AM PST today for necessary system upgrades.\nExpect brief
+ \, intermittent interruptions for approximately one hour while we finalize
+  these improvements.\nThanks for your patience while we get these updates 
+ pushed through!\n\nhttps://status.alliancecan.ca/view_incident?incident=15
+ 42
 URL:https://status.alliancecan.ca/view_incident?incident=1542
 END:VEVENT
 BEGIN:VEVENT
@@ -15269,8 +15269,8 @@ DESCRIPTION:Update:\nPower was restored\; the power outage took all comput
  e nodes offline and running jobs were\, as a result\, cancelled.\nWe took 
  the opportunity to patch a filesystem bug which will hopefully make the fi
  lesystem quite a bit more stable than before.\n-----------------\nThere is
-  a power outage at this site.\n/ Il y a une panne de courant sur ce site.\
- n\nhttps://status.alliancecan.ca/view_incident?incident=1562
+  a power outage at this site.\n/ Il y a une panne de courant sur ce site.
+ \n\nhttps://status.alliancecan.ca/view_incident?incident=1562
 URL:https://status.alliancecan.ca/view_incident?incident=1562
 END:VEVENT
 BEGIN:VEVENT
@@ -15354,17 +15354,17 @@ DTSTAMP:20260703T134918Z
 UID:drac-incident-1554@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:A scheduled maintenance will require a complete shutdown of Na
- rval on March 31 from 8:00 a.m. to 5:00 p.m. (EDT) .\nDuring this period:\
- nAll compute nodes will be offline.\nJobs scheduled to end after 8:00 a.m.
-  (EDT) on March 31 will remain in the queue until the cluster is returned 
- to service.\nNetwork and storage systems associated with Narval will be un
- available.\n======\nUne maintenance planifiée nous oblige à fermer la gr
- appe Narval au complet le 31 mars entre 8 h et 17 h (HAE) .\nLes nœuds de
-  calcul ne seront pas disponibles.\nLes tâches qui devaient se terminer a
- près 8 h (HAE) le 31 mars resteront en file d’attente jusqu’au retour
-  en service de Narval.\nLe réseau et le stockage associés à Narval ne s
- eront pas disponibles.\n\nhttps://status.alliancecan.ca/view_incident?inci
- dent=1554
+ rval on March 31 from 8:00 a.m. to 5:00 p.m. (EDT) .\nDuring this period:
+ \nAll compute nodes will be offline.\nJobs scheduled to end after 8:00 a.m
+ . (EDT) on March 31 will remain in the queue until the cluster is returned
+  to service.\nNetwork and storage systems associated with Narval will be u
+ navailable.\n======\nUne maintenance planifiée nous oblige à fermer la g
+ rappe Narval au complet le 31 mars entre 8 h et 17 h (HAE) .\nLes nœuds d
+ e calcul ne seront pas disponibles.\nLes tâches qui devaient se terminer 
+ après 8 h (HAE) le 31 mars resteront en file d’attente jusqu’au retou
+ r en service de Narval.\nLe réseau et le stockage associés à Narval ne 
+ seront pas disponibles.\n\nhttps://status.alliancecan.ca/view_incident?inc
+ ident=1554
 URL:https://status.alliancecan.ca/view_incident?incident=1554
 END:VEVENT
 BEGIN:VEVENT
@@ -15806,17 +15806,17 @@ DESCRIPTION:Starting May 21 at 1:00 p.m. ET: rolling update of Nvidia driv
   until its update is complete. As soon as a node gets updated\, GPU jobs w
  ill be able to use that node. Full rollout will take up to 7 days (max job
   duration on GPU nodes)\, but GPU jobs will be able to start sooner than t
- hat.\nFeel free to reach out if you have any questions or issues.\n======\
- nÀ partir du 21 mai à 13h00 HE : mise à jour progressive des pilotes Nv
- idia vers la version 580 (CUDA 13) sur tous les nœuds GPU.\nNous utilison
- s la méthode de drainage — les tâches de calcul en cours ne seront pas
-  interrompues\, mais aucune nouvelle tâche ne démarrera sur un nœud ava
- nt que sa mise à jour ne soit terminée. Dès qu'un nœud est à jour\, l
- es tâches GPU vont pouvoir utiliser ce nœud. Le déploiement complet pre
- ndra jusqu’à 7 jours (durée maximale des tâches sur les nœuds GPU)\,
-  mais des tâches GPU pourront démarrer avant cela.\nN’hésitez pas à 
- nous écrire pour toute question ou problème.\n\nhttps://status.alliancec
- an.ca/view_incident?incident=1611
+ hat.\nFeel free to reach out if you have any questions or issues.\n======
+ \nÀ partir du 21 mai à 13h00 HE : mise à jour progressive des pilotes N
+ vidia vers la version 580 (CUDA 13) sur tous les nœuds GPU.\nNous utiliso
+ ns la méthode de drainage — les tâches de calcul en cours ne seront pa
+ s interrompues\, mais aucune nouvelle tâche ne démarrera sur un nœud av
+ ant que sa mise à jour ne soit terminée. Dès qu'un nœud est à jour\, 
+ les tâches GPU vont pouvoir utiliser ce nœud. Le déploiement complet pr
+ endra jusqu’à 7 jours (durée maximale des tâches sur les nœuds GPU)
+ \, mais des tâches GPU pourront démarrer avant cela.\nN’hésitez pas 
+ à nous écrire pour toute question ou problème.\n\nhttps://status.allian
+ cecan.ca/view_incident?incident=1611
 URL:https://status.alliancecan.ca/view_incident?incident=1611
 END:VEVENT
 BEGIN:VEVENT
@@ -15833,17 +15833,17 @@ DESCRIPTION:Starting May 21 at 1:00 p.m. ET: rolling update of Nvidia driv
   until its update is complete. As soon as a node gets updated\, GPU jobs w
  ill be able to use that node. Full rollout will take up to 7 days (max job
   duration on GPU nodes)\, but GPU jobs will be able to start sooner than t
- hat.\nFeel free to reach out if you have any questions or issues.\n======\
- nÀ partir du 21 mai à 13h00 HE : mise à jour progressive des pilotes Nv
- idia vers la version 580 (CUDA 13) sur tous les nœuds GPU.\nNous utilison
- s la méthode de drainage — les tâches de calcul en cours ne seront pas
-  interrompues\, mais aucune nouvelle tâche ne démarrera sur un nœud ava
- nt que sa mise à jour ne soit terminée. Dès qu'un nœud est à jour\, l
- es tâches GPU vont pouvoir utiliser ce nœud. Le déploiement complet pre
- ndra jusqu’à 7 jours (durée maximale des tâches sur les nœuds GPU)\,
-  mais des tâches GPU pourront démarrer avant cela.\nN’hésitez pas à 
- nous écrire pour toute question ou problème.\n\nhttps://status.alliancec
- an.ca/view_incident?incident=1612
+ hat.\nFeel free to reach out if you have any questions or issues.\n======
+ \nÀ partir du 21 mai à 13h00 HE : mise à jour progressive des pilotes N
+ vidia vers la version 580 (CUDA 13) sur tous les nœuds GPU.\nNous utiliso
+ ns la méthode de drainage — les tâches de calcul en cours ne seront pa
+ s interrompues\, mais aucune nouvelle tâche ne démarrera sur un nœud av
+ ant que sa mise à jour ne soit terminée. Dès qu'un nœud est à jour\, 
+ les tâches GPU vont pouvoir utiliser ce nœud. Le déploiement complet pr
+ endra jusqu’à 7 jours (durée maximale des tâches sur les nœuds GPU)
+ \, mais des tâches GPU pourront démarrer avant cela.\nN’hésitez pas 
+ à nous écrire pour toute question ou problème.\n\nhttps://status.allian
+ cecan.ca/view_incident?incident=1612
 URL:https://status.alliancecan.ca/view_incident?incident=1612
 END:VEVENT
 BEGIN:VEVENT
@@ -15939,29 +15939,29 @@ UID:drac-incident-269@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:The SciNet datacentre will undergo a two-day maintenance shutd
  own on May 29th and 30th 2019\, starting at 7 am EDT on Wednesday May 29th
- . There will be no access to any of the SciNet systems (Niagara\, P7\, P8\
- , BGQ\, SGC\, HPSS\, Teach cluster\, or the file systems) during this time
- . This is necessary to finish the installation of an emergency power gener
- ator\, to perform the annual cooling tower maintenance\, and to enhance lo
- gin security. We expect to be able to bring the systems back online the ev
- ening of May 30th. Due to the enhanced login security\, the ssh applicatio
- ns of users will need to update their known host list. More detailed infor
- mation on this procedure will be sent shortly before the systems are back 
- online. For up-to-date and more detailed information on the status of all 
- the SciNet systems\, you can always check https://docs.scinet.utoronto.ca.
- \nToutes les ressources de calcul et de stockage situées dans le centre d
- e données de SciNet (Niagara\, P7\, P8\, BGQ\, SGC\, HPSS\, et Teach) ne 
- seront pas disponibles les 29 et 30 mai 2019\, à partir de 7h (heure de l
- 'Est) le mercredi 29 mai. L’arrêt de service est nécessaire pour compl
- éter la installation d'un générateur de secours\, pour le service d'ent
- retien de la tour aéroréfrigérante\, et pour améliorer la sécurité d
- e connexion. Nous espérons pouvoir remettre les systèmes en ligne le 30 
- mai en soir. En raison de la sécurité de connexion améliorée\, les app
- lications ssh des utilisateurs devront mettre à jour leur liste des hôte
- s connus. Des informations plus détaillées sur cette procédure seront c
- ommuniquées peu avant la remise en service des systèmes. Les mises à jo
- ur détailées seront postées sur https://docs.scinet.utoronto.ca.\n\nhtt
- ps://status.alliancecan.ca/view_incident?incident=269
+ . There will be no access to any of the SciNet systems (Niagara\, P7\, P8
+ \, BGQ\, SGC\, HPSS\, Teach cluster\, or the file systems) during this tim
+ e. This is necessary to finish the installation of an emergency power gene
+ rator\, to perform the annual cooling tower maintenance\, and to enhance l
+ ogin security. We expect to be able to bring the systems back online the e
+ vening of May 30th. Due to the enhanced login security\, the ssh applicati
+ ons of users will need to update their known host list. More detailed info
+ rmation on this procedure will be sent shortly before the systems are back
+  online. For up-to-date and more detailed information on the status of all
+  the SciNet systems\, you can always check https://docs.scinet.utoronto.ca
+ .\nToutes les ressources de calcul et de stockage situées dans le centre 
+ de données de SciNet (Niagara\, P7\, P8\, BGQ\, SGC\, HPSS\, et Teach) ne
+  seront pas disponibles les 29 et 30 mai 2019\, à partir de 7h (heure de 
+ l'Est) le mercredi 29 mai. L’arrêt de service est nécessaire pour comp
+ léter la installation d'un générateur de secours\, pour le service d'en
+ tretien de la tour aéroréfrigérante\, et pour améliorer la sécurité 
+ de connexion. Nous espérons pouvoir remettre les systèmes en ligne le 30
+  mai en soir. En raison de la sécurité de connexion améliorée\, les ap
+ plications ssh des utilisateurs devront mettre à jour leur liste des hôt
+ es connus. Des informations plus détaillées sur cette procédure seront 
+ communiquées peu avant la remise en service des systèmes. Les mises à j
+ our détailées seront postées sur https://docs.scinet.utoronto.ca.\n\nht
+ tps://status.alliancecan.ca/view_incident?incident=269
 URL:https://status.alliancecan.ca/view_incident?incident=269
 END:VEVENT
 BEGIN:VEVENT
@@ -15976,23 +15976,23 @@ DESCRIPTION:Planned maintenance work requires us to shut down the entire c
  e work marks the beginning of a major project to replace close to 700 hard
   disk drives (HDDs) for the /project filesystem.\nOn June 1 and 2 (added J
  une 3)\, the storage servers’ firmware will be upgraded\, the first hard
-  disks replacements will be made\, and the storage system will be tested.\
- nFollowing this\, the hard disks will be progressively replaced.\nAs the c
- ompute nodes will be offline during this entire period\, jobs scheduled to
-  end after June 1 at 8:00 AM (EDT) will remain in the queue until Rorqual 
- returns to service.\nThe network and other storage spaces will also be una
- vailable during these two days.\n======\nUne maintenance planifiée nous o
- blige à fermer la grappe à partir de 8 h le 1er juin jusqu'à 17 h l
- e 2 juin (HAE).\nCette maintenance marque le début d’un vaste projet de
-  remplacement de quelque 700 disques durs pour le système de fichiers /pr
- oject .\nLes 1er et 2 juin (ajouté 3 juin) : mises à jour du micrologici
- el (firmware) des serveurs de stockage\, début du remplacement des disque
- s durs et tests du système de stockage.\nPar la suite\, il y aura remplac
- ement progressif des autres disques durs.\nPuisque les nœuds de calcul se
- ront hors ligne\, les tâches qui devaient se terminer après 8 h le 1er
-  juin resteront en file d'attente jusqu'au retour en service.\nL’arrêt 
- de service comprend aussi le réseau et les autres espaces de stockage.\n\
- nhttps://status.alliancecan.ca/view_incident?incident=1598
+  disks replacements will be made\, and the storage system will be tested.
+ \nFollowing this\, the hard disks will be progressively replaced.\nAs the 
+ compute nodes will be offline during this entire period\, jobs scheduled t
+ o end after June 1 at 8:00 AM (EDT) will remain in the queue until Rorqual
+  returns to service.\nThe network and other storage spaces will also be un
+ available during these two days.\n======\nUne maintenance planifiée nous 
+ oblige à fermer la grappe à partir de 8 h le 1er juin jusqu'à 17 h 
+ le 2 juin (HAE).\nCette maintenance marque le début d’un vaste projet d
+ e remplacement de quelque 700 disques durs pour le système de fichiers /p
+ roject .\nLes 1er et 2 juin (ajouté 3 juin) : mises à jour du micrologic
+ iel (firmware) des serveurs de stockage\, début du remplacement des disqu
+ es durs et tests du système de stockage.\nPar la suite\, il y aura rempla
+ cement progressif des autres disques durs.\nPuisque les nœuds de calcul s
+ eront hors ligne\, les tâches qui devaient se terminer après 8 h le 1e
+ r juin resteront en file d'attente jusqu'au retour en service.\nL’arrêt
+  de service comprend aussi le réseau et les autres espaces de stockage.\n
+ \nhttps://status.alliancecan.ca/view_incident?incident=1598
 URL:https://status.alliancecan.ca/view_incident?incident=1598
 END:VEVENT
 BEGIN:VEVENT
@@ -16116,8 +16116,8 @@ DESCRIPTION:On Tuesday and Wednesday\, June 9-10 \, 2026 Vector's Killarn
  . HPC compute nodes in the cluster will be shut down and queued jobs will 
  not execute. Running jobs will be cancelled.\nThe Scientific Computing tea
  m will take advantage of these maintenance windows to perform upgrades to 
- address security\, performance and add enhancements to the environment.\n\
- nhttps://status.alliancecan.ca/view_incident?incident=1617
+ address security\, performance and add enhancements to the environment.\n
+ \nhttps://status.alliancecan.ca/view_incident?incident=1617
 URL:https://status.alliancecan.ca/view_incident?incident=1617
 END:VEVENT
 BEGIN:VEVENT
@@ -16500,9 +16500,9 @@ DESCRIPTION:This maintenance window\, related to the Trillium expansion fo
   this time which all *Trillium compute nodes* will be unavailable.  The *
  login nodes*\, storage\, HPSS\, Globus\, Open Ondemand\, as well as the S4
  H\, Balam\, Neptune\, and Teach clusters\, will all remain up\, except for
-  brief periods on July 21st when transformer maintenance will take place.\
- nMaintenance updates will be published on https://docs.scinet.utoronto.ca 
- .\n\nhttps://status.alliancecan.ca/view_incident?incident=1653
+  brief periods on July 21st when transformer maintenance will take place.
+ \nMaintenance updates will be published on https://docs.scinet.utoronto.ca
+  .\n\nhttps://status.alliancecan.ca/view_incident?incident=1653
 URL:https://status.alliancecan.ca/view_incident?incident=1653
 END:VEVENT
 BEGIN:VEVENT
@@ -16911,8 +16911,8 @@ END:VEVENT
 BEGIN:VEVENT
 SUMMARY:[Arbutus] (unresolved) Arbutus Cloud External Network Maintenance
 DTSTART;TZID=America/Toronto:20260811T195000
-DTEND;TZID=America/Toronto:20260820T105428
-DTSTAMP:20260819T145429Z
+DTEND;TZID=America/Toronto:20260820T115135
+DTSTAMP:20260819T155137Z
 UID:drac-incident-1683@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:Unresolved: This is an ongoing issue without a definitive end 
@@ -17014,7 +17014,7 @@ BEGIN:VEVENT
 SUMMARY:[Vulcan] Planned Outage - Arrêt planifié
 DTSTART;TZID=America/Edmonton:20260821T000000
 DTEND;TZID=America/Edmonton:20260822T000000
-DTSTAMP:20260819T145429Z
+DTSTAMP:20260819T155137Z
 UID:drac-incident-1644@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:Vulcan will be unavailable August 21st to 26th. During this ti
