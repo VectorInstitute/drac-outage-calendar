@@ -16909,16 +16909,15 @@ DESCRIPTION:Replacing a hard-drive is usually transparent to users\, but t
 URL:https://status.alliancecan.ca/view_incident?incident=1682
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:[Arbutus] (unresolved) Arbutus Cloud External Network Maintenance
+SUMMARY:[Arbutus] Arbutus Cloud External Network Maintenance
 DTSTART;TZID=America/Toronto:20260811T195000
-DTEND;TZID=America/Toronto:20260821T105542
-DTSTAMP:20260820T145543Z
+DTEND;TZID=America/Toronto:20260820T115233
+DTSTAMP:20260820T155233Z
 UID:drac-incident-1683@status.alliancecan.ca
 CATEGORIES:UNPLANNED
-DESCRIPTION:Unresolved: This is an ongoing issue without a definitive end 
- date.\n\nBCNet will be performing network maintenance involving some Arbu
- tus connections. No outage is expected.\n\nhttps://status.alliancecan.ca/v
- iew_incident?incident=1683
+DESCRIPTION:BCNet will be performing network maintenance involving some A
+ rbutus connections. No outage is expected.\n\nhttps://status.alliancecan.c
+ a/view_incident?incident=1683
 URL:https://status.alliancecan.ca/view_incident?incident=1683
 END:VEVENT
 BEGIN:VEVENT
@@ -17014,7 +17013,7 @@ BEGIN:VEVENT
 SUMMARY:[Vulcan] Planned Outage - Arrêt planifié
 DTSTART;TZID=America/Edmonton:20260821T000000
 DTEND;TZID=America/Edmonton:20260822T000000
-DTSTAMP:20260820T145543Z
+DTSTAMP:20260820T155233Z
 UID:drac-incident-1644@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:Vulcan will be unavailable August 21st to 26th. During this ti
