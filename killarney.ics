@@ -216,7 +216,7 @@ BEGIN:VEVENT
 SUMMARY:[Killarney] Outage - Panne
 DTSTART;TZID=America/Toronto:20260629T221700
 DTEND;TZID=America/Toronto:20260702T171900
-DTSTAMP:20260703T134918Z
+DTSTAMP:20260821T135709Z
 UID:drac-incident-1648@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:Killarney is completely currently offline due to a cooling iss
@@ -230,7 +230,7 @@ BEGIN:VEVENT
 SUMMARY:[Killarney] Planned Outage - Arrêt planifié
 DTSTART;TZID=America/Toronto:20260720T200000
 DTEND;TZID=America/Toronto:20260722T180000
-DTSTAMP:20260723T200557Z
+DTSTAMP:20260821T135709Z
 UID:drac-incident-1660@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:Killarney will be unavailable 2026-07-20 (20:00 ET) to 2026-07

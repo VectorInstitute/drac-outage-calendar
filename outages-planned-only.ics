@@ -4557,24 +4557,25 @@ BEGIN:VEVENT
 SUMMARY:[tamIA] Maintenance - travaux mécanique - mecanical work
 DTSTART;TZID=America/Toronto:20260706T070000
 DTEND;TZID=America/Toronto:20260706T070000
-DTSTAMP:20260706T191757Z
+DTSTAMP:20260821T135709Z
 UID:drac-incident-1652@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:En raison de travaux mécanique\, nous sommes contraints de me
  ttre hors service les nœuds de calcul de Tamia.\nLundi 6 juillet de 7:00 
- à 19:00.\nLes nœuds de connexion et le système de fichier Lustre ne son
- t pas touchés par cette maintenance.\n===\nDue to mecanical work\, we are
-  forced to shut down Tamia's compute nodes.\nMonday\, july 6th from 7:00 a
- .m. to 7:00 p.m.\nThe login nodes and the Lustre file system are not affec
- ted by this maintenance.\n\nhttps://status.alliancecan.ca/view_incident?in
- cident=1652
+ à 19:00 (planifié). Le service est de retour depuis 15:15.\nLes nœuds d
+ e connexion et le système de fichier Lustre ne sont pas touchés par cett
+ e maintenance.\n===\nDue to mecanical work\, we are forced to shut down Ta
+ mia's compute nodes.\nMonday\, july 6th from 7:00 a.m. to 7:00 p.m. (plann
+ ed). The service is back since 3:15 p.m.\nThe login nodes and the Lustre f
+ ile system are not affected by this maintenance.\n\nhttps://status.allianc
+ ecan.ca/view_incident?incident=1652
 URL:https://status.alliancecan.ca/view_incident?incident=1652
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:[tamIA] Interruption de courant planifiée - Planned power outage
 DTSTART;TZID=America/Toronto:20260709T070000
 DTEND;TZID=America/Toronto:20260709T121500
-DTSTAMP:20260723T200557Z
+DTSTAMP:20260821T135709Z
 UID:drac-incident-1655@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:En raison de travaux électriques\, nous sommes contraints de 
@@ -4610,7 +4611,7 @@ BEGIN:VEVENT
 SUMMARY:[Trillium] SciNet Data Centre Maintenance
 DTSTART;TZID=America/Toronto:20260713T070000
 DTEND;TZID=America/Toronto:20260713T080000
-DTSTAMP:20260724T200623Z
+DTSTAMP:20260821T135709Z
 UID:drac-incident-1653@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:This maintenance window\, related to the Trillium expansion fo
@@ -4641,7 +4642,7 @@ BEGIN:VEVENT
 SUMMARY:[tamIA] Maintenance - travaux mécanique - mecanical work
 DTSTART;TZID=America/Toronto:20260715T070000
 DTEND;TZID=America/Toronto:20260715T040000
-DTSTAMP:20260723T200557Z
+DTSTAMP:20260821T135709Z
 UID:drac-incident-1664@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:En raison de travaux mécanique\, nous sommes contraints de me
@@ -4659,7 +4660,7 @@ SUMMARY:[Rorqual] 2026-07-16 - Replacing hard drives for /project - Rempla
  cement de disques durs pour /project
 DTSTART;TZID=America/Toronto:20260716T000000
 DTEND;TZID=America/Toronto:20260717T000000
-DTSTAMP:20260723T200557Z
+DTSTAMP:20260821T135709Z
 UID:drac-incident-1662@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:Replacing hard-drives is usually transparent to users\, but Ro
@@ -4691,7 +4692,7 @@ BEGIN:VEVENT
 SUMMARY:[tamIA] Maintenance - travaux mécanique - mecanical work
 DTSTART;TZID=America/Toronto:20260716T070000
 DTEND;TZID=America/Toronto:20260716T040000
-DTSTAMP:20260723T200557Z
+DTSTAMP:20260821T135709Z
 UID:drac-incident-1666@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:En raison de travaux mécanique\, nous sommes contraints de me
@@ -4708,7 +4709,7 @@ BEGIN:VEVENT
 SUMMARY:[Fir] Outage
 DTSTART;TZID=America/Vancouver:20260716T160000
 DTEND;TZID=America/Vancouver:20260716T170000
-DTSTAMP:20260723T200557Z
+DTSTAMP:20260821T135709Z
 UID:drac-incident-1667@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:Hello\, The Fir cluster is currently undergoing unscheduled ma
@@ -4730,7 +4731,7 @@ BEGIN:VEVENT
 SUMMARY:[Killarney] Planned Outage - Arrêt planifié
 DTSTART;TZID=America/Toronto:20260720T200000
 DTEND;TZID=America/Toronto:20260722T180000
-DTSTAMP:20260723T200557Z
+DTSTAMP:20260821T135709Z
 UID:drac-incident-1660@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:Killarney will be unavailable 2026-07-20 (20:00 ET) to 2026-07
@@ -4750,7 +4751,7 @@ BEGIN:VEVENT
 SUMMARY:[Fir] Planned Maintenance: Fir Cluster Shutdown
 DTSTART;TZID=America/Vancouver:20260727T120000
 DTEND;TZID=America/Vancouver:20260705T000000
-DTSTAMP:20260801T160257Z
+DTSTAMP:20260821T135709Z
 UID:drac-incident-1672@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:Due to urgent cooling system maintenance\, the Fir cluster wil
@@ -4764,11 +4765,11 @@ DESCRIPTION:Due to urgent cooling system maintenance\, the Fir cluster wil
 URL:https://status.alliancecan.ca/view_incident?incident=1672
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:[Rorqual] 2026-08-05 - Planned Maintenance: Backup Service Unavail
- able - Services de sauvegarde non disponibles
+SUMMARY:[DRAC] 2026-08-05 - Planned Maintenance: Backup Service Unavailabl
+ e - Services de sauvegarde non disponibles
 DTSTART;TZID=America/Toronto:20260805T120000
-DTEND;TZID=America/Toronto:20260805T150645
-DTSTAMP:20260805T190645Z
+DTEND;TZID=America/Toronto:20260806T000000
+DTSTAMP:20260821T135709Z
 UID:drac-incident-1668@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:Due to a scheduled upgrade\, our backup services for this syst
@@ -4788,11 +4789,11 @@ DESCRIPTION:Due to a scheduled upgrade\, our backup services for this syst
 URL:https://status.alliancecan.ca/view_incident?incident=1668
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:[Narval] 2026-08-05 - Planned Maintenance: Backup Service Unavaila
- ble - Services de sauvegarde non disponibles
+SUMMARY:[DRAC] 2026-08-05 - Planned Maintenance: Backup Service Unavailabl
+ e - Services de sauvegarde non disponibles
 DTSTART;TZID=America/Toronto:20260805T120000
-DTEND;TZID=America/Toronto:20260805T150645
-DTSTAMP:20260805T190645Z
+DTEND;TZID=America/Toronto:20260806T000000
+DTSTAMP:20260821T135709Z
 UID:drac-incident-1669@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:Due to a scheduled upgrade\, our backup services for this syst
@@ -4812,11 +4813,11 @@ DESCRIPTION:Due to a scheduled upgrade\, our backup services for this syst
 URL:https://status.alliancecan.ca/view_incident?incident=1669
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:[Juno] 2026-08-05 - Planned Maintenance: Backup Service Unavailabl
+SUMMARY:[DRAC] 2026-08-05 - Planned Maintenance: Backup Service Unavailabl
  e - Services de sauvegarde non disponibles
 DTSTART;TZID=America/Toronto:20260805T120000
-DTEND;TZID=America/Toronto:20260805T150645
-DTSTAMP:20260805T190645Z
+DTEND;TZID=America/Toronto:20260806T000000
+DTSTAMP:20260821T135709Z
 UID:drac-incident-1670@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:Due to a scheduled upgrade\, our backup services for this syst
@@ -4837,7 +4838,7 @@ BEGIN:VEVENT
 SUMMARY:[Vulcan] Planned Outage - Arrêt planifié
 DTSTART;TZID=America/Edmonton:20260821T000000
 DTEND;TZID=America/Edmonton:20260822T000000
-DTSTAMP:20260821T130210Z
+DTSTAMP:20260821T135709Z
 UID:drac-incident-1644@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:Vulcan will be unavailable August 21st to 26th. During this ti
