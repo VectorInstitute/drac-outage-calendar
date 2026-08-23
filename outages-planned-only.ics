@@ -4838,7 +4838,7 @@ BEGIN:VEVENT
 SUMMARY:[Vulcan] Planned Outage - Arrêt planifié
 DTSTART;TZID=America/Edmonton:20260821T000000
 DTEND;TZID=America/Edmonton:20260822T000000
-DTSTAMP:20260823T010418Z
+DTSTAMP:20260823T021244Z
 UID:drac-incident-1644@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:Vulcan will be unavailable August 21st to 26th. During this ti
