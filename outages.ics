@@ -17028,4 +17028,20 @@ DESCRIPTION:Vulcan will be unavailable August 21st to 26th. During this ti
  ca/view_incident?incident=1644
 URL:https://status.alliancecan.ca/view_incident?incident=1644
 END:VEVENT
+BEGIN:VEVENT
+SUMMARY:[tamIA] Planned Outage - Arrêt planifié
+DTSTART;TZID=America/Toronto:20260902T090000
+DTEND;TZID=America/Toronto:20260902T170000
+DTSTAMP:20260825T225043Z
+UID:drac-incident-1691@status.alliancecan.ca
+CATEGORIES:SCHEDULED
+DESCRIPTION:Les nœuds de calcul de Tamia seront hors service pour appliqu
+ er une mise à jour.\nMercredi 2 septembre de 09:00 à 17:00 Les nœuds de
+  connexion et le système de fichier Lustre ne sont pas touchés par cette
+  maintenance.\n===\nTamia's compute nodes will be offline to perform an up
+ date.\nWednesday\, September 2\, from 9:00 AM to 5:00 PM The login nodes a
+ nd the Lustre file system are not affected by this maintenance.\n\nhttps:/
+ /status.alliancecan.ca/view_incident?incident=1691
+URL:https://status.alliancecan.ca/view_incident?incident=1691
+END:VEVENT
 END:VCALENDAR
