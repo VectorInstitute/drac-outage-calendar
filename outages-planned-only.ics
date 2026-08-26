@@ -4851,10 +4851,29 @@ DESCRIPTION:Vulcan will be unavailable August 21st to 26th. During this ti
 URL:https://status.alliancecan.ca/view_incident?incident=1644
 END:VEVENT
 BEGIN:VEVENT
+SUMMARY:[Nibi] Planned Outage - Arrêt planifié
+DTSTART;TZID=America/Toronto:20260902T080000
+DTEND;TZID=America/Toronto:20260902T090000
+DTSTAMP:20260826T201952Z
+UID:drac-incident-1692@status.alliancecan.ca
+CATEGORIES:SCHEDULED
+DESCRIPTION:Nibi compute nodes will be down for maintenance starting Septe
+ mber 2\, 2026 at 8:00 AM \, running through September 3\, 2026 at 8:00 AM 
+ .\nLogin access and storage will remain available throughout this window\,
+  so you can still get in and manage your files as needed. However\, no job
+ s will be running during this period. If you have a job in progress when t
+ he outage begins\, it will be terminated and will need to be resubmitted o
+ nce the system is back up.\nTo help avoid disruptions\, Slurm has been con
+ figured to hold off on starting any jobs that wouldn't finish before the m
+ aintenance begins.\n\nhttps://status.alliancecan.ca/view_incident?incident
+ =1692
+URL:https://status.alliancecan.ca/view_incident?incident=1692
+END:VEVENT
+BEGIN:VEVENT
 SUMMARY:[tamIA] Planned Outage - Arrêt planifié
 DTSTART;TZID=America/Toronto:20260902T090000
 DTEND;TZID=America/Toronto:20260902T170000
-DTSTAMP:20260826T192158Z
+DTSTAMP:20260826T201952Z
 UID:drac-incident-1691@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:Les nœuds de calcul de Tamia seront hors service pour appliqu
