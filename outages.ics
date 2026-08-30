@@ -17042,23 +17042,22 @@ DESCRIPTION:We have a short outage ( ~ 15-20min ) on Nibi's scheduler serv
 URL:https://status.alliancecan.ca/view_incident?incident=1693
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:[Trillium] (unresolved) GPU login node unavailable
+SUMMARY:[Trillium] GPU login node unavailable
 DTSTART;TZID=America/Toronto:20260829T205700
-DTEND;TZID=America/Toronto:20260830T194349
-DTSTAMP:20260829T234350Z
+DTEND;TZID=America/Toronto:20260829T211228
+DTSTAMP:20260830T011228Z
 UID:drac-incident-1694@status.alliancecan.ca
 CATEGORIES:UNPLANNED
-DESCRIPTION:Unresolved: This is an ongoing issue without a definitive end 
- date.\n\nThe GPU login node has an issue\; we are investigating. Meanwhile
- \, this login node remains in maintenance.\n\nhttps://status.alliancecan.c
- a/view_incident?incident=1694
+DESCRIPTION:The GPU login node has an issue\; we are investigating. Meanwh
+ ile\, this login node remains in maintenance.\n\nhttps://status.allianceca
+ n.ca/view_incident?incident=1694
 URL:https://status.alliancecan.ca/view_incident?incident=1694
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:[Nibi] Planned Outage - Arrêt planifié
 DTSTART;TZID=America/Toronto:20260902T080000
 DTEND;TZID=America/Toronto:20260902T090000
-DTSTAMP:20260829T234350Z
+DTSTAMP:20260830T011228Z
 UID:drac-incident-1692@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:Nibi compute nodes will be down for maintenance starting Septe
@@ -17077,7 +17076,7 @@ BEGIN:VEVENT
 SUMMARY:[tamIA] Planned Outage - Arrêt planifié
 DTSTART;TZID=America/Toronto:20260902T090000
 DTEND;TZID=America/Toronto:20260902T170000
-DTSTAMP:20260829T234350Z
+DTSTAMP:20260830T011228Z
 UID:drac-incident-1691@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:Les nœuds de calcul de Tamia seront hors service pour appliqu
