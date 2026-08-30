@@ -17045,7 +17045,7 @@ BEGIN:VEVENT
 SUMMARY:[Trillium] GPU login node unavailable
 DTSTART;TZID=America/Toronto:20260829T205700
 DTEND;TZID=America/Toronto:20260830T143400
-DTSTAMP:20260830T154401Z
+DTSTAMP:20260830T164349Z
 UID:drac-incident-1694@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:The GPU login node has an issue\; we are investigating. Meanwh
@@ -17057,7 +17057,7 @@ BEGIN:VEVENT
 SUMMARY:[Nibi] Planned Outage - Arrêt planifié
 DTSTART;TZID=America/Toronto:20260902T080000
 DTEND;TZID=America/Toronto:20260902T090000
-DTSTAMP:20260830T154401Z
+DTSTAMP:20260830T164349Z
 UID:drac-incident-1692@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:Nibi compute nodes will be down for maintenance starting Septe
@@ -17076,7 +17076,7 @@ BEGIN:VEVENT
 SUMMARY:[tamIA] Planned Outage - Arrêt planifié
 DTSTART;TZID=America/Toronto:20260902T090000
 DTEND;TZID=America/Toronto:20260902T170000
-DTSTAMP:20260830T154401Z
+DTSTAMP:20260830T164349Z
 UID:drac-incident-1691@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:Les nœuds de calcul de Tamia seront hors service pour appliqu
