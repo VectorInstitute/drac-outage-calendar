@@ -4854,7 +4854,7 @@ BEGIN:VEVENT
 SUMMARY:[Nibi] Planned Outage - Arrêt planifié
 DTSTART;TZID=America/Toronto:20260902T080000
 DTEND;TZID=America/Toronto:20260902T090000
-DTSTAMP:20260831T154357Z
+DTSTAMP:20260831T164347Z
 UID:drac-incident-1692@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:Nibi compute nodes will be down for maintenance starting Septe
@@ -4873,7 +4873,7 @@ BEGIN:VEVENT
 SUMMARY:[tamIA] Planned Outage - Arrêt planifié
 DTSTART;TZID=America/Toronto:20260902T090000
 DTEND;TZID=America/Toronto:20260902T170000
-DTSTAMP:20260831T154357Z
+DTSTAMP:20260831T164347Z
 UID:drac-incident-1691@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:Les nœuds de calcul de Tamia seront hors service pour appliqu
@@ -4884,5 +4884,47 @@ DESCRIPTION:Les nœuds de calcul de Tamia seront hors service pour appliqu
  nd the Lustre file system are not affected by this maintenance.\n\nhttps:/
  /status.alliancecan.ca/view_incident?incident=1691
 URL:https://status.alliancecan.ca/view_incident?incident=1691
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:[Narval] 2026-09-02 - Planned Maintenance of Slurm - Maintenance p
+ lanifiée de Slurm
+DTSTART;TZID=America/Toronto:20260902T090000
+DTEND;TZID=America/Toronto:20260902T100000
+DTSTAMP:20260831T164347Z
+UID:drac-incident-1695@status.alliancecan.ca
+CATEGORIES:SCHEDULED
+DESCRIPTION:This cluster will undergo planned Slurm updates on September 2
+ nd\, 2026\, starting at 9 am . Users may experience temporary service inte
+ rruptions while the updates are completed. Note:\nA reservation has been s
+ et such that jobs that would not end before the beginning of the maintenan
+ ce will remain in the waiting queue.\n======\nDans la journée du 2 septem
+ bre 2026\, à partir de 9h \, nous procéderons à la mise à jour de l’
+ ordonnanceur Slurm sur cette grappe. Le service d’ordonnancement des tâ
+ ches sera donc interrompu à quelques reprises pendant les travaux. Note :
+ \nUne réservation a été configurée de sorte à maintenir en file d'att
+ ente les tâches qui ne se termineraient pas avant le début de la mainten
+ ance.\n\nhttps://status.alliancecan.ca/view_incident?incident=1695
+URL:https://status.alliancecan.ca/view_incident?incident=1695
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:[Rorqual] 2026-09-02 - Planned Maintenance of Slurm - Maintenance 
+ planifiée de Slurm
+DTSTART;TZID=America/Toronto:20260902T090000
+DTEND;TZID=America/Toronto:20260902T100000
+DTSTAMP:20260831T164347Z
+UID:drac-incident-1696@status.alliancecan.ca
+CATEGORIES:SCHEDULED
+DESCRIPTION:This cluster will undergo planned Slurm updates on September 2
+ nd\, 2026\, starting at 9 am . Users may experience temporary service inte
+ rruptions while the updates are completed. Note:\nA reservation has been s
+ et such that jobs that would not end before the beginning of the maintenan
+ ce will remain in the waiting queue.\n======\nDans la journée du 2 septem
+ bre 2026\, à partir de 9h \, nous procéderons à la mise à jour de l’
+ ordonnanceur Slurm sur cette grappe. Le service d’ordonnancement des tâ
+ ches sera donc interrompu à quelques reprises pendant les travaux. Note :
+ \nUne réservation a été configurée de sorte à maintenir en file d'att
+ ente les tâches qui ne se termineraient pas avant le début de la mainten
+ ance.\n\nhttps://status.alliancecan.ca/view_incident?incident=1696
+URL:https://status.alliancecan.ca/view_incident?incident=1696
 END:VEVENT
 END:VCALENDAR
