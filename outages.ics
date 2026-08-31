@@ -17054,10 +17054,25 @@ DESCRIPTION:The GPU login node has an issue\; we are investigating. Meanwh
 URL:https://status.alliancecan.ca/view_incident?incident=1694
 END:VEVENT
 BEGIN:VEVENT
+SUMMARY:[Fir] 2026-09-01 Planned Slurm upgrade
+DTSTART;TZID=America/Vancouver:20260901T100000
+DTEND;TZID=America/Vancouver:20260901T110000
+DTSTAMP:20260831T204349Z
+UID:drac-incident-1698@status.alliancecan.ca
+CATEGORIES:SCHEDULED
+DESCRIPTION:This cluster will undergo planned Slurm updates on September 1
+ st\, 2026\, starting at 10 am. Users may experience temporary service inte
+ rruptions while the updates are completed.\nNote:\nA reservation has been 
+ set such that jobs that would not end before the beginning of the maintena
+ nce will remain in the waiting queue.\n\nhttps://status.alliancecan.ca/vie
+ w_incident?incident=1698
+URL:https://status.alliancecan.ca/view_incident?incident=1698
+END:VEVENT
+BEGIN:VEVENT
 SUMMARY:[Nibi] Planned Outage - Arrêt planifié
 DTSTART;TZID=America/Toronto:20260902T080000
 DTEND;TZID=America/Toronto:20260902T090000
-DTSTAMP:20260831T194350Z
+DTSTAMP:20260831T204349Z
 UID:drac-incident-1692@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:Nibi compute nodes will be down for maintenance starting Septe
@@ -17076,7 +17091,7 @@ BEGIN:VEVENT
 SUMMARY:[tamIA] Planned Outage - Arrêt planifié
 DTSTART;TZID=America/Toronto:20260902T090000
 DTEND;TZID=America/Toronto:20260902T170000
-DTSTAMP:20260831T194350Z
+DTSTAMP:20260831T204349Z
 UID:drac-incident-1691@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:Les nœuds de calcul de Tamia seront hors service pour appliqu
@@ -17093,20 +17108,20 @@ SUMMARY:[Narval] 2026-09-02 - Planned Maintenance of Slurm - Maintenance p
  lanifiée de Slurm
 DTSTART;TZID=America/Toronto:20260902T090000
 DTEND;TZID=America/Toronto:20260902T100000
-DTSTAMP:20260831T194350Z
+DTSTAMP:20260831T204349Z
 UID:drac-incident-1695@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:This cluster will undergo planned Slurm updates on September 2
  nd\, 2026\, starting at 9 am . Users may experience temporary service inte
  rruptions while the updates are completed. Note:\nA reservation has been s
- et such that jobs that would not end before the beginning of the maintenan
- ce will remain in the waiting queue.\n======\nDans la journée du 2 septem
- bre 2026\, à partir de 9h \, nous procéderons à la mise à jour de l’
- ordonnanceur Slurm sur cette grappe. Le service d’ordonnancement des tâ
- ches sera donc interrompu à quelques reprises pendant les travaux. Note :
- \nUne réservation a été configurée de sorte à maintenir en file d'att
- ente les tâches qui ne se termineraient pas avant le début de la mainten
- ance.\n\nhttps://status.alliancecan.ca/view_incident?incident=1695
+ et to keep jobs in the waiting queue if they would not end before the begi
+ nning of the maintenance.\n======\nDans la journée du 2 septembre 2026\, 
+ à partir de 9h \, nous procéderons à la mise à jour de l’ordonnanceu
+ r Slurm sur cette grappe. Le service d’ordonnancement des tâches sera d
+ onc interrompu à quelques reprises pendant les travaux. Note :\nUne rése
+ rvation a été configurée de sorte à maintenir en file d'attente les t
+ âches qui ne se termineraient pas avant le début de la maintenance.\n\nh
+ ttps://status.alliancecan.ca/view_incident?incident=1695
 URL:https://status.alliancecan.ca/view_incident?incident=1695
 END:VEVENT
 BEGIN:VEVENT
@@ -17114,20 +17129,20 @@ SUMMARY:[Rorqual] 2026-09-02 - Planned Maintenance of Slurm - Maintenance
  planifiée de Slurm
 DTSTART;TZID=America/Toronto:20260902T090000
 DTEND;TZID=America/Toronto:20260902T100000
-DTSTAMP:20260831T194350Z
+DTSTAMP:20260831T204349Z
 UID:drac-incident-1696@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:This cluster will undergo planned Slurm updates on September 2
  nd\, 2026\, starting at 9 am . Users may experience temporary service inte
  rruptions while the updates are completed. Note:\nA reservation has been s
- et such that jobs that would not end before the beginning of the maintenan
- ce will remain in the waiting queue.\n======\nDans la journée du 2 septem
- bre 2026\, à partir de 9h \, nous procéderons à la mise à jour de l’
- ordonnanceur Slurm sur cette grappe. Le service d’ordonnancement des tâ
- ches sera donc interrompu à quelques reprises pendant les travaux. Note :
- \nUne réservation a été configurée de sorte à maintenir en file d'att
- ente les tâches qui ne se termineraient pas avant le début de la mainten
- ance.\n\nhttps://status.alliancecan.ca/view_incident?incident=1696
+ et to keep jobs in the waiting queue if they would not end before the begi
+ nning of the maintenance.\n======\nDans la journée du 2 septembre 2026\, 
+ à partir de 9h \, nous procéderons à la mise à jour de l’ordonnanceu
+ r Slurm sur cette grappe. Le service d’ordonnancement des tâches sera d
+ onc interrompu à quelques reprises pendant les travaux. Note :\nUne rése
+ rvation a été configurée de sorte à maintenir en file d'attente les t
+ âches qui ne se termineraient pas avant le début de la maintenance.\n\nh
+ ttps://status.alliancecan.ca/view_incident?incident=1696
 URL:https://status.alliancecan.ca/view_incident?incident=1696
 END:VEVENT
 END:VCALENDAR
