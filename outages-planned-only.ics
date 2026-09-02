@@ -4869,7 +4869,7 @@ BEGIN:VEVENT
 SUMMARY:[Nibi] Planned Outage - Arrêt planifié
 DTSTART;TZID=America/Toronto:20260902T080000
 DTEND;TZID=America/Toronto:20260902T090000
-DTSTAMP:20260902T184622Z
+DTSTAMP:20260902T194423Z
 UID:drac-incident-1692@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:Nibi compute nodes will be down for maintenance starting Septe
@@ -4887,59 +4887,61 @@ END:VEVENT
 BEGIN:VEVENT
 SUMMARY:[tamIA] Planned Outage - Arrêt planifié
 DTSTART;TZID=America/Toronto:20260902T090000
-DTEND;TZID=America/Toronto:20260902T170000
-DTSTAMP:20260902T184622Z
+DTEND;TZID=America/Toronto:20260902T050000
+DTSTAMP:20260902T194423Z
 UID:drac-incident-1691@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:Les nœuds de calcul de Tamia seront hors service pour appliqu
- er une mise à jour.\nMercredi 2 septembre de 09:00 à 17:00 Les nœuds de
-  connexion et le système de fichier Lustre ne sont pas touchés par cette
-  maintenance.\n===\nTamia's compute nodes will be offline to perform an up
- date.\nWednesday\, September 2\, from 9:00 AM to 5:00 PM The login nodes a
- nd the Lustre file system are not affected by this maintenance.\n\nhttps:/
- /status.alliancecan.ca/view_incident?incident=1691
+ er une mise à jour.\nMercredi 2 septembre de 09:00 à Jeudi 3 septembre 1
+ 7:00 Les nœuds de connexion et le système de fichier Lustre ne sont pas 
+ touchés par cette maintenance.\n===\nTamia's compute nodes will be offlin
+ e to perform an update.\nWednesday\, September 2\, 09:00 to Thursday\, Sep
+ tember 3\, 5:00 PM The login nodes and the Lustre file system are not affe
+ cted by this maintenance.\n\nhttps://status.alliancecan.ca/view_incident?i
+ ncident=1691
 URL:https://status.alliancecan.ca/view_incident?incident=1691
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:[Narval] 2026-09-02 - Planned Maintenance of Slurm - Maintenance p
- lanifiée de Slurm
+SUMMARY:[Narval] 2026-09-02 - Planned Maintenance - Maintenance planifiée
 DTSTART;TZID=America/Toronto:20260902T090000
 DTEND;TZID=America/Toronto:20260902T100000
-DTSTAMP:20260902T144553Z
+DTSTAMP:20260902T194423Z
 UID:drac-incident-1695@status.alliancecan.ca
 CATEGORIES:SCHEDULED
-DESCRIPTION:This cluster will undergo planned Slurm updates on September 2
- nd\, 2026\, starting at 9 am . Users may experience temporary service inte
- rruptions while the updates are completed. Note:\nA reservation has been s
- et to keep jobs in the waiting queue if they would not end before the begi
- nning of the maintenance.\n======\nDans la journée du 2 septembre 2026\, 
- à partir de 9h \, nous procéderons à la mise à jour de l’ordonnanceu
- r Slurm sur cette grappe. Le service d’ordonnancement des tâches sera d
- onc interrompu à quelques reprises pendant les travaux. Note :\nUne rése
- rvation a été configurée de sorte à maintenir en file d'attente les t
- âches qui ne se termineraient pas avant le début de la maintenance.\n\nh
- ttps://status.alliancecan.ca/view_incident?incident=1695
+DESCRIPTION:This cluster will undergo planned updates on September 2nd\, 2
+ 026\, starting at 9 am . Users may experience temporary service interrupti
+ ons while the updates are completed. Notes:\nA reservation has been set to
+  keep jobs in the waiting queue if they would not end before the beginning
+  of the maintenance.\nLogin nodes and storage will remain accessible.\n===
+ ===\nDans la journée du 2 septembre 2026\, à partir de 9h \, nous procé
+ derons différentes mises à jour sur cette grappe. Les usagers peuvent su
+ bir des interruptions de service temporaires pendant la durée des mises 
+ à jour. Notes :\nUne réservation a été configurée de sorte à mainten
+ ir en file d'attente les tâches qui ne se termineraient pas avant le déb
+ ut de la maintenance.\nLes nœuds de connexion et le stockage resteront ac
+ cessibles.\n\nhttps://status.alliancecan.ca/view_incident?incident=1695
 URL:https://status.alliancecan.ca/view_incident?incident=1695
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:[Rorqual] 2026-09-02 - Planned Maintenance of Slurm - Maintenance 
- planifiée de Slurm
+SUMMARY:[Rorqual] 2026-09-02 - Planned Maintenance - Maintenance planifié
+ e
 DTSTART;TZID=America/Toronto:20260902T090000
 DTEND;TZID=America/Toronto:20260902T100000
-DTSTAMP:20260902T144553Z
+DTSTAMP:20260902T194423Z
 UID:drac-incident-1696@status.alliancecan.ca
 CATEGORIES:SCHEDULED
-DESCRIPTION:This cluster will undergo planned Slurm updates on September 2
- nd\, 2026\, starting at 9 am . Users may experience temporary service inte
- rruptions while the updates are completed. Note:\nA reservation has been s
- et to keep jobs in the waiting queue if they would not end before the begi
- nning of the maintenance.\n======\nDans la journée du 2 septembre 2026\, 
- à partir de 9h \, nous procéderons à la mise à jour de l’ordonnanceu
- r Slurm sur cette grappe. Le service d’ordonnancement des tâches sera d
- onc interrompu à quelques reprises pendant les travaux. Note :\nUne rése
- rvation a été configurée de sorte à maintenir en file d'attente les t
- âches qui ne se termineraient pas avant le début de la maintenance.\n\nh
- ttps://status.alliancecan.ca/view_incident?incident=1696
+DESCRIPTION:This cluster will undergo planned updates on September 2nd\, 2
+ 026\, starting at 9 am . Users may experience temporary service interrupti
+ ons while the updates are completed. Notes:\nA reservation has been set to
+  keep jobs in the waiting queue if they would not end before the beginning
+  of the maintenance.\nLogin nodes and storage will remain accessible.\n===
+ ===\nDans la journée du 2 septembre 2026\, à partir de 9h \, nous procé
+ derons différentes mises à jour sur cette grappe. Les usagers peuvent su
+ bir des interruptions de service temporaires pendant la durée des mises 
+ à jour. Notes :\nUne réservation a été configurée de sorte à mainten
+ ir en file d'attente les tâches qui ne se termineraient pas avant le déb
+ ut de la maintenance.\nLes nœuds de connexion et le stockage resteront ac
+ cessibles.\n\nhttps://status.alliancecan.ca/view_incident?incident=1696
 URL:https://status.alliancecan.ca/view_incident?incident=1696
 END:VEVENT
 END:VCALENDAR
