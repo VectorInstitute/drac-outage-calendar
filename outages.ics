@@ -17109,7 +17109,7 @@ BEGIN:VEVENT
 SUMMARY:[Nibi] Planned Outage - Arrêt planifié
 DTSTART;TZID=America/Toronto:20260902T080000
 DTEND;TZID=America/Toronto:20260902T090000
-DTSTAMP:20260903T125206Z
+DTSTAMP:20260903T134418Z
 UID:drac-incident-1692@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:Nibi compute nodes will be down for maintenance starting Septe
