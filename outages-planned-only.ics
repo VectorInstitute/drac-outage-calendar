@@ -4869,7 +4869,7 @@ BEGIN:VEVENT
 SUMMARY:[Nibi] Planned Outage - Arrêt planifié
 DTSTART;TZID=America/Toronto:20260902T080000
 DTEND;TZID=America/Toronto:20260902T090000
-DTSTAMP:20260902T234351Z
+DTSTAMP:20260903T011126Z
 UID:drac-incident-1692@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:Nibi compute nodes will be down for maintenance starting Septe
@@ -4885,27 +4885,10 @@ DESCRIPTION:Nibi compute nodes will be down for maintenance starting Septe
 URL:https://status.alliancecan.ca/view_incident?incident=1692
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:[tamIA] Planned Outage - Arrêt planifié
-DTSTART;TZID=America/Toronto:20260902T090000
-DTEND;TZID=America/Toronto:20260902T050000
-DTSTAMP:20260902T234351Z
-UID:drac-incident-1691@status.alliancecan.ca
-CATEGORIES:SCHEDULED
-DESCRIPTION:Les nœuds de calcul de Tamia seront hors service pour appliqu
- er une mise à jour.\nMercredi 2 septembre de 09:00 à Jeudi 3 septembre 1
- 7:00 Les nœuds de connexion et le système de fichier Lustre ne sont pas 
- touchés par cette maintenance.\n===\nTamia's compute nodes will be offlin
- e to perform an update.\nWednesday\, September 2\, 09:00 to Thursday\, Sep
- tember 3\, 5:00 PM The login nodes and the Lustre file system are not affe
- cted by this maintenance.\n\nhttps://status.alliancecan.ca/view_incident?i
- ncident=1691
-URL:https://status.alliancecan.ca/view_incident?incident=1691
-END:VEVENT
-BEGIN:VEVENT
 SUMMARY:[Narval] 2026-09-02 - Planned Maintenance - Maintenance planifiée
 DTSTART;TZID=America/Toronto:20260902T090000
 DTEND;TZID=America/Toronto:20260902T100000
-DTSTAMP:20260902T234351Z
+DTSTAMP:20260903T011126Z
 UID:drac-incident-1695@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:This cluster will undergo planned updates on September 2nd\, 2
@@ -4927,7 +4910,7 @@ SUMMARY:[Rorqual] 2026-09-02 - Planned Maintenance - Maintenance planifié
  e
 DTSTART;TZID=America/Toronto:20260902T090000
 DTEND;TZID=America/Toronto:20260902T100000
-DTSTAMP:20260902T234351Z
+DTSTAMP:20260903T011126Z
 UID:drac-incident-1696@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:This cluster will undergo planned updates on September 2nd\, 2
@@ -4943,5 +4926,22 @@ DESCRIPTION:This cluster will undergo planned updates on September 2nd\, 2
  ut de la maintenance.\nLes nœuds de connexion et le stockage resteront ac
  cessibles.\n\nhttps://status.alliancecan.ca/view_incident?incident=1696
 URL:https://status.alliancecan.ca/view_incident?incident=1696
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:[tamIA] Planned Outage - Arrêt planifié
+DTSTART;TZID=America/Toronto:20260902T090000
+DTEND;TZID=America/Toronto:20260902T050000
+DTSTAMP:20260902T234351Z
+UID:drac-incident-1691@status.alliancecan.ca
+CATEGORIES:SCHEDULED
+DESCRIPTION:Les nœuds de calcul de Tamia seront hors service pour appliqu
+ er une mise à jour.\nMercredi 2 septembre de 09:00 à Jeudi 3 septembre 1
+ 7:00 Les nœuds de connexion et le système de fichier Lustre ne sont pas 
+ touchés par cette maintenance.\n===\nTamia's compute nodes will be offlin
+ e to perform an update.\nWednesday\, September 2\, 09:00 to Thursday\, Sep
+ tember 3\, 5:00 PM The login nodes and the Lustre file system are not affe
+ cted by this maintenance.\n\nhttps://status.alliancecan.ca/view_incident?i
+ ncident=1691
+URL:https://status.alliancecan.ca/view_incident?incident=1691
 END:VEVENT
 END:VCALENDAR
