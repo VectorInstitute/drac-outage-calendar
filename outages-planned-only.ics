@@ -4869,7 +4869,7 @@ BEGIN:VEVENT
 SUMMARY:[Nibi] Planned Outage - Arrêt planifié
 DTSTART;TZID=America/Toronto:20260902T080000
 DTEND;TZID=America/Toronto:20260902T090000
-DTSTAMP:20260903T164526Z
+DTSTAMP:20260903T174358Z
 UID:drac-incident-1692@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:Nibi compute nodes will be down for maintenance starting Septe
@@ -4948,7 +4948,7 @@ BEGIN:VEVENT
 SUMMARY:[CCDB] Planned Outage - Arrêt planifié
 DTSTART;TZID=America/Toronto:20260903T000000
 DTEND;TZID=America/Toronto:20260904T000000
-DTSTAMP:20260903T164526Z
+DTSTAMP:20260903T174358Z
 UID:drac-incident-1705@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:On Thursday\, September 3\, 2026\, we will be performing maint
@@ -4956,8 +4956,8 @@ DESCRIPTION:On Thursday\, September 3\, 2026\, we will be performing maint
  CDB portal will be unavailable between 1:00 pm and 1:30 pm Eastern Time. /
   Le jeudi 3 septembre 2026\, nous effectuerons une maintenance sur le port
  ail CCDB qui nécessitera un temps d’arrêt. L’accès au portail ne se
- ra pas disponible entre 13 h et 13 h 30\, heure de l’Est.\n\nhttps://sta
- tus.alliancecan.ca/view_incident?incident=1705
+ ra pas disponible entre 13 h et 13 h 30\, heure de l’Est.\n-- On going\n
+ \nhttps://status.alliancecan.ca/view_incident?incident=1705
 URL:https://status.alliancecan.ca/view_incident?incident=1705
 END:VEVENT
 END:VCALENDAR
