@@ -4869,7 +4869,7 @@ BEGIN:VEVENT
 SUMMARY:[Nibi] Planned Outage - Arrêt planifié
 DTSTART;TZID=America/Toronto:20260902T080000
 DTEND;TZID=America/Toronto:20260902T090000
-DTSTAMP:20260904T144353Z
+DTSTAMP:20260904T154350Z
 UID:drac-incident-1692@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:Nibi compute nodes will be down for maintenance starting Septe
@@ -4948,7 +4948,7 @@ BEGIN:VEVENT
 SUMMARY:[CCDB] Planned Outage - Arrêt planifié
 DTSTART;TZID=America/Toronto:20260903T000000
 DTEND;TZID=America/Toronto:20260904T000000
-DTSTAMP:20260904T144353Z
+DTSTAMP:20260904T154350Z
 UID:drac-incident-1705@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:On Thursday\, September 3\, 2026\, we will be performing maint
@@ -4959,5 +4959,20 @@ DESCRIPTION:On Thursday\, September 3\, 2026\, we will be performing maint
  ra pas disponible entre 13 h et 13 h 30\, heure de l’Est.\n-- On going\n
  \nhttps://status.alliancecan.ca/view_incident?incident=1705
 URL:https://status.alliancecan.ca/view_incident?incident=1705
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:[Killarney] Software maintenance
+DTSTART;TZID=America/Toronto:20260908T090000
+DTEND;TZID=America/Toronto:20260908T150000
+DTSTAMP:20260904T154350Z
+UID:drac-incident-1706@status.alliancecan.ca
+CATEGORIES:SCHEDULED
+DESCRIPTION:On Tuesday \, September 8\, from 09:00 to 15:00 EDT (13:00-19:
+ 00 UTC) there will be software maintenance done on the Killarney cluster.
+ \nNew jobs will not start during this time period\, but already-running jo
+ bs should continue to execute. This is being done to deal with an somewhat
+  urgent software issue.\nIt will still be possible to SSH into the login n
+ odes.\n\nhttps://status.alliancecan.ca/view_incident?incident=1706
+URL:https://status.alliancecan.ca/view_incident?incident=1706
 END:VEVENT
 END:VCALENDAR

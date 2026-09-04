@@ -246,4 +246,19 @@ DESCRIPTION:Killarney will be unavailable 2026-07-20 (20:00 ET) to 2026-07
  60
 URL:https://status.alliancecan.ca/view_incident?incident=1660
 END:VEVENT
+BEGIN:VEVENT
+SUMMARY:[Killarney] Software maintenance
+DTSTART;TZID=America/Toronto:20260908T090000
+DTEND;TZID=America/Toronto:20260908T150000
+DTSTAMP:20260904T154350Z
+UID:drac-incident-1706@status.alliancecan.ca
+CATEGORIES:SCHEDULED
+DESCRIPTION:On Tuesday \, September 8\, from 09:00 to 15:00 EDT (13:00-19:
+ 00 UTC) there will be software maintenance done on the Killarney cluster.
+ \nNew jobs will not start during this time period\, but already-running jo
+ bs should continue to execute. This is being done to deal with an somewhat
+  urgent software issue.\nIt will still be possible to SSH into the login n
+ odes.\n\nhttps://status.alliancecan.ca/view_incident?incident=1706
+URL:https://status.alliancecan.ca/view_incident?incident=1706
+END:VEVENT
 END:VCALENDAR
