@@ -17188,7 +17188,7 @@ BEGIN:VEVENT
 SUMMARY:[CCDB] Planned Outage - Arrêt planifié
 DTSTART;TZID=America/Toronto:20260903T000000
 DTEND;TZID=America/Toronto:20260904T000000
-DTSTAMP:20260910T125111Z
+DTSTAMP:20260910T134352Z
 UID:drac-incident-1705@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:On Thursday\, September 3\, 2026\, we will be performing maint
@@ -17204,7 +17204,7 @@ BEGIN:VEVENT
 SUMMARY:[Killarney] Software maintenance
 DTSTART;TZID=America/Toronto:20260908T090000
 DTEND;TZID=America/Toronto:20260908T150000
-DTSTAMP:20260910T125111Z
+DTSTAMP:20260910T134352Z
 UID:drac-incident-1706@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:On Tuesday \, September 8\, from 09:00 to 15:00 EDT (13:00-19:
@@ -17214,6 +17214,38 @@ DESCRIPTION:On Tuesday \, September 8\, from 09:00 to 15:00 EDT (13:00-19:
   urgent software issue.\nIt will still be possible to SSH into the login n
  odes.\n\nhttps://status.alliancecan.ca/view_incident?incident=1706
 URL:https://status.alliancecan.ca/view_incident?incident=1706
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:[Rorqual] 2026-09-10 - Replacing hard drives for /project - Rempla
+ cement de disques durs pour /project
+DTSTART;TZID=America/Toronto:20260908T135500
+DTEND;TZID=America/Toronto:20260910T133000
+DTSTAMP:20260910T134352Z
+UID:drac-incident-1707@status.alliancecan.ca
+CATEGORIES:UNPLANNED
+DESCRIPTION:Replacing a hard-drive is usually transparent to users\, but t
+ he storage system has been very sensitive to such operation. To prevent an
+ y additional problem\, we have to pause read and write operations for a ce
+ rtain time period (in the order of 30-45 minutes if no issue).\nActive job
+ s accessing /project will hang until read and write operations are resumed
+  . The jobs will continue as usual after that\, but their time limit will 
+ not be increased.\nThe access from login nodes and via Globus is also affe
+ cted.\nReplacing the hard drives is relatively urgent and we cannot wait f
+ or a proper maintenance period. We apologize for the impacts on your resea
+ rch activities.\n======\nLe remplacement d'un disque dur est généralemen
+ t transparent pour les usagers\, mais le système de stockage s'est montr
+ é très sensible à ce type d'opération. Afin d'éviter tout problème s
+ upplémentaire\, nous devons mettre sur pause les opérations de lecture e
+ t d'écriture pendant une certaine période (de l'ordre de 30 à 45 minute
+ s si tout va bien).\nLes tâches en cours accédant à /project subiront l
+ a pause jusqu'à la reprise des opérations de lecture et d'écriture . El
+ les reprendront ensuite leur cours normal\, mais leur durée limite ne ser
+ a pas prolongée.\nL'accès à partir des nœuds de connexion et via Globu
+ s sera aussi affecté.\nLe remplacement de ces disques durs est relativeme
+ nt urgent et nous ne pouvons pas attendre une période de maintenance plus
+  appropriée. Nous sommes désolés pour les impacts sur vos activités de
+  recherche.\n\nhttps://status.alliancecan.ca/view_incident?incident=1707
+URL:https://status.alliancecan.ca/view_incident?incident=1707
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:[Nibi] Problem with login nodes - Problème avec les noeuds de con
