@@ -17188,7 +17188,7 @@ BEGIN:VEVENT
 SUMMARY:[CCDB] Planned Outage - Arrêt planifié
 DTSTART;TZID=America/Toronto:20260903T000000
 DTEND;TZID=America/Toronto:20260904T000000
-DTSTAMP:20260916T114447Z
+DTSTAMP:20260916T125326Z
 UID:drac-incident-1705@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:On Thursday\, September 3\, 2026\, we will be performing maint
@@ -17204,7 +17204,7 @@ BEGIN:VEVENT
 SUMMARY:[Killarney] Software maintenance
 DTSTART;TZID=America/Toronto:20260908T090000
 DTEND;TZID=America/Toronto:20260908T150000
-DTSTAMP:20260916T114447Z
+DTSTAMP:20260916T125326Z
 UID:drac-incident-1706@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:On Tuesday \, September 8\, from 09:00 to 15:00 EDT (13:00-19:
@@ -17298,8 +17298,8 @@ BEGIN:VEVENT
 SUMMARY:[Trillium] (unresolved) Trillium GPU login node issues / Problème
  s sur le nœud de connexion GPU Trillium
 DTSTART;TZID=America/Toronto:20260914T191300
-DTEND;TZID=America/Toronto:20260917T074445
-DTSTAMP:20260916T114447Z
+DTEND;TZID=America/Toronto:20260917T085323
+DTSTAMP:20260916T125326Z
 UID:drac-incident-1710@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:Unresolved: This is an ongoing issue without a definitive end 
@@ -17318,7 +17318,7 @@ SUMMARY:[Juno] 2026-09-15 - Planned Maintenance: Backup Service Unavailabl
  e - Service de sauvegardes en maintenance
 DTSTART;TZID=America/Toronto:20260915T090000
 DTEND;TZID=America/Toronto:20260915T100000
-DTSTAMP:20260916T114447Z
+DTSTAMP:20260916T125326Z
 UID:drac-incident-1711@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:On Tuesday September 15\, starting at 9 am (ET)\, the TSM serv
@@ -17332,5 +17332,33 @@ DESCRIPTION:On Tuesday September 15\, starting at 9 am (ET)\, the TSM serv
  it être de retour en production vers la fin de la journée.\n\nhttps://st
  atus.alliancecan.ca/view_incident?incident=1711
 URL:https://status.alliancecan.ca/view_incident?incident=1711
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:[Arbutus] Configuration change to networking
+DTSTART;TZID=America/Toronto:20260915T175000
+DTEND;TZID=America/Toronto:20260915T195600
+DTSTAMP:20260916T125326Z
+UID:drac-incident-1712@status.alliancecan.ca
+CATEGORIES:UNPLANNED
+DESCRIPTION:Upgrade to a software networking component of OpenStack will b
+ e rolling out across the cloud. This will result in a brief network outage
+  of a few seconds on every server in the cloud. Recovery should happen aut
+ omatically and should have minimal impact on virtual machines running on A
+ rbutus. Rollout will take between 1-2 hours.\n\nhttps://status.alliancecan
+ .ca/view_incident?incident=1712
+URL:https://status.alliancecan.ca/view_incident?incident=1712
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:[Helpdesk - Centre d'assistance] Outage - Panne
+DTSTART;TZID=America/Toronto:20260916T115200
+DTEND;TZID=America/Toronto:20260916T115600
+DTSTAMP:20260916T125326Z
+UID:drac-incident-1713@status.alliancecan.ca
+CATEGORIES:UNPLANNED
+DESCRIPTION:Helpdesk is currently offline due to an unknown issue. We are 
+ investigating. / Le service d'assistance est actuellement hors ligne en ra
+ ison d'un problème inconnu. Nous enquêtons.\n\nhttps://status.allianceca
+ n.ca/view_incident?incident=1713
+URL:https://status.alliancecan.ca/view_incident?incident=1713
 END:VEVENT
 END:VCALENDAR
