@@ -17188,7 +17188,7 @@ BEGIN:VEVENT
 SUMMARY:[CCDB] Planned Outage - Arrêt planifié
 DTSTART;TZID=America/Toronto:20260903T000000
 DTEND;TZID=America/Toronto:20260904T000000
-DTSTAMP:20260916T011045Z
+DTSTAMP:20260916T015409Z
 UID:drac-incident-1705@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:On Thursday\, September 3\, 2026\, we will be performing maint
@@ -17204,7 +17204,7 @@ BEGIN:VEVENT
 SUMMARY:[Killarney] Software maintenance
 DTSTART;TZID=America/Toronto:20260908T090000
 DTEND;TZID=America/Toronto:20260908T150000
-DTSTAMP:20260916T011045Z
+DTSTAMP:20260916T015409Z
 UID:drac-incident-1706@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:On Tuesday \, September 8\, from 09:00 to 15:00 EDT (13:00-19:
@@ -17298,8 +17298,8 @@ BEGIN:VEVENT
 SUMMARY:[Trillium] (unresolved) Trillium GPU login node issues / Problème
  s sur le nœud de connexion GPU Trillium
 DTSTART;TZID=America/Toronto:20260914T191300
-DTEND;TZID=America/Toronto:20260916T211044
-DTSTAMP:20260916T011045Z
+DTEND;TZID=America/Toronto:20260916T215407
+DTSTAMP:20260916T015409Z
 UID:drac-incident-1710@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:Unresolved: This is an ongoing issue without a definitive end 
@@ -17318,7 +17318,7 @@ SUMMARY:[Juno] 2026-09-15 - Planned Maintenance: Backup Service Unavailabl
  e - Service de sauvegardes en maintenance
 DTSTART;TZID=America/Toronto:20260915T090000
 DTEND;TZID=America/Toronto:20260915T100000
-DTSTAMP:20260916T011045Z
+DTSTAMP:20260916T015409Z
 UID:drac-incident-1711@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:On Tuesday September 15\, starting at 9 am (ET)\, the TSM serv
