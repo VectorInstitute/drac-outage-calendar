@@ -17188,7 +17188,7 @@ BEGIN:VEVENT
 SUMMARY:[CCDB] Planned Outage - Arrêt planifié
 DTSTART;TZID=America/Toronto:20260903T000000
 DTEND;TZID=America/Toronto:20260904T000000
-DTSTAMP:20260917T174336Z
+DTSTAMP:20260917T184854Z
 UID:drac-incident-1705@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:On Thursday\, September 3\, 2026\, we will be performing maint
@@ -17204,7 +17204,7 @@ BEGIN:VEVENT
 SUMMARY:[Killarney] Software maintenance
 DTSTART;TZID=America/Toronto:20260908T090000
 DTEND;TZID=America/Toronto:20260908T150000
-DTSTAMP:20260917T174336Z
+DTSTAMP:20260917T184854Z
 UID:drac-incident-1706@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:On Tuesday \, September 8\, from 09:00 to 15:00 EDT (13:00-19:
@@ -17298,8 +17298,8 @@ BEGIN:VEVENT
 SUMMARY:[Trillium] (unresolved) Trillium GPU login node issues / Problème
  s sur le nœud de connexion GPU Trillium
 DTSTART;TZID=America/Toronto:20260914T191300
-DTEND;TZID=America/Toronto:20260918T134334
-DTSTAMP:20260917T174336Z
+DTEND;TZID=America/Toronto:20260918T144852
+DTSTAMP:20260917T184854Z
 UID:drac-incident-1710@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:Unresolved: This is an ongoing issue without a definitive end 
@@ -17376,34 +17376,17 @@ DESCRIPTION:An incorrect configuration was deployed on the software stack.
 URL:https://status.alliancecan.ca/view_incident?incident=1714
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:[Narval] (unresolved) Scheduler problem - Problème d'ordonnanceur
+SUMMARY:[Narval] Scheduler problem - Problème d'ordonnanceur
 DTSTART;TZID=America/Toronto:20260917T135200
-DTEND;TZID=America/Toronto:20260918T134334
-DTSTAMP:20260917T174336Z
+DTEND;TZID=America/Toronto:20260917T144854
+DTSTAMP:20260917T184854Z
 UID:drac-incident-1715@status.alliancecan.ca
 CATEGORIES:UNPLANNED
-DESCRIPTION:Unresolved: This is an ongoing issue without a definitive end 
- date.\n\nThe job scheduler is misbehaving\, which may impair the ability t
- o submit and start new jobs. We are investigating.\n======\nL'ordonnanceur
-  a un problème\, ce qui peut empêcher de soumettre et de démarrer de no
- uvelles tâches. Nous investiguons actuellement ce qui se passe.\n\nhttps:
- //status.alliancecan.ca/view_incident?incident=1715
+DESCRIPTION:The job scheduler is misbehaving\, which may impair the abilit
+ y to submit and start new jobs. We are investigating.\n======\nL'ordonnanc
+ eur a un problème\, ce qui peut empêcher de soumettre et de démarrer de
+  nouvelles tâches. Nous investiguons actuellement ce qui se passe.\n\nhtt
+ ps://status.alliancecan.ca/view_incident?incident=1715
 URL:https://status.alliancecan.ca/view_incident?incident=1715
-END:VEVENT
-BEGIN:VEVENT
-SUMMARY:[Arbutus] (unresolved) Configuration change to networking
-DTSTART;TZID=America/Toronto:20260917T173100
-DTEND;TZID=America/Toronto:20260918T134334
-DTSTAMP:20260917T174336Z
-UID:drac-incident-1717@status.alliancecan.ca
-CATEGORIES:UNPLANNED
-DESCRIPTION:Unresolved: This is an ongoing issue without a definitive end 
- date.\n\nUpgrade to a software networking component of OpenStack will be r
- olling out across the cloud. This will result in a brief network outage of
-  a few seconds on every server in the cloud and is similar to the process 
- that happened earlier in the week. This should be even less of a disruptio
- n than the other outage. It's expected this rollout to take no longer than
-  30 minutes.\n\nhttps://status.alliancecan.ca/view_incident?incident=1717
-URL:https://status.alliancecan.ca/view_incident?incident=1717
 END:VEVENT
 END:VCALENDAR
