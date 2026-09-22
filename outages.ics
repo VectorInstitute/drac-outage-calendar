@@ -17188,7 +17188,7 @@ BEGIN:VEVENT
 SUMMARY:[CCDB] Planned Outage - Arrêt planifié
 DTSTART;TZID=America/Toronto:20260903T000000
 DTEND;TZID=America/Toronto:20260904T000000
-DTSTAMP:20260922T194341Z
+DTSTAMP:20260922T204438Z
 UID:drac-incident-1705@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:On Thursday\, September 3\, 2026\, we will be performing maint
@@ -17204,7 +17204,7 @@ BEGIN:VEVENT
 SUMMARY:[Killarney] Software maintenance
 DTSTART;TZID=America/Toronto:20260908T090000
 DTEND;TZID=America/Toronto:20260908T150000
-DTSTAMP:20260922T194341Z
+DTSTAMP:20260922T204438Z
 UID:drac-incident-1706@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:On Tuesday \, September 8\, from 09:00 to 15:00 EDT (13:00-19:
@@ -17298,8 +17298,8 @@ BEGIN:VEVENT
 SUMMARY:[Trillium] (unresolved) Trillium GPU login node issues / Problème
  s sur le nœud de connexion GPU Trillium
 DTSTART;TZID=America/Toronto:20260914T191300
-DTEND;TZID=America/Toronto:20260923T154339
-DTSTAMP:20260922T194341Z
+DTEND;TZID=America/Toronto:20260923T164430
+DTSTAMP:20260922T204438Z
 UID:drac-incident-1710@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:Unresolved: This is an ongoing issue without a definitive end 
@@ -17318,7 +17318,7 @@ SUMMARY:[DRAC] 2026-09-15 - Planned Maintenance: Backup Service Unavailabl
  e - Service de sauvegardes en maintenance
 DTSTART;TZID=America/Toronto:20260915T090000
 DTEND;TZID=America/Toronto:20260915T100000
-DTSTAMP:20260921T204436Z
+DTSTAMP:20260922T204438Z
 UID:drac-incident-1711@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:On Tuesday September 15\, starting at 9 am (ET)\, the TSM serv
@@ -17337,7 +17337,7 @@ BEGIN:VEVENT
 SUMMARY:[Arbutus] Configuration change to networking
 DTSTART;TZID=America/Toronto:20260915T175000
 DTEND;TZID=America/Toronto:20260915T195600
-DTSTAMP:20260921T204436Z
+DTSTAMP:20260922T204438Z
 UID:drac-incident-1712@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:Upgrade to a software networking component of OpenStack will b
@@ -17352,7 +17352,7 @@ BEGIN:VEVENT
 SUMMARY:[Helpdesk - Centre d'assistance] Outage - Panne
 DTSTART;TZID=America/Toronto:20260916T115200
 DTEND;TZID=America/Toronto:20260916T125500
-DTSTAMP:20260921T204436Z
+DTSTAMP:20260922T204438Z
 UID:drac-incident-1713@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:Helpdesk is currently offline due to an unknown issue. We are 
@@ -17366,7 +17366,7 @@ SUMMARY:[National software environment - Environnement logiciel national]
  Incorrect configuration deployed - Configuration incorrecte déployée
 DTSTART;TZID=America/Toronto:20260916T212400
 DTEND;TZID=America/Toronto:20260916T213900
-DTSTAMP:20260921T204436Z
+DTSTAMP:20260922T204438Z
 UID:drac-incident-1714@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:An incorrect configuration was deployed on the software stack.
@@ -17379,7 +17379,7 @@ BEGIN:VEVENT
 SUMMARY:[Narval] Scheduler problem - Problème d'ordonnanceur
 DTSTART;TZID=America/Toronto:20260917T135200
 DTEND;TZID=America/Toronto:20260917T184800
-DTSTAMP:20260921T204436Z
+DTSTAMP:20260922T204438Z
 UID:drac-incident-1715@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:The job scheduler is misbehaving\, which may impair the abilit
@@ -17393,7 +17393,7 @@ BEGIN:VEVENT
 SUMMARY:[Arbutus] Configuration change to networking
 DTSTART;TZID=America/Toronto:20260917T173100
 DTEND;TZID=America/Toronto:20260917T184600
-DTSTAMP:20260921T204436Z
+DTSTAMP:20260922T204438Z
 UID:drac-incident-1717@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:Upgrade to a software networking component of OpenStack will b
@@ -17408,13 +17408,27 @@ END:VEVENT
 BEGIN:VEVENT
 SUMMARY:[Fir] Power outage - Panne électrique
 DTSTART;TZID=America/Toronto:20260921T200200
-DTEND;TZID=America/Toronto:20260922T154341
-DTSTAMP:20260922T194341Z
+DTEND;TZID=America/Toronto:20260922T194200
+DTSTAMP:20260922T204438Z
 UID:drac-incident-1718@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:There is an unexpected partial power outage at this site.\n/ I
  l y a une panne de courant sur ce site.\n\nhttps://status.alliancecan.ca/v
  iew_incident?incident=1718
 URL:https://status.alliancecan.ca/view_incident?incident=1718
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:[Nibi AIaaS: Brine] (unresolved) Brine DeepSeek model is currently
+  offline
+DTSTART;TZID=America/Toronto:20260922T204000
+DTEND;TZID=America/Toronto:20260923T164430
+DTSTAMP:20260922T204438Z
+UID:drac-incident-1719@status.alliancecan.ca
+CATEGORIES:UNPLANNED
+DESCRIPTION:Unresolved: This is an ongoing issue without a definitive end 
+ date.\n\nWe are aware of problems with the DeepSeek model hosting on the B
+ rine service and are investigating.\n\nhttps://status.alliancecan.ca/view_
+ incident?incident=1719
+URL:https://status.alliancecan.ca/view_incident?incident=1719
 END:VEVENT
 END:VCALENDAR
