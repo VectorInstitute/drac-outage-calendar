@@ -17188,7 +17188,7 @@ BEGIN:VEVENT
 SUMMARY:[CCDB] Planned Outage - Arrêt planifié
 DTSTART;TZID=America/Toronto:20260903T000000
 DTEND;TZID=America/Toronto:20260904T000000
-DTSTAMP:20260928T134953Z
+DTSTAMP:20260928T145116Z
 UID:drac-incident-1705@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:On Thursday\, September 3\, 2026\, we will be performing maint
@@ -17204,7 +17204,7 @@ BEGIN:VEVENT
 SUMMARY:[Killarney] Software maintenance
 DTSTART;TZID=America/Toronto:20260908T090000
 DTEND;TZID=America/Toronto:20260908T150000
-DTSTAMP:20260928T134953Z
+DTSTAMP:20260928T145116Z
 UID:drac-incident-1706@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:On Tuesday \, September 8\, from 09:00 to 15:00 EDT (13:00-19:
@@ -17420,7 +17420,7 @@ BEGIN:VEVENT
 SUMMARY:[Trillium] Outage - Panne
 DTSTART;TZID=America/Toronto:20260926T150900
 DTEND;TZID=America/Toronto:20260928T125000
-DTSTAMP:20260928T134953Z
+DTSTAMP:20260928T145116Z
 UID:drac-incident-1723@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:Trillium is currently offline due to an switch-related issue. 
