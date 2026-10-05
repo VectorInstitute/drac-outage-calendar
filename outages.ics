@@ -17188,7 +17188,7 @@ BEGIN:VEVENT
 SUMMARY:[CCDB] Planned Outage - Arrêt planifié
 DTSTART;TZID=America/Toronto:20260903T000000
 DTEND;TZID=America/Toronto:20260904T000000
-DTSTAMP:20261004T234525Z
+DTSTAMP:20261005T012227Z
 UID:drac-incident-1705@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:On Thursday\, September 3\, 2026\, we will be performing maint
@@ -17204,7 +17204,7 @@ BEGIN:VEVENT
 SUMMARY:[Killarney] Software maintenance
 DTSTART;TZID=America/Toronto:20260908T090000
 DTEND;TZID=America/Toronto:20260908T150000
-DTSTAMP:20261004T234525Z
+DTSTAMP:20261005T012227Z
 UID:drac-incident-1706@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:On Tuesday \, September 8\, from 09:00 to 15:00 EDT (13:00-19:
@@ -17252,7 +17252,7 @@ SUMMARY:[Nibi] Problem with login nodes - Problème avec les noeuds de con
  nexion
 DTSTART;TZID=America/Toronto:20260908T204800
 DTEND;TZID=America/Toronto:20260909T015100
-DTSTAMP:20261001T174757Z
+DTSTAMP:20261005T012227Z
 UID:drac-incident-1708@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:The login nodes fail to mount CVMFS causing problems with modu
@@ -17299,7 +17299,7 @@ SUMMARY:[Trillium] Trillium GPU login node issues / Problèmes sur le nœu
  d de connexion GPU Trillium
 DTSTART;TZID=America/Toronto:20260914T191300
 DTEND;TZID=America/Toronto:20260928T172000
-DTSTAMP:20261001T174757Z
+DTSTAMP:20261005T012227Z
 UID:drac-incident-1710@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:Occasionally\, the Trillium GPU login node may experience issu
@@ -17317,7 +17317,7 @@ SUMMARY:[DRAC] 2026-09-15 - Planned Maintenance: Backup Service Unavailabl
  e - Service de sauvegardes en maintenance
 DTSTART;TZID=America/Toronto:20260915T090000
 DTEND;TZID=America/Toronto:20260915T100000
-DTSTAMP:20261001T174757Z
+DTSTAMP:20261005T012227Z
 UID:drac-incident-1711@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:On Tuesday September 15\, starting at 9 am (ET)\, the TSM serv
@@ -17336,7 +17336,7 @@ BEGIN:VEVENT
 SUMMARY:[Arbutus] Configuration change to networking
 DTSTART;TZID=America/Toronto:20260915T175000
 DTEND;TZID=America/Toronto:20260915T195600
-DTSTAMP:20261001T174757Z
+DTSTAMP:20261005T012227Z
 UID:drac-incident-1712@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:Upgrade to a software networking component of OpenStack will b
@@ -17351,7 +17351,7 @@ BEGIN:VEVENT
 SUMMARY:[Helpdesk - Centre d'assistance] Outage - Panne
 DTSTART;TZID=America/Toronto:20260916T115200
 DTEND;TZID=America/Toronto:20260916T125500
-DTSTAMP:20261001T174757Z
+DTSTAMP:20261005T012227Z
 UID:drac-incident-1713@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:Helpdesk is currently offline due to an unknown issue. We are 
@@ -17365,7 +17365,7 @@ SUMMARY:[National software environment - Environnement logiciel national]
  Incorrect configuration deployed - Configuration incorrecte déployée
 DTSTART;TZID=America/Toronto:20260916T212400
 DTEND;TZID=America/Toronto:20260916T213900
-DTSTAMP:20261001T174757Z
+DTSTAMP:20261005T012227Z
 UID:drac-incident-1714@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:An incorrect configuration was deployed on the software stack.
@@ -17378,7 +17378,7 @@ BEGIN:VEVENT
 SUMMARY:[Narval] Scheduler problem - Problème d'ordonnanceur
 DTSTART;TZID=America/Toronto:20260917T135200
 DTEND;TZID=America/Toronto:20260917T184800
-DTSTAMP:20261001T174757Z
+DTSTAMP:20261005T012227Z
 UID:drac-incident-1715@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:The job scheduler is misbehaving\, which may impair the abilit
@@ -17392,7 +17392,7 @@ BEGIN:VEVENT
 SUMMARY:[Arbutus] Configuration change to networking
 DTSTART;TZID=America/Toronto:20260917T173100
 DTEND;TZID=America/Toronto:20260917T184600
-DTSTAMP:20261001T174757Z
+DTSTAMP:20261005T012227Z
 UID:drac-incident-1717@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:Upgrade to a software networking component of OpenStack will b
@@ -17408,7 +17408,7 @@ BEGIN:VEVENT
 SUMMARY:[Fir] Power outage - Panne électrique
 DTSTART;TZID=America/Toronto:20260921T200200
 DTEND;TZID=America/Toronto:20260923T171300
-DTSTAMP:20261001T174757Z
+DTSTAMP:20261005T012227Z
 UID:drac-incident-1718@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:There is an unexpected partial power outage at this site.\n/ I
@@ -17420,7 +17420,7 @@ BEGIN:VEVENT
 SUMMARY:[Nibi AIaaS: Brine] Brine DeepSeek model is currently offline
 DTSTART;TZID=America/Toronto:20260922T204000
 DTEND;TZID=America/Toronto:20260922T205200
-DTSTAMP:20261001T174757Z
+DTSTAMP:20261005T012227Z
 UID:drac-incident-1719@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:We are aware of problems with the DeepSeek model hosting on th
@@ -17432,7 +17432,7 @@ BEGIN:VEVENT
 SUMMARY:[DRAC] Outage - Panne
 DTSTART;TZID=America/Toronto:20260926T150900
 DTEND;TZID=America/Toronto:20260928T171900
-DTSTAMP:20261001T174757Z
+DTSTAMP:20261005T012227Z
 UID:drac-incident-1723@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:Trillium is currently offline due to an switch-related issue. 
@@ -17444,7 +17444,7 @@ BEGIN:VEVENT
 SUMMARY:[Arbutus] Some Arbutus nodes temporarily unavailable
 DTSTART;TZID=America/Toronto:20260930T140300
 DTEND;TZID=America/Toronto:20260930T190800
-DTSTAMP:20261001T174757Z
+DTSTAMP:20261005T012227Z
 UID:drac-incident-1725@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:Update: Power to those nodes has been restored and VMs should 
@@ -17452,5 +17452,53 @@ DESCRIPTION:Update: Power to those nodes has been restored and VMs should
  available due to suspected power issues. We are investigating.\n\nhttps://
  status.alliancecan.ca/view_incident?incident=1725
 URL:https://status.alliancecan.ca/view_incident?incident=1725
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:[Juno] Problèmes avec l'authentification - Authentification probl
+ ems
+DTSTART;TZID=America/Toronto:20261001T174700
+DTEND;TZID=America/Toronto:20261001T183000
+DTSTAMP:20261005T012227Z
+UID:drac-incident-1726@status.alliancecan.ca
+CATEGORIES:UNPLANNED
+DESCRIPTION:Un problème affecte présentement le système d'authentificat
+ ion de ce service\, causant des erreurs lors de l'accès à l'API. L'équi
+ pe travaille à le résoudre.\nA problem is currently affecting the authen
+ tification system of this service\, causing errors when accessing the API.
+  Our team is working on resolving the issue.\n\nhttps://status.alliancecan
+ .ca/view_incident?incident=1726
+URL:https://status.alliancecan.ca/view_incident?incident=1726
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:[Nuage Béluga - Béluga Cloud] Problèmes avec l'authentification
+  - Authentication problems
+DTSTART;TZID=America/Toronto:20261001T174700
+DTEND;TZID=America/Toronto:20261001T183100
+DTSTAMP:20261005T012227Z
+UID:drac-incident-1727@status.alliancecan.ca
+CATEGORIES:UNPLANNED
+DESCRIPTION:Un problème affecte présentement le système d'authentificat
+ ion de ce service\, causant des erreurs lors de l'accès à l'API. L'équi
+ pe travaille à le résoudre.\nA problem is currently affecting the authen
+ tification system of this service\, causing errors when accessing the API.
+  Our team is working on resolving the issue.\n\nhttps://status.alliancecan
+ .ca/view_incident?incident=1727
+URL:https://status.alliancecan.ca/view_incident?incident=1727
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:[Nibi] (unresolved) Power outage - Panne électrique
+DTSTART;TZID=America/Toronto:20261005T000400
+DTEND;TZID=America/Toronto:20261005T212213
+DTSTAMP:20261005T012227Z
+UID:drac-incident-1728@status.alliancecan.ca
+CATEGORIES:UNPLANNED
+DESCRIPTION:Unresolved: This is an ongoing issue without a definitive end 
+ date.\n\nNibi suffered a power outage on Saturday Oct 3/26 @ ~ 1:15pm. All
+  running jobs were killed and could have reported "NODE_FAIL" because of t
+ his outage. The cause will be investigated and discussed Monday morning wi
+ th Plant Operations at UWaterloo.\nNodes have been put back in service and
+  are currently running jobs.\n\nhttps://status.alliancecan.ca/view_inciden
+ t?incident=1728
+URL:https://status.alliancecan.ca/view_incident?incident=1728
 END:VEVENT
 END:VCALENDAR
