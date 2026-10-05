@@ -17188,7 +17188,7 @@ BEGIN:VEVENT
 SUMMARY:[CCDB] Planned Outage - Arrêt planifié
 DTSTART;TZID=America/Toronto:20260903T000000
 DTEND;TZID=America/Toronto:20260904T000000
-DTSTAMP:20261005T145106Z
+DTSTAMP:20261005T155006Z
 UID:drac-incident-1705@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:On Thursday\, September 3\, 2026\, we will be performing maint
@@ -17204,7 +17204,7 @@ BEGIN:VEVENT
 SUMMARY:[Killarney] Software maintenance
 DTSTART;TZID=America/Toronto:20260908T090000
 DTEND;TZID=America/Toronto:20260908T150000
-DTSTAMP:20261005T145106Z
+DTSTAMP:20261005T155006Z
 UID:drac-incident-1706@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:On Tuesday \, September 8\, from 09:00 to 15:00 EDT (13:00-19:
@@ -17486,19 +17486,18 @@ DESCRIPTION:Un problème affecte présentement le système d'authentificat
 URL:https://status.alliancecan.ca/view_incident?incident=1727
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:[Nibi] (unresolved) Power outage - Panne électrique
+SUMMARY:[Nibi] Power outage - Panne électrique
 DTSTART;TZID=America/Toronto:20261005T000400
-DTEND;TZID=America/Toronto:20261006T105104
-DTSTAMP:20261005T145106Z
+DTEND;TZID=America/Toronto:20261005T151700
+DTSTAMP:20261005T155006Z
 UID:drac-incident-1728@status.alliancecan.ca
 CATEGORIES:UNPLANNED
-DESCRIPTION:Unresolved: This is an ongoing issue without a definitive end 
- date.\n\nNibi suffered a power outage on Saturday Oct 3/26 @ ~ 1:15pm. All
-  running jobs were killed and could have reported "NODE_FAIL" because of t
- his outage. The cause will be investigated and discussed Monday morning wi
- th Plant Operations at UWaterloo.\nNodes have been put back in service and
-  are currently running jobs.\n\nhttps://status.alliancecan.ca/view_inciden
- t?incident=1728
+DESCRIPTION:Nibi suffered a power outage on Saturday Oct 3/26 @ ~ 1:15pm. 
+ All running jobs were killed and might have reported "NODE_FAIL" because o
+ f this outage. The cause will be investigated and discussed Monday morning
+  with Plant Operations at UWaterloo.\nNodes have been put back in service 
+ and are currently running jobs.\n\nhttps://status.alliancecan.ca/view_inci
+ dent?incident=1728
 URL:https://status.alliancecan.ca/view_incident?incident=1728
 END:VEVENT
 END:VCALENDAR
