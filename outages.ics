@@ -17188,7 +17188,7 @@ BEGIN:VEVENT
 SUMMARY:[CCDB] Planned Outage - Arrêt planifié
 DTSTART;TZID=America/Toronto:20260903T000000
 DTEND;TZID=America/Toronto:20260904T000000
-DTSTAMP:20261005T012227Z
+DTSTAMP:20261005T020553Z
 UID:drac-incident-1705@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:On Thursday\, September 3\, 2026\, we will be performing maint
@@ -17204,7 +17204,7 @@ BEGIN:VEVENT
 SUMMARY:[Killarney] Software maintenance
 DTSTART;TZID=America/Toronto:20260908T090000
 DTEND;TZID=America/Toronto:20260908T150000
-DTSTAMP:20261005T012227Z
+DTSTAMP:20261005T020553Z
 UID:drac-incident-1706@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:On Tuesday \, September 8\, from 09:00 to 15:00 EDT (13:00-19:
@@ -17488,8 +17488,8 @@ END:VEVENT
 BEGIN:VEVENT
 SUMMARY:[Nibi] (unresolved) Power outage - Panne électrique
 DTSTART;TZID=America/Toronto:20261005T000400
-DTEND;TZID=America/Toronto:20261005T212213
-DTSTAMP:20261005T012227Z
+DTEND;TZID=America/Toronto:20261005T220552
+DTSTAMP:20261005T020553Z
 UID:drac-incident-1728@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:Unresolved: This is an ongoing issue without a definitive end 
