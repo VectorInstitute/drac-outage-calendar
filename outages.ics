@@ -17501,15 +17501,16 @@ DESCRIPTION:Nibi suffered a power outage on Saturday Oct 3/26 @ ~ 1:15pm.
 URL:https://status.alliancecan.ca/view_incident?incident=1728
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:[Arbutus] Volume Storage Slowness
+SUMMARY:[Arbutus] (unresolved) Volume Storage Slowness
 DTSTART;TZID=America/Toronto:20261005T210600
-DTEND;TZID=America/Toronto:20261008T094954
-DTSTAMP:20261008T134954Z
+DTEND;TZID=America/Toronto:20261009T134833
+DTSTAMP:20261008T174835Z
 UID:drac-incident-1729@status.alliancecan.ca
 CATEGORIES:UNPLANNED
-DESCRIPTION:There are reports of slowness with some Arbutus storage volume
- s. We are investigating.\n\nhttps://status.alliancecan.ca/view_incident?in
- cident=1729
+DESCRIPTION:Unresolved: This is an ongoing issue without a definitive end 
+ date.\n\nThere are reports of slowness with some Arbutus storage volumes. 
+ We are investigating.\n\nhttps://status.alliancecan.ca/view_incident?incid
+ ent=1729
 URL:https://status.alliancecan.ca/view_incident?incident=1729
 END:VEVENT
 END:VCALENDAR
