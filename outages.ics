@@ -17486,6 +17486,29 @@ DESCRIPTION:Un problème affecte présentement le système d'authentificat
 URL:https://status.alliancecan.ca/view_incident?incident=1727
 END:VEVENT
 BEGIN:VEVENT
+SUMMARY:[Arbutus] VMs launching without SSH keys on persistent nodes
+DTSTART;TZID=America/Vancouver:20261003T000000
+DTEND;TZID=America/Vancouver:20261004T000000
+DTSTAMP:20261008T214828Z
+UID:drac-incident-1732@status.alliancecan.ca
+CATEGORIES:UNPLANNED
+DESCRIPTION:Since around October 3\, some VMs launched on our busiest pers
+ istent nodes have booted without their SSH keys\, user data\, or cloud-ini
+ t settings. These are delivered to a VM at first boot by our metadata serv
+ ice. On those nodes\, the metadata service was hitting a resource limit an
+ d failing to serve some new VMs.\nWe have identified the cause and are rol
+ ling out a fix. As the fix reaches each node\, its metadata service restar
+ ts\, briefly interrupting metadata for a few seconds. A VM that happens to
+  boot during that window could also come up without its keys.\nVMs that al
+ ready received their SSH keys are not affected\, and existing access conti
+ nues to work.\nIf you launched a VM that has no SSH key\, then once we mar
+ k this incident resolved:\n- try rebooting the VM\, which allows cloud-ini
+ t to retry on many images\; or - if the VM has no data you need\, delete i
+ t and launch a new one.\n\nhttps://status.alliancecan.ca/view_incident?inc
+ ident=1732
+URL:https://status.alliancecan.ca/view_incident?incident=1732
+END:VEVENT
+BEGIN:VEVENT
 SUMMARY:[Nibi] Power outage - Panne électrique
 DTSTART;TZID=America/Toronto:20261005T000400
 DTEND;TZID=America/Toronto:20261005T183600
@@ -17503,8 +17526,8 @@ END:VEVENT
 BEGIN:VEVENT
 SUMMARY:[Arbutus] (unresolved) Volume Storage Slowness
 DTSTART;TZID=America/Toronto:20261005T210600
-DTEND;TZID=America/Toronto:20261009T165008
-DTSTAMP:20261008T205009Z
+DTEND;TZID=America/Toronto:20261009T174824
+DTSTAMP:20261008T214828Z
 UID:drac-incident-1729@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:Unresolved: This is an ongoing issue without a definitive end 
@@ -17512,5 +17535,32 @@ DESCRIPTION:Unresolved: This is an ongoing issue without a definitive end
  We are investigating.\n\nhttps://status.alliancecan.ca/view_incident?incid
  ent=1729
 URL:https://status.alliancecan.ca/view_incident?incident=1729
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:[tamIA] Power outage - Panne électrique
+DTSTART;TZID=America/Toronto:20261006T161300
+DTEND;TZID=America/Toronto:20261006T164100
+DTSTAMP:20261008T214828Z
+UID:drac-incident-1730@status.alliancecan.ca
+CATEGORIES:UNPLANNED
+DESCRIPTION:There is a power outage at this site.\n/ Il y a une panne de c
+ ourant sur ce site.\n\nhttps://status.alliancecan.ca/view_incident?inciden
+ t=1730
+URL:https://status.alliancecan.ca/view_incident?incident=1730
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:[Fir] (unresolved) GPU nodes temporarily unavailable due to cuda u
+ pdates
+DTSTART;TZID=America/Toronto:20261008T205400
+DTEND;TZID=America/Toronto:20261009T174824
+DTSTAMP:20261008T214828Z
+UID:drac-incident-1733@status.alliancecan.ca
+CATEGORIES:UNPLANNED
+DESCRIPTION:Unresolved: This is an ongoing issue without a definitive end 
+ date.\n\nWe are currently in the process of updating the cuda driver to th
+ e latest version to fix security vulnerabilities.\nWe expect this process 
+ to be finished by the end of the day.\nThank you for your understanding\n
+ \nhttps://status.alliancecan.ca/view_incident?incident=1733
+URL:https://status.alliancecan.ca/view_incident?incident=1733
 END:VEVENT
 END:VCALENDAR
