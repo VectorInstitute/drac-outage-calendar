@@ -17489,7 +17489,7 @@ BEGIN:VEVENT
 SUMMARY:[Arbutus] VMs launching without SSH keys on persistent nodes
 DTSTART;TZID=America/Vancouver:20261003T000000
 DTEND;TZID=America/Vancouver:20261004T000000
-DTSTAMP:20261008T214828Z
+DTSTAMP:20261010T134642Z
 UID:drac-incident-1732@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:Since around October 3\, some VMs launched on our busiest pers
@@ -17526,8 +17526,8 @@ END:VEVENT
 BEGIN:VEVENT
 SUMMARY:[Arbutus] (unresolved) Volume Storage Slowness
 DTSTART;TZID=America/Toronto:20261005T210600
-DTEND;TZID=America/Toronto:20261011T085359
-DTSTAMP:20261010T125400Z
+DTEND;TZID=America/Toronto:20261011T094638
+DTSTAMP:20261010T134642Z
 UID:drac-incident-1729@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:Unresolved: This is an ongoing issue without a definitive end 
@@ -17540,12 +17540,40 @@ BEGIN:VEVENT
 SUMMARY:[tamIA] Power outage - Panne électrique
 DTSTART;TZID=America/Toronto:20261006T161300
 DTEND;TZID=America/Toronto:20261006T164100
-DTSTAMP:20261008T214828Z
+DTSTAMP:20261010T134642Z
 UID:drac-incident-1730@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:There is a power outage at this site.\n/ Il y a une panne de c
  ourant sur ce site.\n\nhttps://status.alliancecan.ca/view_incident?inciden
  t=1730
 URL:https://status.alliancecan.ca/view_incident?incident=1730
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:[Fir] GPU nodes temporarily unavailable due to cuda updates
+DTSTART;TZID=America/Toronto:20261008T205400
+DTEND;TZID=America/Toronto:20261008T234000
+DTSTAMP:20261010T134642Z
+UID:drac-incident-1733@status.alliancecan.ca
+CATEGORIES:UNPLANNED
+DESCRIPTION:We are currently in the process of updating the cuda driver to
+  the latest version to fix security vulnerabilities.\nWe expect this proce
+ ss to be finished by the end of the day.\nThank you for your understanding
+ \n\nhttps://status.alliancecan.ca/view_incident?incident=1733
+URL:https://status.alliancecan.ca/view_incident?incident=1733
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:[Nibi] Partial power outage
+DTSTART;TZID=America/Toronto:20261010T074000
+DTEND;TZID=America/Toronto:20261010T084000
+DTSTAMP:20261010T134642Z
+UID:drac-incident-1734@status.alliancecan.ca
+CATEGORIES:UNPLANNED
+DESCRIPTION:On October 10th\, 2026\, at 7:40am the Graham Data Center whic
+ h hosts the Nibi cluster experienced an partial power outage causing some 
+ of the GPU and CPU nodes\, as well as some of the networking equipment to 
+ reboot. Some of the infrastructure remains offline\, and while the cluster
+  is up\, it is operating at a reduced capacity and the H100 GPU nodes are 
+ unavailable.\n\nhttps://status.alliancecan.ca/view_incident?incident=1734
+URL:https://status.alliancecan.ca/view_incident?incident=1734
 END:VEVENT
 END:VCALENDAR
