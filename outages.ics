@@ -17526,8 +17526,8 @@ END:VEVENT
 BEGIN:VEVENT
 SUMMARY:[Arbutus] (unresolved) Volume Storage Slowness
 DTSTART;TZID=America/Toronto:20261005T210600
-DTEND;TZID=America/Toronto:20261011T194614
-DTSTAMP:20261010T234615Z
+DTEND;TZID=America/Toronto:20261011T212424
+DTSTAMP:20261011T012425Z
 UID:drac-incident-1729@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:Unresolved: This is an ongoing issue without a definitive end 
@@ -17565,7 +17565,7 @@ BEGIN:VEVENT
 SUMMARY:[Nibi] Partial power outage
 DTSTART;TZID=America/Toronto:20261010T074000
 DTEND;TZID=America/Toronto:20261010T084000
-DTSTAMP:20261010T234615Z
+DTSTAMP:20261011T012425Z
 UID:drac-incident-1734@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:On October 10th\, 2026\, at 7:40am the Graham Data Center whic
