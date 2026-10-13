@@ -4995,4 +4995,61 @@ DESCRIPTION:On Tuesday September 15\, starting at 9 am (ET)\, the TSM serv
  atus.alliancecan.ca/view_incident?incident=1711
 URL:https://status.alliancecan.ca/view_incident?incident=1711
 END:VEVENT
+BEGIN:VEVENT
+SUMMARY:[Rorqual] 2026-10-27 - Electrical maintenance - Maintenance élect
+ rique
+DTSTART;TZID=America/Toronto:20261027T000000
+DTEND;TZID=America/Toronto:20261031T000000
+DTSTAMP:20261013T155050Z
+UID:drac-incident-1737@status.alliancecan.ca
+CATEGORIES:SCHEDULED
+DESCRIPTION:Electrical work to increase the data centre capacity will requ
+ ire shutting down the compute nodes from October 27 to 30. During this
+  time\, we will also conduct brief maintenance work on the storage system.
+ \nMaintenance windows (Eastern Time) Compute nodes will be down from 5:00 
+ AM on October 27 to 5:00 PM on October 30.\nMaintenance work for about one
+  hour on the storage system. See https://status.alliancecan.ca/system/Rorq
+ ual for details.\nImpacts Your data will remain accessible via Globus and 
+ the login nodes\, except during the short maintenance work on the storage.
+ \nJobs scheduled to complete during maintenance work will remain in the qu
+ eue until the cluster returns to service.\nAccess via JupyterHub will be b
+ locked.\n======\nLes nœuds de calcul seront fermés du 27 au 30 octobre
+  en raison de travaux visant à augmenter la capacité électrique du cent
+ re de données. Quelques travaux de maintenance au système de stockage se
+ ront également effectués.\nHoraire des travaux (heure de l’Est) Fermet
+ ure des nœuds de calcul entre 5 h le 27 octobre et 17 h le 30 oct
+ obre.\nTravaux d’environ une heure au système de stockage. Pour les dé
+ tails\, voir https://status.alliancecan.ca/system/Rorqual .\nImpact Vos do
+ nnées demeureront accessibles via Globus et les nœuds de connexion\, sau
+ f pendant la brève maintenance du système de stockage.\nLes tâches deva
+ nt se terminer pendant les travaux resteront en file d’attente jusqu’
+ à la fin des travaux.\nL’accès via JupyterHub ne sera pas possible.\n
+ \nhttps://status.alliancecan.ca/view_incident?incident=1737
+URL:https://status.alliancecan.ca/view_incident?incident=1737
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:[Narval] 2026-10-27 - Electrical maintenance - Maintenance électr
+ ique
+DTSTART;TZID=America/Toronto:20261027T000000
+DTEND;TZID=America/Toronto:20261031T000000
+DTSTAMP:20261013T155050Z
+UID:drac-incident-1738@status.alliancecan.ca
+CATEGORIES:SCHEDULED
+DESCRIPTION:Electrical work to increase the data centre capacity will requ
+ ire shutting down the compute nodes from October 27 to 30.\nMaintenanc
+ e window (Eastern Time) Compute nodes will be down from 5:00 AM on October
+  27 to 5:00 PM on October 30.\nImpacts Your data will remain accessible vi
+ a Globus and the login nodes.\nJobs scheduled to complete during maintenan
+ ce work will remain in the queue until the cluster returns to service.\nAc
+ cess via JupyterHub will be blocked.\n======\nLes nœuds de calcul seront 
+ fermés du 27 au 30 octobre en raison de travaux visant à augmenter la 
+ capacité électrique du centre de données.\nHoraire des travaux (heure d
+ e l’Est) Fermeture des nœuds de calcul entre 5 h le 27 octobre et 1
+ 7 h le 30 octobre.\nImpact Vos données demeureront accessibles via Gl
+ obus et les nœuds de connexion.\nLes tâches devant se terminer pendant l
+ es travaux resteront en file d’attente jusqu’à la fin des travaux.\nL
+ ’accès via JupyterHub ne sera pas possible.\n\nhttps://status.alliancec
+ an.ca/view_incident?incident=1738
+URL:https://status.alliancecan.ca/view_incident?incident=1738
+END:VEVENT
 END:VCALENDAR
