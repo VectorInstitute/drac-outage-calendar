@@ -17578,8 +17578,8 @@ END:VEVENT
 BEGIN:VEVENT
 SUMMARY:[DMP Assistant - L'Assistant PGD] (unresolved) Outage - Panne
 DTSTART;TZID=America/Toronto:20261013T133700
-DTEND;TZID=America/Toronto:20261014T115048
-DTSTAMP:20261013T155050Z
+DTEND;TZID=America/Toronto:20261014T125110
+DTSTAMP:20261013T165115Z
 UID:drac-incident-1735@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:Unresolved: This is an ongoing issue without a definitive end 
@@ -17590,26 +17590,25 @@ DESCRIPTION:Unresolved: This is an ongoing issue without a definitive end
 URL:https://status.alliancecan.ca/view_incident?incident=1735
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:[Arbutus] (unresolved) Problem with Cloud dashboard and API interf
- aces - Problème avec le tableau de bord du nuage et les interfaces API
-DTSTART;TZID=America/Toronto:20261013T144000
-DTEND;TZID=America/Toronto:20261014T115048
-DTSTAMP:20261013T155050Z
-UID:drac-incident-1736@status.alliancecan.ca
+SUMMARY:[Arbutus] (unresolved) Cloud Authentication issues
+DTSTART;TZID=America/Toronto:20261013T160700
+DTEND;TZID=America/Toronto:20261014T125110
+DTSTAMP:20261013T165115Z
+UID:drac-incident-1741@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:Unresolved: This is an ongoing issue without a definitive end 
- date.\n\nAccess to Cloud dashboard and API interfaces disrupted. We are in
- vestigating.\n/ L'accès au tableau de bord du nuage et aux interfaces API
-  est interrompu. Nous travaillons à résoudre le problème.\n\nhttps://st
- atus.alliancecan.ca/view_incident?incident=1736
-URL:https://status.alliancecan.ca/view_incident?incident=1736
+ date.\n\nWe experience currently issues with the authentication backend\, 
+ cloud logins do not work at the moment. This affects the authentication vi
+ a dashboard as well as authentication via cli.\n\nhttps://status.alliancec
+ an.ca/view_incident?incident=1741
+URL:https://status.alliancecan.ca/view_incident?incident=1741
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:[Rorqual] 2026-10-27 - Electrical maintenance - Maintenance élect
  rique
 DTSTART;TZID=America/Toronto:20261027T000000
 DTEND;TZID=America/Toronto:20261031T000000
-DTSTAMP:20261013T155050Z
+DTSTAMP:20261013T165115Z
 UID:drac-incident-1737@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:Electrical work to increase the data centre capacity will requ
@@ -17641,7 +17640,7 @@ SUMMARY:[Narval] 2026-10-27 - Electrical maintenance - Maintenance électr
  ique
 DTSTART;TZID=America/Toronto:20261027T000000
 DTEND;TZID=America/Toronto:20261031T000000
-DTSTAMP:20261013T155050Z
+DTSTAMP:20261013T165115Z
 UID:drac-incident-1738@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:Electrical work to increase the data centre capacity will requ
@@ -17660,5 +17659,27 @@ DESCRIPTION:Electrical work to increase the data centre capacity will requ
  ’accès via JupyterHub ne sera pas possible.\n\nhttps://status.alliancec
  an.ca/view_incident?incident=1738
 URL:https://status.alliancecan.ca/view_incident?incident=1738
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:[Juno] 2026-10-27 - Juno HPC - Electrical maintenance - Maintenanc
+ e électrique
+DTSTART;TZID=America/Toronto:20261027T000000
+DTEND;TZID=America/Toronto:20261031T000000
+DTSTAMP:20261013T165115Z
+UID:drac-incident-1740@status.alliancecan.ca
+CATEGORIES:SCHEDULED
+DESCRIPTION:Electrical work to increase the data centre capacity will requ
+ ire shutting down the Juno VM servers hosted on the HPC side of the data c
+ entre from October 27 to 30.\nMaintenance window (Eastern Time) Juno V
+ M servers on HPC side will be down from 5:00 AM on October 27 to 5:00 PM o
+ n October 30.\nImpact Virtual machines hosted on these servers must be shu
+ t down prior to the maintenance.\n======\nLes serveurs Juno hébergés du 
+ côté HPC seront fermés du 27 au 30 octobre en raison de travaux visan
+ t à augmenter la capacité électrique du centre de données.\nHoraire de
+ s travaux (heure de l’Est) Fermeture des serveurs du côté HPC entre 5
+  h le 27 octobre et 17 h le 30 octobre.\nImpact Les machines virtu
+ elles sur ces serveurs doivent être éteintes avant la maintenance.\n\nht
+ tps://status.alliancecan.ca/view_incident?incident=1740
+URL:https://status.alliancecan.ca/view_incident?incident=1740
 END:VEVENT
 END:VCALENDAR
