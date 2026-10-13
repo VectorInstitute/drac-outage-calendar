@@ -17578,8 +17578,8 @@ END:VEVENT
 BEGIN:VEVENT
 SUMMARY:[DMP Assistant - L'Assistant PGD] (unresolved) Outage - Panne
 DTSTART;TZID=America/Toronto:20261013T133700
-DTEND;TZID=America/Toronto:20261014T125110
-DTSTAMP:20261013T165115Z
+DTEND;TZID=America/Toronto:20261014T134858
+DTSTAMP:20261013T174900Z
 UID:drac-incident-1735@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:Unresolved: This is an ongoing issue without a definitive end 
@@ -17590,25 +17590,41 @@ DESCRIPTION:Unresolved: This is an ongoing issue without a definitive end
 URL:https://status.alliancecan.ca/view_incident?incident=1735
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:[Arbutus] (unresolved) Cloud Authentication issues
-DTSTART;TZID=America/Toronto:20261013T160700
-DTEND;TZID=America/Toronto:20261014T125110
-DTSTAMP:20261013T165115Z
-UID:drac-incident-1741@status.alliancecan.ca
+SUMMARY:[Arbutus] (unresolved) Problem with Cloud dashboard and API interf
+ aces - Problème avec le tableau de bord du nuage et les interfaces API
+DTSTART;TZID=America/Toronto:20261013T144000
+DTEND;TZID=America/Toronto:20261014T134858
+DTSTAMP:20261013T174900Z
+UID:drac-incident-1736@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:Unresolved: This is an ongoing issue without a definitive end 
- date.\n\nWe experience currently issues with the authentication backend\, 
- cloud logins do not work at the moment. This affects the authentication vi
- a dashboard as well as authentication via cli.\n\nhttps://status.alliancec
- an.ca/view_incident?incident=1741
-URL:https://status.alliancecan.ca/view_incident?incident=1741
+ date.\n\nAccess to Cloud dashboard and API interfaces disrupted. We are in
+ vestigating.\n/ L'accès au tableau de bord du nuage et aux interfaces API
+  est interrompu. Nous travaillons à résoudre le problème.\n\nhttps://st
+ atus.alliancecan.ca/view_incident?incident=1736
+URL:https://status.alliancecan.ca/view_incident?incident=1736
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:[Fir] (unresolved) GPU nodes temporarily unavailable due to cuda u
+ pdates
+DTSTART;TZID=America/Toronto:20261013T171800
+DTEND;TZID=America/Toronto:20261014T134858
+DTSTAMP:20261013T174900Z
+UID:drac-incident-1742@status.alliancecan.ca
+CATEGORIES:UNPLANNED
+DESCRIPTION:Unresolved: This is an ongoing issue without a definitive end 
+ date.\n\nWe are currently in the process of updating the cuda driver to th
+ e latest version to fix security vulnerabilities.\nWe expect this process 
+ to be finished within 2 hours.\nThank you for your understanding\n\nhttps:
+ //status.alliancecan.ca/view_incident?incident=1742
+URL:https://status.alliancecan.ca/view_incident?incident=1742
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:[Rorqual] 2026-10-27 - Electrical maintenance - Maintenance élect
  rique
 DTSTART;TZID=America/Toronto:20261027T000000
 DTEND;TZID=America/Toronto:20261031T000000
-DTSTAMP:20261013T165115Z
+DTSTAMP:20261013T174900Z
 UID:drac-incident-1737@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:Electrical work to increase the data centre capacity will requ
@@ -17640,7 +17656,7 @@ SUMMARY:[Narval] 2026-10-27 - Electrical maintenance - Maintenance électr
  ique
 DTSTART;TZID=America/Toronto:20261027T000000
 DTEND;TZID=America/Toronto:20261031T000000
-DTSTAMP:20261013T165115Z
+DTSTAMP:20261013T174900Z
 UID:drac-incident-1738@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:Electrical work to increase the data centre capacity will requ
@@ -17665,7 +17681,7 @@ SUMMARY:[Juno] 2026-10-27 - Juno HPC - Electrical maintenance - Maintenanc
  e électrique
 DTSTART;TZID=America/Toronto:20261027T000000
 DTEND;TZID=America/Toronto:20261031T000000
-DTSTAMP:20261013T165115Z
+DTSTAMP:20261013T174900Z
 UID:drac-incident-1740@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:Electrical work to increase the data centre capacity will requ
