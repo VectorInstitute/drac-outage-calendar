@@ -17524,16 +17524,15 @@ DESCRIPTION:Nibi suffered a power outage on Saturday Oct 3/26 @ ~ 1:15pm.
 URL:https://status.alliancecan.ca/view_incident?incident=1728
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:[Arbutus] (unresolved) Volume Storage Slowness
+SUMMARY:[Arbutus] Volume Storage Slowness
 DTSTART;TZID=America/Toronto:20261005T210600
-DTEND;TZID=America/Toronto:20261014T095601
-DTSTAMP:20261013T135606Z
+DTEND;TZID=America/Toronto:20261013T105319
+DTSTAMP:20261013T145319Z
 UID:drac-incident-1729@status.alliancecan.ca
 CATEGORIES:UNPLANNED
-DESCRIPTION:Unresolved: This is an ongoing issue without a definitive end 
- date.\n\nThere are reports of slowness with some Arbutus storage volumes. 
- We are investigating.\n\nhttps://status.alliancecan.ca/view_incident?incid
- ent=1729
+DESCRIPTION:There are reports of slowness with some Arbutus storage volume
+ s. We are investigating.\n\nhttps://status.alliancecan.ca/view_incident?in
+ cident=1729
 URL:https://status.alliancecan.ca/view_incident?incident=1729
 END:VEVENT
 BEGIN:VEVENT
@@ -17579,8 +17578,8 @@ END:VEVENT
 BEGIN:VEVENT
 SUMMARY:[DMP Assistant - L'Assistant PGD] (unresolved) Outage - Panne
 DTSTART;TZID=America/Toronto:20261013T133700
-DTEND;TZID=America/Toronto:20261014T095601
-DTSTAMP:20261013T135606Z
+DTEND;TZID=America/Toronto:20261014T105316
+DTSTAMP:20261013T145319Z
 UID:drac-incident-1735@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:Unresolved: This is an ongoing issue without a definitive end 
@@ -17589,5 +17588,20 @@ DESCRIPTION:Unresolved: This is an ongoing issue without a definitive end
  d'un problème inconnu. Nous menons actuellement une enquête.\n\nhttps://
  status.alliancecan.ca/view_incident?incident=1735
 URL:https://status.alliancecan.ca/view_incident?incident=1735
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:[Arbutus] (unresolved) Problem with Cloud dashboard and API interf
+ aces - Problème avec le tableau de bord du nuage et les interfaces API
+DTSTART;TZID=America/Toronto:20261013T144000
+DTEND;TZID=America/Toronto:20261014T105316
+DTSTAMP:20261013T145319Z
+UID:drac-incident-1736@status.alliancecan.ca
+CATEGORIES:UNPLANNED
+DESCRIPTION:Unresolved: This is an ongoing issue without a definitive end 
+ date.\n\nAccess to Cloud dashboard and API interfaces disrupted. We are in
+ vestigating.\n/ L'accès au tableau de bord du nuage et aux interfaces API
+  est interrompu. Nous travaillons à résoudre le problème.\n\nhttps://st
+ atus.alliancecan.ca/view_incident?incident=1736
+URL:https://status.alliancecan.ca/view_incident?incident=1736
 END:VEVENT
 END:VCALENDAR
