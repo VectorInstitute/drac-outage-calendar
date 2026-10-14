@@ -17526,8 +17526,8 @@ END:VEVENT
 BEGIN:VEVENT
 SUMMARY:[Arbutus] (unresolved) Volume Storage Slowness
 DTSTART;TZID=America/Toronto:20261005T210600
-DTEND;TZID=America/Toronto:20261015T184347
-DTSTAMP:20261014T224349Z
+DTEND;TZID=America/Toronto:20261015T194358
+DTSTAMP:20261014T234359Z
 UID:drac-incident-1729@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:Unresolved: This is an ongoing issue without a definitive end 
@@ -17608,7 +17608,7 @@ SUMMARY:[Rorqual] 2026-10-27 - Electrical maintenance - Maintenance élect
  rique
 DTSTART;TZID=America/Toronto:20261027T000000
 DTEND;TZID=America/Toronto:20261031T000000
-DTSTAMP:20261014T224349Z
+DTSTAMP:20261014T234359Z
 UID:drac-incident-1737@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:Electrical work to increase the data centre capacity will requ
@@ -17640,7 +17640,7 @@ SUMMARY:[Narval] 2026-10-27 - Electrical maintenance - Maintenance électr
  ique
 DTSTART;TZID=America/Toronto:20261027T000000
 DTEND;TZID=America/Toronto:20261031T000000
-DTSTAMP:20261014T224349Z
+DTSTAMP:20261014T234359Z
 UID:drac-incident-1738@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:Electrical work to increase the data centre capacity will requ
@@ -17665,7 +17665,7 @@ SUMMARY:[Juno] 2026-10-27 - Juno HPC - Electrical maintenance - Maintenanc
  e électrique
 DTSTART;TZID=America/Toronto:20261027T000000
 DTEND;TZID=America/Toronto:20261031T000000
-DTSTAMP:20261014T224349Z
+DTSTAMP:20261014T234359Z
 UID:drac-incident-1740@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:Electrical work to increase the data centre capacity will requ
