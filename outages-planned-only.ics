@@ -5000,7 +5000,7 @@ SUMMARY:[Rorqual] 2026-10-27 - Electrical maintenance - Maintenance élect
  rique
 DTSTART;TZID=America/Toronto:20261027T000000
 DTEND;TZID=America/Toronto:20261031T000000
-DTSTAMP:20261015T015308Z
+DTSTAMP:20261015T025055Z
 UID:drac-incident-1737@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:Electrical work to increase the data centre capacity will requ
@@ -5032,7 +5032,7 @@ SUMMARY:[Narval] 2026-10-27 - Electrical maintenance - Maintenance électr
  ique
 DTSTART;TZID=America/Toronto:20261027T000000
 DTEND;TZID=America/Toronto:20261031T000000
-DTSTAMP:20261015T015308Z
+DTSTAMP:20261015T025055Z
 UID:drac-incident-1738@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:Electrical work to increase the data centre capacity will requ
@@ -5057,7 +5057,7 @@ SUMMARY:[Juno] 2026-10-27 - Juno HPC - Electrical maintenance - Maintenanc
  e électrique
 DTSTART;TZID=America/Toronto:20261027T000000
 DTEND;TZID=America/Toronto:20261031T000000
-DTSTAMP:20261015T015308Z
+DTSTAMP:20261015T025055Z
 UID:drac-incident-1740@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:Electrical work to increase the data centre capacity will requ
