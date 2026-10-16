@@ -17527,7 +17527,7 @@ BEGIN:VEVENT
 SUMMARY:[Arbutus] Ongoing Volume Storage Slowness
 DTSTART;TZID=America/Toronto:20261005T210600
 DTEND;TZID=America/Toronto:20261015T210200
-DTSTAMP:20261016T144756Z
+DTSTAMP:20261016T154612Z
 UID:drac-incident-1729@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:There are reports of slowness with some Arbutus storage volume
@@ -17637,7 +17637,7 @@ BEGIN:VEVENT
 SUMMARY:[Nibi] GPUs issues / problèmes
 DTSTART;TZID=America/Toronto:20261016T144500
 DTEND;TZID=America/Toronto:20261016T144600
-DTSTAMP:20261016T144756Z
+DTSTAMP:20261016T154612Z
 UID:drac-incident-1747@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:Some GPU nodes have been experiencing issues\, some jobs may t
@@ -17652,7 +17652,7 @@ SUMMARY:[Rorqual] 2026-10-27 - Electrical maintenance - Maintenance élect
  rique
 DTSTART;TZID=America/Toronto:20261027T000000
 DTEND;TZID=America/Toronto:20261031T000000
-DTSTAMP:20261016T144756Z
+DTSTAMP:20261016T154612Z
 UID:drac-incident-1737@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:Electrical work to increase the data centre capacity will requ
@@ -17684,7 +17684,7 @@ SUMMARY:[Narval] 2026-10-27 - Electrical maintenance - Maintenance électr
  ique
 DTSTART;TZID=America/Toronto:20261027T000000
 DTEND;TZID=America/Toronto:20261031T000000
-DTSTAMP:20261016T144756Z
+DTSTAMP:20261016T154612Z
 UID:drac-incident-1738@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:Electrical work to increase the data centre capacity will requ
@@ -17709,7 +17709,7 @@ SUMMARY:[Juno] 2026-10-27 - Juno HPC - Electrical maintenance - Maintenanc
  e électrique
 DTSTART;TZID=America/Toronto:20261027T000000
 DTEND;TZID=America/Toronto:20261031T000000
-DTSTAMP:20261016T144756Z
+DTSTAMP:20261016T154612Z
 UID:drac-incident-1740@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:Electrical work to increase the data centre capacity will requ
@@ -17730,7 +17730,7 @@ BEGIN:VEVENT
 SUMMARY:[Nibi] External network maintenance
 DTSTART;TZID=America/Toronto:20261028T223000
 DTEND;TZID=America/Toronto:20261028T233000
-DTSTAMP:20261016T144756Z
+DTSTAMP:20261016T154612Z
 UID:drac-incident-1743@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:On October 28th at 22:30 EST the network provider for SHARCNET
@@ -17745,7 +17745,7 @@ BEGIN:VEVENT
 SUMMARY:[Nibi AIaaS: Brine] External network maintenance
 DTSTART;TZID=America/Toronto:20261028T223000
 DTEND;TZID=America/Toronto:20261028T233000
-DTSTAMP:20261016T144756Z
+DTSTAMP:20261016T154612Z
 UID:drac-incident-1744@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:On October 28th at 22:30 EST the network provider for SHARCNET
@@ -17760,7 +17760,7 @@ BEGIN:VEVENT
 SUMMARY:[Graham Cloud] External network maintenance
 DTSTART;TZID=America/Toronto:20261028T223000
 DTEND;TZID=America/Toronto:20261028T233000
-DTSTAMP:20261016T144756Z
+DTSTAMP:20261016T154612Z
 UID:drac-incident-1745@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:On October 28th at 22:30 EST the network provider for SHARCNET
