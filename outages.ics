@@ -17527,7 +17527,7 @@ BEGIN:VEVENT
 SUMMARY:[Arbutus] Ongoing Volume Storage Slowness
 DTSTART;TZID=America/Toronto:20261005T210600
 DTEND;TZID=America/Toronto:20261020T164600
-DTSTAMP:20261026T174714Z
+DTSTAMP:20261026T185843Z
 UID:drac-incident-1729@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:There are reports of slowness with some Arbutus storage volume
@@ -17651,8 +17651,8 @@ END:VEVENT
 BEGIN:VEVENT
 SUMMARY:[Nibi] (unresolved) Reduced Throughput
 DTSTART;TZID=America/Toronto:20261021T144400
-DTEND;TZID=America/Toronto:20261027T134711
-DTSTAMP:20261026T174714Z
+DTEND;TZID=America/Toronto:20261027T145840
+DTSTAMP:20261026T185843Z
 UID:drac-incident-1751@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:Unresolved: This is an ongoing issue without a definitive end 
@@ -17679,11 +17679,33 @@ DESCRIPTION:The Alliance Technical Documentation wiki is down for emergenc
 URL:https://status.alliancecan.ca/view_incident?incident=1752
 END:VEVENT
 BEGIN:VEVENT
+SUMMARY:[Juno] 2026-10-26 - Juno HPC - Electrical maintenance - Maintenanc
+ e électrique
+DTSTART;TZID=America/Toronto:20261026T000000
+DTEND;TZID=America/Toronto:20261031T000000
+DTSTAMP:20261026T185843Z
+UID:drac-incident-1740@status.alliancecan.ca
+CATEGORIES:SCHEDULED
+DESCRIPTION:Electrical work to increase the data centre capacity will requ
+ ire shutting down the Juno VM servers hosted on the HPC side of the data c
+ entre from October 26 to 30.\nMaintenance window (Eastern Time) Juno V
+ M servers on HPC side will be down from 2:00 PM on October 26 to 5:00 PM o
+ n October 30.\nImpact Virtual machines hosted on these servers must be shu
+ t down prior to the maintenance.\n======\nLes serveurs Juno hébergés du 
+ côté HPC seront fermés du 26 au 30 octobre en raison de travaux visan
+ t à augmenter la capacité électrique du centre de données.\nHoraire de
+ s travaux (heure de l’Est) Fermeture des serveurs du côté HPC entre 14
+  h le 26 octobre et 17 h le 30 octobre.\nImpact Les machines virtu
+ elles sur ces serveurs doivent être éteintes avant la maintenance.\n\nht
+ tps://status.alliancecan.ca/view_incident?incident=1740
+URL:https://status.alliancecan.ca/view_incident?incident=1740
+END:VEVENT
+BEGIN:VEVENT
 SUMMARY:[Rorqual] 2026-10-27 - Electrical maintenance - Maintenance élect
  rique
 DTSTART;TZID=America/Toronto:20261027T000000
 DTEND;TZID=America/Toronto:20261031T000000
-DTSTAMP:20261026T174714Z
+DTSTAMP:20261026T185843Z
 UID:drac-incident-1737@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:Electrical work to increase the data centre capacity will requ
@@ -17715,7 +17737,7 @@ SUMMARY:[Narval] 2026-10-27 - Electrical maintenance - Maintenance électr
  ique
 DTSTART;TZID=America/Toronto:20261027T000000
 DTEND;TZID=America/Toronto:20261031T000000
-DTSTAMP:20261026T174714Z
+DTSTAMP:20261026T185843Z
 UID:drac-incident-1738@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:Electrical work to increase the data centre capacity will requ
@@ -17736,32 +17758,10 @@ DESCRIPTION:Electrical work to increase the data centre capacity will requ
 URL:https://status.alliancecan.ca/view_incident?incident=1738
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:[Juno] 2026-10-27 - Juno HPC - Electrical maintenance - Maintenanc
- e électrique
-DTSTART;TZID=America/Toronto:20261027T000000
-DTEND;TZID=America/Toronto:20261031T000000
-DTSTAMP:20261026T174714Z
-UID:drac-incident-1740@status.alliancecan.ca
-CATEGORIES:SCHEDULED
-DESCRIPTION:Electrical work to increase the data centre capacity will requ
- ire shutting down the Juno VM servers hosted on the HPC side of the data c
- entre from October 27 to 30.\nMaintenance window (Eastern Time) Juno V
- M servers on HPC side will be down from 5:00 AM on October 27 to 5:00 PM o
- n October 30.\nImpact Virtual machines hosted on these servers must be shu
- t down prior to the maintenance.\n======\nLes serveurs Juno hébergés du 
- côté HPC seront fermés du 27 au 30 octobre en raison de travaux visan
- t à augmenter la capacité électrique du centre de données.\nHoraire de
- s travaux (heure de l’Est) Fermeture des serveurs du côté HPC entre 5
-  h le 27 octobre et 17 h le 30 octobre.\nImpact Les machines virtu
- elles sur ces serveurs doivent être éteintes avant la maintenance.\n\nht
- tps://status.alliancecan.ca/view_incident?incident=1740
-URL:https://status.alliancecan.ca/view_incident?incident=1740
-END:VEVENT
-BEGIN:VEVENT
 SUMMARY:[Nibi] External network maintenance
 DTSTART;TZID=America/Toronto:20261028T223000
 DTEND;TZID=America/Toronto:20261028T233000
-DTSTAMP:20261026T174714Z
+DTSTAMP:20261026T185843Z
 UID:drac-incident-1743@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:On October 28th at 22:30 EST the network provider for SHARCNET
@@ -17776,7 +17776,7 @@ BEGIN:VEVENT
 SUMMARY:[Nibi AIaaS: Brine] External network maintenance
 DTSTART;TZID=America/Toronto:20261028T223000
 DTEND;TZID=America/Toronto:20261028T233000
-DTSTAMP:20261026T174714Z
+DTSTAMP:20261026T185843Z
 UID:drac-incident-1744@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:On October 28th at 22:30 EST the network provider for SHARCNET
@@ -17791,7 +17791,7 @@ BEGIN:VEVENT
 SUMMARY:[Graham Cloud] External network maintenance
 DTSTART;TZID=America/Toronto:20261028T223000
 DTEND;TZID=America/Toronto:20261028T233000
-DTSTAMP:20261026T174714Z
+DTSTAMP:20261026T185843Z
 UID:drac-incident-1745@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:On October 28th at 22:30 EST the network provider for SHARCNET
@@ -17807,7 +17807,7 @@ BEGIN:VEVENT
 SUMMARY:[Helpdesk - Centre d'assistance] External network maintenance
 DTSTART;TZID=America/Toronto:20261028T223000
 DTEND;TZID=America/Toronto:20261028T233000
-DTSTAMP:20261026T174714Z
+DTSTAMP:20261026T185843Z
 UID:drac-incident-1749@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:On October 28th at 22:30 EST the network provider will be perf
@@ -17821,7 +17821,7 @@ BEGIN:VEVENT
 SUMMARY:[Wiki] External network maintenance
 DTSTART;TZID=America/Toronto:20261028T223000
 DTEND;TZID=America/Toronto:20261028T233000
-DTSTAMP:20261026T174714Z
+DTSTAMP:20261026T185843Z
 UID:drac-incident-1750@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:On October 28th at 22:30 EST the network provider for SHARCNET
