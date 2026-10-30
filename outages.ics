@@ -17527,7 +17527,7 @@ BEGIN:VEVENT
 SUMMARY:[Arbutus] Ongoing Volume Storage Slowness
 DTSTART;TZID=America/Toronto:20261005T210600
 DTEND;TZID=America/Toronto:20261020T164600
-DTSTAMP:20261030T174359Z
+DTSTAMP:20261030T184351Z
 UID:drac-incident-1729@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:There are reports of slowness with some Arbutus storage volume
@@ -17649,10 +17649,10 @@ DESCRIPTION:Some GPU nodes have been experiencing issues\, some jobs may t
 URL:https://status.alliancecan.ca/view_incident?incident=1747
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:[Nibi] Reduced Throughput
+SUMMARY:[DRAC] Reduced Throughput
 DTSTART;TZID=America/Toronto:20261021T144400
-DTEND;TZID=America/Toronto:20261028T114409
-DTSTAMP:20261028T154409Z
+DTEND;TZID=America/Toronto:20261028T145400
+DTSTAMP:20261030T184351Z
 UID:drac-incident-1751@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:Due to an important security update\, all of Nibi's compute no
@@ -17668,7 +17668,7 @@ SUMMARY:[Wiki] Documentation wiki unavailable - Wiki de documentation non
  disponible
 DTSTART;TZID=America/Toronto:20261021T185100
 DTEND;TZID=America/Toronto:20261021T190000
-DTSTAMP:20261028T144403Z
+DTSTAMP:20261030T184351Z
 UID:drac-incident-1752@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:The Alliance Technical Documentation wiki is down for emergenc
@@ -17704,7 +17704,7 @@ SUMMARY:[Rorqual] 2026-10-27 - Electrical maintenance - Maintenance élect
  rique
 DTSTART;TZID=America/Toronto:20261027T000000
 DTEND;TZID=America/Toronto:20261031T000000
-DTSTAMP:20261030T174359Z
+DTSTAMP:20261030T184351Z
 UID:drac-incident-1737@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:Electrical work to increase the data centre capacity will requ
@@ -17736,7 +17736,7 @@ SUMMARY:[Narval] 2026-10-27 - Electrical maintenance - Maintenance électr
  ique
 DTSTART;TZID=America/Toronto:20261027T000000
 DTEND;TZID=America/Toronto:20261031T000000
-DTSTAMP:20261030T174359Z
+DTSTAMP:20261030T184351Z
 UID:drac-incident-1738@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:Electrical work to increase the data centre capacity will requ
@@ -17760,7 +17760,7 @@ BEGIN:VEVENT
 SUMMARY:[Nibi] External network maintenance
 DTSTART;TZID=America/Toronto:20261028T223000
 DTEND;TZID=America/Toronto:20261028T233000
-DTSTAMP:20261030T174359Z
+DTSTAMP:20261030T184351Z
 UID:drac-incident-1743@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:On October 28th at 22:30 EST the network provider for SHARCNET
@@ -17775,7 +17775,7 @@ BEGIN:VEVENT
 SUMMARY:[Nibi AIaaS: Brine] External network maintenance
 DTSTART;TZID=America/Toronto:20261028T223000
 DTEND;TZID=America/Toronto:20261028T233000
-DTSTAMP:20261030T174359Z
+DTSTAMP:20261030T184351Z
 UID:drac-incident-1744@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:On October 28th at 22:30 EST the network provider for SHARCNET
@@ -17790,7 +17790,7 @@ BEGIN:VEVENT
 SUMMARY:[Graham Cloud] External network maintenance
 DTSTART;TZID=America/Toronto:20261028T223000
 DTEND;TZID=America/Toronto:20261028T233000
-DTSTAMP:20261030T174359Z
+DTSTAMP:20261030T184351Z
 UID:drac-incident-1745@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:On October 28th at 22:30 EST the network provider for SHARCNET
@@ -17806,7 +17806,7 @@ BEGIN:VEVENT
 SUMMARY:[Helpdesk - Centre d'assistance] External network maintenance
 DTSTART;TZID=America/Toronto:20261028T223000
 DTEND;TZID=America/Toronto:20261028T233000
-DTSTAMP:20261030T174359Z
+DTSTAMP:20261030T184351Z
 UID:drac-incident-1749@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:On October 28th at 22:30 EST the network provider will be perf
@@ -17820,7 +17820,7 @@ BEGIN:VEVENT
 SUMMARY:[Wiki] External network maintenance
 DTSTART;TZID=America/Toronto:20261028T223000
 DTEND;TZID=America/Toronto:20261028T233000
-DTSTAMP:20261030T174359Z
+DTSTAMP:20261030T184351Z
 UID:drac-incident-1750@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:On October 28th at 22:30 EST the network provider for SHARCNET
@@ -17833,5 +17833,18 @@ DESCRIPTION:On October 28th at 22:30 EST the network provider for SHARCNET
  ’interruption de service devraient durer 90 minutes.\n\nhttps://status.a
  lliancecan.ca/view_incident?incident=1750
 URL:https://status.alliancecan.ca/view_incident?incident=1750
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:[Trillium] (unresolved) CVMFS Software stack issues
+DTSTART;TZID=America/Toronto:20261030T175800
+DTEND;TZID=America/Toronto:20261031T144345
+DTSTAMP:20261030T184351Z
+UID:drac-incident-1755@status.alliancecan.ca
+CATEGORIES:UNPLANNED
+DESCRIPTION:Unresolved: This is an ongoing issue without a definitive end 
+ date.\n\nTrillium is experiencing issues with the cvmfs software stack at 
+ the moment. Please check https://docs.scinet.utoronto.ca for updates.\n\nh
+ ttps://status.alliancecan.ca/view_incident?incident=1755
+URL:https://status.alliancecan.ca/view_incident?incident=1755
 END:VEVENT
 END:VCALENDAR
