@@ -5078,7 +5078,7 @@ BEGIN:VEVENT
 SUMMARY:[Nibi] External network maintenance
 DTSTART;TZID=America/Toronto:20261028T223000
 DTEND;TZID=America/Toronto:20261028T233000
-DTSTAMP:20261031T054339Z
+DTSTAMP:20261031T064354Z
 UID:drac-incident-1743@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:On October 28th at 22:30 EST the network provider for SHARCNET
@@ -5093,7 +5093,7 @@ BEGIN:VEVENT
 SUMMARY:[Nibi AIaaS: Brine] External network maintenance
 DTSTART;TZID=America/Toronto:20261028T223000
 DTEND;TZID=America/Toronto:20261028T233000
-DTSTAMP:20261031T054339Z
+DTSTAMP:20261031T064354Z
 UID:drac-incident-1744@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:On October 28th at 22:30 EST the network provider for SHARCNET
@@ -5108,7 +5108,7 @@ BEGIN:VEVENT
 SUMMARY:[Graham Cloud] External network maintenance
 DTSTART;TZID=America/Toronto:20261028T223000
 DTEND;TZID=America/Toronto:20261028T233000
-DTSTAMP:20261031T054339Z
+DTSTAMP:20261031T064354Z
 UID:drac-incident-1745@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:On October 28th at 22:30 EST the network provider for SHARCNET
@@ -5124,7 +5124,7 @@ BEGIN:VEVENT
 SUMMARY:[Helpdesk - Centre d'assistance] External network maintenance
 DTSTART;TZID=America/Toronto:20261028T223000
 DTEND;TZID=America/Toronto:20261028T233000
-DTSTAMP:20261031T054339Z
+DTSTAMP:20261031T064354Z
 UID:drac-incident-1749@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:On October 28th at 22:30 EST the network provider will be perf
@@ -5138,7 +5138,7 @@ BEGIN:VEVENT
 SUMMARY:[Wiki] External network maintenance
 DTSTART;TZID=America/Toronto:20261028T223000
 DTEND;TZID=America/Toronto:20261028T233000
-DTSTAMP:20261031T054339Z
+DTSTAMP:20261031T064354Z
 UID:drac-incident-1750@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:On October 28th at 22:30 EST the network provider for SHARCNET
@@ -5156,7 +5156,7 @@ BEGIN:VEVENT
 SUMMARY:[Arbutus] Arbutus Power Maintenance
 DTSTART;TZID=America/Vancouver:20261102T090000
 DTEND;TZID=America/Vancouver:20261102T190000
-DTSTAMP:20261031T054339Z
+DTSTAMP:20261031T064354Z
 UID:drac-incident-1756@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:UVic Data Centre Services is performing power maintenance on t
