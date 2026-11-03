@@ -17863,7 +17863,7 @@ BEGIN:VEVENT
 SUMMARY:[Arbutus] Arbutus Power Maintenance
 DTSTART;TZID=America/Vancouver:20261103T090000
 DTEND;TZID=America/Vancouver:20261103T190000
-DTSTAMP:20261103T174408Z
+DTSTAMP:20261103T184420Z
 UID:drac-incident-1758@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:UVic Data Centre Services is continuing power maintenance on t
