@@ -17527,7 +17527,7 @@ BEGIN:VEVENT
 SUMMARY:[Arbutus] Ongoing Volume Storage Slowness
 DTSTART;TZID=America/Toronto:20261005T210600
 DTEND;TZID=America/Toronto:20261020T164600
-DTSTAMP:20261104T144400Z
+DTSTAMP:20261104T154339Z
 UID:drac-incident-1729@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:There are reports of slowness with some Arbutus storage volume
@@ -17873,21 +17873,5 @@ DESCRIPTION:Update: Power work has completed for today UVic Data Centre Se
   expected during this maintenance window.\n\nhttps://status.alliancecan.ca
  /view_incident?incident=1758
 URL:https://status.alliancecan.ca/view_incident?incident=1758
-END:VEVENT
-BEGIN:VEVENT
-SUMMARY:[Juno] (unresolved) API S3 et page web Horizon hors service -- S3 
- API and Horizon web page down.
-DTSTART;TZID=America/Toronto:20261104T142900
-DTEND;TZID=America/Toronto:20261105T094341
-DTSTAMP:20261104T144400Z
-UID:drac-incident-1759@status.alliancecan.ca
-CATEGORIES:UNPLANNED
-DESCRIPTION:Unresolved: This is an ongoing issue without a definitive end 
- date.\n\nLe stockage objet est inaccessible via l'API S3. Les données res
- tent accessibles via l'API Swift. La page Horizon de Juno est également h
- ors service.\n----\nThe object store is unreachable the S3 API. The data i
- s still reachable via the swift API. The Juno horizon page is also down.\n
- \nhttps://status.alliancecan.ca/view_incident?incident=1759
-URL:https://status.alliancecan.ca/view_incident?incident=1759
 END:VEVENT
 END:VCALENDAR
