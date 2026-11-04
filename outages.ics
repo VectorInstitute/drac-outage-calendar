@@ -17489,7 +17489,7 @@ BEGIN:VEVENT
 SUMMARY:[Arbutus] VMs launching without SSH keys on persistent nodes
 DTSTART;TZID=America/Vancouver:20261003T000000
 DTEND;TZID=America/Vancouver:20261004T000000
-DTSTAMP:20261013T135606Z
+DTSTAMP:20261104T144400Z
 UID:drac-incident-1732@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:Since around October 3\, some VMs launched on our busiest pers
@@ -17527,7 +17527,7 @@ BEGIN:VEVENT
 SUMMARY:[Arbutus] Ongoing Volume Storage Slowness
 DTSTART;TZID=America/Toronto:20261005T210600
 DTEND;TZID=America/Toronto:20261020T164600
-DTSTAMP:20261104T134402Z
+DTSTAMP:20261104T144400Z
 UID:drac-incident-1729@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:There are reports of slowness with some Arbutus storage volume
@@ -17543,7 +17543,7 @@ BEGIN:VEVENT
 SUMMARY:[tamIA] Power outage - Panne électrique
 DTSTART;TZID=America/Toronto:20261006T161300
 DTEND;TZID=America/Toronto:20261006T164100
-DTSTAMP:20261013T135606Z
+DTSTAMP:20261104T144400Z
 UID:drac-incident-1730@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:There is a power outage at this site.\n/ Il y a une panne de c
@@ -17555,7 +17555,7 @@ BEGIN:VEVENT
 SUMMARY:[Fir] GPU nodes temporarily unavailable due to cuda updates
 DTSTART;TZID=America/Toronto:20261008T205400
 DTEND;TZID=America/Toronto:20261008T234000
-DTSTAMP:20261013T135606Z
+DTSTAMP:20261104T144400Z
 UID:drac-incident-1733@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:We are currently in the process of updating the cuda driver to
@@ -17568,7 +17568,7 @@ BEGIN:VEVENT
 SUMMARY:[Nibi] Partial power outage
 DTSTART;TZID=America/Toronto:20261010T074000
 DTEND;TZID=America/Toronto:20261010T084000
-DTSTAMP:20261013T135606Z
+DTSTAMP:20261104T144400Z
 UID:drac-incident-1734@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:On October 10th\, 2026\, at 7:40am the Graham Data Center whic
@@ -17582,8 +17582,8 @@ END:VEVENT
 BEGIN:VEVENT
 SUMMARY:[DMP Assistant - L'Assistant PGD] Outage - Panne
 DTSTART;TZID=America/Toronto:20261013T133700
-DTEND;TZID=America/Toronto:20261013T145307
-DTSTAMP:20261013T185307Z
+DTEND;TZID=America/Toronto:20261013T180800
+DTSTAMP:20261104T144400Z
 UID:drac-incident-1735@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:DMP Assistant is currently offline due to an unknown issue. We
@@ -17596,8 +17596,8 @@ BEGIN:VEVENT
 SUMMARY:[Arbutus] Problem with Cloud dashboard and API interfaces - Probl
  ème avec le tableau de bord du nuage et les interfaces API
 DTSTART;TZID=America/Toronto:20261013T144000
-DTEND;TZID=America/Toronto:20261014T134712
-DTSTAMP:20261014T174712Z
+DTEND;TZID=America/Toronto:20261014T165400
+DTSTAMP:20261104T144400Z
 UID:drac-incident-1736@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:Access to Cloud dashboard and API interfaces disrupted. We are
@@ -17610,7 +17610,7 @@ BEGIN:VEVENT
 SUMMARY:[DRAC] Cloud Authentication issues
 DTSTART;TZID=America/Toronto:20261013T160700
 DTEND;TZID=America/Toronto:20261013T174500
-DTSTAMP:20261015T204631Z
+DTSTAMP:20261104T144400Z
 UID:drac-incident-1741@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:We experience currently issues with the authentication backend
@@ -17623,7 +17623,7 @@ BEGIN:VEVENT
 SUMMARY:[Fir] GPU nodes temporarily unavailable due to cuda updates
 DTSTART;TZID=America/Toronto:20261013T171800
 DTEND;TZID=America/Toronto:20261013T184600
-DTSTAMP:20261015T204631Z
+DTSTAMP:20261104T144400Z
 UID:drac-incident-1742@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:Update:\nGPU nodes were successfully updated.  New GPU driver
@@ -17638,7 +17638,7 @@ BEGIN:VEVENT
 SUMMARY:[Nibi] GPUs issues / problèmes
 DTSTART;TZID=America/Toronto:20261016T144500
 DTEND;TZID=America/Toronto:20261016T163500
-DTSTAMP:20261019T144945Z
+DTSTAMP:20261104T144400Z
 UID:drac-incident-1747@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:Some GPU nodes have been experiencing issues\, some jobs may t
@@ -17652,7 +17652,7 @@ BEGIN:VEVENT
 SUMMARY:[DRAC] Reduced Throughput
 DTSTART;TZID=America/Toronto:20261021T144400
 DTEND;TZID=America/Toronto:20261028T145400
-DTSTAMP:20261030T224357Z
+DTSTAMP:20261104T144400Z
 UID:drac-incident-1751@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:Due to an important security update\, all of Nibi's compute no
@@ -17668,7 +17668,7 @@ SUMMARY:[Wiki] Documentation wiki unavailable - Wiki de documentation non
  disponible
 DTSTART;TZID=America/Toronto:20261021T185100
 DTEND;TZID=America/Toronto:20261021T190000
-DTSTAMP:20261030T224357Z
+DTSTAMP:20261104T144400Z
 UID:drac-incident-1752@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:The Alliance Technical Documentation wiki is down for emergenc
@@ -17681,8 +17681,8 @@ BEGIN:VEVENT
 SUMMARY:[Juno] 2026-10-26 - Juno HPC - Electrical maintenance - Maintenanc
  e électrique
 DTSTART;TZID=America/Toronto:20261026T000000
-DTEND;TZID=America/Toronto:20261030T124353
-DTSTAMP:20261030T164353Z
+DTEND;TZID=America/Toronto:20261031T000000
+DTSTAMP:20261104T144400Z
 UID:drac-incident-1740@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:Electrical work to increase the data centre capacity will requ
@@ -17703,8 +17703,8 @@ BEGIN:VEVENT
 SUMMARY:[Rorqual] 2026-10-27 - Electrical maintenance - Maintenance élect
  rique
 DTSTART;TZID=America/Toronto:20261027T000000
-DTEND;TZID=America/Toronto:20261030T174421
-DTSTAMP:20261030T214421Z
+DTEND;TZID=America/Toronto:20261031T000000
+DTSTAMP:20261104T144400Z
 UID:drac-incident-1737@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:Electrical work to increase the data centre capacity will requ
@@ -17735,8 +17735,8 @@ BEGIN:VEVENT
 SUMMARY:[Narval] 2026-10-27 - Electrical maintenance - Maintenance électr
  ique
 DTSTART;TZID=America/Toronto:20261027T000000
-DTEND;TZID=America/Toronto:20261030T174421
-DTSTAMP:20261030T214421Z
+DTEND;TZID=America/Toronto:20261031T000000
+DTSTAMP:20261104T144400Z
 UID:drac-incident-1738@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:Electrical work to increase the data centre capacity will requ
@@ -17760,7 +17760,7 @@ BEGIN:VEVENT
 SUMMARY:[Nibi] External network maintenance
 DTSTART;TZID=America/Toronto:20261028T223000
 DTEND;TZID=America/Toronto:20261028T233000
-DTSTAMP:20261103T164354Z
+DTSTAMP:20261104T144400Z
 UID:drac-incident-1743@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:On October 28th at 22:30 EST the network provider for SHARCNET
@@ -17775,7 +17775,7 @@ BEGIN:VEVENT
 SUMMARY:[Nibi AIaaS: Brine] External network maintenance
 DTSTART;TZID=America/Toronto:20261028T223000
 DTEND;TZID=America/Toronto:20261028T233000
-DTSTAMP:20261103T164354Z
+DTSTAMP:20261104T144400Z
 UID:drac-incident-1744@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:On October 28th at 22:30 EST the network provider for SHARCNET
@@ -17790,7 +17790,7 @@ BEGIN:VEVENT
 SUMMARY:[Graham Cloud] External network maintenance
 DTSTART;TZID=America/Toronto:20261028T223000
 DTEND;TZID=America/Toronto:20261028T233000
-DTSTAMP:20261103T164354Z
+DTSTAMP:20261104T144400Z
 UID:drac-incident-1745@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:On October 28th at 22:30 EST the network provider for SHARCNET
@@ -17806,7 +17806,7 @@ BEGIN:VEVENT
 SUMMARY:[Helpdesk - Centre d'assistance] External network maintenance
 DTSTART;TZID=America/Toronto:20261028T223000
 DTEND;TZID=America/Toronto:20261028T233000
-DTSTAMP:20261103T154358Z
+DTSTAMP:20261104T144400Z
 UID:drac-incident-1749@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:On October 28th at 22:30 EST the network provider will be perf
@@ -17820,7 +17820,7 @@ BEGIN:VEVENT
 SUMMARY:[Wiki] External network maintenance
 DTSTART;TZID=America/Toronto:20261028T223000
 DTEND;TZID=America/Toronto:20261028T233000
-DTSTAMP:20261103T154358Z
+DTSTAMP:20261104T144400Z
 UID:drac-incident-1750@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:On October 28th at 22:30 EST the network provider for SHARCNET
@@ -17838,7 +17838,7 @@ BEGIN:VEVENT
 SUMMARY:[Trillium] CVMFS Software stack issues
 DTSTART;TZID=America/Toronto:20261030T175800
 DTEND;TZID=America/Toronto:20261030T192400
-DTSTAMP:20261030T224357Z
+DTSTAMP:20261104T144400Z
 UID:drac-incident-1755@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:Trillium is experiencing issues with the cvmfs software stack 
@@ -17849,27 +17849,45 @@ END:VEVENT
 BEGIN:VEVENT
 SUMMARY:[Arbutus] Arbutus Power Maintenance
 DTSTART;TZID=America/Vancouver:20261102T090000
-DTEND;TZID=America/Toronto:20261102T194909
-DTSTAMP:20261103T004909Z
+DTEND;TZID=America/Vancouver:20261102T190000
+DTSTAMP:20261104T144400Z
 UID:drac-incident-1756@status.alliancecan.ca
 CATEGORIES:SCHEDULED
-DESCRIPTION:UVic Data Centre Services is performing power maintenance on t
- he facility that hosts the Arbutus Cloud on Monday November 2 from 9AM - 7
- PM Pacific. There is no impact expected during this maintenance window.\n
- \nhttps://status.alliancecan.ca/view_incident?incident=1756
+DESCRIPTION:Update: Power work partially complete\, done for today but wil
+ l continue tomorrow.\nUVic Data Centre Services is performing power mainte
+ nance on the facility that hosts the Arbutus Cloud on Monday November 2 fr
+ om 9AM - 7PM Pacific. There is no impact expected during this maintenance 
+ window.\n\nhttps://status.alliancecan.ca/view_incident?incident=1756
 URL:https://status.alliancecan.ca/view_incident?incident=1756
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:[Arbutus] Arbutus Power Maintenance
 DTSTART;TZID=America/Vancouver:20261103T090000
-DTEND;TZID=America/Toronto:20261103T174358
-DTSTAMP:20261103T224358Z
+DTEND;TZID=America/Vancouver:20261103T190000
+DTSTAMP:20261104T144400Z
 UID:drac-incident-1758@status.alliancecan.ca
 CATEGORIES:SCHEDULED
-DESCRIPTION:UVic Data Centre Services is continuing power maintenance on t
- he facility that hosts the Arbutus Cloud on Tuesday November 3 from 9AM - 
- 7PM Pacific. There is no impact expected during this maintenance window.\n
- \nhttps://status.alliancecan.ca/view_incident?incident=1758
+DESCRIPTION:Update: Power work has completed for today UVic Data Centre Se
+ rvices is continuing power maintenance on the facility that hosts the Arbu
+ tus Cloud on Tuesday November 3 from 9AM - 7PM Pacific. There is no impact
+  expected during this maintenance window.\n\nhttps://status.alliancecan.ca
+ /view_incident?incident=1758
 URL:https://status.alliancecan.ca/view_incident?incident=1758
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:[Juno] (unresolved) API S3 et page web Horizon hors service -- S3 
+ API and Horizon web page down.
+DTSTART;TZID=America/Toronto:20261104T142900
+DTEND;TZID=America/Toronto:20261105T094341
+DTSTAMP:20261104T144400Z
+UID:drac-incident-1759@status.alliancecan.ca
+CATEGORIES:UNPLANNED
+DESCRIPTION:Unresolved: This is an ongoing issue without a definitive end 
+ date.\n\nLe stockage objet est inaccessible via l'API S3. Les données res
+ tent accessibles via l'API Swift. La page Horizon de Juno est également h
+ ors service.\n----\nThe object store is unreachable the S3 API. The data i
+ s still reachable via the swift API. The Juno horizon page is also down.\n
+ \nhttps://status.alliancecan.ca/view_incident?incident=1759
+URL:https://status.alliancecan.ca/view_incident?incident=1759
 END:VEVENT
 END:VCALENDAR
