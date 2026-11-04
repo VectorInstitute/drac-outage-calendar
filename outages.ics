@@ -17527,7 +17527,7 @@ BEGIN:VEVENT
 SUMMARY:[Arbutus] Ongoing Volume Storage Slowness
 DTSTART;TZID=America/Toronto:20261005T210600
 DTEND;TZID=America/Toronto:20261020T164600
-DTSTAMP:20261104T204418Z
+DTSTAMP:20261104T214353Z
 UID:drac-incident-1729@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:There are reports of slowness with some Arbutus storage volume
@@ -17892,8 +17892,8 @@ END:VEVENT
 BEGIN:VEVENT
 SUMMARY:[Nibi] (unresolved) Reduced Throughput
 DTSTART;TZID=America/Toronto:20261104T203700
-DTEND;TZID=America/Toronto:20261105T154357
-DTSTAMP:20261104T204418Z
+DTEND;TZID=America/Toronto:20261105T164352
+DTSTAMP:20261104T214353Z
 UID:drac-incident-1760@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:Unresolved: This is an ongoing issue without a definitive end 
