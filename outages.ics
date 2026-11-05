@@ -17527,7 +17527,7 @@ BEGIN:VEVENT
 SUMMARY:[Arbutus] Ongoing Volume Storage Slowness
 DTSTART;TZID=America/Toronto:20261005T210600
 DTEND;TZID=America/Toronto:20261020T164600
-DTSTAMP:20261105T114359Z
+DTSTAMP:20261105T124354Z
 UID:drac-incident-1729@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:There are reports of slowness with some Arbutus storage volume
@@ -17892,8 +17892,8 @@ END:VEVENT
 BEGIN:VEVENT
 SUMMARY:[Nibi] (unresolved) Reduced Throughput
 DTSTART;TZID=America/Toronto:20261104T203700
-DTEND;TZID=America/Toronto:20261106T064358
-DTSTAMP:20261105T114359Z
+DTEND;TZID=America/Toronto:20261106T074352
+DTSTAMP:20261105T124354Z
 UID:drac-incident-1760@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:Unresolved: This is an ongoing issue without a definitive end 
@@ -17909,8 +17909,8 @@ BEGIN:VEVENT
 SUMMARY:[Narval] (unresolved) Cooling issues\, reservation in place - Prob
  lème de refroidissement\, réservation en place
 DTSTART;TZID=America/Toronto:20261104T234500
-DTEND;TZID=America/Toronto:20261106T064358
-DTSTAMP:20261105T114359Z
+DTEND;TZID=America/Toronto:20261106T074352
+DTSTAMP:20261105T124354Z
 UID:drac-incident-1761@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:Unresolved: This is an ongoing issue without a definitive end 
@@ -17924,8 +17924,8 @@ BEGIN:VEVENT
 SUMMARY:[Rorqual] (unresolved) Cooling issues\, reservation in place - Pro
  blème de refroidissement\, réservation en place
 DTSTART;TZID=America/Toronto:20261104T234600
-DTEND;TZID=America/Toronto:20261106T064358
-DTSTAMP:20261105T114359Z
+DTEND;TZID=America/Toronto:20261106T074352
+DTSTAMP:20261105T124354Z
 UID:drac-incident-1762@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:Unresolved: This is an ongoing issue without a definitive end 
@@ -17934,5 +17934,20 @@ DESCRIPTION:Unresolved: This is an ongoing issue without a definitive end
   les nouvelles tâches à cause d'un problème de refroidissement.\n\nhttp
  s://status.alliancecan.ca/view_incident?incident=1762
 URL:https://status.alliancecan.ca/view_incident?incident=1762
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:[Fir] (unresolved) Problem with login nodes - Problème avec les n
+ oeuds de connexion
+DTSTART;TZID=America/Toronto:20261105T123400
+DTEND;TZID=America/Toronto:20261106T074352
+DTSTAMP:20261105T124354Z
+UID:drac-incident-1763@status.alliancecan.ca
+CATEGORIES:UNPLANNED
+DESCRIPTION:Unresolved: This is an ongoing issue without a definitive end 
+ date.\n\nAccess to login nodes is disrupted. We are investigating.\n/ L'ac
+ cès aux noeuds de connexion est interrompu. Nous investiguons actuellemen
+ t ce qui se passe.\n\nhttps://status.alliancecan.ca/view_incident?incident
+ =1763
+URL:https://status.alliancecan.ca/view_incident?incident=1763
 END:VEVENT
 END:VCALENDAR
