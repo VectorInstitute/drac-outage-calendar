@@ -17527,7 +17527,7 @@ BEGIN:VEVENT
 SUMMARY:[Arbutus] Ongoing Volume Storage Slowness
 DTSTART;TZID=America/Toronto:20261005T210600
 DTEND;TZID=America/Toronto:20261020T164600
-DTSTAMP:20261106T134403Z
+DTSTAMP:20261106T144351Z
 UID:drac-incident-1729@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:There are reports of slowness with some Arbutus storage volume
@@ -17893,7 +17893,7 @@ BEGIN:VEVENT
 SUMMARY:[Nibi] Reduced Throughput
 DTSTART;TZID=America/Toronto:20261104T203700
 DTEND;TZID=America/Toronto:20261105T134500
-DTSTAMP:20261106T134403Z
+DTSTAMP:20261106T144351Z
 UID:drac-incident-1760@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:Due to some more important security updates\, all of Nibi's co
@@ -17936,8 +17936,8 @@ BEGIN:VEVENT
 SUMMARY:[Fir] Problem with login nodes - Problème avec les noeuds de conn
  exion
 DTSTART;TZID=America/Toronto:20261105T123400
-DTEND;TZID=America/Toronto:20261106T131900
-DTSTAMP:20261106T134403Z
+DTEND;TZID=America/Toronto:20261106T094351
+DTSTAMP:20261106T144351Z
 UID:drac-incident-1763@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:Access to login nodes is disrupted. We are investigating.\n/ L
@@ -17947,27 +17947,16 @@ DESCRIPTION:Access to login nodes is disrupted. We are investigating.\n/ L
 URL:https://status.alliancecan.ca/view_incident?incident=1763
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:[Fir] lustre filesystem issues
-DTSTART;TZID=America/Toronto:20261106T001900
-DTEND;TZID=America/Toronto:20261106T072700
-DTSTAMP:20261106T134403Z
-UID:drac-incident-1764@status.alliancecan.ca
-CATEGORIES:UNPLANNED
-DESCRIPTION:We are currently investigating an issue with the lustre filesy
- stem that manifests in /home\, /project and /scratch being unavailable.\nM
- eanwhile login nodes might not work as expected. Sorry for the inconvenien
- ce.\n\nhttps://status.alliancecan.ca/view_incident?incident=1764
-URL:https://status.alliancecan.ca/view_incident?incident=1764
-END:VEVENT
-BEGIN:VEVENT
 SUMMARY:[Fir] Outage - Panne
 DTSTART;TZID=America/Toronto:20261106T131900
-DTEND;TZID=America/Toronto:20261106T132400
-DTSTAMP:20261106T134403Z
+DTEND;TZID=America/Toronto:20261106T140300
+DTSTAMP:20261106T144351Z
 UID:drac-incident-1765@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:Fir is currently offline due to an unknown issue. We are inves
- tigating.\n\nhttps://status.alliancecan.ca/view_incident?incident=1765
+ tigating.\nFir est actuellement hors ligne en raison d'un problème inconn
+ u. Nous menons actuellement une enquête.\n\nhttps://status.alliancecan.ca
+ /view_incident?incident=1765
 URL:https://status.alliancecan.ca/view_incident?incident=1765
 END:VEVENT
 END:VCALENDAR
