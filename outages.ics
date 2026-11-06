@@ -17527,7 +17527,7 @@ BEGIN:VEVENT
 SUMMARY:[Arbutus] Ongoing Volume Storage Slowness
 DTSTART;TZID=America/Toronto:20261005T210600
 DTEND;TZID=America/Toronto:20261020T164600
-DTSTAMP:20261106T064406Z
+DTSTAMP:20261106T074358Z
 UID:drac-incident-1729@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:There are reports of slowness with some Arbutus storage volume
@@ -17893,7 +17893,7 @@ BEGIN:VEVENT
 SUMMARY:[Nibi] Reduced Throughput
 DTSTART;TZID=America/Toronto:20261104T203700
 DTEND;TZID=America/Toronto:20261105T134500
-DTSTAMP:20261106T064406Z
+DTSTAMP:20261106T074358Z
 UID:drac-incident-1760@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:Due to some more important security updates\, all of Nibi's co
@@ -17947,17 +17947,16 @@ DESCRIPTION:Access to login nodes is disrupted. We are investigating.\n/ L
 URL:https://status.alliancecan.ca/view_incident?incident=1763
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:[Fir] (unresolved) lustre filesystem issues
+SUMMARY:[Fir] lustre filesystem issues
 DTSTART;TZID=America/Toronto:20261106T001900
-DTEND;TZID=America/Toronto:20261107T014405
-DTSTAMP:20261106T064406Z
+DTEND;TZID=America/Toronto:20261106T024358
+DTSTAMP:20261106T074358Z
 UID:drac-incident-1764@status.alliancecan.ca
 CATEGORIES:UNPLANNED
-DESCRIPTION:Unresolved: This is an ongoing issue without a definitive end 
- date.\n\nWe are currently investigating an issue with the lustre filesyste
- m that manifests in /home\, /project and /scratch being unavailable.\nMean
- while login nodes might not work as expected. Sorry for the inconvenience.
- \n\nhttps://status.alliancecan.ca/view_incident?incident=1764
+DESCRIPTION:We are currently investigating an issue with the lustre filesy
+ stem that manifests in /home\, /project and /scratch being unavailable.\nM
+ eanwhile login nodes might not work as expected. Sorry for the inconvenien
+ ce.\n\nhttps://status.alliancecan.ca/view_incident?incident=1764
 URL:https://status.alliancecan.ca/view_incident?incident=1764
 END:VEVENT
 END:VCALENDAR
