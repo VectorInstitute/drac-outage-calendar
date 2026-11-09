@@ -17527,7 +17527,7 @@ BEGIN:VEVENT
 SUMMARY:[Arbutus] Ongoing Volume Storage Slowness
 DTSTART;TZID=America/Toronto:20261005T210600
 DTEND;TZID=America/Toronto:20261020T164600
-DTSTAMP:20261109T204406Z
+DTSTAMP:20261109T214410Z
 UID:drac-incident-1729@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:There are reports of slowness with some Arbutus storage volume
@@ -17893,7 +17893,7 @@ BEGIN:VEVENT
 SUMMARY:[Nibi] Reduced Throughput
 DTSTART;TZID=America/Toronto:20261104T203700
 DTEND;TZID=America/Toronto:20261106T192900
-DTSTAMP:20261109T204406Z
+DTSTAMP:20261109T214410Z
 UID:drac-incident-1760@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:Due to some more important security updates\, all of Nibi's co
@@ -17909,7 +17909,7 @@ SUMMARY:[Narval] Cooling issues\, reservation in place - Problème de refr
  oidissement\, réservation en place
 DTSTART;TZID=America/Toronto:20261104T234500
 DTEND;TZID=America/Toronto:20261105T154300
-DTSTAMP:20261106T134403Z
+DTSTAMP:20261109T214410Z
 UID:drac-incident-1761@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:A reservation has been put in place to stop new jobs running d
@@ -17923,7 +17923,7 @@ SUMMARY:[Rorqual] Cooling issues\, reservation in place - Problème de ref
  roidissement\, réservation en place
 DTSTART;TZID=America/Toronto:20261104T234600
 DTEND;TZID=America/Toronto:20261105T154400
-DTSTAMP:20261106T134403Z
+DTSTAMP:20261109T214410Z
 UID:drac-incident-1762@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:A reservation has been put in place to stop new jobs running d
@@ -17936,27 +17936,98 @@ BEGIN:VEVENT
 SUMMARY:[Fir] Problem with login nodes - Problème avec les noeuds de conn
  exion
 DTSTART;TZID=America/Toronto:20261105T123400
-DTEND;TZID=America/Toronto:20261106T094351
-DTSTAMP:20261106T144351Z
+DTEND;TZID=America/Toronto:20261106T205400
+DTSTAMP:20261109T214410Z
 UID:drac-incident-1763@status.alliancecan.ca
 CATEGORIES:UNPLANNED
-DESCRIPTION:Access to login nodes is disrupted. We are investigating.\n/ L
- 'accès aux noeuds de connexion est interrompu. Nous investiguons actuelle
- ment ce qui se passe.\n\nhttps://status.alliancecan.ca/view_incident?incid
- ent=1763
+DESCRIPTION:We were able to track the issue down to some incorrect file sy
+ stem usage pattern that the filesystem was not capable of managing or repo
+ rting on very well.  The vendor will work on patching these areas.\nThe p
+ attern has also been stopped.\nAccess to login nodes is disrupted. We are 
+ investigating.\n/ L'accès aux noeuds de connexion est interrompu. Nous in
+ vestiguons actuellement ce qui se passe.\n\nhttps://status.alliancecan.ca/
+ view_incident?incident=1763
 URL:https://status.alliancecan.ca/view_incident?incident=1763
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:[Fir] lustre filesystem issues
+DTSTART;TZID=America/Toronto:20261106T001900
+DTEND;TZID=America/Toronto:20261106T225000
+DTSTAMP:20261109T214410Z
+UID:drac-incident-1764@status.alliancecan.ca
+CATEGORIES:UNPLANNED
+DESCRIPTION:We are currently investigating an issue with the lustre filesy
+ stem that manifests in /home\, /project and /scratch being unavailable.\nM
+ eanwhile login nodes might not work as expected. Sorry for the inconvenien
+ ce.\n\nhttps://status.alliancecan.ca/view_incident?incident=1764
+URL:https://status.alliancecan.ca/view_incident?incident=1764
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:[Fir] Outage - Panne
 DTSTART;TZID=America/Toronto:20261106T131900
-DTEND;TZID=America/Toronto:20261106T140300
-DTSTAMP:20261106T204349Z
+DTEND;TZID=America/Toronto:20261106T205500
+DTSTAMP:20261109T214410Z
 UID:drac-incident-1765@status.alliancecan.ca
 CATEGORIES:UNPLANNED
-DESCRIPTION:Fir is currently offline due to an unknown issue. We are inves
- tigating.\nFir est actuellement hors ligne en raison d'un problème inconn
- u. Nous menons actuellement une enquête.\n\nhttps://status.alliancecan.ca
- /view_incident?incident=1765
+DESCRIPTION:We were able to track the issue down to some incorrect file sy
+ stem usage pattern that the filesystem was not capable of managing or repo
+ rting on very well.  The vendor will work on patching these areas.\nThe p
+ attern has also been stopped.\nFir is currently offline due to an unknown 
+ issue. We are investigating.\nFir est actuellement hors ligne en raison d'
+ un problème inconnu. Nous menons actuellement une enquête.\n\nhttps://st
+ atus.alliancecan.ca/view_incident?incident=1765
 URL:https://status.alliancecan.ca/view_incident?incident=1765
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:[Arbutus] Upgrade to login services
+DTSTART;TZID=America/Vancouver:20261109T094500
+DTEND;TZID=America/Vancouver:20261109T114500
+DTSTAMP:20261109T214410Z
+UID:drac-incident-1767@status.alliancecan.ca
+CATEGORIES:UNPLANNED
+DESCRIPTION:We will upgrade the login service for the Arbutus cloud on Nov
+ ember 9 from 9:45 AM to 11:45 AM Pacific Time.\nDuring this window\, loggi
+ ng in to the Arbutus dashboard (Horizon) may fail for short periods\, and 
+ anyone who is already logged in will need to log in again.\nRunning virtua
+ l machines\, and the services and storage they use\, are not affected.\n\n
+ https://status.alliancecan.ca/view_incident?incident=1767
+URL:https://status.alliancecan.ca/view_incident?incident=1767
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:[Juno] (unresolved) Outage - Panne API OpenStack & S3
+DTSTART;TZID=America/Toronto:20261109T212000
+DTEND;TZID=America/Toronto:20261110T164403
+DTSTAMP:20261109T214410Z
+UID:drac-incident-1768@status.alliancecan.ca
+CATEGORIES:UNPLANNED
+DESCRIPTION:Unresolved: This is an ongoing issue without a definitive end 
+ date.\n\nLes API OpenStack et S3 ainsi que le tableau de bord Horizon de J
+ uno sont actuellement indisponibles. L'accès aux serveurs déjà déploy
+ és n'est pas affecté. Nos équipes cherchent la source du problème\, no
+ us vous tiendrons informés.\n---\nThe OpenStack and S3 APIs\, as well as 
+ the Horizon dashboard\, on the Juno cloud are currently down. Access to al
+ ready deployed servers is not affected. Our team is investigating. We'll k
+ eep you posted.\n\nhttps://status.alliancecan.ca/view_incident?incident=17
+ 68
+URL:https://status.alliancecan.ca/view_incident?incident=1768
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:[Nuage Béluga - Béluga Cloud] (unresolved) Panne - Outage  API O
+ penStack & S3
+DTSTART;TZID=America/Toronto:20261109T213500
+DTEND;TZID=America/Toronto:20261110T164403
+DTSTAMP:20261109T214410Z
+UID:drac-incident-1769@status.alliancecan.ca
+CATEGORIES:UNPLANNED
+DESCRIPTION:Unresolved: This is an ongoing issue without a definitive end 
+ date.\n\nLes API OpenStack et S3 ainsi que le tableau de bord Horizon de B
+ éluga sont actuellement indisponibles. L'accès aux serveurs déjà dépl
+ oyés n'est pas affecté. Nos équipes cherchent la source du problème\, 
+ nous vous tiendrons informés.\n---\nThe OpenStack and S3 APIs\, as well a
+ s the Horizon dashboard\, on the Béluga cloud are currently down. Access 
+ to already deployed servers is not affected. Our team is investigating. We
+ 'll keep you posted.\n\nhttps://status.alliancecan.ca/view_incident?incide
+ nt=1769
+URL:https://status.alliancecan.ca/view_incident?incident=1769
 END:VEVENT
 END:VCALENDAR
