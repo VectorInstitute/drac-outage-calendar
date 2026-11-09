@@ -17527,7 +17527,7 @@ BEGIN:VEVENT
 SUMMARY:[Arbutus] Ongoing Volume Storage Slowness
 DTSTART;TZID=America/Toronto:20261005T210600
 DTEND;TZID=America/Toronto:20261020T164600
-DTSTAMP:20261109T214410Z
+DTSTAMP:20261109T224345Z
 UID:drac-incident-1729@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:There are reports of slowness with some Arbutus storage volume
@@ -17893,7 +17893,7 @@ BEGIN:VEVENT
 SUMMARY:[Nibi] Reduced Throughput
 DTSTART;TZID=America/Toronto:20261104T203700
 DTEND;TZID=America/Toronto:20261106T192900
-DTSTAMP:20261109T214410Z
+DTSTAMP:20261109T224345Z
 UID:drac-incident-1760@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:Due to some more important security updates\, all of Nibi's co
@@ -17992,42 +17992,5 @@ DESCRIPTION:We will upgrade the login service for the Arbutus cloud on Nov
  l machines\, and the services and storage they use\, are not affected.\n\n
  https://status.alliancecan.ca/view_incident?incident=1767
 URL:https://status.alliancecan.ca/view_incident?incident=1767
-END:VEVENT
-BEGIN:VEVENT
-SUMMARY:[Juno] (unresolved) Outage - Panne API OpenStack & S3
-DTSTART;TZID=America/Toronto:20261109T212000
-DTEND;TZID=America/Toronto:20261110T164403
-DTSTAMP:20261109T214410Z
-UID:drac-incident-1768@status.alliancecan.ca
-CATEGORIES:UNPLANNED
-DESCRIPTION:Unresolved: This is an ongoing issue without a definitive end 
- date.\n\nLes API OpenStack et S3 ainsi que le tableau de bord Horizon de J
- uno sont actuellement indisponibles. L'accès aux serveurs déjà déploy
- és n'est pas affecté. Nos équipes cherchent la source du problème\, no
- us vous tiendrons informés.\n---\nThe OpenStack and S3 APIs\, as well as 
- the Horizon dashboard\, on the Juno cloud are currently down. Access to al
- ready deployed servers is not affected. Our team is investigating. We'll k
- eep you posted.\n\nhttps://status.alliancecan.ca/view_incident?incident=17
- 68
-URL:https://status.alliancecan.ca/view_incident?incident=1768
-END:VEVENT
-BEGIN:VEVENT
-SUMMARY:[Nuage Béluga - Béluga Cloud] (unresolved) Panne - Outage  API O
- penStack & S3
-DTSTART;TZID=America/Toronto:20261109T213500
-DTEND;TZID=America/Toronto:20261110T164403
-DTSTAMP:20261109T214410Z
-UID:drac-incident-1769@status.alliancecan.ca
-CATEGORIES:UNPLANNED
-DESCRIPTION:Unresolved: This is an ongoing issue without a definitive end 
- date.\n\nLes API OpenStack et S3 ainsi que le tableau de bord Horizon de B
- éluga sont actuellement indisponibles. L'accès aux serveurs déjà dépl
- oyés n'est pas affecté. Nos équipes cherchent la source du problème\, 
- nous vous tiendrons informés.\n---\nThe OpenStack and S3 APIs\, as well a
- s the Horizon dashboard\, on the Béluga cloud are currently down. Access 
- to already deployed servers is not affected. Our team is investigating. We
- 'll keep you posted.\n\nhttps://status.alliancecan.ca/view_incident?incide
- nt=1769
-URL:https://status.alliancecan.ca/view_incident?incident=1769
 END:VEVENT
 END:VCALENDAR
