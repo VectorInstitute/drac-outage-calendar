@@ -17526,17 +17526,20 @@ END:VEVENT
 BEGIN:VEVENT
 SUMMARY:[Arbutus] Ongoing Volume Storage Slowness
 DTSTART;TZID=America/Toronto:20261005T210600
-DTEND;TZID=America/Toronto:20261020T164600
-DTSTAMP:20261110T204357Z
+DTEND;TZID=America/Toronto:20261110T210300
+DTSTAMP:20261110T214354Z
 UID:drac-incident-1729@status.alliancecan.ca
 CATEGORIES:UNPLANNED
-DESCRIPTION:There are reports of slowness with some Arbutus storage volume
- s. We are investigating.\nSpecifically we are seeing slow IOPS for read op
- erations on some volumes. The impacted volumes are not performing as expec
- ted\, and we expect improvements when the issue is resolved.\nThank you fo
- r your patience\, the investigation continues.\nTuning is in progress and 
- we will share another update early next week.\n\nhttps://status.allianceca
- n.ca/view_incident?incident=1729
+DESCRIPTION:The new high_performance volume type has been made available 
+ for OS/DB workloads. As these high IOPS workloads move onto the new volume
+  type\, we expect standard volume performance to improve due to workload c
+ hanges.\n----------\nThere are reports of slowness with some Arbutus stora
+ ge volumes. We are investigating.\nSpecifically we are seeing slow IOPS fo
+ r read operations on some volumes. The impacted volumes are not performing
+  as expected\, and we expect improvements when the issue is resolved.\nTha
+ nk you for your patience\, the investigation continues.\nTuning is in prog
+ ress and we will share another update early next week.\n\nhttps://status.a
+ lliancecan.ca/view_incident?incident=1729
 URL:https://status.alliancecan.ca/view_incident?incident=1729
 END:VEVENT
 BEGIN:VEVENT
@@ -17893,7 +17896,7 @@ BEGIN:VEVENT
 SUMMARY:[Nibi] Reduced Throughput
 DTSTART;TZID=America/Toronto:20261104T203700
 DTEND;TZID=America/Toronto:20261106T192900
-DTSTAMP:20261110T204357Z
+DTSTAMP:20261110T214354Z
 UID:drac-incident-1760@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:Due to some more important security updates\, all of Nibi's co
