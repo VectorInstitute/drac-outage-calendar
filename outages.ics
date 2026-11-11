@@ -17527,7 +17527,7 @@ BEGIN:VEVENT
 SUMMARY:[Arbutus] Ongoing Volume Storage Slowness
 DTSTART;TZID=America/Toronto:20261005T210600
 DTEND;TZID=America/Toronto:20261110T210300
-DTSTAMP:20261111T210518Z
+DTSTAMP:20261111T214343Z
 UID:drac-incident-1729@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:The new high_performance volume type has been made available 
@@ -17896,7 +17896,7 @@ BEGIN:VEVENT
 SUMMARY:[Nibi] Reduced Throughput
 DTSTART;TZID=America/Toronto:20261104T203700
 DTEND;TZID=America/Toronto:20261106T192900
-DTSTAMP:20261111T210518Z
+DTSTAMP:20261111T214343Z
 UID:drac-incident-1760@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:Due to some more important security updates\, all of Nibi's co
@@ -18034,8 +18034,8 @@ BEGIN:VEVENT
 SUMMARY:[Fir] (unresolved) Fir compute is offline due to CVMFS Filesystem 
  problem
 DTSTART;TZID=America/Toronto:20261111T175200
-DTEND;TZID=America/Toronto:20261112T160516
-DTSTAMP:20261111T210518Z
+DTEND;TZID=America/Toronto:20261112T164342
+DTSTAMP:20261111T214343Z
 UID:drac-incident-1770@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:Unresolved: This is an ongoing issue without a definitive end 
@@ -18044,5 +18044,41 @@ DESCRIPTION:Unresolved: This is an ongoing issue without a definitive end
  heduler has been paused to avoid new jobs starting until this is resolved.
  \n\nhttps://status.alliancecan.ca/view_incident?incident=1770
 URL:https://status.alliancecan.ca/view_incident?incident=1770
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:[Rorqual] (unresolved) 2026-11-12 - Replacing hard drives for /pro
+ ject - Remplacement de disques durs pour /project
+DTSTART;TZID=America/Toronto:20261111T210800
+DTEND;TZID=America/Toronto:20261112T164342
+DTSTAMP:20261111T214343Z
+UID:drac-incident-1771@status.alliancecan.ca
+CATEGORIES:UNPLANNED
+DESCRIPTION:Unresolved: This is an ongoing issue without a definitive end 
+ date.\n\nReplacing a hard-drive is usually transparent to users\, but the 
+ storage system has been very sensitive to such operation. To prevent any a
+ dditional problem\, we have to pause read and write operations for a certa
+ in time period (in the order of 30-45 minutes if no issue).\nActive jobs a
+ ccessing /project will hang until read and write operations are resumed . 
+ The jobs will continue as usual after that\, but their time limit will not
+  be increased.\nThe access from login nodes and via Globus is also affecte
+ d.\nNew sessions on JupyterHub will fail because all nodes are temporarily
+  not starting new jobs.\nReplacing the hard drives is relatively urgent an
+ d we cannot wait for a proper maintenance period. We apologize for the imp
+ acts on your research activities.\n======\nLe remplacement d'un disque dur
+  est généralement transparent pour les usagers\, mais le système de sto
+ ckage s'est montré très sensible à ce type d'opération. Afin d'éviter
+  tout problème supplémentaire\, nous devons mettre sur pause les opérat
+ ions de lecture et d'écriture pendant une certaine période (de l'ordre d
+ e 30 à 45 minutes si tout va bien).\nLes tâches en cours accédant à /p
+ roject subiront la pause jusqu'à la reprise des opérations de lecture et
+  d'écriture . Elles reprendront ensuite leur cours normal\, mais leur dur
+ ée limite ne sera pas prolongée.\nL'accès à partir des nœuds de conne
+ xion et via Globus sera aussi affecté.\nLes nouvelles sessions sur Jupyte
+ rHub vont échouer\, car tous les nœuds ne démarrent temporairement aucu
+ ne tâche.\nLe remplacement de ces disques durs est relativement urgent et
+  nous ne pouvons pas attendre une période de maintenance plus appropriée
+ . Nous sommes désolés pour les impacts sur vos activités de recherche.
+ \n\nhttps://status.alliancecan.ca/view_incident?incident=1771
+URL:https://status.alliancecan.ca/view_incident?incident=1771
 END:VEVENT
 END:VCALENDAR
