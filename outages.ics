@@ -17527,7 +17527,7 @@ BEGIN:VEVENT
 SUMMARY:[Arbutus] Ongoing Volume Storage Slowness
 DTSTART;TZID=America/Toronto:20261005T210600
 DTEND;TZID=America/Toronto:20261110T210300
-DTSTAMP:20261112T194413Z
+DTSTAMP:20261112T204354Z
 UID:drac-incident-1729@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:The new high_performance volume type has been made available 
@@ -18079,18 +18079,48 @@ DESCRIPTION:Replacing a hard-drive is usually transparent to users\, but t
 URL:https://status.alliancecan.ca/view_incident?incident=1771
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:[Fir] (unresolved) Problem with login nodes - Problème avec les n
- oeuds de connexion
+SUMMARY:[Fir] Problem with login nodes - Problème avec les noeuds de conn
+ exion
 DTSTART;TZID=America/Toronto:20261112T130900
-DTEND;TZID=America/Toronto:20261113T144412
-DTSTAMP:20261112T194413Z
+DTEND;TZID=America/Toronto:20261112T154354
+DTSTAMP:20261112T204354Z
 UID:drac-incident-1772@status.alliancecan.ca
 CATEGORIES:UNPLANNED
-DESCRIPTION:Unresolved: This is an ongoing issue without a definitive end 
- date.\n\nAccess to login nodes is disrupted. We are investigating.\n/ L'ac
- cès aux noeuds de connexion est interrompu. Nous investiguons actuellemen
- t ce qui se passe.\n\nhttps://status.alliancecan.ca/view_incident?incident
- =1772
+DESCRIPTION:Access to login nodes is disrupted. We are investigating.\n/ L
+ 'accès aux noeuds de connexion est interrompu. Nous investiguons actuelle
+ ment ce qui se passe.\n\nhttps://status.alliancecan.ca/view_incident?incid
+ ent=1772
 URL:https://status.alliancecan.ca/view_incident?incident=1772
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:[Nibi] (unresolved) Scheduling Communication Issues
+DTSTART;TZID=America/Toronto:20261112T195300
+DTEND;TZID=America/Toronto:20261113T154352
+DTSTAMP:20261112T204354Z
+UID:drac-incident-1773@status.alliancecan.ca
+CATEGORIES:UNPLANNED
+DESCRIPTION:Unresolved: This is an ongoing issue without a definitive end 
+ date.\n\nThere seems to be an issue with communication between compute nod
+ es and the "srun" command.\nWe are currently investigating.\n\nhttps://sta
+ tus.alliancecan.ca/view_incident?incident=1773
+URL:https://status.alliancecan.ca/view_incident?incident=1773
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:[Fir] Planned Outage - Arrêt planifié
+DTSTART;TZID=America/Vancouver:20261117T000000
+DTEND;TZID=America/Vancouver:20261120T000000
+DTSTAMP:20261112T204354Z
+UID:drac-incident-1774@status.alliancecan.ca
+CATEGORIES:UNPLANNED
+DESCRIPTION:Fir will be unavailable starting on 2026-11-17 to 2026-11-20. 
+ During this time\, you will not be able to log in or run jobs on the clust
+ er. Any jobs that are running at the time of the outage will be terminated
+  and you will need to re-submit them once the cluster is back online.\n===
+ ===\nFir ne sera pas disponible 2026-11-17 de 2026-11-20. Durant cette p
+ ériode\, les utilisateurs ne pourront pas se connecter ni exécuter des t
+ âches sur Fir. Toute tâche en cours au moment de l’arrêt de service s
+ era arrêtée et devra être soumise à nouveau une fois les travaux termi
+ nés.\n\nhttps://status.alliancecan.ca/view_incident?incident=1774
+URL:https://status.alliancecan.ca/view_incident?incident=1774
 END:VEVENT
 END:VCALENDAR
