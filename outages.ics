@@ -17527,7 +17527,7 @@ BEGIN:VEVENT
 SUMMARY:[Arbutus] Ongoing Volume Storage Slowness
 DTSTART;TZID=America/Toronto:20261005T210600
 DTEND;TZID=America/Toronto:20261110T210300
-DTSTAMP:20261112T124356Z
+DTSTAMP:20261112T134355Z
 UID:drac-incident-1729@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:The new high_performance volume type has been made available 
@@ -17896,7 +17896,7 @@ BEGIN:VEVENT
 SUMMARY:[Nibi] Reduced Throughput
 DTSTART;TZID=America/Toronto:20261104T203700
 DTEND;TZID=America/Toronto:20261106T192900
-DTSTAMP:20261112T124356Z
+DTSTAMP:20261112T134355Z
 UID:drac-incident-1760@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:Due to some more important security updates\, all of Nibi's co
@@ -18047,8 +18047,8 @@ BEGIN:VEVENT
 SUMMARY:[Rorqual] (unresolved) 2026-11-12 - Replacing hard drives for /pro
  ject - Remplacement de disques durs pour /project
 DTSTART;TZID=America/Toronto:20261111T210800
-DTEND;TZID=America/Toronto:20261113T074355
-DTSTAMP:20261112T124356Z
+DTEND;TZID=America/Toronto:20261113T084353
+DTSTAMP:20261112T134355Z
 UID:drac-incident-1771@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:Unresolved: This is an ongoing issue without a definitive end 
@@ -18078,5 +18078,20 @@ DESCRIPTION:Unresolved: This is an ongoing issue without a definitive end
  . Nous sommes désolés pour les impacts sur vos activités de recherche.
  \n\nhttps://status.alliancecan.ca/view_incident?incident=1771
 URL:https://status.alliancecan.ca/view_incident?incident=1771
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:[Fir] (unresolved) Problem with login nodes - Problème avec les n
+ oeuds de connexion
+DTSTART;TZID=America/Toronto:20261112T130900
+DTEND;TZID=America/Toronto:20261113T084353
+DTSTAMP:20261112T134355Z
+UID:drac-incident-1772@status.alliancecan.ca
+CATEGORIES:UNPLANNED
+DESCRIPTION:Unresolved: This is an ongoing issue without a definitive end 
+ date.\n\nAccess to login nodes is disrupted. We are investigating.\n/ L'ac
+ cès aux noeuds de connexion est interrompu. Nous investiguons actuellemen
+ t ce qui se passe.\n\nhttps://status.alliancecan.ca/view_incident?incident
+ =1772
+URL:https://status.alliancecan.ca/view_incident?incident=1772
 END:VEVENT
 END:VCALENDAR
