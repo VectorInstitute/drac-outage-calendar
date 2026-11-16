@@ -17527,7 +17527,7 @@ BEGIN:VEVENT
 SUMMARY:[Arbutus] Ongoing Volume Storage Slowness
 DTSTART;TZID=America/Toronto:20261005T210600
 DTEND;TZID=America/Toronto:20261110T210300
-DTSTAMP:20261116T145129Z
+DTSTAMP:20261116T154659Z
 UID:drac-incident-1729@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:The new high_performance volume type has been made available 
@@ -18122,8 +18122,8 @@ END:VEVENT
 BEGIN:VEVENT
 SUMMARY:[Nibi] Power outage - Panne électrique
 DTSTART;TZID=America/Toronto:20261115T181200
-DTEND;TZID=America/Toronto:20261116T145100
-DTSTAMP:20261116T145129Z
+DTEND;TZID=America/Toronto:20261116T104659
+DTSTAMP:20261116T154659Z
 UID:drac-incident-1779@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:There seems to have been a power outage at Nibi and most compu
@@ -18134,10 +18134,46 @@ DESCRIPTION:There seems to have been a power outage at Nibi and most compu
 URL:https://status.alliancecan.ca/view_incident?incident=1779
 END:VEVENT
 BEGIN:VEVENT
+SUMMARY:[Rorqual] (unresolved) 2026-11-17 - Replacing hard drives for /pro
+ ject - Remplacement de disques durs pour /project
+DTSTART;TZID=America/Toronto:20261116T154600
+DTEND;TZID=America/Toronto:20261117T104657
+DTSTAMP:20261116T154659Z
+UID:drac-incident-1780@status.alliancecan.ca
+CATEGORIES:UNPLANNED
+DESCRIPTION:Unresolved: This is an ongoing issue without a definitive end 
+ date.\n\nReplacing a hard-drive is usually transparent to users\, but the 
+ storage system has been very sensitive to such operation. To prevent any a
+ dditional problem\, we have to pause read and write operations for a certa
+ in time period (in the order of 30-45 minutes if no issue).\nActive jobs a
+ ccessing /project will hang until read and write operations are resumed . 
+ The jobs will continue as usual after that\, but their time limit will not
+  be increased.\nThe access from login nodes and via Globus is also affecte
+ d.\nNew sessions on JupyterHub will fail because all nodes are temporarily
+  not starting new jobs.\nReplacing the hard drives is relatively urgent an
+ d we cannot wait for a proper maintenance period. We apologize for the imp
+ acts on your research activities.\n======\nLe remplacement d'un disque dur
+  est généralement transparent pour les usagers\, mais le système de sto
+ ckage s'est montré très sensible à ce type d'opération. Afin d'éviter
+  tout problème supplémentaire\, nous devons mettre sur pause les opérat
+ ions de lecture et d'écriture pendant une certaine période (de l'ordre d
+ e 30 à 45 minutes si tout va bien).\nLes tâches en cours accédant à /p
+ roject subiront la pause jusqu'à la reprise des opérations de lecture et
+  d'écriture . Elles reprendront ensuite leur cours normal\, mais leur dur
+ ée limite ne sera pas prolongée.\nL'accès à partir des nœuds de conne
+ xion et via Globus sera aussi affecté.\nLes nouvelles sessions sur Jupyte
+ rHub vont échouer\, car tous les nœuds ne démarrent temporairement aucu
+ ne tâche.\nLe remplacement de ces disques durs est relativement urgent et
+  nous ne pouvons pas attendre une période de maintenance plus appropriée
+ . Nous sommes désolés pour les impacts sur vos activités de recherche.
+ \n\nhttps://status.alliancecan.ca/view_incident?incident=1780
+URL:https://status.alliancecan.ca/view_incident?incident=1780
+END:VEVENT
+BEGIN:VEVENT
 SUMMARY:[Fir] Planned Outage - Arrêt planifié
 DTSTART;TZID=America/Vancouver:20261117T000000
 DTEND;TZID=America/Vancouver:20261120T000000
-DTSTAMP:20261116T145129Z
+DTSTAMP:20261116T154659Z
 UID:drac-incident-1774@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:Fir will be unavailable starting on 2026-11-17 to 2026-11-20. 
