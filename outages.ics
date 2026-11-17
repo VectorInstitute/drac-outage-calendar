@@ -17527,7 +17527,7 @@ BEGIN:VEVENT
 SUMMARY:[Arbutus] Ongoing Volume Storage Slowness
 DTSTART;TZID=America/Toronto:20261005T210600
 DTEND;TZID=America/Toronto:20261110T210300
-DTSTAMP:20261117T134400Z
+DTSTAMP:20261117T144344Z
 UID:drac-incident-1729@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:The new high_performance volume type has been made available 
@@ -18134,12 +18134,65 @@ DESCRIPTION:There seems to have been a power outage at Nibi and most compu
 URL:https://status.alliancecan.ca/view_incident?incident=1779
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:[Rorqual] (unresolved) 2026-11-17 - Replacing hard drives for /pro
- ject - Remplacement de disques durs pour /project
+SUMMARY:[Rorqual] 2026-11-17 - Replacing hard drives for /project - Rempla
+ cement de disques durs pour /project
 DTSTART;TZID=America/Toronto:20261116T154600
-DTEND;TZID=America/Toronto:20261118T084359
-DTSTAMP:20261117T134400Z
+DTEND;TZID=America/Toronto:20261117T094344
+DTSTAMP:20261117T144344Z
 UID:drac-incident-1780@status.alliancecan.ca
+CATEGORIES:UNPLANNED
+DESCRIPTION:Replacing a hard-drive is usually transparent to users\, but t
+ he storage system has been very sensitive to such operation. To prevent an
+ y additional problem\, we have to pause read and write operations for a ce
+ rtain time period (in the order of 30-45 minutes if no issue).\nActive job
+ s accessing /project will hang until read and write operations are resumed
+  . The jobs will continue as usual after that\, but their time limit will 
+ not be increased.\nThe access from login nodes and via Globus is also affe
+ cted.\nNew sessions on JupyterHub will fail because all nodes are temporar
+ ily not starting new jobs.\nReplacing the hard drives is relatively urgent
+  and we cannot wait for a proper maintenance period. We apologize for the 
+ impacts on your research activities.\n======\nLe remplacement d'un disque 
+ dur est généralement transparent pour les usagers\, mais le système de 
+ stockage s'est montré très sensible à ce type d'opération. Afin d'évi
+ ter tout problème supplémentaire\, nous devons mettre sur pause les opé
+ rations de lecture et d'écriture pendant une certaine période (de l'ordr
+ e de 30 à 45 minutes si tout va bien).\nLes tâches en cours accédant à
+  /project subiront la pause jusqu'à la reprise des opérations de lecture
+  et d'écriture . Elles reprendront ensuite leur cours normal\, mais leur 
+ durée limite ne sera pas prolongée.\nL'accès à partir des nœuds de co
+ nnexion et via Globus sera aussi affecté.\nLes nouvelles sessions sur Jup
+ yterHub vont échouer\, car tous les nœuds ne démarrent temporairement a
+ ucune tâche.\nLe remplacement de ces disques durs est relativement urgent
+  et nous ne pouvons pas attendre une période de maintenance plus appropri
+ ée. Nous sommes désolés pour les impacts sur vos activités de recherch
+ e.\n\nhttps://status.alliancecan.ca/view_incident?incident=1780
+URL:https://status.alliancecan.ca/view_incident?incident=1780
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:[Fir] Planned Outage - Arrêt planifié
+DTSTART;TZID=America/Vancouver:20261117T000000
+DTEND;TZID=America/Vancouver:20261120T000000
+DTSTAMP:20261117T144344Z
+UID:drac-incident-1774@status.alliancecan.ca
+CATEGORIES:UNPLANNED
+DESCRIPTION:Fir will be unavailable starting on 2026-11-17 to 2026-11-20. 
+ During this time\, you will not be able to log in or run jobs on the clust
+ er. Any jobs that are running at the time of the outage will be terminated
+  and you will need to re-submit them once the cluster is back online.\n===
+ ===\nFir ne sera pas disponible 2026-11-17 de 2026-11-20. Durant cette p
+ ériode\, les utilisateurs ne pourront pas se connecter ni exécuter des t
+ âches sur Fir. Toute tâche en cours au moment de l’arrêt de service s
+ era arrêtée et devra être soumise à nouveau une fois les travaux termi
+ nés.\n\nhttps://status.alliancecan.ca/view_incident?incident=1774
+URL:https://status.alliancecan.ca/view_incident?incident=1774
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:[Rorqual] (unresolved) 2026-11-18 - Replacing hard drives for /pro
+ ject - Remplacement de disques durs pour /project
+DTSTART;TZID=America/Toronto:20261117T143000
+DTEND;TZID=America/Toronto:20261118T094343
+DTSTAMP:20261117T144344Z
+UID:drac-incident-1781@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:Unresolved: This is an ongoing issue without a definitive end 
  date.\n\nReplacing a hard-drive is usually transparent to users\, but the 
@@ -18166,25 +18219,7 @@ DESCRIPTION:Unresolved: This is an ongoing issue without a definitive end
  ne tâche.\nLe remplacement de ces disques durs est relativement urgent et
   nous ne pouvons pas attendre une période de maintenance plus appropriée
  . Nous sommes désolés pour les impacts sur vos activités de recherche.
- \n\nhttps://status.alliancecan.ca/view_incident?incident=1780
-URL:https://status.alliancecan.ca/view_incident?incident=1780
-END:VEVENT
-BEGIN:VEVENT
-SUMMARY:[Fir] Planned Outage - Arrêt planifié
-DTSTART;TZID=America/Vancouver:20261117T000000
-DTEND;TZID=America/Vancouver:20261120T000000
-DTSTAMP:20261117T134400Z
-UID:drac-incident-1774@status.alliancecan.ca
-CATEGORIES:UNPLANNED
-DESCRIPTION:Fir will be unavailable starting on 2026-11-17 to 2026-11-20. 
- During this time\, you will not be able to log in or run jobs on the clust
- er. Any jobs that are running at the time of the outage will be terminated
-  and you will need to re-submit them once the cluster is back online.\n===
- ===\nFir ne sera pas disponible 2026-11-17 de 2026-11-20. Durant cette p
- ériode\, les utilisateurs ne pourront pas se connecter ni exécuter des t
- âches sur Fir. Toute tâche en cours au moment de l’arrêt de service s
- era arrêtée et devra être soumise à nouveau une fois les travaux termi
- nés.\n\nhttps://status.alliancecan.ca/view_incident?incident=1774
-URL:https://status.alliancecan.ca/view_incident?incident=1774
+ \n\nhttps://status.alliancecan.ca/view_incident?incident=1781
+URL:https://status.alliancecan.ca/view_incident?incident=1781
 END:VEVENT
 END:VCALENDAR
