@@ -5178,4 +5178,22 @@ DESCRIPTION:UVic Data Centre Services is continuing power maintenance on t
  \nhttps://status.alliancecan.ca/view_incident?incident=1758
 URL:https://status.alliancecan.ca/view_incident?incident=1758
 END:VEVENT
+BEGIN:VEVENT
+SUMMARY:[Nibi] Planned Outage - Arrêt planifié
+DTSTART;TZID=America/Toronto:20261124T120000
+DTEND;TZID=America/Toronto:20261105T000000
+DTSTAMP:20261117T204346Z
+UID:drac-incident-1782@status.alliancecan.ca
+CATEGORIES:SCHEDULED
+DESCRIPTION:Due to physical adjustment of equipment\, the Nibi cluster wil
+ l be unavailable from 8:00 AM Tuesday\, November 24 to 4:00 PM EST Wednesd
+ ay\, November 25\, 2026.\nImpacted Compute and login nodes will be unavail
+ able during the maintenance window Running jobs will be terminated before 
+ the shutdown Job scheduling will be disabled during this period Note that 
+ the job scheduler has been configured to hold off on starting any jobs tha
+ t wouldn't finish before the maintenance begins so users may notice a dela
+ y is starting jobs.\n\nhttps://status.alliancecan.ca/view_incident?inciden
+ t=1782
+URL:https://status.alliancecan.ca/view_incident?incident=1782
+END:VEVENT
 END:VCALENDAR

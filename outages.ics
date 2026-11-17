@@ -17527,7 +17527,7 @@ BEGIN:VEVENT
 SUMMARY:[Arbutus] Ongoing Volume Storage Slowness
 DTSTART;TZID=America/Toronto:20261005T210600
 DTEND;TZID=America/Toronto:20261110T210300
-DTSTAMP:20261117T194356Z
+DTSTAMP:20261117T204346Z
 UID:drac-incident-1729@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:The new high_performance volume type has been made available 
@@ -18172,7 +18172,7 @@ BEGIN:VEVENT
 SUMMARY:[Fir] Planned Outage - Arrêt planifié
 DTSTART;TZID=America/Vancouver:20261117T000000
 DTEND;TZID=America/Vancouver:20261120T000000
-DTSTAMP:20261117T194356Z
+DTSTAMP:20261117T204346Z
 UID:drac-incident-1774@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:Fir will be unavailable starting on 2026-11-17 to 2026-11-20. 
@@ -18190,8 +18190,8 @@ BEGIN:VEVENT
 SUMMARY:[Rorqual] (unresolved) 2026-11-18 - Replacing hard drives for /pro
  ject - Remplacement de disques durs pour /project
 DTSTART;TZID=America/Toronto:20261117T143000
-DTEND;TZID=America/Toronto:20261118T144352
-DTSTAMP:20261117T194356Z
+DTEND;TZID=America/Toronto:20261118T154344
+DTSTAMP:20261117T204346Z
 UID:drac-incident-1781@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:Unresolved: This is an ongoing issue without a definitive end 
@@ -18221,5 +18221,23 @@ DESCRIPTION:Unresolved: This is an ongoing issue without a definitive end
  . Nous sommes désolés pour les impacts sur vos activités de recherche.
  \n\nhttps://status.alliancecan.ca/view_incident?incident=1781
 URL:https://status.alliancecan.ca/view_incident?incident=1781
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:[Nibi] Planned Outage - Arrêt planifié
+DTSTART;TZID=America/Toronto:20261124T120000
+DTEND;TZID=America/Toronto:20261105T000000
+DTSTAMP:20261117T204346Z
+UID:drac-incident-1782@status.alliancecan.ca
+CATEGORIES:SCHEDULED
+DESCRIPTION:Due to physical adjustment of equipment\, the Nibi cluster wil
+ l be unavailable from 8:00 AM Tuesday\, November 24 to 4:00 PM EST Wednesd
+ ay\, November 25\, 2026.\nImpacted Compute and login nodes will be unavail
+ able during the maintenance window Running jobs will be terminated before 
+ the shutdown Job scheduling will be disabled during this period Note that 
+ the job scheduler has been configured to hold off on starting any jobs tha
+ t wouldn't finish before the maintenance begins so users may notice a dela
+ y is starting jobs.\n\nhttps://status.alliancecan.ca/view_incident?inciden
+ t=1782
+URL:https://status.alliancecan.ca/view_incident?incident=1782
 END:VEVENT
 END:VCALENDAR
