@@ -5179,10 +5179,25 @@ DESCRIPTION:UVic Data Centre Services is continuing power maintenance on t
 URL:https://status.alliancecan.ca/view_incident?incident=1758
 END:VEVENT
 BEGIN:VEVENT
+SUMMARY:[Arbutus] Rolling Hypervisor Maintenance
+DTSTART;TZID=America/Vancouver:20261116T000000
+DTEND;TZID=America/Vancouver:20261117T000000
+DTSTAMP:20261119T014346Z
+UID:drac-incident-1784@status.alliancecan.ca
+CATEGORIES:SCHEDULED
+DESCRIPTION:Planned maintenance is required on the Arbutus Cloud cluster. 
+ This maintenance requires a reboot of the hypervisors hosting your Virtual
+  Machines (VMs)\, causing a 5-10 minute outage of the VM.\nPersistent VMs 
+ will not be affected.\nThe maintenance will take place during a 4-day wind
+ ow starting on November 16\, 2026.\n\nhttps://status.alliancecan.ca/view_i
+ ncident?incident=1784
+URL:https://status.alliancecan.ca/view_incident?incident=1784
+END:VEVENT
+BEGIN:VEVENT
 SUMMARY:[Nibi] Planned Outage - Arrêt planifié
 DTSTART;TZID=America/Toronto:20261124T120000
 DTEND;TZID=America/Toronto:20261105T000000
-DTSTAMP:20261119T005049Z
+DTSTAMP:20261119T014346Z
 UID:drac-incident-1782@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:Due to physical adjustment of equipment\, the Nibi cluster wil

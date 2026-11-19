@@ -17527,7 +17527,7 @@ BEGIN:VEVENT
 SUMMARY:[Arbutus] Ongoing Volume Storage Slowness
 DTSTART;TZID=America/Toronto:20261005T210600
 DTEND;TZID=America/Toronto:20261110T210300
-DTSTAMP:20261119T005049Z
+DTSTAMP:20261119T014346Z
 UID:drac-incident-1729@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:The new high_performance volume type has been made available 
@@ -18134,6 +18134,21 @@ DESCRIPTION:There seems to have been a power outage at Nibi and most compu
 URL:https://status.alliancecan.ca/view_incident?incident=1779
 END:VEVENT
 BEGIN:VEVENT
+SUMMARY:[Arbutus] Rolling Hypervisor Maintenance
+DTSTART;TZID=America/Vancouver:20261116T000000
+DTEND;TZID=America/Vancouver:20261117T000000
+DTSTAMP:20261119T014346Z
+UID:drac-incident-1784@status.alliancecan.ca
+CATEGORIES:SCHEDULED
+DESCRIPTION:Planned maintenance is required on the Arbutus Cloud cluster. 
+ This maintenance requires a reboot of the hypervisors hosting your Virtual
+  Machines (VMs)\, causing a 5-10 minute outage of the VM.\nPersistent VMs 
+ will not be affected.\nThe maintenance will take place during a 4-day wind
+ ow starting on November 16\, 2026.\n\nhttps://status.alliancecan.ca/view_i
+ ncident?incident=1784
+URL:https://status.alliancecan.ca/view_incident?incident=1784
+END:VEVENT
+BEGIN:VEVENT
 SUMMARY:[Rorqual] 2026-11-17 - Replacing hard drives for /project - Rempla
  cement de disques durs pour /project
 DTSTART;TZID=America/Toronto:20261116T154600
@@ -18172,7 +18187,7 @@ BEGIN:VEVENT
 SUMMARY:[Fir] Planned Outage - Arrêt planifié
 DTSTART;TZID=America/Vancouver:20261117T000000
 DTEND;TZID=America/Vancouver:20261120T000000
-DTSTAMP:20261119T005049Z
+DTSTAMP:20261119T014346Z
 UID:drac-incident-1774@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:Fir will be unavailable starting on 2026-11-17 to 2026-11-20. 
@@ -18222,10 +18237,35 @@ DESCRIPTION:Replacing a hard-drive is usually transparent to users\, but t
 URL:https://status.alliancecan.ca/view_incident?incident=1781
 END:VEVENT
 BEGIN:VEVENT
+SUMMARY:[Arbutus] Arbutus Services Experiencing Intermittent Issues
+DTSTART;TZID=America/Toronto:20261118T042300
+DTEND;TZID=America/Toronto:20261118T050700
+DTSTAMP:20261119T014346Z
+UID:drac-incident-1783@status.alliancecan.ca
+CATEGORIES:UNPLANNED
+DESCRIPTION:Update: The issue has been resolved.\nSome Arbutus services ar
+ e experiencing intermittent issues. We are investigating.\n\nhttps://statu
+ s.alliancecan.ca/view_incident?incident=1783
+URL:https://status.alliancecan.ca/view_incident?incident=1783
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:[Nextcloud] (unresolved) Outage - Panne
+DTSTART;TZID=America/Toronto:20261119T005800
+DTEND;TZID=America/Toronto:20261119T204343
+DTSTAMP:20261119T014346Z
+UID:drac-incident-1785@status.alliancecan.ca
+CATEGORIES:UNPLANNED
+DESCRIPTION:Unresolved: This is an ongoing issue without a definitive end 
+ date.\n\nNextcloud is currently offline. We are investigating and working 
+ to restore service as soon as possible .\n\nhttps://status.alliancecan.ca/
+ view_incident?incident=1785
+URL:https://status.alliancecan.ca/view_incident?incident=1785
+END:VEVENT
+BEGIN:VEVENT
 SUMMARY:[Nibi] Planned Outage - Arrêt planifié
 DTSTART;TZID=America/Toronto:20261124T120000
 DTEND;TZID=America/Toronto:20261105T000000
-DTSTAMP:20261119T005049Z
+DTSTAMP:20261119T014346Z
 UID:drac-incident-1782@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:Due to physical adjustment of equipment\, the Nibi cluster wil
