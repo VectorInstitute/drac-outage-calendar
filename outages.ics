@@ -17527,7 +17527,7 @@ BEGIN:VEVENT
 SUMMARY:[Arbutus] Ongoing Volume Storage Slowness
 DTSTART;TZID=America/Toronto:20261005T210600
 DTEND;TZID=America/Toronto:20261110T210300
-DTSTAMP:20261123T164356Z
+DTSTAMP:20261123T174358Z
 UID:drac-incident-1729@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:The new high_performance volume type has been made available 
@@ -18273,33 +18273,32 @@ DESCRIPTION:Nextcloud is currently offline (not responding). We are invest
 URL:https://status.alliancecan.ca/view_incident?incident=1786
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:[Rorqual] (unresolved) /scratch filesystem problem - Problème ave
- c le système de fichiers /scratch
+SUMMARY:[Rorqual] /scratch filesystem problem - Problème avec le système
+  de fichiers /scratch
 DTSTART;TZID=America/Toronto:20261123T155600
-DTEND;TZID=America/Toronto:20261124T114355
-DTSTAMP:20261123T164356Z
+DTEND;TZID=America/Toronto:20261123T165000
+DTSTAMP:20261123T174358Z
 UID:drac-incident-1788@status.alliancecan.ca
 CATEGORIES:UNPLANNED
-DESCRIPTION:Unresolved: This is an ongoing issue without a definitive end 
- date.\n\nThere is a problem with the /scratch filesystem.\nImpacts: blocki
- ng the access to login nodes\, compute nodes\, JupyterHub and Globus. All 
- compute jobs are held in the waiting queue.\nCause: To be determined Solut
- ion: we may need to temporarily unmount ( umount ) the /scratch file syste
- m on all nodes.\nEstimate time to solution: To be determined\n======\nIl y
-  a un problème avec le système de fichiers /scratch .\nImpacts : accès 
- bloqués aux nœuds de connexion\, aux nœuds de calcul\, à JupyterHub et
-  à Globus. Toutes les tâches de calcul sont retenues en file d'attente.
- \nCause : à déterminer Solution : il se pourrait que nous ayons à démo
- nter ( umount ) temporairement le système de fichiers /scratch .\nHeure e
- stimée de résolution : à déterminer\n\nhttps://status.alliancecan.ca/v
- iew_incident?incident=1788
+DESCRIPTION:There is a problem with the /scratch filesystem.\nImpacts: blo
+ cking the access to login nodes\, compute nodes\, JupyterHub and Globus. A
+ ll compute jobs are held in the waiting queue.\nCause: To be determined So
+ lution: we may need to temporarily unmount ( umount ) the /scratch file sy
+ stem on all nodes.\nEstimate time to solution: To be determined\n======\nI
+ l y a un problème avec le système de fichiers /scratch .\nImpacts : acc
+ ès bloqués aux nœuds de connexion\, aux nœuds de calcul\, à JupyterHu
+ b et à Globus. Toutes les tâches de calcul sont retenues en file d'atten
+ te.\nCause : à déterminer Solution : il se pourrait que nous ayons à d
+ émonter ( umount ) temporairement le système de fichiers /scratch .\nHeu
+ re estimée de résolution : à déterminer\n\nhttps://status.alliancecan.
+ ca/view_incident?incident=1788
 URL:https://status.alliancecan.ca/view_incident?incident=1788
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:[Nibi] Planned Outage - Arrêt planifié
 DTSTART;TZID=America/Toronto:20261124T120000
 DTEND;TZID=America/Toronto:20261105T000000
-DTSTAMP:20261123T164356Z
+DTSTAMP:20261123T174358Z
 UID:drac-incident-1782@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:Due to physical adjustment of equipment\, the Nibi cluster wil
