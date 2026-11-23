@@ -17527,7 +17527,7 @@ BEGIN:VEVENT
 SUMMARY:[Arbutus] Ongoing Volume Storage Slowness
 DTSTART;TZID=America/Toronto:20261005T210600
 DTEND;TZID=America/Toronto:20261110T210300
-DTSTAMP:20261123T094355Z
+DTSTAMP:20261123T104339Z
 UID:drac-incident-1729@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:The new high_performance volume type has been made available 
@@ -18137,7 +18137,7 @@ BEGIN:VEVENT
 SUMMARY:[Arbutus] Rolling Hypervisor Maintenance
 DTSTART;TZID=America/Vancouver:20261116T000000
 DTEND;TZID=America/Vancouver:20261117T000000
-DTSTAMP:20261121T234352Z
+DTSTAMP:20261123T104339Z
 UID:drac-incident-1784@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:Planned maintenance is required on the Arbutus Cloud cluster. 
@@ -18240,7 +18240,7 @@ BEGIN:VEVENT
 SUMMARY:[Arbutus] Arbutus Services Experiencing Intermittent Issues
 DTSTART;TZID=America/Toronto:20261118T042300
 DTEND;TZID=America/Toronto:20261118T050700
-DTSTAMP:20261121T234352Z
+DTSTAMP:20261123T104339Z
 UID:drac-incident-1783@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:Update: The issue has been resolved.\nSome Arbutus services ar
@@ -18252,7 +18252,7 @@ BEGIN:VEVENT
 SUMMARY:[Nextcloud] Outage - Panne
 DTSTART;TZID=America/Toronto:20261119T005800
 DTEND;TZID=America/Toronto:20261119T200100
-DTSTAMP:20261121T234352Z
+DTSTAMP:20261123T104339Z
 UID:drac-incident-1785@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:Nextcloud is currently offline. We are investigating and worki
@@ -18263,8 +18263,8 @@ END:VEVENT
 BEGIN:VEVENT
 SUMMARY:[Nextcloud] Outage - Panne
 DTSTART;TZID=America/Toronto:20261121T232700
-DTEND;TZID=America/Toronto:20261121T233000
-DTSTAMP:20261122T174358Z
+DTEND;TZID=America/Toronto:20261122T180400
+DTSTAMP:20261123T104339Z
 UID:drac-incident-1786@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:Nextcloud is currently offline (not responding). We are invest
@@ -18273,10 +18273,24 @@ DESCRIPTION:Nextcloud is currently offline (not responding). We are invest
 URL:https://status.alliancecan.ca/view_incident?incident=1786
 END:VEVENT
 BEGIN:VEVENT
+SUMMARY:[Rorqual] Problem with login nodes - Problème avec les noeuds de 
+ connexion
+DTSTART;TZID=America/Toronto:20261123T103300
+DTEND;TZID=America/Toronto:20261123T103500
+DTSTAMP:20261123T104339Z
+UID:drac-incident-1787@status.alliancecan.ca
+CATEGORIES:UNPLANNED
+DESCRIPTION:Access to login nodes is disrupted. We are investigating.\n/ L
+ 'accès aux noeuds de connexion est interrompu. Nous investiguons actuelle
+ ment ce qui se passe.\n\nhttps://status.alliancecan.ca/view_incident?incid
+ ent=1787
+URL:https://status.alliancecan.ca/view_incident?incident=1787
+END:VEVENT
+BEGIN:VEVENT
 SUMMARY:[Nibi] Planned Outage - Arrêt planifié
 DTSTART;TZID=America/Toronto:20261124T120000
 DTEND;TZID=America/Toronto:20261105T000000
-DTSTAMP:20261123T094355Z
+DTSTAMP:20261123T104339Z
 UID:drac-incident-1782@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:Due to physical adjustment of equipment\, the Nibi cluster wil
