@@ -18137,7 +18137,7 @@ BEGIN:VEVENT
 SUMMARY:[Arbutus] Rolling Hypervisor Maintenance
 DTSTART;TZID=America/Vancouver:20261116T000000
 DTEND;TZID=America/Vancouver:20261117T000000
-DTSTAMP:20261123T104339Z
+DTSTAMP:20261125T224347Z
 UID:drac-incident-1784@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:Planned maintenance is required on the Arbutus Cloud cluster. 
@@ -18240,7 +18240,7 @@ BEGIN:VEVENT
 SUMMARY:[Arbutus] Arbutus Services Experiencing Intermittent Issues
 DTSTART;TZID=America/Toronto:20261118T042300
 DTEND;TZID=America/Toronto:20261118T050700
-DTSTAMP:20261123T104339Z
+DTSTAMP:20261125T224347Z
 UID:drac-incident-1783@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:Update: The issue has been resolved.\nSome Arbutus services ar
@@ -18252,7 +18252,7 @@ BEGIN:VEVENT
 SUMMARY:[Nextcloud] Outage - Panne
 DTSTART;TZID=America/Toronto:20261119T005800
 DTEND;TZID=America/Toronto:20261119T200100
-DTSTAMP:20261123T104339Z
+DTSTAMP:20261125T224347Z
 UID:drac-incident-1785@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:Nextcloud is currently offline. We are investigating and worki
@@ -18264,7 +18264,7 @@ BEGIN:VEVENT
 SUMMARY:[Nextcloud] Outage - Panne
 DTSTART;TZID=America/Toronto:20261121T232700
 DTEND;TZID=America/Toronto:20261122T180400
-DTSTAMP:20261123T104339Z
+DTSTAMP:20261125T224347Z
 UID:drac-incident-1786@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:Nextcloud is currently offline (not responding). We are invest
@@ -18273,45 +18273,60 @@ DESCRIPTION:Nextcloud is currently offline (not responding). We are invest
 URL:https://status.alliancecan.ca/view_incident?incident=1786
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:[Rorqual] 2026-11-25 - Replacing hard drives for /project - Rempla
- cement de disques durs pour /project
-DTSTART;TZID=America/Toronto:20261123T210600
-DTEND;TZID=America/Toronto:20261125T114356
-DTSTAMP:20261125T164356Z
-UID:drac-incident-1790@status.alliancecan.ca
+SUMMARY:[Rorqual] Problem with login nodes - Problème avec les noeuds de 
+ connexion
+DTSTART;TZID=America/Toronto:20261123T103300
+DTEND;TZID=America/Toronto:20261123T161200
+DTSTAMP:20261125T224347Z
+UID:drac-incident-1787@status.alliancecan.ca
 CATEGORIES:UNPLANNED
-DESCRIPTION:Replacing a hard-drive is usually transparent to users\, but t
- he storage system has been very sensitive to such operation. To prevent an
- y additional problem\, we have to pause read and write operations for a ce
- rtain time period (in the order of 30-45 minutes if no issue).\nActive job
- s accessing /project will hang until read and write operations are resumed
-  . The jobs will continue as usual after that\, but their time limit will 
- not be increased.\nThe access from login nodes and via Globus is also affe
- cted.\nNew sessions on JupyterHub will fail because all nodes are temporar
- ily not starting new jobs.\nReplacing the hard drives is relatively urgent
-  and we cannot wait for a proper maintenance period. We apologize for the 
- impacts on your research activities.\n======\nLe remplacement d'un disque 
- dur est généralement transparent pour les usagers\, mais le système de 
- stockage s'est montré très sensible à ce type d'opération. Afin d'évi
- ter tout problème supplémentaire\, nous devons mettre sur pause les opé
- rations de lecture et d'écriture pendant une certaine période (de l'ordr
- e de 30 à 45 minutes si tout va bien).\nLes tâches en cours accédant à
-  /project subiront la pause jusqu'à la reprise des opérations de lecture
-  et d'écriture . Elles reprendront ensuite leur cours normal\, mais leur 
- durée limite ne sera pas prolongée.\nL'accès à partir des nœuds de co
- nnexion et via Globus sera aussi affecté.\nLes nouvelles sessions sur Jup
- yterHub vont échouer\, car tous les nœuds ne démarrent temporairement a
- ucune tâche.\nLe remplacement de ces disques durs est relativement urgent
-  et nous ne pouvons pas attendre une période de maintenance plus appropri
- ée. Nous sommes désolés pour les impacts sur vos activités de recherch
- e.\n\nhttps://status.alliancecan.ca/view_incident?incident=1790
-URL:https://status.alliancecan.ca/view_incident?incident=1790
+DESCRIPTION:Access to login nodes is disrupted. We are investigating.\n/ L
+ 'accès aux noeuds de connexion est interrompu. Nous investiguons actuelle
+ ment ce qui se passe.\n\nhttps://status.alliancecan.ca/view_incident?incid
+ ent=1787
+URL:https://status.alliancecan.ca/view_incident?incident=1787
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:[DRAC] /scratch filesystem problem - Problème avec le système de
+  fichiers /scratch
+DTSTART;TZID=America/Toronto:20261123T155600
+DTEND;TZID=America/Toronto:20261123T212300
+DTSTAMP:20261125T224347Z
+UID:drac-incident-1788@status.alliancecan.ca
+CATEGORIES:UNPLANNED
+DESCRIPTION:There is a problem with the /scratch filesystem.\nImpacts: blo
+ cking the access to login nodes\, compute nodes\, JupyterHub and Globus. A
+ ll compute jobs are held in the waiting queue.\nCause: To be determined So
+ lution: we may need to temporarily unmount ( umount ) the /scratch file sy
+ stem on all nodes.\nEstimate time to solution: To be determined\n======\nI
+ l y a un problème avec le système de fichiers /scratch .\nImpacts : acc
+ ès bloqués aux nœuds de connexion\, aux nœuds de calcul\, à JupyterHu
+ b et à Globus. Toutes les tâches de calcul sont retenues en file d'atten
+ te.\nCause : à déterminer Solution : il se pourrait que nous ayons à d
+ émonter ( umount ) temporairement le système de fichiers /scratch .\nHeu
+ re estimée de résolution : à déterminer\n\nhttps://status.alliancecan.
+ ca/view_incident?incident=1788
+URL:https://status.alliancecan.ca/view_incident?incident=1788
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:[Arbutus] (unresolved) Arbutus Systems Maintenance
+DTSTART;TZID=America/Toronto:20261123T195100
+DTEND;TZID=America/Toronto:20261126T174342
+DTSTAMP:20261125T224347Z
+UID:drac-incident-1789@status.alliancecan.ca
+CATEGORIES:UNPLANNED
+DESCRIPTION:Unresolved: This is an ongoing issue without a definitive end 
+ date.\n\nNon-impacting infrastructure maintenance is required on the Arbut
+ us Cloud cluster. This background activity will occur during regular busin
+ ess hours but should not impact running instances or networks.\n\nhttps://
+ status.alliancecan.ca/view_incident?incident=1789
+URL:https://status.alliancecan.ca/view_incident?incident=1789
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:[Nibi] Planned Outage - Arrêt planifié
 DTSTART;TZID=America/Toronto:20261124T120000
 DTEND;TZID=America/Toronto:20261105T000000
-DTSTAMP:20261125T214336Z
+DTSTAMP:20261125T224347Z
 UID:drac-incident-1782@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:Due to physical adjustment of equipment\, the Nibi cluster wil
@@ -18329,8 +18344,8 @@ BEGIN:VEVENT
 SUMMARY:[Fir] Problem with login nodes - Problème avec les noeuds de conn
  exion
 DTSTART;TZID=America/Toronto:20261124T132900
-DTEND;TZID=America/Toronto:20261124T134400
-DTSTAMP:20261124T184400Z
+DTEND;TZID=America/Toronto:20261124T183500
+DTSTAMP:20261125T224347Z
 UID:drac-incident-1791@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:Access to login nodes is disrupted. We are investigating.\n/ L
