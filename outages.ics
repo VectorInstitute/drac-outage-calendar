@@ -18309,24 +18309,23 @@ DESCRIPTION:There is a problem with the /scratch filesystem.\nImpacts: blo
 URL:https://status.alliancecan.ca/view_incident?incident=1788
 END:VEVENT
 BEGIN:VEVENT
-SUMMARY:[Arbutus] (unresolved) Arbutus Systems Maintenance
+SUMMARY:[Arbutus] Arbutus Systems Maintenance
 DTSTART;TZID=America/Toronto:20261123T195100
-DTEND;TZID=America/Toronto:20261126T195156
-DTSTAMP:20261126T005158Z
+DTEND;TZID=America/Toronto:20261125T204359
+DTSTAMP:20261126T014359Z
 UID:drac-incident-1789@status.alliancecan.ca
 CATEGORIES:UNPLANNED
-DESCRIPTION:Unresolved: This is an ongoing issue without a definitive end 
- date.\n\nNon-impacting infrastructure maintenance is required on the Arbut
- us Cloud cluster. This background activity will occur during regular busin
- ess hours but should not impact running instances or networks.\n\nhttps://
- status.alliancecan.ca/view_incident?incident=1789
+DESCRIPTION:Non-impacting infrastructure maintenance is required on the Ar
+ butus Cloud cluster. This background activity will occur during regular bu
+ siness hours but should not impact running instances or networks.\n\nhttps
+ ://status.alliancecan.ca/view_incident?incident=1789
 URL:https://status.alliancecan.ca/view_incident?incident=1789
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:[Nibi] Planned Outage - Arrêt planifié
 DTSTART;TZID=America/Toronto:20261124T120000
 DTEND;TZID=America/Toronto:20261105T000000
-DTSTAMP:20261126T005158Z
+DTSTAMP:20261126T014359Z
 UID:drac-incident-1782@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:Due to physical adjustment of equipment\, the Nibi cluster wil
