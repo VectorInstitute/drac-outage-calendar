@@ -18311,8 +18311,8 @@ END:VEVENT
 BEGIN:VEVENT
 SUMMARY:[Arbutus] (unresolved) Arbutus Systems Maintenance
 DTSTART;TZID=America/Toronto:20261123T195100
-DTEND;TZID=America/Toronto:20261127T164338
-DTSTAMP:20261126T214338Z
+DTEND;TZID=America/Toronto:20261127T174346
+DTSTAMP:20261126T224347Z
 UID:drac-incident-1789@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:Unresolved: This is an ongoing issue without a definitive end 
@@ -18378,18 +18378,5 @@ DESCRIPTION:The new high_performance volume type has been made available f
  will share another update early next week.\n\nhttps://status.alliancecan.c
  a/view_incident?incident=1793
 URL:https://status.alliancecan.ca/view_incident?incident=1793
-END:VEVENT
-BEGIN:VEVENT
-SUMMARY:[Nextcloud] (unresolved) Outage - Panne
-DTSTART;TZID=America/Toronto:20261126T182100
-DTEND;TZID=America/Toronto:20261127T164338
-DTSTAMP:20261126T214338Z
-UID:drac-incident-1794@status.alliancecan.ca
-CATEGORIES:UNPLANNED
-DESCRIPTION:Unresolved: This is an ongoing issue without a definitive end 
- date.\n\nNextcloud is currently offline. We are investigating and working 
- to restore service as soon as possible .\n\nhttps://status.alliancecan.ca/
- view_incident?incident=1794
-URL:https://status.alliancecan.ca/view_incident?incident=1794
 END:VEVENT
 END:VCALENDAR
