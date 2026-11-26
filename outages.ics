@@ -18311,8 +18311,8 @@ END:VEVENT
 BEGIN:VEVENT
 SUMMARY:[Arbutus] (unresolved) Arbutus Systems Maintenance
 DTSTART;TZID=America/Toronto:20261123T195100
-DTEND;TZID=America/Toronto:20261127T144401
-DTSTAMP:20261126T194402Z
+DTEND;TZID=America/Toronto:20261127T154356
+DTSTAMP:20261126T204357Z
 UID:drac-incident-1789@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:Unresolved: This is an ongoing issue without a definitive end 
@@ -18326,7 +18326,7 @@ BEGIN:VEVENT
 SUMMARY:[Nibi] Planned Outage - Arrêt planifié
 DTSTART;TZID=America/Toronto:20261124T120000
 DTEND;TZID=America/Toronto:20261105T000000
-DTSTAMP:20261126T194402Z
+DTSTAMP:20261126T204357Z
 UID:drac-incident-1782@status.alliancecan.ca
 CATEGORIES:SCHEDULED
 DESCRIPTION:Due to physical adjustment of equipment\, the Nibi cluster wil
@@ -18382,8 +18382,8 @@ END:VEVENT
 BEGIN:VEVENT
 SUMMARY:[Nextcloud] (unresolved) Outage - Panne
 DTSTART;TZID=America/Toronto:20261126T182100
-DTEND;TZID=America/Toronto:20261127T144401
-DTSTAMP:20261126T194402Z
+DTEND;TZID=America/Toronto:20261127T154356
+DTSTAMP:20261126T204357Z
 UID:drac-incident-1794@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:Unresolved: This is an ongoing issue without a definitive end 
