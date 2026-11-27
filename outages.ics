@@ -18311,8 +18311,8 @@ END:VEVENT
 BEGIN:VEVENT
 SUMMARY:[Arbutus] (unresolved) Arbutus Systems Maintenance
 DTSTART;TZID=America/Toronto:20261123T195100
-DTEND;TZID=America/Toronto:20261128T024404
-DTSTAMP:20261127T074405Z
+DTEND;TZID=America/Toronto:20261128T034346
+DTSTAMP:20261127T084347Z
 UID:drac-incident-1789@status.alliancecan.ca
 CATEGORIES:UNPLANNED
 DESCRIPTION:Unresolved: This is an ongoing issue without a definitive end 
